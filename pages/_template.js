@@ -22,7 +22,6 @@ class Template extends React.Component {
             }}
             to={prefixLink('/')}
           >
-            {config.blogTitle}
           </Link>
         </h1>
       )
@@ -42,7 +41,6 @@ class Template extends React.Component {
             }}
             to={prefixLink('/')}
           >
-            {config.blogTitle}
           </Link>
         </h3>
       )

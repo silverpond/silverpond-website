@@ -13,11 +13,6 @@ module.exports = React.createClass({
     const { body } = this.props
     const head = Helmet.rewind();
 
-    let css
-    if (process.env.NODE_ENV === 'production') {
-      css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />
-    }
-
     return (
       <html lang="en">
         <head>
@@ -29,7 +24,6 @@ module.exports = React.createClass({
           />
           {head.title.toComponent()}
           {head.meta.toComponent()}
-          {css}
         </head>
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />

@@ -12,13 +12,12 @@ class Bio extends React.Component {
       >
         <img
           src={prefixLink(profilePic)}
-          alt={`author ${config.authorName}`}
           style={{
             float: 'left',
             marginBottom: 0,
           }}
         />
-        Written by <strong>{config.authorName}</strong> who lives and works in San Francisco building useful things. <a href="https://twitter.com/kylemathews">You should follow him on Twitter</a>
+        Written by <strong></strong> who lives and works in San Francisco building useful things. <a href="https://twitter.com/kylemathews">You should follow him on Twitter</a>
       </p>
     )
   }

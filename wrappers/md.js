@@ -5,8 +5,6 @@ import ReadNext from '../components/ReadNext'
 import { config } from 'config'
 import Bio from 'components/Bio'
 
-import '../css/zenburn.css'
-
 class MarkdownWrapper extends React.Component {
   render () {
     const { route } = this.props
@@ -15,7 +13,7 @@ class MarkdownWrapper extends React.Component {
     return (
       <div className="markdown">
         <Helmet
-          title={`${post.title} | ${config.blogTitle}`}
+          title={`${post.title}`}
         />
         <h1 style={{marginTop: 0}}>{post.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.body }} />
