@@ -2,7 +2,6 @@ import React from 'react'
 import moment from 'moment'
 import Helmet from "react-helmet"
 import ReadNext from '../components/ReadNext'
-import { rhythm } from 'utils/typography'
 import { config } from 'config'
 import Bio from 'components/Bio'
 
@@ -23,14 +22,12 @@ class MarkdownWrapper extends React.Component {
         <em
           style={{
             display: 'block',
-            marginBottom: rhythm(2),
           }}
         >
           Posted {moment(post.date).format('MMMM D, YYYY')}
         </em>
         <hr
           style={{
-            marginBottom: rhythm(2),
           }}
         />
         <ReadNext post={post} pages={route.pages} />
