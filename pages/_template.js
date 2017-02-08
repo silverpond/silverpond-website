@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import { config } from 'config'
 
+import { palette, type } from '../utils/settings'
+
 class Template extends React.Component {
   render () {
     const { location, children } = this.props
