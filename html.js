@@ -24,6 +24,7 @@ module.exports = React.createClass({
           />
           {head.title.toComponent()}
           {head.meta.toComponent()}
+          <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Volkhov" rel="stylesheet">
         </head>
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />
