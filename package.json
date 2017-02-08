@@ -1,10 +1,10 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "name": "silverpond-website",
+  "description": "Silverpond website",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Andy Carson <andrew.carson@silverpond.com.au>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
+    "url": "https://github.com/silverpond/silverpond-website/issues"
   },
   "dependencies": {
     "gatsby": "^0.12.22",
@@ -15,25 +15,24 @@
     "react-helmet": "^3.2.2",
     "underscore.string": "^3.2.3"
   },
-  "devDependencies": {
-    "gh-pages": "^0.12.0"
-  },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "http://silverpond.com.au/silverpond-website/",
   "keywords": [
-    "gatsby"
+    "Silverpond",
+    "AI",
+    "Deep learning",
+    "Machine learning"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/silverpond/silverpond-website.git"
   },
   "scripts": {
     "dev": "gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public"
+    "build": "gatsby build"
   }
 }
