@@ -47,6 +47,14 @@ const AboutText = styled(IntroText)`
   margin-bottom: 2rem;
 `;
 
+const ArticleCol = styled(Col)`
+  display: flex;
+`;
+
+const ClientsWrapper = styled(ColWrapper)`
+  align-items: center;
+`;
+
 // Component
 const Home = (
   {
@@ -59,6 +67,7 @@ const Home = (
 ) => {
   const promotedArticles = getPromotedPages(route.pages, 'articles');
   const promotedEvents = getPromotedPages(route.pages, 'events');
+  const promotedClients = getPromotedPages(route.pages, 'clients', 4);
   return (
     <div>
       <Splash>
@@ -154,7 +163,7 @@ const Home = (
         <ColWrapper>
           {promotedArticles.map(article => {
             return (
-              <Col
+              <ArticleCol
                 key={article.data.title}
                 span="6"
                 style={{ display: 'flex' }}
@@ -164,10 +173,25 @@ const Home = (
                   date={article.data.date}
                   title={article.data.title}
                 />
-              </Col>
+              </ArticleCol>
             );
           })}
         </ColWrapper>
+      </PromotedContent>
+
+      <PromotedContent category="clients" to="/clients">
+        <ClientsWrapper>
+          {promotedClients.map(client => {
+            return (
+              <Col key={client.data.name}>
+                <img
+                  src={prefixLink(`images/clients/${client.data.image}`)}
+                  alt={`${client.data.name} logo`}
+                />
+              </Col>
+            );
+          })}
+        </ClientsWrapper>
       </PromotedContent>
 
     </div>

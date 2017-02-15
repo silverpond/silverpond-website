@@ -9,7 +9,7 @@ export const ColWrapper = styled.div`
 `;
 
 export const Col = styled.div`
-  flex-grow: 1,
-  padding-left: ${spacing}
+  flex-grow: 1;
+  padding-left: ${spacing};
   width: ${props => props.span / 12 * 100}%;
 `;
