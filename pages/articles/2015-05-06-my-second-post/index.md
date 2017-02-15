@@ -2,7 +2,9 @@
 title: My Second Post!
 date: "2015-05-06T23:46:37.121Z"
 readNext: "/hi-folks/"
-path: "/my-second-post/"
+path: "/articles/my-second-post/"
+featured: true
+author: Noon van der Silk
 ---
 
 Wow! I love blogging so much already.

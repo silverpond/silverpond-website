@@ -7,9 +7,11 @@
     "url": "https://github.com/silverpond/silverpond-website/issues"
   },
   "dependencies": {
+    "dateformat": "^2.0.0",
     "gatsby": "^0.12.22",
     "lodash": "^4.17.2",
     "moment": "^2.17.1",
+    "normalize.css": "^5.0.0",
     "palette-generator": "^1.1.0",
     "react-addons-shallow-compare": "^15.4.1",
     "react-dates": "^4.1.0",
@@ -17,6 +19,7 @@
     "style-inject": "^0.1.1",
     "styled-components": "^1.4.3",
     "to-css": "^1.2.1",
+    "to-style": "^1.3.3",
     "typescale": "0.0.8",
     "underscore.string": "^3.2.3"
   },

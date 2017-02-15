@@ -3,6 +3,8 @@ title: Hello World
 date: "2015-05-01T22:12:03.284Z"
 readNext: "/my-second-post/"
 path: "/articles/hello-world/"
+featured: true
+author: Andy Kitchen
 ---
 
 This is my first post on my new fake blog! How exciting!
