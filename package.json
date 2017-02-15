@@ -16,6 +16,7 @@
     "react-addons-shallow-compare": "^15.4.1",
     "react-dates": "^4.1.0",
     "react-helmet": "^3.2.2",
+    "string": "^3.3.3",
     "style-inject": "^0.1.1",
     "styled-components": "^1.4.3",
     "to-css": "^1.2.1",

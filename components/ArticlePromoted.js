@@ -14,7 +14,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  min-height: 24rem;
   padding: 3rem;
 `;
 
@@ -41,16 +40,23 @@ const Date = styled.p`
   ${typeStyles('small')}
 `;
 
+const ReadTime = styled.p`
+  font-family: georgia;
+  font-style: italic;
+`;
+
 // Component
 // flow error when trying to define author shape :/
 const ArticlePromoted = (
   {
     author,
     date,
+    readTime,
     title,
   }: {
     author: any,
     date: string,
+    readTime: number,
     title: string,
   },
 ) => {
@@ -62,11 +68,12 @@ const ArticlePromoted = (
           {dateformat(date, 'mediumDate')}
         </Date>
       </Head>
-      <Body>
-        <Title>
-          {title}
-        </Title>
-      </Body>
+      <Title>
+        {title}
+      </Title>
+      <ReadTime>
+        {readTime} min read
+      </ReadTime>
     </Container>
   );
 };

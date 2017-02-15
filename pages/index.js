@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
 import { palette, typeStyles } from '../lib/settings';
-import { getPerson, getPromotedPages } from '../lib/utilities';
+import { calcReadTime, getPerson, getPromotedPages } from '../lib/utilities';
 
 // Imports - components
 import { ColWrapper, Col } from '../components/Grid';
@@ -170,6 +170,7 @@ const Home = (
                   author={getPerson(route.pages, article.data.author)}
                   date={article.data.date}
                   title={article.data.title}
+                  readTime={calcReadTime(article.data.body)}
                 />
               </ArticleCol>
             );
