@@ -65,6 +65,7 @@ const Home = (
     },
   },
 ) => {
+  const promotedCaseStudy = getPromotedPages(route.pages, 'case-studies', 1)[0];
   const promotedArticles = getPromotedPages(route.pages, 'articles');
   const promotedEvents = getPromotedPages(route.pages, 'events');
   const promotedClients = getPromotedPages(route.pages, 'clients', 4);
@@ -117,7 +118,7 @@ const Home = (
               enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus
               semper.
             </AboutText>
-            <ArrowLink to="/deep-learning">
+            <ArrowLink to={prefixLink('/deep-learning')}>
               Find out more about deep learning
             </ArrowLink>
           </Col>
@@ -126,15 +127,12 @@ const Home = (
 
       <Section color="grey">
         <CaseStudySmall
-          to="case-studies/powercor"
-          image="images/powercor-grid.png"
-          title="Smarter electrical grids through advanced analytics with Powercor"
-          intro="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                 Suspendisse enim mi, vulputate nec tincidunt quis, finibus id ex.
-                 Quisque venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed
-                 tincidunt maximus felis a dictum. Donec eu vestibulum sapien. Ut
-                 tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus
-                 faucibus semper."
+          to={prefixLink(promotedCaseStudy.data.path)}
+          image={prefixLink(
+            `/images/case-studies/${promotedCaseStudy.data.image}`,
+          )}
+          title={promotedCaseStudy.data.title}
+          intro={promotedCaseStudy.data.intro}
         />
       </Section>
 
