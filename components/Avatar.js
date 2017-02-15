@@ -2,6 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
+import { prefixLink } from 'gatsby-helpers';
 import { typeStyles } from '../lib/settings';
 
 const Container = styled.div`
@@ -32,7 +33,7 @@ const Avatar = (
 ) => {
   return (
     <Container>
-      <Image src={image} />
+      <Image src={prefixLink(`/images/people/${image}`)} />
       <Name>
         {name}
       </Name>
