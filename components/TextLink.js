@@ -25,7 +25,7 @@ const TextLink = (
     props: Object,
   },
 ) => {
-  return to.includes('http')
+  return to.includes('http') || to.includes('mailto')
     ? <Anchor href={to} {...props}>{children}</Anchor>
     : <Link to={to} {...props}>{children}</Link>;
 };

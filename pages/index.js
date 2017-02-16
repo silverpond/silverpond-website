@@ -86,19 +86,7 @@ const Home = (
     <div>
       <Splash>
 
-        <Nav
-          style={{ flexShrink: 0, marginBottom: '2rem' }}
-          white
-          items={[
-            'About',
-            'Co-working',
-            'Articles',
-            'Events',
-            'Training',
-            'Clients',
-            'Contact',
-          ]}
-        />
+        <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
 
         <div style={{ flexShrink: 0 }}>
           <Logo src={prefixLink('images/silverpond-logo.svg')} />
