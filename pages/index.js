@@ -1,11 +1,11 @@
 // @flow
 // Imports - config
 import React from 'react';
-import styled from 'styled-components';
-import { prefixLink } from 'gatsby-helpers';
-import { palette, typeStyles } from '../lib/settings';
-import { calcReadTime, getPerson, getPromotedPages } from '../lib/utilities';
 import string from 'string';
+import styled from 'styled-components';
+import { calcReadTime, getPerson, getPromotedPages } from '../lib/utilities';
+import { palette, typeStyles } from '../lib/settings';
+import { prefixLink } from 'gatsby-helpers';
 
 // Imports - components
 import { ColWrapper, Col } from '../components/Grid';
@@ -25,8 +25,9 @@ const Splash = styled.div`
   background-color: ${palette.red.base};
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 3vh);
   justify-content: space-between;
+  min-height: 66rem;
   padding: 2rem 0 5rem;
 `;
 
@@ -39,6 +40,7 @@ const TagLine = styled.h2`
   ${typeStyles('h2')}
   color: white;
   font-family: volkhov;
+  margin-bottom: 5rem;
   text-align: center;
 `;
 
@@ -85,7 +87,7 @@ const Home = (
       <Splash>
 
         <Nav
-          style={{ marginBottom: '2rem' }}
+          style={{ flexShrink: 0, marginBottom: '2rem' }}
           white
           items={[
             'About',
@@ -98,7 +100,7 @@ const Home = (
           ]}
         />
 
-        <div>
+        <div style={{ flexShrink: 0 }}>
           <Logo src={prefixLink('images/silverpond-logo.svg')} />
           <TagLine>
             A digital agency
@@ -111,7 +113,7 @@ const Home = (
           </TagLine>
         </div>
 
-        <Inner>
+        <Inner style={{ flexShrink: 0 }}>
           <ColWrapper>
             <Col span="6">
               <Card>
