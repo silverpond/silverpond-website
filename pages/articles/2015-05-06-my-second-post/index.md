@@ -1,6 +1,6 @@
 ---
 title: "A New Journal: The Art, Science, and Engineering of Programming"
-intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus semper.
+meta: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus semper.
 date: "2015-05-06T23:46:37.121Z"
 image: neighbourhood.png
 readNext: "/hi-folks/"
