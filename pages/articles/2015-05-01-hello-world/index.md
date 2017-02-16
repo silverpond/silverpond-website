@@ -1,6 +1,8 @@
 ---
 title: Hello World
+intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus semper.
 date: "2015-05-01T22:12:03.284Z"
+image: neighbourhood.png
 readNext: "/my-second-post/"
 path: "/articles/hello-world/"
 featured: true

@@ -75,7 +75,7 @@ const EventSmall = (
     title,
   }: {
     date: string,
-    hosts: Array<any>,
+    hosts?: Array<any>,
     location: {
       title: string,
       link: string,
@@ -106,20 +106,23 @@ const EventSmall = (
         <Text>
           {text}
         </Text>
-        <SubTitle>
-          Hosted by
-        </SubTitle>
-        <Hosts>
-          {hosts.map(host => {
-            return (
-              <Avatar
-                key={host.data.name}
-                name={host.data.name}
-                image={host.data.image}
-              />
-            );
-          })}
-        </Hosts>
+        {!!hosts &&
+          <div>
+            <SubTitle>
+              Hosted by
+            </SubTitle>
+            <Hosts>
+              {hosts.map(host => {
+                return (
+                  <Avatar
+                    key={host.data.name}
+                    name={host.data.name}
+                    image={host.data.image}
+                  />
+                );
+              })}
+            </Hosts>
+          </div>}
       </Main>
     </Container>
   );

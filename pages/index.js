@@ -5,13 +5,15 @@ import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
 import { palette, typeStyles } from '../lib/settings';
 import { calcReadTime, getPerson, getPromotedPages } from '../lib/utilities';
+import string from 'string';
 
 // Imports - components
 import { ColWrapper, Col } from '../components/Grid';
 import ArrowLink from '../components/ArrowLink';
-import ArticlePromoted from '../components/ArticlePromoted';
+import ArticleSmall from '../components/ArticleSmall';
 import CaseStudySmall from '../components/CaseStudySmall';
 import EventSmall from '../components/EventSmall';
+import Inner from '../components/Inner';
 import IntroText from '../components/IntroText';
 import Nav from '../components/Nav';
 import PromotedContent from '../components/PromotedContent';
@@ -24,7 +26,8 @@ const Splash = styled.div`
   display: flex;
   flex-direction: column;
   height: calc(100vh - 6rem);
-  padding: 2rem 0;
+  justify-content: space-between;
+  padding: 2rem 0 5rem;
 `;
 
 const Logo = styled.img`
@@ -55,6 +58,12 @@ const ClientsWrapper = styled(ColWrapper)`
   align-items: center;
 `;
 
+const Card = styled.div`
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,.15);
+  padding: 2rem 2rem 1.5rem;
+`;
+
 // Component
 const Home = (
   {
@@ -69,6 +78,8 @@ const Home = (
   const promotedArticles = getPromotedPages(route.pages, 'articles');
   const promotedEvents = getPromotedPages(route.pages, 'events');
   const promotedClients = getPromotedPages(route.pages, 'clients', 4);
+  const featuredEvent = promotedEvents[0];
+  const featuredArticle = promotedArticles[0];
   return (
     <div>
       <Splash>
@@ -87,17 +98,49 @@ const Home = (
           ]}
         />
 
-        <Logo src={prefixLink('images/silverpond-logo.svg')} />
+        <div>
+          <Logo src={prefixLink('images/silverpond-logo.svg')} />
+          <TagLine>
+            A digital agency
+            <br />
+            specialising in&nbsp;
+            <Highlight>
+              deep learning
+            </Highlight>
+            .
+          </TagLine>
+        </div>
 
-        <TagLine>
-          A digital agency
-          <br />
-          specialising in&nbsp;
-          <Highlight>
-            deep learning
-          </Highlight>
-          .
-        </TagLine>
+        <Inner>
+          <ColWrapper>
+            <Col span="6">
+              <Card>
+                <EventSmall
+                  key={featuredEvent.data.title}
+                  date={featuredEvent.data.date}
+                  title={featuredEvent.data.title}
+                  location={{
+                    title: featuredEvent.data.location,
+                    link: featuredEvent.data.locationLink,
+                  }}
+                  text={string(featuredEvent.data.intro).truncate(150).s}
+                />
+              </Card>
+            </Col>
+
+            <Col span="6" style={{ display: 'flex' }}>
+              <Card style={{ flexGrow: 1 }}>
+                <ArticleSmall
+                  author={getPerson(route.pages, featuredArticle.data.author)}
+                  date={featuredArticle.data.date}
+                  title={featuredArticle.data.title}
+                  readTime={calcReadTime(featuredArticle.data.body)}
+                />
+              </Card>
+            </Col>
+
+          </ColWrapper>
+        </Inner>
 
       </Splash>
 
@@ -157,7 +200,7 @@ const Home = (
         })}
       </PromotedContent>
 
-      <PromotedContent category="articles" to="/articles" color="red">
+      <PromotedContent category="articles" to="/articles" color="grey">
         <ColWrapper>
           {promotedArticles.map(article => {
             return (
@@ -166,11 +209,13 @@ const Home = (
                 span="6"
                 style={{ display: 'flex' }}
               >
-                <ArticlePromoted
+                <ArticleSmall
                   author={getPerson(route.pages, article.data.author)}
                   date={article.data.date}
                   title={article.data.title}
+                  text={article.data.intro}
                   readTime={calcReadTime(article.data.body)}
+                  image={article.data.image}
                 />
               </ArticleCol>
             );
@@ -182,7 +227,7 @@ const Home = (
         <ClientsWrapper>
           {promotedClients.map(client => {
             return (
-              <Col key={client.data.name}>
+              <Col key={client.data.name} span="3">
                 <img
                   src={prefixLink(`images/clients/${client.data.image}`)}
                   alt={`${client.data.name} logo`}
