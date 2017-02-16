@@ -33,13 +33,13 @@ const Nav = (
   },
 ) => {
   const items = [
-    { name: 'About', link: '/about' },
+    { name: 'About', link: '/about/' },
     { name: 'Co-working', link: 'http://silverpond.com.au/the_pond/' },
-    { name: 'Articles', link: '/articles' },
-    { name: 'Events', link: '/events' },
-    { name: 'Training', link: '/training' },
-    { name: 'Clients', link: '/clients' },
-    { name: 'Contact', link: '/contact' },
+    { name: 'Articles', link: '/articles/' },
+    { name: 'Events', link: '/events/' },
+    { name: 'Training', link: '/training/' },
+    { name: 'Clients', link: '/clients/' },
+    { name: 'Contact', link: '/contact/' },
   ];
   return (
     <Container style={style}>

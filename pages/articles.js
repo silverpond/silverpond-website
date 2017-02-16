@@ -1,50 +1,73 @@
-import React from 'react'
-import { Link } from 'react-router'
-import sortBy from 'lodash/sortBy'
-import get from 'lodash/get'
-import { prefixLink } from 'gatsby-helpers'
-import Helmet from "react-helmet"
-import { config } from 'config'
-import include from 'underscore.string/include'
-import Bio from 'components/Bio'
+// @flow
+// Imports - config
+import React from 'react';
+import { chunk } from 'lodash';
+import { prefixLink } from 'gatsby-helpers';
+import { filterPages, calcReadTime, getPerson } from '../lib/utilities';
 
-class BlogIndex extends React.Component {
-  render () {
-    // Sort pages.
-    const sortedPages = sortBy(this.props.route.pages, 'data.date')
-    // Posts are those with md extension that are not 404 pages OR have a date (meaning they're a react component post).
-    const visiblePages = sortedPages.filter(page => (
-      get(page, 'file.ext') === 'md' && !include(page.path, '/404') || get(page, 'data.date')
-    ))
-    return (
-      <div>
-        <Helmet
-          meta={[
-            {"name": "description", "content": "Sample blog"},
-            {"name": "keywords", "content": "blog, articles"},
-          ]}
+import ArticleFeatured from '../components/ArticleFeatured';
+import ArticleSmall from '../components/ArticleSmall';
+import MastHead from '../components/MastHead';
+import Section from '../components/Section';
+import { ColWrapper, Col } from '../components/Grid';
+
+// Component
+const Articles = (
+  {
+    route: { pages },
+  }: {
+    route: Object,
+  },
+) => {
+  const articles = filterPages(pages, 'articles');
+  const featuredArticle = articles[0];
+  return (
+    <div>
+      <MastHead title="Articles" subTitle="We write lots of great articles." />
+
+      <Section color="grey">
+        <ArticleFeatured
+          to={prefixLink(featuredArticle.data.path)}
+          image={prefixLink(
+            `/images/case-studies/${featuredArticle.data.image}`,
+          )}
+          title={featuredArticle.data.title}
+          text={featuredArticle.data.meta}
+          tag="Featured"
         />
-        <Bio />
-        <ul>
-          {visiblePages.map((page) => (
-              <li
-                key={page.path}
-                style={{
-                }}
-              >
-                <Link style={{boxShadow: 'none'}} to={prefixLink(page.path)}>
-                    {get(page, 'data.title', page.path)}
-                </Link>
-              </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
-}
+      </Section>
 
-BlogIndex.propTypes = {
-  route: React.PropTypes.object,
-}
+      {chunk(articles, 3).map((group, i) => {
+        return (
+          <Section key={i}>
+            <ColWrapper>
+              {group.map(article => {
+                return (
+                  <Col span="4" key={article.data.date}>
+                    <ArticleSmall
+                      author={getPerson(pages, article.data.author)}
+                      date={article.data.date}
+                      title={article.data.title}
+                      text={article.data.meta}
+                      readTime={calcReadTime(article.data.body)}
+                      image={article.data.image}
+                    />
+                  </Col>
+                );
+              })}
+            </ColWrapper>
+          </Section>
+        );
+      })}
 
-export default BlogIndex
+    </div>
+  );
+};
+
+export default Articles;
+// <Helmet
+//   meta={[
+//     { name: 'description', content: 'Sample blog' },
+//     { name: 'keywords', content: 'blog, articles' },
+//   ]}
+// />;

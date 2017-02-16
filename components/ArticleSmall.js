@@ -48,11 +48,11 @@ const Text = styled.p`
 
 // Component
 // flow error when trying to define author shape :/
-const ArticlePromoted = (
+const ArticleSmall = (
   {
     author,
     date,
-    image,
+    image = 'neighbourhood.png',
     text,
     readTime,
     title,
@@ -83,9 +83,9 @@ const ArticlePromoted = (
         <Text>
           {text}
         </Text>}
-      <Avatar name={author.data.name} image={author.data.image} />
+      {!!author && <Avatar name={author.data.name} image={author.data.image} />}
     </Container>
   );
 };
 
-export default ArticlePromoted;
+export default ArticleSmall;

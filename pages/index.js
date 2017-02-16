@@ -11,7 +11,7 @@ import { prefixLink } from 'gatsby-helpers';
 import { ColWrapper, Col } from '../components/Grid';
 import ArrowLink from '../components/ArrowLink';
 import ArticleSmall from '../components/ArticleSmall';
-import CaseStudySmall from '../components/CaseStudySmall';
+import ArticleFeatured from '../components/ArticleFeatured';
 import EventSmall from '../components/EventSmall';
 import Inner from '../components/Inner';
 import IntroText from '../components/IntroText';
@@ -159,13 +159,14 @@ const Home = (
       </Section>
 
       <Section color="grey">
-        <CaseStudySmall
+        <ArticleFeatured
           to={prefixLink(promotedCaseStudy.data.path)}
           image={prefixLink(
             `/images/case-studies/${promotedCaseStudy.data.image}`,
           )}
           title={promotedCaseStudy.data.title}
-          intro={promotedCaseStudy.data.intro}
+          text={promotedCaseStudy.data.meta}
+          tag="Case study"
         />
       </Section>
 
@@ -203,7 +204,7 @@ const Home = (
                   author={getPerson(route.pages, article.data.author)}
                   date={article.data.date}
                   title={article.data.title}
-                  text={article.data.intro}
+                  text={article.data.meta}
                   readTime={calcReadTime(article.data.body)}
                   image={article.data.image}
                 />

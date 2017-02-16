@@ -84,7 +84,7 @@ const Footer = () => {
       <Inner>
 
         <div>
-          <Logo src={prefixLink('images/silverpond-logo.svg')} />
+          <Logo src={prefixLink('/images/silverpond-logo.svg')} />
           <Address>
             Level 2
             <br />
@@ -125,9 +125,7 @@ const Footer = () => {
 
         <Aside>
           <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
-          <div>
-            mailing list
-          </div>
+          <div />
         </Aside>
 
       </Inner>

@@ -30,12 +30,14 @@ const Tag = styled(TagBase)`
 const CaseStudySmall = (
   {
     image,
-    intro,
+    tag,
+    text,
     title,
     to,
   }: {
     image: string,
-    intro: string,
+    tag: string,
+    text: string,
     title: string,
     to: string,
   },
@@ -45,13 +47,13 @@ const CaseStudySmall = (
       <ColWrapper>
         <Col span="6">
           <Tag>
-            Case study
+            {tag}
           </Tag>
           <Title>
             {title}
           </Title>
           <p>
-            {intro}
+            {text}
           </p>
           <ArrowLink to={to}>
             Find out more
