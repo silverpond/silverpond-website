@@ -51,6 +51,7 @@ const Articles = (
                       text={article.data.meta}
                       readTime={calcReadTime(article.data.body)}
                       image={article.data.image}
+                      path={article.path}
                     />
                   </Col>
                 );
@@ -65,9 +66,3 @@ const Articles = (
 };
 
 export default Articles;
-// <Helmet
-//   meta={[
-//     { name: 'description', content: 'Sample blog' },
-//     { name: 'keywords', content: 'blog, articles' },
-//   ]}
-// />;

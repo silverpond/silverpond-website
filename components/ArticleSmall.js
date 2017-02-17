@@ -7,10 +7,11 @@ import { prefixLink } from 'gatsby-helpers';
 import { typeStyles } from '../lib/settings';
 
 // Imports - components
+import { Link } from 'react-router';
 import Avatar from '../components/Avatar';
 
 // Styled components
-const Container = styled.div`
+const Container = styled(Link)`
   display: flex;
   flex-direction: column;
 `;
@@ -52,21 +53,23 @@ const ArticleSmall = (
   {
     author,
     date,
-    image = 'neighbourhood.png',
-    text,
+    image,
+    path,
     readTime,
+    text,
     title,
   }: {
     author: any,
     date: string,
     image?: string,
+    path: string,
     text?: string,
     readTime: number,
     title: string,
   },
 ) => {
   return (
-    <Container>
+    <Container to={path}>
       <Head>
         <Date>
           {dateformat(date, 'mediumDate')}
@@ -75,7 +78,7 @@ const ArticleSmall = (
           {readTime} min read
         </ReadTime>
       </Head>
-      {!!image && <Image src={prefixLink(`/images/articles/${image}`)} />}
+      {!!image && <Image src={prefixLink(`${path}/${image}`)} />}
       <Title>
         {title}
       </Title>

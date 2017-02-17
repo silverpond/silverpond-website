@@ -125,6 +125,7 @@ const Home = (
                   date={featuredArticle.data.date}
                   title={featuredArticle.data.title}
                   readTime={calcReadTime(featuredArticle.data.body)}
+                  path={featuredArticle.path}
                 />
               </Card>
             </Col>
@@ -207,6 +208,7 @@ const Home = (
                   text={article.data.meta}
                   readTime={calcReadTime(article.data.body)}
                   image={article.data.image}
+                  path={article.path}
                 />
               </ArticleCol>
             );
