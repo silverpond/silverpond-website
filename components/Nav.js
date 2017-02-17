@@ -28,7 +28,7 @@ const Nav = (
     style,
     white,
   }: {
-    style: Object,
+    style?: Object,
     white?: boolean,
   },
 ) => {

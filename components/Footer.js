@@ -6,6 +6,7 @@ import { prefixLink } from 'gatsby-helpers';
 import { palette, type, typeStyles } from '../lib/settings';
 
 import InnerBase from '../components/Inner';
+import LogoLink from '../components/LogoLink';
 import Nav from '../components/Nav';
 import TextLink from '../components/TextLink';
 
@@ -26,9 +27,8 @@ const Inner = styled(InnerBase)`
   justify-content: space-between;
 `;
 
-const Logo = styled.img`
+const Logo = styled(LogoLink)`
   margin-bottom: 1.5rem;
-  width: 160px;
 `;
 
 const Address = styled.p`
@@ -84,7 +84,7 @@ const Footer = () => {
       <Inner>
 
         <div>
-          <Logo src={prefixLink('/images/silverpond-logo.svg')} />
+          <Logo to={prefixLink('/')} />
           <Address>
             Level 2
             <br />

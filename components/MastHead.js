@@ -2,16 +2,18 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
+import { prefixLink } from 'gatsby-helpers';
 import { palette, type, typeStyles } from '../lib/settings';
 
+import Nav from '../components/Nav';
+import LogoLink from '../components/LogoLink';
+
 const Container = styled.div`
-  align-items: center;
   background-color: ${palette.red.base};
   color: white;
   display: flex;
   flex-direction: column;
   height: 40rem;
-  justify-content: center;
 
   &:after {
     background-image: url('/images/silverpond-logo.svg');
@@ -22,9 +24,28 @@ const Container = styled.div`
     display: block;
     height: 100%;
     opacity: .1;
+    pointer-events: none;
     position: absolute;
+    top: 0;
     width: 100%;
   }
+`;
+
+const Head = styled.div`
+  display: flex;
+  justify-content: space-between;
+  left: 3rem;
+  position: absolute;
+  right: 3rem;
+  top: 2.5rem;
+`;
+
+const Body = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
 `;
 
 const Title = styled.h2`
@@ -49,12 +70,18 @@ const MastHead = (
 ) => {
   return (
     <Container>
-      <Title>
-        {title}
-      </Title>
-      <SubTitle>
-        {subTitle}
-      </SubTitle>
+      <Head>
+        <LogoLink to={prefixLink('/')} />
+        <Nav />
+      </Head>
+      <Body>
+        <Title>
+          {title}
+        </Title>
+        <SubTitle>
+          {subTitle}
+        </SubTitle>
+      </Body>
     </Container>
   );
 };
