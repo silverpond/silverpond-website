@@ -1,17 +1,10 @@
 ---
-layout: blog
 title: "Balancing Spark – Bin Packing to Solve Data Skew"
 date: Oct 6, 2016
 author: James Sofra
 meta: Applying bin packing techniques to resolve data skew and speed up Apache Spark execution.
+image: birds_on_a_wire.jpg
 ---
-
-<p class="attribution">
-	<img src="/img/blog/balancing_spark/birds_on_a_wire.jpg" class="image fit" />
-	<em>
-    <span style="font-size: 10px"><a href="https://pixabay.com/en/power-lines-birds-sky-cloudy-grey-690893/">Pixabay</a></span>
-	</em>
-</p>
 
 Here at Silverpond we love our [functional programming](https://en.wikipedia.org/wiki/Functional_programming), so much so that we helped run a Melbourne functional programming conference, [Compose](http://www.composeconference.org/). So [Spark](http://spark.apache.org/) seemed like a natural fit for large, scalable batch processing jobs. Recently I worked with some of our resident data scientists on large-scale electrical meter data analysis.  My job was to write a harness to run a number of candidate models, written in Python. The models needed to run over all the smart meter data in the electricity network using [PySpark](http://spark.apache.org/docs/latest/api/python/index.html). PySpark is the [Python](https://www.python.org/) API to [Apache Spark](http://spark.apache.org/docs/latest/index.html).
 
@@ -27,7 +20,7 @@ Let’s start with the basics:
 
 Spark is a general-purpose, distributed cluster computing engine. Spark is written in [Scala](www.scala-lang.org/) which means it inherits some of Scala's functional flavour, giving the API a nice feel right out of the box. This functional flavour is on display in Spark's central abstraction, the [Resilient Distributed Datasets (RDD)](http://spark.apache.org/docs/latest/programming-guide.html#resilient-distributed-datasets-rdds). RDD's are an immutable, partitioned, distributed data structure.
 
-![](/img/blog/balancing_spark/RDD.png)
+![](./RDD.png)
 
 All distributed computation in Spark is done via **transformations** and **actions** over the RDD's. Transformations are operations on RDD's that return a new transformed RDD, such as *map*, *filter*, *flatMap* etc. Actions are operations that run a computation on the RDD and return some value to the driver program, such as *reduce*, *count*, *take* etc.
 
@@ -37,11 +30,11 @@ These operations should look familiar to anyone who has done some functional pro
 
 The first time I realised that there may be uneven distribution of computation on the cluster was when I was reviewing the [Ganglia](http://ganglia.info/) metrics for my cluster (we were running [EMR](https://aws.amazon.com/emr/) clusters) and noticed a strange pattern in the memory usage.
 
-![](/img/blog/balancing_spark/memory_data_skew.png)
+![](./memory_data_skew.png)
 
 As can be seen in the Ganglia memory trace above, memory usage ramps up quickly at the start of the job run and then reduces in steps over time. As nodes in the cluster finish processing they release their memory and that is reflected in the trace. We can see that one node seems to be processing data long after all the other nodes have finished processing. This is confirmed by looking at the load traces for the individual nodes (see below), we can see the fist node continues to process load after all the other have completed.
 
-![](/img/blog/balancing_spark/node1_load.png) ![](/img/blog/balancing_spark/node2_load.png) ![](/img/blog/balancing_spark/node3_load.png) ![](/img/blog/balancing_spark/node4_load.png)
+![](./node1_load.png) ![](./node2_load.png) ![](./node3_load.png) ![](./node4_load.png)
 
 It was clear from this that we had an uneven distribution of work across the cluster; one node was doing all the heavy lifting whilst others did very little. This is obviously inefficient. There was unused capacity in the cluster that we should be able to harness.
 
@@ -49,22 +42,22 @@ So, why the uneven distribution of work? From looking at my code, it didn't seem
 
 The Spark UI allows you to look at the details of each processing stage. It shows detail information and metrics about the time taken to execute each individual task, amount of input data processed and the amount of output data produced. At the top of the page is a visual chart showing each of the tasks per executor, that looks like this:
 
-![](/img/blog/balancing_spark/init_sparkui.png)
+![](./init_sparkui.png)
 
 The task chart gives a good high level overview of what happened in the cluster. It allows you to quickly see if tasks were delayed or if there was excessive data shuffling, or deserialization happening. In my case none of these were an issue. If we zoom out to see the entire chart we can start to get an idea of what may be going on:
 
-![](/img/blog/balancing_spark/sparkui_skew_zoom.png)
+![](./sparkui_skew_zoom.png)
 
 We can see that all tasks take varying amounts of time to complete, which is to be expected, but the variation is quite large. If we look the aggregated metrics for the executors (JVM instances that workers run on) we see that the executors have very varied output record sizes:
 
-![](/img/blog/balancing_spark/skew_metrics.png)
+![](./skew_metrics.png)
 
 
 So maybe it was the data? Each node is doing more or less work not because of computation complexity but because of the amount of data they processed.
 
 I realised the root of the problem: we were running the models across meter readings that were being grouped by transformer, on a per transformer basis.
 
-![](/img/blog/balancing_spark/groupby.png)
+![](./groupby.png)
 
 It so happened that the number of meters per transformer varied wildly, causing each task to process different amounts of data. We had a data skew problem due to the natural hierarchy in our data!
 
@@ -76,7 +69,7 @@ The example makes use of ebook text from the [Project Gutenberg](https://www.gut
 
 The Frequency Analysis used is the very vanilla [Term Frequency - Inverse Document Frequency (TF-IDF)](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
 
-![](/img/blog/balancing_spark/tf_idf.png)
+![](./tf_idf.png)
 
 Our aim is to search the Gutenberg texts in a couple of ways, given some search terms:
 
@@ -89,7 +82,7 @@ The code in the example is written in [Clojure](http://clojure.org/) using the [
 
 So what can we do about data skew? When we look at data by partition we can identify heavily weighted partitions and that a number of the larger bookshelves are clumped together. We know that Spark assigns one task per partition and each worker can process one task at a time. This means the more partitions the greater potential parallelism, given enough hardware to support it.
 
-![](/img/blog/balancing_spark/rdd_partitions.png)
+![](./rdd_partitions.png)
 
 ### Solution 1: Simply Partitioning
 
@@ -101,11 +94,11 @@ So can we simply partition our way out of this? What if we partition our data to
 
 Let's have a look at the Spark UI for this repartitioning and see how it compares to the previous skewed example, here is the zoomed out task chart (this is from the end of the run, the full task chart consisted of three pages):
 
-![](/img/blog/balancing_spark/sparkui_partitioning_zoom.png)
+![](./sparkui_partitioning_zoom.png)
 
 And here we can see the output record sizes are still somewhat unbalanced:
 
-![](/img/blog/balancing_spark/partitioned_metrics.png)
+![](./partitioned_metrics.png)
 
 The partitioning did in fact improve the performance. In fact it improved it greatly. We went from ~55 mins to ~25 mins on the same hardware, but there was still a number of issues:
 
@@ -349,11 +342,11 @@ Using these three methods run times were as follows:
 
 Using maximal partitioning on the Gutenberg data set shows a significant improvement and an even greater improvement when using the bin packing method. The bin packing method also has the most predictable run time. It was always 15 mins whereas the other methods fluctuated due to the unpredictable schedule of the different sized tasks. If we look at the Spark UI for a bin packed run we can see just how evenly the tasks were distributed:
 
-![](/img/blog/balancing_spark/sparkui_binpacked_zoom.png)
+![](./sparkui_binpacked_zoom.png)
 
 The output record sizes are also very even, with exactly 4 task per executor:
 
-![](/img/blog/balancing_spark/binpacked_metrics.png)
+![](./binpacked_metrics.png)
 
 
 ## Conclusions

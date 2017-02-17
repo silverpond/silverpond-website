@@ -2,11 +2,9 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { prefixLink } from 'gatsby-helpers';
 import { palette, type, typeStyles } from '../lib/settings';
 
-import Nav from '../components/Nav';
-import LogoLink from '../components/LogoLink';
+import Header from '../components/Header';
 
 const Container = styled.div`
   background-color: ${palette.red.base};
@@ -29,15 +27,6 @@ const Container = styled.div`
     top: 0;
     width: 100%;
   }
-`;
-
-const Head = styled.div`
-  display: flex;
-  justify-content: space-between;
-  left: 3rem;
-  position: absolute;
-  right: 3rem;
-  top: 2.5rem;
 `;
 
 const Body = styled.div`
@@ -70,10 +59,10 @@ const MastHead = (
 ) => {
   return (
     <Container>
-      <Head>
-        <LogoLink to={prefixLink('/')} />
-        <Nav />
-      </Head>
+      <Header
+        style={{ position: 'absolute', top: 0, left: 0, right: 0 }}
+        onDark
+      />
       <Body>
         <Title>
           {title}

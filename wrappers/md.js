@@ -1,42 +1,122 @@
-import React from 'react'
-import moment from 'moment'
-import Helmet from "react-helmet"
-import ReadNext from '../components/ReadNext'
-import { config } from 'config'
-import Bio from 'components/Bio'
+// @flow
+// Imports - config
+import React from 'react';
+import styled from 'styled-components';
+import dateformat from 'dateformat';
+import { prefixLink } from 'gatsby-helpers';
+import { type, typeStyles } from '../lib/settings';
+import { textBlock } from '../lib/styles';
+import { calcReadTime, getPerson } from '../lib/utilities';
 
-class MarkdownWrapper extends React.Component {
-  render () {
-    const { route } = this.props
-    const post = route.page.data
+// Imports - components
+import Avatar from '../components/Avatar';
+import Inner from '../components/Inner';
+import Header from '../components/Header';
+import Helmet from 'react-helmet';
 
-    return (
-      <div className="markdown">
-        <Helmet
-          title={`${post.title}`}
-        />
-        <h1 style={{marginTop: 0}}>{post.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.body }} />
-        <em
-          style={{
-            display: 'block',
-          }}
-        >
-          Posted {moment(post.date).format('MMMM D, YYYY')}
-        </em>
-        <hr
-          style={{
-          }}
-        />
-        <ReadNext post={post} pages={route.pages} />
-        <Bio />
-      </div>
-    )
+const SplashImage = styled.img`
+  height: 30rem;
+  margin-bottom: 4rem;
+  object-fit: cover;
+  width: 100%;
+`;
+
+const Head = styled.div`
+  margin-bottom: 5rem;
+`;
+
+const Body = styled.div`
+  ${textBlock}
+  margin-bottom: 6rem;
+`;
+
+const Title = styled.div`
+  ${typeStyles('h2')}
+  margin-bottom: 1.5rem;
+`;
+
+const Meta = styled.div`
+  align-items: baseline;
+  display: flex;
+  margin-bottom: 1.5rem;
+
+  & > * + * {
+    margin-left: 2rem;
   }
-}
+`;
 
-MarkdownWrapper.propTypes = {
-  route: React.PropTypes.object,
-}
+const Date = styled.p`
+  ${typeStyles('small')}
+  font-weight: ${type.weights.medium};
+`;
 
-export default MarkdownWrapper
+const ReadTime = styled.p`
+  font-family: georgia;
+  font-style: italic;
+  margin-bottom: 0;
+  margin-top: 0;
+`;
+
+// Component
+const MarkdownWrapper = (
+  {
+    route: {
+      pages,
+      page: {
+        data: {
+          author,
+          title,
+          image,
+          date,
+          body,
+        },
+      },
+    },
+  }: {
+    route: {
+      pages: Object,
+      page: {
+        data: {
+          author: string,
+          title: string,
+          image: string,
+          date: string,
+          body: string,
+        },
+      },
+    },
+  },
+) => {
+  const authorDetails = getPerson(pages, author);
+  return (
+    <div>
+      <Helmet title={title} />
+      <Header />
+      <SplashImage src={prefixLink(`./${image}`)} />
+      <Inner size="medium">
+        <Head>
+          <Title>
+            {title}
+          </Title>
+          <Meta>
+            <Date>
+              {dateformat(date, 'mediumDate')}
+            </Date>
+            <ReadTime>
+              {calcReadTime(body)} min read
+            </ReadTime>
+          </Meta>
+          {!!author &&
+            <Avatar
+              name={authorDetails.data.name}
+              image={authorDetails.data.image}
+            />}
+        </Head>
+        <Body dangerouslySetInnerHTML={{ __html: body }} />
+      </Inner>
+
+    </div>
+  );
+};
+
+export default MarkdownWrapper;
