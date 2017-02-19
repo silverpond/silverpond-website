@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { Link as LinkBase } from 'react-router';
 import { linkUnderline } from '../lib/styles';
 
-// Component
 const Link = styled(LinkBase)`
   ${linkUnderline}
 `;
@@ -14,6 +13,7 @@ const Anchor = styled.a`
   ${linkUnderline}
 `;
 
+// Component
 const TextLink = (
   {
     children,

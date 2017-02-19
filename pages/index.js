@@ -114,6 +114,8 @@ const Home = (
                     link: featuredEvent.data.locationLink,
                   }}
                   text={string(featuredEvent.data.intro).truncate(150).s}
+                  attendLink={featuredEvent.data.attendLink}
+                  eventLink={prefixLink(featuredEvent.path)}
                 />
               </Card>
             </Col>
@@ -187,6 +189,8 @@ const Home = (
               }}
               hosts={hosts}
               text={event.data.intro}
+              attendLink={event.data.attendLink}
+              eventLink={prefixLink(event.path)}
             />
           );
         })}

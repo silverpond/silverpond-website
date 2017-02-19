@@ -4,8 +4,10 @@ type Size = 'medium';
 
 const getSize = (size: Size): string => {
   switch (size) {
-    case 'medium':
+    case 'small':
       return '700px';
+    case 'medium':
+      return '950px';
     default:
       return '1175px';
   }

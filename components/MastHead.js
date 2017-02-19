@@ -20,7 +20,7 @@ const Container = styled.div`
     background-size: 4000px;
     content: "";
     display: block;
-    height: 100%;
+    height: 40rem;
     opacity: .1;
     pointer-events: none;
     position: absolute;

@@ -93,7 +93,7 @@ const MarkdownWrapper = (
       <Helmet title={title} />
       <Header />
       <SplashImage src={prefixLink(`./${image}`)} />
-      <Inner size="medium">
+      <Inner size="small">
         <Head>
           <Title>
             {title}

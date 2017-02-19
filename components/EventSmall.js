@@ -5,7 +5,9 @@ import styled from 'styled-components';
 import dateformat from 'dateformat';
 import { palette, type, typeStyles } from '../lib/settings';
 
+import { Link } from 'react-router';
 import Avatar from '../components/Avatar';
+import Button from '../components/Button';
 import TextLink from '../components/TextLink';
 
 const Container = styled.div`
@@ -38,7 +40,11 @@ const Location = styled(TextLink)`
   white-space: nowrap;
 `;
 
-const Title = styled.h4`
+const AttendButton = styled(Button)`
+  margin-top: 1.5rem;
+`;
+
+const Title = styled(Link)`
   ${typeStyles('h3')}
   padding-top: 1.25rem;
 `;
@@ -67,14 +73,18 @@ const Hosts = styled.div`
 // Component
 const EventSmall = (
   {
+    attendLink,
     date,
+    eventLink,
     hosts,
     location,
     style,
     text,
     title,
   }: {
+    attendLink?: string,
     date: string,
+    eventLink: string,
     hosts?: Array<any>,
     location: {
       title: string,
@@ -97,10 +107,13 @@ const EventSmall = (
         <Location to={location.link} target="_blank">
           {location.title}
         </Location>
+        <AttendButton to={attendLink}>
+          Attend event
+        </AttendButton>
       </Aside>
 
       <Main>
-        <Title>
+        <Title to={eventLink}>
           {title}
         </Title>
         <Text>

@@ -8,6 +8,7 @@ import { palette } from '../lib/settings';
 import Inner from '../components/Inner';
 
 type Color = 'red' | 'grey';
+type Size = 'small' | 'medium';
 
 const getBackgroundColor = (color: string): string => {
   switch (color) {
@@ -30,14 +31,16 @@ const Section = (
   {
     children,
     color,
+    size,
   }: {
     children?: React.Element<any>,
     color?: Color,
+    size?: Size,
   },
 ) => {
   return (
     <Container color={color}>
-      <Inner>
+      <Inner size={size}>
         {children}
       </Inner>
     </Container>
