@@ -64,8 +64,8 @@ const Events = (
               }}
               hosts={hosts}
               text={event.data.intro || s(event.data.body).stripTags().s}
-              attendLink={featuredEvent.data.attendLink}
-              eventLink={prefixLink(featuredEvent.path)}
+              attendLink={event.data.attendLink}
+              eventLink={prefixLink(event.path)}
             />
           );
         })}
