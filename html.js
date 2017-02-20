@@ -13,15 +13,15 @@ module.exports = React.createClass({
     const { body } = this.props;
     const head = Helmet.rewind();
     let css;
-    if (process.env.NODE_ENV === 'production') {
-      css = (
-        <style
-          dangerouslySetInnerHTML={{
-            __html: require('!raw!./public/highlight.css'),
-          }}
-        />
-      );
-    }
+    // if (process.env.NODE_ENV === 'production') {
+    //   css = (
+    //     <style
+    //       dangerouslySetInnerHTML={{
+    //         __html: require('!raw!./public/highlight.css'),
+    //       }}
+    //     />
+    //   );
+    // }
 
     return (
       <html lang="en">
