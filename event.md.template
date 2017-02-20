@@ -1,0 +1,11 @@
+---
+title: {{ title }}
+date: {{ date }}
+location: {{ location }}
+locationLink: {{ &locationLink }}
+hosts:
+  - {{ host }}
+attendLink: {{ &attendLink }}
+path: "/events/{{ slug }}/"
+---
+{{ &body }}
