@@ -106,7 +106,7 @@ const Article = (
               {calcReadTime(body)} min read
             </ReadTime>
           </Meta>
-          {!!author &&
+          {!!authorDetails &&
             <Avatar
               name={authorDetails.data.name}
               image={authorDetails.data.image}
