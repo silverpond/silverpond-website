@@ -15,7 +15,12 @@ const Container = styled.div`
 `;
 
 const Aside = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
   margin-right: 4rem;
+  width: 15rem;
 `;
 
 const Main = styled.div`
@@ -46,6 +51,7 @@ const AttendButton = styled(Button)`
 
 const Title = styled(Link)`
   ${typeStyles('h3')}
+  display: block;
   padding-top: 1.25rem;
 `;
 
@@ -107,7 +113,7 @@ const EventSmall = (
         <Location to={location.link} target="_blank">
           {location.title}
         </Location>
-        <AttendButton to={attendLink}>
+        <AttendButton to={attendLink} target="_blank">
           Attend event
         </AttendButton>
       </Aside>
@@ -120,19 +126,23 @@ const EventSmall = (
           {text}
         </Text>
         {!!hosts &&
+          hosts.length > 0 &&
           <div>
             <SubTitle>
               Hosted by
             </SubTitle>
             <Hosts>
               {hosts.map(host => {
-                return (
-                  <Avatar
-                    key={host.data.name}
-                    name={host.data.name}
-                    image={host.data.image}
-                  />
-                );
+                if (host != null) {
+                  return (
+                    <Avatar
+                      key={host.data.name}
+                      name={host.data.name}
+                      image={host.data.image}
+                    />
+                  );
+                }
+                return null;
               })}
             </Hosts>
           </div>}

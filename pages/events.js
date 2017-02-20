@@ -3,7 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
-import { filterPages, getPerson } from '../lib/utilities';
+import { filterPages, getHosts } from '../lib/utilities';
+import s from 'string';
 
 import EventSmall from '../components/EventSmall';
 import MastHead from '../components/MastHead';
@@ -24,8 +25,7 @@ const Events = (
 ) => {
   const events = filterPages(pages, 'events');
   const featuredEvent = events[0];
-  const featuredEventHosts = featuredEvent.data.hosts.map(host =>
-    getPerson(pages, host));
+  const featuredEventHosts = getHosts(featuredEvent.data.hosts, pages);
   return (
     <div>
       <MastHead title="Events" subTitle="We run lots of great events" />
@@ -43,7 +43,7 @@ const Events = (
             link: featuredEvent.data.locationLink,
           }}
           hosts={featuredEventHosts}
-          text={featuredEvent.data.intro}
+          text={featuredEvent.data.intro || featuredEvent.data.body}
           attendLink={featuredEvent.data.attendLink}
           eventLink={prefixLink(featuredEvent.path)}
         />
@@ -51,11 +51,11 @@ const Events = (
 
       <Section size="medium">
         {events.map((event, i) => {
-          const hosts = event.data.hosts.map(host => getPerson(pages, host));
+          const hosts = getHosts(event.data.hosts, pages);
           return (
             <EventSmall
-              key={event.data.title}
-              style={{ marginTop: i !== 0 ? '5rem' : 0 }}
+              key={event.data.title + event.data.date}
+              style={{ marginTop: i !== 0 ? '7rem' : 0 }}
               date={event.data.date}
               title={event.data.title}
               location={{
@@ -63,7 +63,7 @@ const Events = (
                 link: event.data.locationLink,
               }}
               hosts={hosts}
-              text={event.data.intro}
+              text={event.data.intro || s(event.data.body).stripTags().s}
               attendLink={featuredEvent.data.attendLink}
               eventLink={prefixLink(featuredEvent.path)}
             />
