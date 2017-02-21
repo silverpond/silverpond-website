@@ -69,12 +69,12 @@ const Card = styled.div`
 // Component
 const Home = (
   {
-    route,
+    route
   }: {
     route: {
-      pages: Object[],
-    },
-  },
+      pages: Object[]
+    }
+  }
 ) => {
   const promotedCaseStudy = getPromotedPages(route.pages, 'case-studies', 1)[0];
   const promotedArticles = getPromotedPages(route.pages, 'articles');
@@ -162,7 +162,7 @@ const Home = (
         <ArticleFeatured
           to={prefixLink(promotedCaseStudy.data.path)}
           image={prefixLink(
-            `/images/case-studies/${promotedCaseStudy.data.image}`,
+            `/images/case-studies/${promotedCaseStudy.data.image}`
           )}
           title={promotedCaseStudy.data.title}
           text={promotedCaseStudy.data.meta}
@@ -220,7 +220,7 @@ const Home = (
             return (
               <Col key={client.data.name} span="3">
                 <img
-                  src={prefixLink(`images/clients/${client.data.image}`)}
+                  src={prefixLink(`${client.path}${client.data.image}`)}
                   alt={`${client.data.name} logo`}
                 />
               </Col>

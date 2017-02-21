@@ -33,7 +33,7 @@ const Avatar = (
 ) => {
   return (
     <Container>
-      <Image src={prefixLink(`/images/people/${image}`)} />
+      <Image src={image} />
       <Name>
         {name}
       </Name>

@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import dateformat from 'dateformat';
 import { palette, type, typeStyles } from '../lib/settings';
-import { mapLink } from '../lib/utilities';
+import { mapLink, imagePath } from '../lib/utilities';
 
 import { Link } from 'react-router';
 import Avatar from '../components/Avatar';
@@ -147,7 +147,7 @@ const EventSmall = (
                     <Avatar
                       key={host.data.name}
                       name={host.data.name}
-                      image={host.data.image}
+                      image={imagePath(host.path, host.data.image)}
                     />
                   );
                 }

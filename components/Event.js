@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import dateformat from 'dateformat';
 import { palette, type, typeStyles } from '../lib/settings';
 import { textBlock } from '../lib/styles';
-import { getHosts, mapLink } from '../lib/utilities';
+import { getHosts, mapLink, imagePath } from '../lib/utilities';
 
 // Imports - components
 import Avatar from '../components/Avatar';
@@ -156,7 +156,7 @@ const Event = (
                     <Avatar
                       key={host.data.name}
                       name={host.data.name}
-                      image={host.data.image}
+                      image={imagePath(host.path, host.data.image)}
                     />
                   );
                 }

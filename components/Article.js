@@ -6,7 +6,7 @@ import dateformat from 'dateformat';
 import { prefixLink } from 'gatsby-helpers';
 import { type, typeStyles } from '../lib/settings';
 import { textBlock } from '../lib/styles';
-import { calcReadTime, getPerson } from '../lib/utilities';
+import { calcReadTime, getPerson, imagePath } from '../lib/utilities';
 
 // Imports - components
 import Avatar from '../components/Avatar';
@@ -109,7 +109,7 @@ const Article = (
           {!!authorDetails &&
             <Avatar
               name={authorDetails.data.name}
-              image={authorDetails.data.image}
+              image={imagePath(authorDetails.path, authorDetails.data.image)}
             />}
         </Head>
         <Body dangerouslySetInnerHTML={{ __html: body }} />

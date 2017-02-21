@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import dateformat from 'dateformat';
 import { prefixLink } from 'gatsby-helpers';
 import { typeStyles } from '../lib/settings';
+import { imagePath } from '../lib/utilities';
 
 // Imports - components
 import { Link } from 'react-router';
@@ -86,7 +87,11 @@ const ArticleSmall = (
         <Text>
           {text}
         </Text>}
-      {!!author && <Avatar name={author.data.name} image={author.data.image} />}
+      {!!author &&
+        <Avatar
+          name={author.data.name}
+          image={imagePath(author.path, author.data.image)}
+        />}
     </Container>
   );
 };
