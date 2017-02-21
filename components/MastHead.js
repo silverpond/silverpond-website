@@ -6,12 +6,16 @@ import { palette, type, typeStyles } from '../lib/settings';
 
 import Header from '../components/Header';
 
+export const settings = {
+  height: '40rem',
+};
+
 const Container = styled.div`
   background-color: ${palette.red.base};
   color: white;
   display: flex;
   flex-direction: column;
-  height: 40rem;
+  height: ${settings.height};
 
   &:after {
     background-image: url('/images/silverpond-logo.svg');
@@ -20,7 +24,7 @@ const Container = styled.div`
     background-size: 4000px;
     content: "";
     display: block;
-    height: 40rem;
+    height: ${settings.height};
     opacity: .1;
     pointer-events: none;
     position: absolute;
