@@ -24,16 +24,6 @@ const meetups = [
 
 const client = new Client();
 
-const mapLink = ({
-  address_1,
-  city,
-  country,
-  lat,
-  lon,
-}) => {
-  return `https://www.google.com/maps/place/${address_1.replace(/ /, '+')}+${city}+${country}/@${lat},@${lon}`
-}
-
 const createEvent = (event, host) => {
   const template = fs.readFileSync('event.md.template', { encoding: 'utf8' })
 
@@ -43,8 +33,7 @@ const createEvent = (event, host) => {
       title: event.name,
       slug: `${_.kebabCase(event.name)}-${event.time}`,
       date: new Date(event.time),
-      location: event.venue.name,
-      locationLink: mapLink(event.venue),
+      venue: event.venue,
       body: event.description,
       attendLink: event.link,
       host: host,

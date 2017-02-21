@@ -38,13 +38,9 @@ const Events = (
           key={featuredEvent.data.title}
           date={featuredEvent.data.date}
           title={featuredEvent.data.title}
-          location={{
-            title: featuredEvent.data.location,
-            link: featuredEvent.data.locationLink,
-          }}
+          venue={featuredEvent.data.venue}
           hosts={featuredEventHosts}
           text={featuredEvent.data.intro || featuredEvent.data.body}
-          attendLink={featuredEvent.data.attendLink}
           eventLink={prefixLink(featuredEvent.path)}
         />
       </Section>
@@ -58,10 +54,7 @@ const Events = (
               style={{ marginTop: i !== 0 ? '7rem' : 0 }}
               date={event.data.date}
               title={event.data.title}
-              location={{
-                title: event.data.location,
-                link: event.data.locationLink,
-              }}
+              venue={event.data.venue}
               hosts={hosts}
               text={event.data.intro || s(event.data.body).stripTags().s}
               attendLink={event.data.attendLink}

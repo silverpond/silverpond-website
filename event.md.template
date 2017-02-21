@@ -1,11 +1,17 @@
 ---
 title: {{ title }}
 date: {{ date }}
-location: {{ location }}
-locationLink: {{ &locationLink }}
 hosts:
   - {{ host }}
 attendLink: {{ &attendLink }}
 path: "/events/{{ slug }}/"
+venue:
+  name: {{ venue.name }}
+  lat: {{ venue.lat }}
+  lon: {{ venue.lon }}
+  address: {{ venue.address_1 }}
+  city: {{ venue.city }}
+  country: {{ venue.country }}
+
 ---
 {{ &body }}

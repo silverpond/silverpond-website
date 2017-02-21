@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import dateformat from 'dateformat';
 import { palette, type, typeStyles } from '../lib/settings';
+import { mapLink } from '../lib/utilities';
 
 import { Link } from 'react-router';
 import Avatar from '../components/Avatar';
@@ -83,22 +84,26 @@ const EventSmall = (
     date,
     eventLink,
     hosts,
-    location,
     style,
     text,
     title,
+    venue,
   }: {
     attendLink?: string,
     date: string,
     eventLink: string,
     hosts?: Array<any>,
-    location: {
-      title: string,
-      link: string,
-    },
     style?: Object,
     text: string,
     title: string,
+    venue: {
+      name: string,
+      lat: string,
+      lon: string,
+      address: string,
+      city: string,
+      country: string,
+    },
   },
 ) => {
   return (
@@ -110,9 +115,12 @@ const EventSmall = (
         <Time>
           {dateformat(date, 'h:Mtt')}
         </Time>
-        <Location to={location.link} target="_blank">
-          {location.title}
-        </Location>
+
+        {!!venue &&
+          <Location to={mapLink(venue)} target="_blank">
+            {venue.name}
+          </Location>}
+
         <AttendButton to={attendLink} target="_blank">
           Attend event
         </AttendButton>
@@ -125,6 +133,7 @@ const EventSmall = (
         <Text>
           {text}
         </Text>
+
         {!!hosts &&
           hosts.length > 0 &&
           <div>
@@ -146,6 +155,7 @@ const EventSmall = (
               })}
             </Hosts>
           </div>}
+
       </Main>
     </Container>
   );

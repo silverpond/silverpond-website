@@ -109,10 +109,7 @@ const Home = (
                   key={featuredEvent.data.title}
                   date={featuredEvent.data.date}
                   title={featuredEvent.data.title}
-                  location={{
-                    title: featuredEvent.data.location,
-                    link: featuredEvent.data.locationLink,
-                  }}
+                  venue={featuredEvent.data.venue}
                   text={string(featuredEvent.data.intro).truncate(150).s}
                   attendLink={featuredEvent.data.attendLink}
                   eventLink={prefixLink(featuredEvent.path)}
@@ -183,10 +180,7 @@ const Home = (
               style={{ marginTop: i !== 0 ? '5rem' : 0 }}
               date={event.data.date}
               title={event.data.title}
-              location={{
-                title: event.data.location,
-                link: event.data.locationLink,
-              }}
+              venue={event.data.venue}
               hosts={hosts}
               text={event.data.intro}
               attendLink={event.data.attendLink}

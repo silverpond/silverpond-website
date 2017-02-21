@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { palette } from '../lib/settings';
 
 import AdaptiveLink from '../components/AdaptiveLink';
+import ArrowIcon from '../components/ArrowIcon';
 
 type Color = 'blue' | 'white';
 
@@ -44,14 +45,22 @@ const Link = styled(AdaptiveLink)`
 // Component
 const Component = (
   props: {
-    children: React.Element<any>,
-    to: string,
+    children?: React.Element<any>,
+    to?: string,
+    hasArrow?: boolean,
   },
 ) => {
+  const { hasArrow, children, ...rest } = props;
+  const buttonContent = (
+    <span>
+      {children}
+      {hasArrow && <ArrowIcon fill="white" style={{ marginLeft: '1rem' }} />}
+    </span>
+  );
   if (props.to) {
-    return <Link {...props}>{props.children}</Link>;
+    return <Link {...rest}>{buttonContent}</Link>;
   }
-  return <Button {...props}>{props.children}</Button>;
+  return <Button {...rest}>{buttonContent}</Button>;
 };
 
 export default Component;

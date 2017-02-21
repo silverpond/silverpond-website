@@ -15,7 +15,7 @@ const AdaptiveLink = (
     props: Object,
   },
 ) => {
-  return to.includes('http') || to.includes('mailto')
+  return !!to && (to.includes('http') || to.includes('mailto'))
     ? <a href={to} {...props}>{children}</a>
     : <Link to={to} {...props}>{children}</Link>;
 };
