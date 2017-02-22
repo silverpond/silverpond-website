@@ -15,6 +15,7 @@ import ArticleFeatured from '../components/ArticleFeatured';
 import EventSmall from '../components/EventSmall';
 import Inner from '../components/Inner';
 import IntroText from '../components/IntroText';
+import ItemList from '../components/ItemList';
 import Nav from '../components/Nav';
 import PromotedContent from '../components/PromotedContent';
 import Section from '../components/Section';
@@ -69,12 +70,12 @@ const Card = styled.div`
 // Component
 const Home = (
   {
-    route
+    route,
   }: {
     route: {
-      pages: Object[]
-    }
-  }
+      pages: Object[],
+    },
+  },
 ) => {
   const promotedCaseStudy = getPromotedPages(route.pages, 'case-studies', 1)[0];
   const promotedArticles = getPromotedPages(route.pages, 'articles');
@@ -162,7 +163,7 @@ const Home = (
         <ArticleFeatured
           to={prefixLink(promotedCaseStudy.data.path)}
           image={prefixLink(
-            `/images/case-studies/${promotedCaseStudy.data.image}`
+            `/images/case-studies/${promotedCaseStudy.data.image}`,
           )}
           title={promotedCaseStudy.data.title}
           text={promotedCaseStudy.data.meta}
@@ -171,23 +172,24 @@ const Home = (
       </Section>
 
       <PromotedContent category="events" to="/events">
-        {promotedEvents.map((event, i) => {
-          const hosts = event.data.hosts.map(host =>
-            getPerson(route.pages, host));
-          return (
-            <EventSmall
-              key={event.data.title}
-              style={{ marginTop: i !== 0 ? '5rem' : 0 }}
-              date={event.data.date}
-              title={event.data.title}
-              venue={event.data.venue}
-              hosts={hosts}
-              text={event.data.intro}
-              attendLink={event.data.attendLink}
-              eventLink={prefixLink(event.path)}
-            />
-          );
-        })}
+        <ItemList>
+          {promotedEvents.map((event, i) => {
+            const hosts = event.data.hosts.map(host =>
+              getPerson(route.pages, host));
+            return (
+              <EventSmall
+                key={event.data.title}
+                date={event.data.date}
+                title={event.data.title}
+                venue={event.data.venue}
+                hosts={hosts}
+                text={event.data.intro}
+                attendLink={event.data.attendLink}
+                eventLink={prefixLink(event.path)}
+              />
+            );
+          })}
+        </ItemList>
       </PromotedContent>
 
       <PromotedContent category="articles" to="/articles" color="grey">

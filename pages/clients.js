@@ -2,12 +2,13 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { palette, typeStyles } from '../lib/settings';
-import { filterPages } from '../lib/utilities';
+import { filterPages, imagePath } from '../lib/utilities';
 
+import Client from '../components/Client';
 import IntroText from '../components/IntroText';
 import MastHead from '../components/MastHead';
 import Section from '../components/Section';
+import ItemList from '../components/ItemList';
 
 const Intro = styled(IntroText)`
   margin-bottom: 5rem;
@@ -25,20 +26,32 @@ const Clients = (
   const clients = filterPages(pages, 'clients');
   return (
     <div>
-      <MastHead title="Events" subTitle="We run lots of great events" />
+      <MastHead title="Clients" subTitle="We have lots of great clients" />
 
       <Section size="medium">
         <Intro>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus semper. pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus semper.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque
+          venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed
+          tincidunt maximus felis a dictum. Donec eu vestibulum sapien. Ut
+          tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus
+          faucibus semper. pretium sit amet. Sed tincidunt maximus felis a
+          dictum. Donec eu vestibulum sapien. Ut tempus id enim ut auctor.
+          Suspendisse congue lacus ultrices tellus faucibus semper.
         </Intro>
 
-        {clients.map(client => {
-          return (
-            <div key={client.data.name}>
-              {client.data.name}
-            </div>
-          );
-        })}
+        <ItemList>
+          {clients.map(client => {
+            return (
+              <Client
+                key={client.data.name}
+                image={imagePath(client.path, client.data.image)}
+                name={client.data.name}
+                body={client.data.body}
+              />
+            );
+          })}
+        </ItemList>
       </Section>
 
     </div>

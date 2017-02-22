@@ -9,24 +9,8 @@ import { mapLink, imagePath } from '../lib/utilities';
 import { Link } from 'react-router';
 import Avatar from '../components/Avatar';
 import Button from '../components/Button';
+import MediaBlock from '../components/MediaBlock';
 import TextLink from '../components/TextLink';
-
-const Container = styled.div`
-  display: flex;
-`;
-
-const Aside = styled.div`
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  margin-right: 4rem;
-  width: 15rem;
-`;
-
-const Main = styled.div`
-  display: block;
-`;
 
 const Date = styled.h4`
   ${typeStyles('h1')}
@@ -84,7 +68,6 @@ const EventSmall = (
     date,
     eventLink,
     hosts,
-    style,
     text,
     title,
     venue,
@@ -107,57 +90,59 @@ const EventSmall = (
   },
 ) => {
   return (
-    <Container style={style}>
-      <Aside>
-        <Date>
-          {dateformat(date, 'd mmm')}
-        </Date>
-        <Time>
-          {dateformat(date, 'h:Mtt')}
-        </Time>
-
-        {!!venue &&
-          <Location to={mapLink(venue)} target="_blank">
-            {venue.name}
-          </Location>}
-
-        <AttendButton to={attendLink} target="_blank">
-          Attend event
-        </AttendButton>
-      </Aside>
-
-      <Main>
-        <Title to={eventLink}>
-          {title}
-        </Title>
-        <Text>
-          {text}
-        </Text>
-
-        {!!hosts &&
-          hosts.length > 0 &&
+    <MediaBlock
+      aside={
+        (
           <div>
-            <SubTitle>
-              Hosted by
-            </SubTitle>
-            <Hosts>
-              {hosts.map(host => {
-                if (host != null) {
-                  return (
-                    <Avatar
-                      key={host.data.name}
-                      name={host.data.name}
-                      image={imagePath(host.path, host.data.image)}
-                    />
-                  );
-                }
-                return null;
-              })}
-            </Hosts>
-          </div>}
+            <Date>
+              {dateformat(date, 'd mmm')}
+            </Date>
+            <Time>
+              {dateformat(date, 'h:Mtt')}
+            </Time>
 
-      </Main>
-    </Container>
+            {!!venue &&
+              <Location to={mapLink(venue)} target="_blank">
+                {venue.name}
+              </Location>}
+
+            <AttendButton to={attendLink} target="_blank">
+              Attend event
+            </AttendButton>
+          </div>
+        )
+      }
+    >
+      <Title to={eventLink}>
+        {title}
+      </Title>
+      <Text>
+        {text}
+      </Text>
+
+      {!!hosts &&
+        hosts.length > 0 &&
+        <div>
+          <SubTitle>
+            Hosted by
+          </SubTitle>
+          <Hosts>
+            {hosts.map(host => {
+              if (host != null) {
+                return (
+                  <Avatar
+                    key={host.data.name}
+                    name={host.data.name}
+                    image={imagePath(host.path, host.data.image)}
+                  />
+                );
+              }
+              return null;
+            })}
+          </Hosts>
+        </div>}
+
+    </MediaBlock>
   );
 };
 
