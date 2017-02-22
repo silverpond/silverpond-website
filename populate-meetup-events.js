@@ -19,6 +19,14 @@ const meetups = [
   {
     apiLink: 'https://api.meetup.com/The-Melbourne-Maths-and-Science-Meetup/events?photo-host=public&page=20&sig_id=144437602&sig=8aa8c61e748bb5215c6da8a05de1172556de5ec6',
     host: 'Noon Silk'
+  },
+  {
+    apiLink: 'https://api.meetup.com/Rust-Melbourne/events?photo-host=public&page=20&sig_id=144437602&sig=a41c1bef0951aef42597e6fe83b949827e3e9c33',
+    host: 'Alfie John'
+  },
+  {
+    apiLink: 'https://api.meetup.com/Machine-Learning-AI-Meetup/events?photo-host=public&page=20&sig_id=144437602&sig=5133e445bcc55992901cfd30018c43da176710a1',
+    host: 'Andy Kitchen'
   }
 ];
 
