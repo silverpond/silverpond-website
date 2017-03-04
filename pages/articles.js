@@ -5,11 +5,11 @@ import { chunk } from 'lodash';
 import { prefixLink } from 'gatsby-helpers';
 import { filterPages, calcReadTime, getPerson } from '../lib/utilities';
 
+import { ColWrapper, Col } from '../components/Grid';
 import ArticleFeatured from '../components/ArticleFeatured';
 import ArticleSmall from '../components/ArticleSmall';
 import MastHead from '../components/MastHead';
 import Section from '../components/Section';
-import { ColWrapper, Col } from '../components/Grid';
 
 // Component
 const Articles = (

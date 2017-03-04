@@ -13,13 +13,7 @@ import Avatar from '../components/Avatar';
 import Inner from '../components/Inner';
 import Header from '../components/Header';
 import Helmet from 'react-helmet';
-
-const SplashImage = styled.img`
-  height: 30rem;
-  margin-bottom: 4rem;
-  object-fit: cover;
-  width: 100%;
-`;
+import SplashImage from '../components/SplashImage';
 
 const Head = styled.div`
   margin-bottom: 5rem;

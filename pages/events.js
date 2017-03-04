@@ -2,6 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
+import hash from 'object-hash';
 import { prefixLink } from 'gatsby-helpers';
 import { filterPages, getHosts } from '../lib/utilities';
 import s from 'string';
@@ -36,7 +37,7 @@ const Events = (
           Featured
         </FeaturedTag>
         <EventSmall
-          key={featuredEvent.data.title}
+          key={hash(featuredEvent)}
           date={featuredEvent.data.date}
           title={featuredEvent.data.title}
           venue={featuredEvent.data.venue}
@@ -48,11 +49,11 @@ const Events = (
 
       <Section size="medium">
         <ItemList>
-          {events.map((event, i) => {
+          {events.map(event => {
             const hosts = getHosts(event.data.hosts, pages);
             return (
               <EventSmall
-                key={event.data.title + event.data.date}
+                key={hash(event)}
                 date={event.data.date}
                 title={event.data.title}
                 venue={event.data.venue}
