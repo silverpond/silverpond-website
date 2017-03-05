@@ -38,15 +38,17 @@ const Logo = styled.img`
 `;
 
 const TagLine = styled.h2`
-  ${typeStyles('h2')}
+  ${typeStyles('h1')}
   color: white;
-  font-family: volkhov;
+  font-family: georgia;
+  font-size: 4rem;
+  line-height: 5rem;
   margin-bottom: 5rem;
   text-align: center;
 `;
 
 const Highlight = styled.span`
-  color: ${palette.red.light};
+  color: ${palette.red.lighter};
 `;
 
 const AboutText = styled(IntroText)`
@@ -89,14 +91,24 @@ const Home = (
 
         <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
 
-        <div style={{ flexShrink: 0 }}>
+        <div
+          style={{
+            flexShrink: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
           <Logo src={prefixLink('images/silverpond-logo.svg')} />
           <TagLine>
-            A digital agency
+            A team of technical leaders specialising in
             <br />
-            specialising in&nbsp;
             <Highlight>
-              deep learning
+              machine learning
+            </Highlight>
+            &nbsp;and&nbsp;
+            <Highlight>
+              software engineering
             </Highlight>
             .
           </TagLine>
