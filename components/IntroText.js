@@ -1,12 +1,12 @@
 // Imports - config
-import React from 'react';
 import styled from 'styled-components';
-import { palette, typeStyles } from '../lib/settings';
+import { typeStyles } from '../lib/settings';
 
 // Component
 const IntroText = styled.p`
-  ${typeStyles('h5')}
+  ${typeStyles('h4')}
   font-weight: 500;
+  line-height: 2.5rem;
 `;
 
 export default IntroText;

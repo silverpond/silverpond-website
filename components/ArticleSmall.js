@@ -3,8 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import dateformat from 'dateformat';
-import { prefixLink } from 'gatsby-helpers';
-import { typeStyles } from '../lib/settings';
+import string from 'string';
+import { typeStyles, type } from '../lib/settings';
 import { imagePath } from '../lib/utilities';
 
 // Imports - components
@@ -24,12 +24,13 @@ const Head = styled.div`
 `;
 
 const Title = styled.h3`
-  ${typeStyles('h3')}
+  ${typeStyles('h1')}
   margin-bottom: 1rem;
 `;
 
 const Date = styled.p`
   ${typeStyles('small')}
+  font-weight: ${type.weights.medium};
 `;
 
 const ReadTime = styled.p`
@@ -79,13 +80,13 @@ const ArticleSmall = (
           {readTime} min read
         </ReadTime>
       </Head>
-      {!!image && <Image src={prefixLink(`${path}/${image}`)} />}
+      {!!image && <Image src={imagePath(path, image)} />}
       <Title>
         {title}
       </Title>
       {!!text &&
         <Text>
-          {text}
+          {string(text).truncate(250).s}
         </Text>}
       {!!author &&
         <Avatar

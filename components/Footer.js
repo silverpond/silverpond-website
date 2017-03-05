@@ -58,7 +58,7 @@ const EmailLink = styled(TextLink)`
   font-weight: ${type.weights.normal};
 
   &:after {
-    bottom: 5px;
+    bottom: 4px;
   }
 `;
 

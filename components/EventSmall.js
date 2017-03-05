@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import dateformat from 'dateformat';
+import string from 'string';
 import { palette, type, typeStyles } from '../lib/settings';
 import { mapLink, imagePath } from '../lib/utilities';
 
@@ -13,9 +14,10 @@ import MediaBlock from '../components/MediaBlock';
 import TextLink from '../components/TextLink';
 
 const Date = styled.h4`
-  ${typeStyles('h1')}
   color: ${palette.grey.base}
+  font-size: 4rem;
   font-weight: ${type.weights.bold};
+  line-height: 4.5rem;
   white-space: nowrap;
 `;
 
@@ -32,12 +34,12 @@ const Location = styled(TextLink)`
 
 const AttendButton = styled(Button)`
   margin-top: 1.5rem;
+  width: 100%;
 `;
 
 const Title = styled(Link)`
-  ${typeStyles('h3')}
+  ${typeStyles('h1')}
   display: block;
-  padding-top: 1.25rem;
 `;
 
 const Text = styled.p`
@@ -92,32 +94,30 @@ const EventSmall = (
   return (
     <MediaBlock
       aside={
-        (
-          <div>
-            <Date>
-              {dateformat(date, 'd mmm')}
-            </Date>
-            <Time>
-              {dateformat(date, 'h:Mtt')}
-            </Time>
+        <div>
+          <Date>
+            {dateformat(date, 'd mmm')}
+          </Date>
+          <Time>
+            {dateformat(date, 'h:Mtt')}
+          </Time>
 
-            {!!venue &&
-              <Location to={mapLink(venue)} target="_blank">
-                {venue.name}
-              </Location>}
+          {!!venue &&
+            <Location to={mapLink(venue)} target="_blank">
+              {venue.name}
+            </Location>}
 
-            <AttendButton to={attendLink} target="_blank">
-              Attend event
-            </AttendButton>
-          </div>
-        )
+          <AttendButton to={attendLink} target="_blank" size="small">
+            Attend event
+          </AttendButton>
+        </div>
       }
     >
       <Title to={eventLink}>
         {title}
       </Title>
       <Text>
-        {text}
+        {string(text).truncate(300).s}
       </Text>
 
       {!!hosts &&

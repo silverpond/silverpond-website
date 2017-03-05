@@ -2,8 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { prefixLink } from 'gatsby-helpers';
-import { typeStyles } from '../lib/settings';
+import { typeStyles, type } from '../lib/settings';
 
 const Container = styled.div`
   align-items: center;
@@ -19,6 +18,7 @@ const Image = styled.img`
 
 const Name = styled.p`
   ${typeStyles('small')}
+  font-weight: ${type.weights.medium};
 `;
 
 // Component

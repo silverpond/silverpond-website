@@ -2,7 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { palette } from '../lib/settings';
+import { palette, type } from '../lib/settings';
 
 import AdaptiveLink from '../components/AdaptiveLink';
 import ArrowIcon from '../components/ArrowIcon';
@@ -20,17 +20,34 @@ const getBackgroundColor = (color: Color): string => {
   }
 };
 
+const getSize = size => {
+  switch (size) {
+    case 'small':
+      return `
+        height: 3rem;
+        line-height: 3rem;
+      `;
+    default:
+      return `
+        height: 3.5rem;
+        line-height: 3.5rem;
+      `;
+  }
+};
+
 const styles = (props: Object): string => {
   return `
+  ${getSize(props.size)}
   background-color: ${getBackgroundColor(props.color)};
   border-radius: 3px;
   border: none;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
   color: white;
   display: inline-block;
-  height: 3.5rem;
-  line-height: 3.5rem;
+  font-weight: ${type.weights.medium};
   min-width: 8rem;
   padding: 0 2rem;
+  text-align: center;
   `;
 };
 
@@ -48,6 +65,7 @@ const Component = (
     children?: React.Element<any>,
     to?: string,
     hasArrow?: boolean,
+    size?: string,
   },
 ) => {
   const { hasArrow, children, ...rest } = props;

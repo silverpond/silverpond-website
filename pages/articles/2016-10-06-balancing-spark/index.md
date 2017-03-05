@@ -1,4 +1,5 @@
 ---
+featured: true
 title: "Balancing Spark – Bin Packing to Solve Data Skew"
 date: Oct 6, 2016
 author: James Sofra

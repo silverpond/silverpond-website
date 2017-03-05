@@ -1,11 +1,15 @@
 // @flow
 // Imports - config
 import React from 'react';
-import string from 'string';
 import styled from 'styled-components';
-import { calcReadTime, getPerson, getPromotedPages } from '../lib/utilities';
-import { palette, typeStyles } from '../lib/settings';
+import { palette, type, typeStyles } from '../lib/settings';
 import { prefixLink } from 'gatsby-helpers';
+import {
+  calcReadTime,
+  getPerson,
+  getPromotedPages,
+  imagePath,
+} from '../lib/utilities';
 
 // Imports - components
 import { ColWrapper, Col } from '../components/Grid';
@@ -13,7 +17,6 @@ import ArrowLink from '../components/ArrowLink';
 import ArticleSmall from '../components/ArticleSmall';
 import ArticleFeatured from '../components/ArticleFeatured';
 import EventSmall from '../components/EventSmall';
-import Inner from '../components/Inner';
 import IntroText from '../components/IntroText';
 import ItemList from '../components/ItemList';
 import Nav from '../components/Nav';
@@ -27,9 +30,16 @@ const Splash = styled.div`
   display: flex;
   flex-direction: column;
   height: calc(100vh - 3vh);
-  justify-content: space-between;
   min-height: 66rem;
-  padding: 2rem 0 5rem;
+  padding: 2.5rem 0 5rem;
+`;
+
+const SplashInner = styled.div`
+  alignItems: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
 `;
 
 const Logo = styled.img`
@@ -55,18 +65,17 @@ const AboutText = styled(IntroText)`
   margin-bottom: 2rem;
 `;
 
+const AboutImage = styled.img`
+  margin-left: -6rem;
+  width: calc(100% + 6rem);
+`;
+
 const ArticleCol = styled(Col)`
   display: flex;
 `;
 
 const ClientsWrapper = styled(ColWrapper)`
   align-items: center;
-`;
-
-const Card = styled.div`
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,.15);
-  padding: 2rem 2rem 1.5rem;
 `;
 
 // Component
@@ -83,22 +92,20 @@ const Home = (
   const promotedArticles = getPromotedPages(route.pages, 'articles');
   const promotedEvents = getPromotedPages(route.pages, 'events');
   const promotedClients = getPromotedPages(route.pages, 'clients', 4);
-  const featuredEvent = promotedEvents[0];
-  const featuredArticle = promotedArticles[0];
   return (
     <div>
       <Splash>
 
-        <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
-
-        <div
+        <Nav
           style={{
             flexShrink: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            marginBottom: '2rem',
+            fontWeight: type.weights.medium,
           }}
-        >
+          white
+        />
+
+        <SplashInner>
           <Logo src={prefixLink('images/silverpond-logo.svg')} />
           <TagLine>
             A team of technical leaders specialising in
@@ -112,45 +119,16 @@ const Home = (
             </Highlight>
             .
           </TagLine>
-        </div>
-
-        <Inner style={{ flexShrink: 0 }}>
-          <ColWrapper>
-            <Col span="6">
-              <Card>
-                <EventSmall
-                  key={featuredEvent.data.title}
-                  date={featuredEvent.data.date}
-                  title={featuredEvent.data.title}
-                  venue={featuredEvent.data.venue}
-                  text={string(featuredEvent.data.intro).truncate(150).s}
-                  attendLink={featuredEvent.data.attendLink}
-                  eventLink={prefixLink(featuredEvent.path)}
-                />
-              </Card>
-            </Col>
-
-            <Col span="6" style={{ display: 'flex' }}>
-              <Card style={{ flexGrow: 1 }}>
-                <ArticleSmall
-                  author={getPerson(route.pages, featuredArticle.data.author)}
-                  date={featuredArticle.data.date}
-                  title={featuredArticle.data.title}
-                  readTime={calcReadTime(featuredArticle.data.body)}
-                  path={featuredArticle.path}
-                />
-              </Card>
-            </Col>
-
-          </ColWrapper>
-        </Inner>
-
+        </SplashInner>
       </Splash>
 
       <Section>
         <ColWrapper>
           <Col span="5">
-            image
+            <AboutImage
+              src="/images/coffee.png"
+              alt="Jono Chang having coffee."
+            />
           </Col>
           <Col span="7">
             <AboutText>
@@ -174,8 +152,9 @@ const Home = (
       <Section color="grey">
         <ArticleFeatured
           to={prefixLink(promotedCaseStudy.data.path)}
-          image={prefixLink(
-            `/images/case-studies/${promotedCaseStudy.data.image}`,
+          image={imagePath(
+            promotedCaseStudy.path,
+            promotedCaseStudy.data.image,
           )}
           title={promotedCaseStudy.data.title}
           text={promotedCaseStudy.data.meta}
