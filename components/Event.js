@@ -12,14 +12,9 @@ import Avatar from '../components/Avatar';
 import Button from '../components/Button';
 import Header from '../components/Header';
 import Helmet from 'react-helmet';
-import Inner from '../components/Inner';
+import Section from '../components/Section';
 import MastHeadMap from '../components/MastHeadMap';
 import TextLink from '../components/TextLink';
-
-const Content = styled(Inner)`
-  margin-bottom: 6rem;
-  margin-top: 4rem;
-`;
 
 const Head = styled.div`
   margin-bottom: 4rem;
@@ -118,7 +113,7 @@ const Event = (
       <Header />
       <MastHeadMap lat={venue.lat} lon={venue.lon} />
 
-      <Content size="small">
+      <Section size="small">
         <Head>
           <Title>
             {title}
@@ -165,7 +160,7 @@ const Event = (
             </Hosts>
           </div>}
 
-      </Content>
+      </Section>
     </div>
   );
 };

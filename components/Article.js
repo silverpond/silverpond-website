@@ -10,9 +10,9 @@ import { calcReadTime, getPerson, imagePath } from '../lib/utilities';
 
 // Imports - components
 import Avatar from '../components/Avatar';
-import Inner from '../components/Inner';
 import Header from '../components/Header';
 import Helmet from 'react-helmet';
+import Section from '../components/Section';
 import SplashImage from '../components/SplashImage';
 
 const Head = styled.div`
@@ -87,7 +87,7 @@ const Article = (
       <Helmet title={title} />
       <Header />
       <SplashImage src={prefixLink(`./${image}`)} />
-      <Inner size="small">
+      <Section size="small">
         <Head>
           <Title>
             {title}
@@ -107,8 +107,7 @@ const Article = (
             />}
         </Head>
         <Body dangerouslySetInnerHTML={{ __html: body }} />
-      </Inner>
-
+      </Section>
     </div>
   );
 };

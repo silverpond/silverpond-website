@@ -13,6 +13,7 @@ import TextLink from '../components/TextLink';
 const Container = styled.div`
   background-color: ${palette.slate.base};
   color: white;
+  margin-top: 6rem;
   padding: 4rem 0 6rem;
 `;
 

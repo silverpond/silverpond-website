@@ -5,8 +5,7 @@ import { settings as mastHeadSettings } from '../components/MastHead';
 
 // Component
 const SplashImage = styled.img`
-  height: ${mastHeadSettings.height};
-  margin-bottom: 4rem;
+  height: ${mastHeadSettings.height}
   object-fit: cover;
   width: 100%;
 `;

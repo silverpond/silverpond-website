@@ -21,6 +21,7 @@ const Name = styled.h5`
 
 const Description = styled.p`
   margin: 0;
+  text-align: center;
 `;
 
 const Spacer = styled.div`
