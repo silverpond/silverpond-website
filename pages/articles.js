@@ -1,9 +1,16 @@
 // @flow
 // Imports - config
 import React from 'react';
+import hash from 'object-hash';
 import { chunk } from 'lodash';
 import { prefixLink } from 'gatsby-helpers';
-import { filterPages, calcReadTime, getPerson } from '../lib/utilities';
+import {
+  calcReadTime,
+  filterPages,
+  getPerson,
+  imagePath,
+  sortPages,
+} from '../lib/utilities';
 
 import { ColWrapper, Col } from '../components/Grid';
 import ArticleFeatured from '../components/ArticleFeatured';
@@ -19,8 +26,12 @@ const Articles = (
     route: Object,
   },
 ) => {
-  const articles = filterPages(pages, 'articles');
-  const featuredArticle = articles[0];
+  const sortedArticles = sortPages(filterPages(pages, 'articles'));
+  const {
+    featuredPage: featuredArticle,
+    otherPages: articles,
+  } = sortedArticles;
+
   return (
     <div>
       <MastHead title="Articles" subTitle="We write lots of great articles." />
@@ -28,22 +39,20 @@ const Articles = (
       <Section color="grey">
         <ArticleFeatured
           to={prefixLink(featuredArticle.data.path)}
-          image={prefixLink(
-            `/images/case-studies/${featuredArticle.data.image}`,
-          )}
+          image={imagePath(featuredArticle.path, featuredArticle.data.image)}
           title={featuredArticle.data.title}
           text={featuredArticle.data.meta}
           tag="Featured"
         />
       </Section>
 
-      {chunk(articles, 3).map((group, i) => {
+      {chunk(articles, 2).map(group => {
         return (
-          <Section key={i}>
+          <Section key={hash(group)}>
             <ColWrapper>
               {group.map(article => {
                 return (
-                  <Col span="4" key={article.data.date}>
+                  <Col span="6" key={article.data.date}>
                     <ArticleSmall
                       author={getPerson(pages, article.data.author)}
                       date={article.data.date}
