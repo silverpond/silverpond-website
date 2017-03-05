@@ -52,7 +52,7 @@ const CaseStudySmall = (
             {title}
           </Title>
           <p>
-            {string(text).truncate(250).s}
+            {!!text && string(text).truncate(250).s}
           </p>
           <ArrowLink to={to}>
             Find out more
