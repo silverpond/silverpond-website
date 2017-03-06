@@ -23,7 +23,7 @@ const Clients = (
     route: Object,
   },
 ) => {
-  const clients = filterPages(pages, 'clients');
+  const { pages: clients } = filterPages(pages, 'clients');
   return (
     <div>
       <MastHead title="Clients" subTitle="We have lots of great clients" />

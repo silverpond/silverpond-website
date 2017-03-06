@@ -46,7 +46,7 @@ const About = (
     route: Object,
   },
 ) => {
-  const people = filterPages(pages, 'people').filter(
+  const teamMembers = filterPages(pages, 'people').pages.filter(
     person => person.data.teamMember === true,
   );
   return (
@@ -94,7 +94,7 @@ const About = (
           Meet the team
         </SubTitle>
 
-        {chunk(people, 3).map(row => {
+        {chunk(teamMembers, 3).map(row => {
           return (
             <PeopleRow key={hash(row)}>
               {row.map(person => {

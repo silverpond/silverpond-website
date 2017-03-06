@@ -25,9 +25,13 @@ const Events = (
     route: Object,
   },
 ) => {
-  const events = filterPages(pages, 'events');
-  const featuredEvent = events[0];
+  const {
+    featuredPages: featuredEvents,
+    pages: events,
+  } = filterPages(pages, 'events');
+  const featuredEvent = featuredEvents[0];
   const featuredEventHosts = getHosts(featuredEvent.data.hosts, pages);
+
   return (
     <div>
       <MastHead title="Events" subTitle="We run lots of great events" />

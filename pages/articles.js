@@ -9,7 +9,6 @@ import {
   filterPages,
   getPerson,
   imagePath,
-  sortPages,
 } from '../lib/utilities';
 
 import { ColWrapper, Col } from '../components/Grid';
@@ -26,11 +25,11 @@ const Articles = (
     route: Object,
   },
 ) => {
-  const sortedArticles = sortPages(filterPages(pages, 'articles'));
   const {
-    featuredPage: featuredArticle,
-    otherPages: articles,
-  } = sortedArticles;
+    featuredPages: featuredArticles,
+    pages: articles,
+  } = filterPages(pages, 'articles');
+  const featuredArticle = featuredArticles[0];
 
   return (
     <div>
@@ -52,7 +51,7 @@ const Articles = (
             <ColWrapper>
               {group.map(article => {
                 return (
-                  <Col span="6" key={article.data.date}>
+                  <Col span="6" key={hash(article)}>
                     <ArticleSmall
                       author={getPerson(pages, article.data.author)}
                       date={article.data.date}
