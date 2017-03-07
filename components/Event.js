@@ -111,7 +111,7 @@ const Event = (
     <div>
       <Helmet title={title} />
       <Header />
-      <MastHeadMap lat={venue.lat} lon={venue.lon} />
+      {!!venue && <MastHeadMap lat={venue.lat} lon={venue.lon} />}
 
       <Section size="small">
         <Head>
@@ -131,9 +131,11 @@ const Event = (
               Attend event
             </Button>
           </Meta>
-          <TextLink to={mapLink(venue)}>
-            {venue.name}
-          </TextLink>
+          {!!venue &&
+            <TextLink to={mapLink(venue)}>
+              {venue.name}
+            </TextLink>
+          }
         </Head>
 
         <Body dangerouslySetInnerHTML={{ __html: body }} />
