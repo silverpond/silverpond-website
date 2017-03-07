@@ -112,11 +112,3 @@ The name of the client.
 
 **image**: `great-company-logo.jpg`  
 Client logo (landscape version if possible).
-
-
-
-
-
-TODO:
-- Create travis task to rebuild daily to refresh list of events from meetup.com.
-- Write shell scripts to handle all common tasks
