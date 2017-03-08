@@ -10,6 +10,11 @@ import LogoLink from '../components/LogoLink';
 import Nav from '../components/Nav';
 import TextLink from '../components/TextLink';
 
+const iconUrl = icon => {
+  const url = `/images/icons/${icon}.svg`;
+  return prefixLink(url);
+};
+
 const Container = styled.div`
   background-color: ${palette.slate.base};
   color: white;
@@ -72,7 +77,7 @@ const SocialLinks = styled.div`
 `;
 
 const SocialLink = styled.a`
-  background: url('/images/icons/${props => props.icon}.svg') no-repeat center;
+  background: url('${props => iconUrl(props.icon)}') no-repeat center;
   display: block;
   width: 2rem;
   height: 2rem;

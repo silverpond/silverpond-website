@@ -2,6 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
+import { prefixLink } from 'gatsby-helpers';
 import { palette, type, typeStyles } from '../lib/settings';
 
 import Header from '../components/Header';
@@ -18,7 +19,7 @@ const Container = styled.div`
   height: ${settings.height};
 
   &:after {
-    background-image: url('/images/silverpond-logo.svg');
+    background-image: url('${prefixLink('/images/silverpond-logo.svg')}');
     background-position: -150px 0;
     background-repeat: no-repeat;
     background-size: 4000px;
