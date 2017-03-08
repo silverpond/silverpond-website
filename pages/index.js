@@ -126,7 +126,7 @@ const Home = (
         <ColWrapper>
           <Col span="5">
             <AboutImage
-              src="/images/coffee.png"
+              src={prefixLink('/images/coffee.png')}
               alt="Jono Chang having coffee."
             />
           </Col>
@@ -142,7 +142,7 @@ const Home = (
               enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus
               semper.
             </AboutText>
-            <ArrowLink to={prefixLink('/deep-learning')}>
+            <ArrowLink to={prefixLink('/deep-learning/')}>
               Find out more about deep learning
             </ArrowLink>
           </Col>
@@ -162,9 +162,9 @@ const Home = (
         />
       </Section>
 
-      <PromotedContent category="events" to="/events">
+      <PromotedContent category="events" to="/events/">
         <ItemList>
-          {promotedEvents.map((event, i) => {
+          {promotedEvents.map(event => {
             const hosts = event.data.hosts.map(host =>
               getPerson(route.pages, host));
             return (
@@ -183,7 +183,7 @@ const Home = (
         </ItemList>
       </PromotedContent>
 
-      <PromotedContent category="articles" to="/articles" color="grey">
+      <PromotedContent category="articles" to="/articles/" color="grey">
         <ColWrapper>
           {promotedArticles.map(article => {
             return (
@@ -207,7 +207,7 @@ const Home = (
         </ColWrapper>
       </PromotedContent>
 
-      <PromotedContent category="clients" to="/clients">
+      <PromotedContent category="clients" to="/clients/">
         <ClientsWrapper>
           {promotedClients.map(client => {
             return (
