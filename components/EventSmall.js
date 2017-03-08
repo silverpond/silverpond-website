@@ -107,9 +107,10 @@ const EventSmall = (
               {venue.name}
             </Location>}
 
-          <AttendButton to={attendLink} target="_blank" size="small">
-            Attend event
-          </AttendButton>
+          {!!attendLink &&
+            <AttendButton to={attendLink} target="_blank" size="small">
+              Attend event
+            </AttendButton>}
         </div>
       }
     >
