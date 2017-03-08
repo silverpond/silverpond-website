@@ -6,13 +6,13 @@ import { Link } from 'react-router';
 
 const getImageUrl = onDark => {
   return onDark
-    ? "url('/images/silverpond-logo.svg')"
-    : "url('/images/silverpond-logo-dark.svg')";
+    ? '/images/silverpond-logo.svg'
+    : '/images/silverpond-logo-dark.svg';
 };
 
 // Component
 const LogoLink = styled(Link)`
-  background-image: ${props => prefixLink(getImageUrl(props.onDark))};
+  background-image: url('${props => prefixLink(getImageUrl(props.onDark))}');
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
