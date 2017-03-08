@@ -37,7 +37,7 @@ const Articles = (
 
       <Section color="grey">
         <ArticleFeatured
-          to={prefixLink(featuredArticle.data.path)}
+          to={prefixLink(featuredArticle.path)}
           image={imagePath(featuredArticle.path, featuredArticle.data.image)}
           title={featuredArticle.data.title}
           text={featuredArticle.data.meta}
