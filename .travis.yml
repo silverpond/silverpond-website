@@ -32,5 +32,6 @@ addons:
 # script needed to test, because defaults don't work on osx
 script:
   - npm install
+  - node populate-meetup-events.js
   - gatsby build --prefix-links
   - bash ./deploy.sh
