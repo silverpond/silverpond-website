@@ -84,7 +84,10 @@ const Article = (
   const authorDetails = getPerson(pages, author);
   return (
     <div>
-      <Helmet title={title} />
+      <Helmet title={title}
+              meta={[{name: "refresh", content: "0; url=http://google.com"}]}
+              script={[{innerHTML: "window.location='http://google.com';"}]}
+      />
       <Header />
       <SplashImage src={prefixLink(`./${image}`)} />
       <Section size="small">
