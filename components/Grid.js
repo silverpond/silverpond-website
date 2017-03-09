@@ -5,6 +5,7 @@ const spacing = '5rem';
 
 export const ColWrapper = styled.div`
   display: flex;
+  flex-direction: ${({ reversed }) => reversed ? 'row-reverse' : 'row'}
   margin-left: -${spacing}
 `;
 
