@@ -32,7 +32,9 @@ module.exports = {
       { ignore: ['isValid', 'getValue', 'setValue', 'hasValue', 'isPristine'] },
     ],
     'react/sort-comp': 0,
+    'react/jsx-indent': 0, // handled by prettier
     'react/jsx-no-bind': 0,
+    'react/no-danger': 0,
     'react/require-default-props': 0,
     'react/no-unused-prop-types': 0, // currently can't handle destructuring assignments
     semi: 0,

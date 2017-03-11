@@ -6,6 +6,7 @@ import dateformat from 'dateformat';
 import { palette, type, typeStyles } from '../lib/settings';
 import { textBlock } from '../lib/styles';
 import { getHosts, mapLink, imagePath } from '../lib/utilities';
+import type { Page } from '../lib/type-defs';
 
 // Imports - components
 import Avatar from '../components/Avatar';
@@ -85,13 +86,13 @@ const Event = (
     },
   }: {
     route: {
-      pages: Object,
+      pages: Page[],
       page: {
         data: {
           attendLink?: string,
           body: string,
           date: string,
-          hosts?: Array<any>,
+          hosts: string[],
           title: string,
           venue: {
             name: string,
@@ -134,8 +135,7 @@ const Event = (
           {!!venue &&
             <TextLink to={mapLink(venue)}>
               {venue.name}
-            </TextLink>
-          }
+            </TextLink>}
         </Head>
 
         <Body dangerouslySetInnerHTML={{ __html: body }} />

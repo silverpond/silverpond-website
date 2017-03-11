@@ -1,4 +1,5 @@
 // @flow
+/* global google */
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';

@@ -7,6 +7,8 @@ const ArrowIcon = (
   {
     fill = palette.slate.base,
     ...props
+  }: {
+    fill: string,
   },
 ) => {
   return (

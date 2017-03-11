@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-mixed-operators */
 import styled from 'styled-components';
 
 const spacing = '5rem';

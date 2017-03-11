@@ -19,10 +19,8 @@ const Header = styled.div`
 const Template = (
   {
     children,
-    location,
   }: {
     children: React.Element<any>,
-    location: string,
   },
 ) => {
   return (
