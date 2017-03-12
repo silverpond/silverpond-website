@@ -8,9 +8,10 @@ import Nav from '../components/Nav';
 import LogoLink from '../components/LogoLink';
 
 const Container = styled.div`
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 2.5rem 3rem;
+  padding: 2rem 3rem;
 `;
 
 // Component

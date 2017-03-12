@@ -16,8 +16,8 @@ const LogoLink = styled(Link)`
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
-  height: 30px;
-  width: 160px;
+  height: 40px;
+  width: 195px;
 `;
 
 export default LogoLink;
