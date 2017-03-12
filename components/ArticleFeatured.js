@@ -11,7 +11,7 @@ import ArrowLink from '../components/ArrowLink';
 import TagBase from '../components/Tag';
 
 const Title = styled.h3`
-  ${typeStyles('h1')}
+  ${typeStyles('h3')}
   margin-bottom: 2rem;
 `;
 

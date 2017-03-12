@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
+import { type } from '../lib/settings';
 
 const Container = styled.ul`
   display: flex;
@@ -11,6 +12,7 @@ const Container = styled.ul`
 
 const NavItem = styled.li`
   color: ${props => props.white ? 'white' : 'inherit'};
+  font-weight: ${type.weights.medium};
   margin: 0 2rem;
 
   &:first-child {

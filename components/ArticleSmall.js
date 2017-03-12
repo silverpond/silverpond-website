@@ -24,7 +24,7 @@ const Head = styled.div`
 `;
 
 const Title = styled.h3`
-  ${typeStyles('h1')}
+  ${typeStyles('h3')}
   margin-bottom: 1rem;
 `;
 

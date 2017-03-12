@@ -38,7 +38,7 @@ const AttendButton = styled(Button)`
 `;
 
 const Title = styled(Link)`
-  ${typeStyles('h1')}
+  ${typeStyles('h3')}
   display: block;
 `;
 
@@ -50,7 +50,7 @@ const Text = styled.p`
 const SubTitle = styled.h4`
   ${typeStyles('small')}
   color: ${palette.grey.base};
-  font-weight: ${type.weights.medium};
+  font-weight: ${type.weights.bold};
   margin-bottom: 1rem;
   text-transform: uppercase;
 `;

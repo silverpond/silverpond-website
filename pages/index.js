@@ -2,7 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { palette, type, typeStyles } from '../lib/settings';
+import { palette, typeStyles } from '../lib/settings';
 import { prefixLink } from 'gatsby-helpers';
 import {
   calcReadTime,
@@ -100,7 +100,6 @@ const Home = (
           style={{
             flexShrink: 0,
             marginBottom: '2rem',
-            fontWeight: type.weights.medium,
           }}
           white
         />
