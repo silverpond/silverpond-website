@@ -38,7 +38,7 @@ const Logo = styled(LogoLink)`
 `;
 
 const Address = styled.p`
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
 `;
 
 const Contact = styled.p`
@@ -69,7 +69,7 @@ const EmailLink = styled(TextLink)`
 
 const SocialLinks = styled.div`
   display: flex;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 
   & > * + * {
     margin-left: 1rem;
