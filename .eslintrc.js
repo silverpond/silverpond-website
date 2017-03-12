@@ -14,7 +14,7 @@ module.exports = {
     'import/no-unresolved': 0, // currently not working as expected
     'import/extensions': 0,
     'import/first': 0,
-    indent: 2,
+    indent: 0,
     'new-cap': 0,
     'no-alert': 0,
     'no-multi-spaces': ['error', { exceptions: { VariableDeclarator: true } }],
