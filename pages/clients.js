@@ -6,9 +6,10 @@ import { filterPages, imagePath } from '../lib/utilities';
 
 import Client from '../components/Client';
 import IntroText from '../components/IntroText';
+import ItemList from '../components/ItemList';
 import MastHead from '../components/MastHead';
 import Section from '../components/Section';
-import ItemList from '../components/ItemList';
+import StartProjectBanner from '../components/StartProjectBanner';
 
 const Intro = styled(IntroText)`
   margin-bottom: 5rem;
@@ -54,6 +55,7 @@ const Clients = (
         </ItemList>
       </Section>
 
+      <StartProjectBanner />
     </div>
   );
 };
