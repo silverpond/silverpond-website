@@ -8,9 +8,10 @@ import { typeStyles } from '../lib/settings';
 import { ColWrapper, Col } from '../components/Grid';
 import ArrowLink from '../components/ArrowLink';
 import Section from '../components/Section';
+import type { SectionColor } from '../lib/type-defs';
 
 const Title = styled.h3`
-  ${typeStyles('h2')}
+  ${typeStyles('h3')}
 `;
 
 const SubTitle = styled.h4`
@@ -24,7 +25,7 @@ const Image = styled.img`
 // Component
 const InfoSection = (
   {
-    caseStudyLink,
+    caseStudy,
     color,
     image,
     imageDescription,
@@ -32,8 +33,11 @@ const InfoSection = (
     text,
     title,
   }: {
-    caseStudyLink?: string,
-    color?: string,
+    caseStudy?: {
+      link: string,
+      title: string,
+    },
+    color?: SectionColor,
     image: string,
     imageDescription: string,
     reversed?: boolean,
@@ -42,7 +46,7 @@ const InfoSection = (
   },
 ) => {
   return (
-    <Section size="medium" color={color}>
+    <Section color={color}>
       <ColWrapper reversed={reversed}>
         <Col span="5">
           <Image src={prefixLink(image)} alt={imageDescription} />
@@ -54,12 +58,15 @@ const InfoSection = (
           <p>
             {text}
           </p>
-          <SubTitle>
-            Case study
-          </SubTitle>
-          <ArrowLink to={prefixLink(caseStudyLink)}>
-            Deep learing in the power industry
-          </ArrowLink>
+          {!!caseStudy &&
+            <div>
+              <SubTitle>
+                Case study
+              </SubTitle>
+              <ArrowLink to={prefixLink(caseStudy.link)}>
+                {caseStudy.title}
+              </ArrowLink>
+            </div>}
         </Col>
       </ColWrapper>
     </Section>

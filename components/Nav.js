@@ -41,6 +41,7 @@ const Nav = (
     { name: 'Events', link: '/events/' },
     { name: 'Training', link: '/training/' },
     { name: 'Clients', link: '/clients/' },
+    { name: 'Deep learning', link: '/deep-learning/' },
     { name: 'Contact', link: '/contact/' },
   ];
   return (

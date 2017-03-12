@@ -7,6 +7,7 @@ import IntroText from '../components/IntroText';
 import MastHead from '../components/MastHead';
 import Section from '../components/Section';
 import InfoSection from '../components/InfoSection';
+import StartProjectBanner from '../components/StartProjectBanner';
 
 const Intro = styled(IntroText)`
   margin-bottom: 5rem;
@@ -19,7 +20,7 @@ const DeepLearning = () => {
     <div>
       <MastHead title="Deep learning" subTitle="All about our deep learning" />
 
-      <Section size="medium">
+      <Section>
         <Intro>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque
@@ -37,7 +38,10 @@ const DeepLearning = () => {
         color="grey"
         image="/images/computer-vision.png"
         imageDescription="Amazing example of computer vision"
-        caseStudyLink="computer-vision-case-study"
+        caseStudy={{
+          title: 'Deep learning in the power industry',
+          link: '/case-studies/powercor/',
+        }}
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
               enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque
               venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed
@@ -51,7 +55,10 @@ const DeepLearning = () => {
         title="Natural language processing"
         image="/images/computer-vision.png"
         imageDescription="Amazing example of computer vision"
-        caseStudyLink="computer-vision-case-study"
+        caseStudy={{
+          title: 'Deep learning in the power industry',
+          link: '/case-studies/powercor/',
+        }}
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
               enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque
               venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed
@@ -65,7 +72,10 @@ const DeepLearning = () => {
         color="grey"
         image="/images/computer-vision.png"
         imageDescription="Amazing example of computer vision"
-        caseStudyLink="computer-vision-case-study"
+        caseStudy={{
+          title: 'Deep learning in the power industry',
+          link: '/case-studies/powercor/',
+        }}
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
               enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque
               venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed
@@ -79,7 +89,10 @@ const DeepLearning = () => {
         title="Reinforcement learning"
         image="/images/computer-vision.png"
         imageDescription="Amazing example of computer vision"
-        caseStudyLink="computer-vision-case-study"
+        caseStudy={{
+          title: 'Deep learning in the power industry',
+          link: '/case-studies/powercor/',
+        }}
         text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
               enim mi, vulputate nec tincidunt quis, finibus id ex. Quisque
               venenatis rhoncus odio, eu ornare tortor pretium sit amet. Sed

@@ -3,12 +3,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { palette } from '../lib/settings';
+import { centerContent } from '../lib/styles';
+import type { SectionColor, SectionSize } from '../lib/type-defs';
 
 // Imports - components
 import Inner from '../components/Inner';
-
-type Color = 'red' | 'grey';
-type Size = 'small' | 'medium';
 
 const getBackgroundColor = (color: string): string => {
   switch (color) {
@@ -26,23 +25,36 @@ const Container = styled.div`
   padding: 6rem;
 `;
 
+const Content = styled(Inner)`
+  ${props => {
+  if (props.centeredContent) {
+    return centerContent;
+  }
+  return null;
+}}
+`;
+
 // Component
 const Section = (
   {
+    centeredContent,
     children,
     color,
     size,
+    style,
   }: {
+    centeredContent?: boolean,
     children?: React.Element<any>,
-    color?: Color,
-    size?: Size,
+    color?: SectionColor,
+    size?: SectionSize,
+    style?: Object,
   },
 ) => {
   return (
-    <Container color={color}>
-      <Inner size={size}>
+    <Container color={color} style={style}>
+      <Content size={size} centeredContent={centeredContent}>
         {children}
-      </Inner>
+      </Content>
     </Container>
   );
 };
