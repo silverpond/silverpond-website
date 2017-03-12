@@ -17,18 +17,21 @@ const ColorStyles = (color: Color): string => {
         background: white;
         color: ${palette.slate.base};
         fill: ${palette.slate.base};
+        font-weight: ${type.weights.bold};
       `;
     case 'blue':
       return `
         background: ${palette.blue.base};
         color: white;
         fill: white;
+        font-weight: ${type.weights.medium};
       `;
     default:
       return `
         background: ${palette.blue.base};
         color: white;
         fill: white;
+        font-weight: ${type.weights.medium};
       `;
   }
 };
@@ -39,12 +42,11 @@ const sizeStyles = (size: Size): string => {
       return `
         height: 3rem;
         line-height: 3rem;
-        padding: 0 2rem;
+        padding: 0 3rem;
       `;
     case 'large':
       return `
         ${typeStyles('h4')}
-        font-weight: ${type.weights.bold};
         height: 4.5rem;
         line-height: 4.5rem;
         padding: 0 4.5rem;
@@ -53,7 +55,7 @@ const sizeStyles = (size: Size): string => {
       return `
         height: 3.5rem;
         line-height: 3.5rem;
-        padding: 0 2rem;
+        padding: 0 3rem;
       `;
   }
 };
@@ -67,7 +69,6 @@ const styles = (props: Object): string => {
   box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
   cursor: pointer;
   display: inline-block;
-  font-weight: ${type.weights.medium};
   min-width: 8rem;
   text-align: center;
   `;

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
 import { palette, type, typeStyles } from '../lib/settings';
 
+import EmailSignupForm from '../components/EmailSignupForm';
 import InnerBase from '../components/Inner';
 import LogoLink from '../components/LogoLink';
 import Nav from '../components/Nav';
@@ -130,7 +131,7 @@ const Footer = () => {
 
         <Aside>
           <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
-          <div />
+          <EmailSignupForm />
         </Aside>
 
       </Inner>
