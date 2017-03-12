@@ -88,6 +88,7 @@ const DeepLearning = () => {
               faucibus semper. pretium sit amet."
       />
 
+      <StartProjectBanner />
     </div>
   );
 };
