@@ -99,7 +99,7 @@ const EventSmall = (
             {dateformat(date, 'd mmm')}
           </Date>
           <Time>
-            {dateformat(date, 'h:Mtt')}
+            {dateformat(date, 'h:MMtt')}
           </Time>
 
           {!!venue &&
