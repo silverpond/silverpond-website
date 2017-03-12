@@ -3,10 +3,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import InfoSection from '../components/InfoSection';
 import IntroText from '../components/IntroText';
 import MastHead from '../components/MastHead';
 import Section from '../components/Section';
-import InfoSection from '../components/InfoSection';
 import StartProjectBanner from '../components/StartProjectBanner';
 
 const Intro = styled(IntroText)`
