@@ -1,23 +1,16 @@
+// @flow
 // Imports - config
 import React from 'react';
-import { palette } from '../lib/settings';
 
 // Component
-const ArrowIcon = (
-  {
-    fill = palette.slate.base,
-    ...props
-  }: {
-    fill: string,
-  },
-) => {
+const ArrowIcon = (props: Object) => {
   return (
     <svg
       width={64}
       height={12}
       viewBox="0 0 42 8"
       xmlns="http://www.w3.org/2000/svg"
-      fill={fill}
+      fill="inherit"
       shapeRendering="crispEdges"
       {...props}
     >
