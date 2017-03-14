@@ -86,7 +86,7 @@ const SocialLink = styled.a`
 // Component
 const Footer = () => {
   return (
-    <Container>
+    <Container id="footer">
       <Inner>
 
         <div>

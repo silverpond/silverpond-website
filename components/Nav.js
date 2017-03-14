@@ -6,6 +6,13 @@ import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import { type } from '../lib/settings';
 
+type NavItemType = {
+  name: string,
+  href?: string,
+  link?: string,
+  options?: Object,
+};
+
 const Container = styled.ul`
   display: flex;
 `;
@@ -36,24 +43,30 @@ const Nav = (
 ) => {
   const items = [
     { name: 'About', link: '/about/' },
-    { name: 'Co-working', link: 'http://silverpond.com.au/the_pond/' },
+    {
+      name: 'Co-working',
+      href: 'http://silverpond.com.au/the_pond/',
+      options: { target: '_blank', rel: 'noopener noreferrer' },
+    },
     { name: 'Articles', link: '/articles/' },
     { name: 'Events', link: '/events/' },
     { name: 'Training', link: '/training/' },
     { name: 'Clients', link: '/clients/' },
     { name: 'Deep learning', link: '/deep-learning/' },
-    { name: 'Contact', link: '/contact/' },
+    { name: 'Contact', href: '#footer' },
   ];
   return (
     <Container style={style}>
-      {items.map(({ name, link }) => {
+      {items.map((item: NavItemType) => {
         return (
-          <NavItem key={name} white={white}>
-            {link.includes('http')
-              ? <a href={link} target="_blank" rel="noopener noreferrer">
-                  {name}
+          <NavItem key={item.name} white={white}>
+            {item.hasOwnProperty('href')
+              ? <a href={item.href} {...item.options}>
+                  {item.name}
                 </a>
-              : <Link to={prefixLink(link)}>{name}</Link>}
+              : <Link to={!!item.link && prefixLink(item.link)}>
+                  {item.name}
+                </Link>}
           </NavItem>
         );
       })}
