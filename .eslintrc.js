@@ -40,5 +40,6 @@ module.exports = {
     semi: 0,
     'arrow-parens': ['error', 'as-needed'],
     'no-confusing-arrow': 0,
+    'no-prototype-builtins': 0,
   },
 };
