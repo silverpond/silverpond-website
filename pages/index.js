@@ -150,7 +150,7 @@ const Home = (
 
       <Section color="grey">
         <ArticleFeatured
-          to={prefixLink(promotedCaseStudy.data.path)}
+          to={prefixLink(promotedCaseStudy.path)}
           image={imagePath(
             promotedCaseStudy.path,
             promotedCaseStudy.data.image,

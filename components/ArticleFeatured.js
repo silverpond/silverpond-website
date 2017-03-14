@@ -7,11 +7,13 @@ import { typeStyles } from '../lib/settings';
 
 // Components
 import { ColWrapper, Col } from '../components/Grid';
+import { Link } from 'react-router';
 import ArrowLink from '../components/ArrowLink';
 import TagBase from '../components/Tag';
 
-const Title = styled.h3`
+const Title = styled(Link)`
   ${typeStyles('h3')}
+  display: block;
   margin-bottom: 2rem;
 `;
 
@@ -48,7 +50,7 @@ const CaseStudySmall = (
           <Tag>
             {tag}
           </Tag>
-          <Title>
+          <Title to={to}>
             {title}
           </Title>
           <p>
