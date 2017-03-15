@@ -6,7 +6,7 @@ import hash from 'object-hash';
 import { chunk } from 'lodash';
 import { typeStyles } from '../lib/settings';
 import { textBlock } from '../lib/styles';
-import { filterPages, imagePath } from '../lib/utilities';
+import { filterPagesByCategory, imagePath } from '../lib/utilities';
 
 import Header from '../components/Header';
 import PersonSmall from '../components/PersonSmall';
@@ -46,7 +46,7 @@ const About = (
     route: Object,
   },
 ) => {
-  const teamMembers = filterPages(pages, 'people').pages.filter(
+  const teamMembers = filterPagesByCategory(pages, 'people').filter(
     person => person.data.teamMember === true,
   );
   return (

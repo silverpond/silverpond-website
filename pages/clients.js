@@ -2,7 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { filterPages, imagePath } from '../lib/utilities';
+import { filterPagesByCategory, imagePath } from '../lib/utilities';
 
 import Client from '../components/Client';
 import IntroText from '../components/IntroText';
@@ -24,7 +24,7 @@ const Clients = (
     route: Object,
   },
 ) => {
-  const { pages: clients } = filterPages(pages, 'clients');
+  const clients = filterPagesByCategory(pages, 'clients');
   return (
     <div>
       <MastHead title="Clients" subTitle="We have lots of great clients" />

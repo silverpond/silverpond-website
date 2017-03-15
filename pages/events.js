@@ -4,8 +4,13 @@ import React from 'react';
 import styled from 'styled-components';
 import hash from 'object-hash';
 import { prefixLink } from 'gatsby-helpers';
-import { filterPages, getHosts } from '../lib/utilities';
 import s from 'string';
+import {
+  filterNot,
+  filterPagesByCategory,
+  findFeaturedPages,
+  getHosts,
+} from '../lib/utilities';
 
 import EventSmall from '../components/EventSmall';
 import ItemList from '../components/ItemList';
@@ -25,12 +30,10 @@ const Events = (
     route: Object,
   },
 ) => {
-  const {
-    featuredPages: featuredEvents,
-    pages: events,
-  } = filterPages(pages, 'events');
-  const featuredEvent = featuredEvents[0];
+  const events = filterPagesByCategory(pages, 'events');
+  const featuredEvent = findFeaturedPages(events)[0];
   const featuredEventHosts = getHosts(featuredEvent.data.hosts, pages);
+  const nonFeaturedEvents = filterNot(events, [featuredEvent]);
 
   return (
     <div>
@@ -53,7 +56,7 @@ const Events = (
 
       <Section size="medium">
         <ItemList>
-          {events.map(event => {
+          {nonFeaturedEvents.map(event => {
             const hosts = getHosts(event.data.hosts, pages);
             return (
               <EventSmall

@@ -6,7 +6,9 @@ import { chunk } from 'lodash';
 import { prefixLink } from 'gatsby-helpers';
 import {
   calcReadTime,
-  filterPages,
+  filterNot,
+  filterPagesByCategory,
+  findFeaturedPages,
   getPerson,
   imagePath,
 } from '../lib/utilities';
@@ -25,11 +27,9 @@ const Articles = (
     route: Object,
   },
 ) => {
-  const {
-    featuredPages: featuredArticles,
-    pages: articles,
-  } = filterPages(pages, 'articles');
-  const featuredArticle = featuredArticles[0];
+  const articles = filterPagesByCategory(pages, 'articles');
+  const featuredArticle = findFeaturedPages(articles)[0];
+  const nonFeaturedArticles = filterNot(articles, [featuredArticle]);
 
   return (
     <div>
@@ -45,7 +45,7 @@ const Articles = (
         />
       </Section>
 
-      {chunk(articles, 2).map(group => {
+      {chunk(nonFeaturedArticles, 2).map(group => {
         return (
           <Section key={hash(group)}>
             <ColWrapper>
