@@ -1,5 +1,6 @@
 node_modules/
 pages/meetup-events/
+pages/redirects/
 public
 .gatsby-context.js
 .DS_Store
