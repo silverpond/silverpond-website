@@ -7,6 +7,7 @@ import { prefixLink } from 'gatsby-helpers';
 import { type, typeStyles } from '../lib/settings';
 import { textBlock } from '../lib/styles';
 import { calcReadTime, getPerson, imagePath } from '../lib/utilities';
+import type { Page } from '../lib/type-defs';
 
 // Imports - components
 import Avatar from '../components/Avatar';
@@ -68,7 +69,7 @@ const Article = (
     },
   }: {
     route: {
-      pages: Object,
+      pages: Page[],
       page: {
         data: {
           author: string,
@@ -84,10 +85,7 @@ const Article = (
   const authorDetails = getPerson(pages, author);
   return (
     <div>
-      <Helmet title={title}
-              meta={[{name: "refresh", content: "0; url=http://google.com"}]}
-              script={[{innerHTML: "window.location='http://google.com';"}]}
-      />
+      <Helmet title={title} />
       <Header />
       <SplashImage src={prefixLink(`./${image}`)} />
       <Section size="small">
