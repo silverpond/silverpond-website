@@ -8,9 +8,10 @@ meta: |
   in order to discuss their pain-points and what might be in store
   for the future.
 ---
+<!-- /img/blog/ml-unconference -->
 
 <p class="attribution" style="text-align: right;">
-	<img src="/img/blog/ml-unconference/IMG_2909.JPG" class="image fit" />
+	<img src="./IMG_2909.JPG" class="image fit" />
 	<em>An Unkeynote at the Machine Learning Unconference</em>
 </p>
 
@@ -24,8 +25,8 @@ from each track to the entire audience.
 
 <!--more-->
 
-<img src="/img/blog/ml-unconference/IMG_20161124_100346.jpg" style="width: 48%;" />
-<img src="/img/blog/ml-unconference/IMG_2913.JPG" style="width: 48%;" />
+<img src="./IMG_20161124_100346.jpg" style="width: 48%;" />
+<img src="./IMG_2913.JPG" style="width: 48%;" />
 
 The topics that were tabled by the attendees were:
 
@@ -38,16 +39,16 @@ The topics that were tabled by the attendees were:
 * Privacy <!-- (Summarised by Liam) -->
 * Training for Machines and Newcomers <!-- (Summarised by Andy G) -->
 
-<img src="/img/blog/ml-unconference/IMG_2914.JPG" style="width: 48%;" />
-<img src="/img/blog/ml-unconference/IMG_2915.JPG" style="width: 48%;" />
+<img src="./IMG_2914.JPG" style="width: 48%;" />
+<img src="./IMG_2915.JPG" style="width: 48%;" />
 
 The unconference was hosted at ZenDesk - Who are doing interesting
 things in the machine learning space. Data Science Melbourne also
 invited attendees to the charity gala dinner that they
 were holding that evening.
 
-<img src="/img/blog/ml-unconference/IMG_2917.JPG" style="width: 48%;" />
-<img src="/img/blog/ml-unconference/IMG_2918.JPG" style="width: 48%;" />
+<img src="./IMG_2917.JPG" style="width: 48%;" />
+<img src="./IMG_2918.JPG" style="width: 48%;" />
 
 As part of the event we expressed a desire to facilitate an ongoing forum
 for the discussion of the issues facing our community in Melbourne.
@@ -55,7 +56,7 @@ We encouraged attendees to join the [Machine Learning & AI Meetup](https://www.m
 and Andy launched the new [melbourne.ai](http://melbourne.ai) - with more news
 coming soon.
 
-![](/img/blog/ml-unconference/IMG_2919.JPG)
+![](./IMG_2919.JPG)
 
 It was great to discuss candidly, the current issues and opportunities in 
 machine learning and AI on the ground. Thanks to ZenDesk,  Data Science Melbourne 

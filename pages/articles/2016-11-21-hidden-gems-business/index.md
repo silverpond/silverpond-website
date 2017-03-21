@@ -7,9 +7,10 @@ meta: |
   Deep-learning can make recommendations based on inference about real data, opening
   up previously inaccessable opportunities for your business and your customers.
 ---
+<!-- /img/blog/hidden_gems -->
 
 <p class="attribution" style="text-align: right;">
-	<img src="/img/blog/hidden_gems/gem_splash.png" class="image fit" />
+	<img src="./gem_splash.png" class="image fit" />
 	<em>
 		<a href="https://www.flickr.com/photos/fdecomite/">fdecomite</a> -
 		<a href="https://www.flickr.com/photos/fdecomite/1603420369/in/photolist-3rFX1M-ncdh5w-7qFds9-7qFmro-7qGjeb-7qFe5S-7qGqU3-7qBr5a-41oeXm-7qG8G7-7qFi93-7qBBsX-pZ3KSV-7qBigK-7qBLMx-7qBpPa-cYNhLE-7qFboU-pt9t7-7qCxYF-pt9rb-7qGu3Q-8cHUQj-7qFxjU-7qBoja-8iurgh-7qGhYm-8irc6n-61nsRn-8iuqNA-5xuZ1e-c53udW-4yuBvF-6htW72-pt9uT-6XwGHU-52kvK3-7DfTdW-4yuAbD-7qCyJn-7qBiS4-7qGhMN-pWXgCG-ucbuf-avJWBr-8iur81-7qBqvg-7qBBEi-ea9aV-7qCbuK">"Gems VI"</a>
@@ -24,7 +25,7 @@ nuance, and sparsity.
 
 <!--more-->
 
-<!-- ![](/img/blog/hidden_gems/tshirt.png) -->
+<!-- ![](./tshirt.png) -->
 
 <!-- https://www.flickr.com/photos/iannnnn/6225517096/in/photolist-au8pkE-ob1jpZ-9QPKCC-4zhH6b-4rv8Zp-aW8P62-nBcrV-dwYiiK-4ySf31-afQQ2-KdRsm-5Hbrgk-2jrW3o-5oSQvC-aVdVmn-7hxNu-oLusSk-mCx8K-b7GeF6-se2J7p-f3eXx-561TCd-4CSXGA-aUGSN4-aUHDmz-3V9fwH-9ffsjP-c8V6e5-LxXA-qnSnwB-FGeKe-69APtX-7YMtxL-fEnxBt-8HaSQB-7pdFQo-6aewrG-Eugpm-7VzMVS-7ZnzQ5-55WGKn-9c6rNm-8CbVGm-FhP1i-82q47x-8fUd6e-h6wm8-8Hb6tB-9eARj3-YDVsB -->
 
@@ -45,7 +46,7 @@ And similarly, only simple information about their customers:
 		size: "Medium",
 		past_sales_ids: [ 12345, 12347, 12348, ] }
 
-![](/img/blog/hidden_gems/recommend.png)
+![](./recommend.png)
 
 Information about a customer's amenability to future recommendations is
 highly coupled to information that can be extracted from other products
@@ -91,7 +92,7 @@ or browsed.
 
 We want to take high-dimensional, intractable data:
 
-![](/img/blog/hidden_gems/business_logic_dl2.png)
+![](./business_logic_dl2.png)
 
 <!--
 
@@ -110,7 +111,7 @@ digraph {
 
 ... and transform it into low-dimensional, actionable data:
 
-![](/img/blog/hidden_gems/business_logic_dl3.png)
+![](./business_logic_dl3.png)
 
 <!--
 

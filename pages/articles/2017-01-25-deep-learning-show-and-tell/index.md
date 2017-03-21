@@ -8,8 +8,9 @@ meta: |
   they have been working on using the deep-learning techniques we've
   taught.
 ---
+<!-- /img/blog/show-and-tell -->
 
-![](/img/blog/show-and-tell/birds.png)
+![](./birds.png)
 
 <div style="text-align: right;">
   <em>

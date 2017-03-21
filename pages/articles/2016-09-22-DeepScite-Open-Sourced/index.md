@@ -4,8 +4,9 @@ title: DeepScite Open-Sourced
 author: Lyndon Maydwell
 meta: The DeepScite Arxiv Recommendation Engine has been Open-Sourced
 ---
+<!-- /img/blog/deepscite -->
 
-[![](/img/blog/deepscite/deepscite_splash.jpg)](https://github.com/silky/deep-scite)
+[![](./deepscite_splash.jpg)](https://github.com/silky/deep-scite)
 
 Just in time for the
 [Deep-Learning Workshop](/2016/09/15/Deep-Learning-Workshop-Sep-2016.html)

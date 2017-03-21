@@ -8,8 +8,9 @@ meta: |
   they have been working on using the deep-learning techniques we've
   taught.
 ---
+<!-- /img/blog/2017-02-14-two-day-deep-learning -->
 
-![](/img/blog/2017-02-14-two-day-deep-learning/event.png)
+![](./event.png)
 
 Silverpond have
 [scheduled our next deep-learning workshop](https://www.eventbrite.com/e/deep-learning-2-day-workshop-tickets-32036837042)
@@ -33,7 +34,7 @@ day will focus less on fundamentals and concepts, and more on putting together
 real code-bases intended to accomplish deep-learning heavy-lifting.
 
 <div style="text-align:center; padding: 1em 0;">
-  <img src="/img/blog/2017-02-14-two-day-deep-learning/dl-workshop.png"
+  <img src="./dl-workshop.png"
   style="max-width: 90%;" />
 </div>
 

@@ -7,6 +7,7 @@ meta: |
   "Data-Science Internship Evening", sharing our 
   machine learning and AI work with the 500 attendees.
 ---
+<!-- /img/blog/dsi-event -->
 
 On Monday there was a huge turnout for the
 ["Data-Science Internship Evening"](https://www.meetup.com/Data-Science-Melbourne/events/232889835/)
@@ -17,7 +18,7 @@ interns about the opportunity to come and work with
 them as part of an internship program facilitated
 by the new internship startup [PrevYou](https://www.prevyou.com.au/).
 
-<img src="/img/blog/dsi-event/crowd-1.jpg" class="image fit" />
+<img src="./crowd-1.jpg" class="image fit" />
 
 <!--more-->
 
@@ -30,7 +31,7 @@ the many events we've run and contributed to.
 
 <br />
 
-<img src="/img/blog/dsi-event/sp-2.jpg" class="image fit" />
+<img src="./sp-2.jpg" class="image fit" />
 
 <br />
 

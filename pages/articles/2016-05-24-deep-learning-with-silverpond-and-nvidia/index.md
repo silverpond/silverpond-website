@@ -4,8 +4,9 @@ title: Join us for an evening of Deep Learning!
 author: Noon Silk
 meta: We join NVIDIA to present an evening on the hardware and applications for deep learning.
 ---
+<!-- /img/blog/deep-learning -->
 
-![](/img/blog/deep_learning/An Evening of Deep Learning.png)
+![](./An Evening of Deep Learning.png)
 
 We're excited to announce an event on the 10th of June, featuring
 NVIDIA, who will be speaking about their [DGX-01](http://www.nvidia.com/object/deep-learning-system.html) Deep Learning supercomputer, and a few
@@ -21,18 +22,18 @@ Details can be found here:
 
 Here are some photos from the event!
 
-![](/img/blog/deep_learning/IMG_20160610_174119.jpg)
+![](./IMG_20160610_174119.jpg)
 
-![](/img/blog/deep_learning/IMG_20160610_185457.jpg)
+![](./IMG_20160610_185457.jpg)
 
-![](/img/blog/deep_learning/IMG_20160610_190706.jpg)
+![](./IMG_20160610_190706.jpg)
 
-![](/img/blog/deep_learning/IMG_20160610_192754.jpg)
+![](./IMG_20160610_192754.jpg)
 
-![](/img/blog/deep_learning/IMG_20160610_192759.jpg)
+![](./IMG_20160610_192759.jpg)
 
-![](/img/blog/deep_learning/IMG_20160610_192806.jpg)
+![](./IMG_20160610_192806.jpg)
 
-![](/img/blog/deep_learning/IMG_20160610_192830.jpg)
+![](./IMG_20160610_192830.jpg)
 
-![](/img/blog/deep_learning/IMG_20160610_192858.jpg)
+![](./IMG_20160610_192858.jpg)

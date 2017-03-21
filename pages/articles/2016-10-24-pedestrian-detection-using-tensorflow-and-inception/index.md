@@ -6,8 +6,9 @@ redirect_from: "/2016/10/24/pedestrian-detection-details.html"
 meta: |
   How we built an object detection system using Tensorflow and Inception, and taught it to recognize pedestrians.
 ---
+<!-- /img/blog/pedestrian-detection-details -->
 
-![detection](/img/blog/pedestrian-detection-details/ped_sample.png)
+![detection](./ped_sample.png)
 
 _A detection from our model_
 
@@ -38,7 +39,7 @@ How do we get around these issues?
 
 ## Key Ideas
 
-![inception](/img/blog/pedestrian-detection-details/image03.png)
+![inception](./image03.png)
 
 Taking a very high-level view, we can summarise the Inception v3 architecture shown above as follows:
 
@@ -61,7 +62,7 @@ The key insight towards using Inception to localise objects quickly lies in the 
 
 The image below shows the resulting grid. The edges of the image are not covered: this is our attempt to take Inception's lack of padding in its convolutional layers into account. The grid cells predicting pedestrians with a probability greater than `0.5` are drawn in green.
 
-![grid](/img/blog/pedestrian-detection-details/grid.png)
+![grid](./grid.png)
 
 You will notice the image is bigger than 299x299. This is a nice property of the Inception architecture: as it is fully convolutional, it can be fed with any size of input image. In our case, we used `640x480` as an input, which produces the `13x18x2048` feature grid shown.
 
@@ -82,7 +83,7 @@ With the bounding box regressor trained, we can then run the entire model as fol
 
 This produces a bounding box prediction for each active cell. Lots of these will belong to the same object (see e.g. the grid image: each pedestrian lights up several grid cells, each one of which will predict a bounding box). Hence, as a last step, we group these boxes using non-maximum suppression. The algorithm which worked best for us was [this one](http://www.pyimagesearch.com/2014/11/17/non-maximum-suppression-object-detection-python/). The example below shows the bounding boxes before grouping on the left, and after grouping on the right.
 
-![grid](/img/blog/pedestrian-detection-details/together.png)
+![grid](./together.png)
 
 ## Conclusion
 

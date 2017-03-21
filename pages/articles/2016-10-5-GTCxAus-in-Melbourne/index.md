@@ -4,8 +4,9 @@ title: Nvidia's GTCx in Melbourne
 author: Lyndon Maydwell
 meta: Fostering the deep learning community - Nvidia's GTCx in Melbourne
 ---
+<!-- /img/blog/CTCxAus -->
 
-![](/img/blog/GTCxAus/GTCxAus_1.JPG)
+![](./GTCxAus_1.JPG)
 
 <!--more-->
 
@@ -34,19 +35,19 @@ deep-learning spread and cross-pollinated so that we can all reap the benefits
 of the long overdue resurgance of AI. To this end, Nvidia's GTCx in Melbourne
 was a great event and we look forward to the next one.
 
-![](/img/blog/GTCxAus/GTCxAus_3.jpg)
+![](./GTCxAus_3.jpg)
 
 Kicking off GTCx in Melbourne
 
-![](/img/blog/GTCxAus/GTCxAus_2.jpg)
+![](./GTCxAus_2.jpg)
 
 <a href="http://www.abi.auckland.ac.nz/en/about/our-research/animate-technologies.html" target="_blank">BabyX</a>
 demonstration of virtual infant by University of Auckland
 
-![](/img/blog/GTCxAus/GTCxAus_Andy_Clinicloud.jpg)
+![](./GTCxAus_Andy_Clinicloud.jpg)
 
 Dr Hon Weng Chong, Dr Ajay Kevat and Andy Kitchen on DeepBreath: Deep Learning in Respiratory Medicine
 
-![](/img/blog/GTCxAus/GTCxAus_Andy_Clinicloud_1.jpg)
+![](./GTCxAus_Andy_Clinicloud_1.jpg)
 
 Applying convolutional neural networks to respiratory audio data

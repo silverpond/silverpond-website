@@ -6,9 +6,10 @@ meta: |
   An entertaining demonstration of the extraction capability of the object-detection
   API that we have built is provided by the iconic Beatles Abbey Road album cover.
 ---
+<!-- /img/blog/beatles-extraction -->
 
 <p class="attribution">
-	<img src="/img/blog/beatles-extraction/cover-boxes.png" class="image fit" />
+	<img src="./cover-boxes.png" class="image fit" />
 </p>
 
 The current [object-detection demo](/object-detector) that we have built can,

@@ -10,8 +10,9 @@ meta: |
   papers, posts, and press-releases that
   have caught our attention.
 ---
+<!-- /img/blog/2016-11-industry-news -->
 
-![](/img/blog/2016-11-industry-news/2661597665_cb3689871f_b.jpg)
+![](./2661597665_cb3689871f_b.jpg)
 
 <div style="text-align: right;">
   <em>
@@ -34,7 +35,7 @@ recently discovered by us!
 
 _<https://github.com/ml-lab/Rewrite>_
 
-![](/img/blog/2016-11-industry-news/chinese2.png)
+![](./chinese2.png)
 
 Rather than taking on the herculean challenge of fleshing out a design for
 26,000 characters when creating a new Chinese-language font, why not let
@@ -52,7 +53,7 @@ _... Shared by Noon_
 
 _<http://mldb.ai/>_
 
-![](/img/blog/2016-11-industry-news/mldb.png)
+![](./mldb.png)
 
 > MLDB is an open-source database designed for machine learning. 
 > You can install it wherever you want and send it commands over a RESTful API to 
@@ -67,7 +68,7 @@ _... Shared by Noon_
 
 _<https://scirate.com/arxiv/1611.00347>_
 
-![](/img/blog/2016-11-industry-news/diag.png)
+![](./diag.png)
 
 This paper introduces...
 
@@ -90,7 +91,7 @@ _... Shared by Noon_
 
 _<http://www.dataengconf.com/about>_
 
-![](/img/blog/2016-11-industry-news/deconf.png)
+![](./deconf.png)
 
 > "DataEngConf is the first engineering conference that bridges the gap between
 > data engineers and data scientists."
@@ -106,7 +107,7 @@ _... Shared by Noon_
 
 _<https://arxiv.org/abs/1606.04671v3>_
 
-![](/img/blog/2016-11-industry-news/progress.png)
+![](./progress.png)
 
 The word "progressive" here refers to a progression of "network" columns
 where pre-learned features can be re-used by future network-iterations.
@@ -123,7 +124,7 @@ _... Shared by Noon_
 
 _<https://www.lawbot.info/>_
 
-![](/img/blog/2016-11-industry-news/lawbot.png)
+![](./lawbot.png)
 
 The idea behind law-bot was to bring quasi-legal advice to the masses through
 an intelligent chat-bot. Sounds great! Unfortunately the execution at this
@@ -139,7 +140,7 @@ _... Shared by Lyndon_
 
 _<http://www.pyimagesearch.com/2014/11/17/non-maximum-suppression-object-detection-python/>_
 
-![](/img/blog/2016-11-industry-news/nms.png)
+![](./nms.png)
 
 Although non-maximum-suppression is an older technique, and this post was from 2014,
 we recently found ourselves in need of such a capability for consolidation of
@@ -155,7 +156,7 @@ _... Shared by Amanda_
 
 _<https://scirate.com/arxiv/1609.09270>_
 
-![](/img/blog/2016-11-industry-news/panorama.png)
+![](./panorama.png)
 
 Input a panoramic photo; output a 3D model. Simple!
 
@@ -169,7 +170,7 @@ _... Shared by Noon_
 
 _<https://scirate.com/arxiv/1610.02357>_
 
-![](/img/blog/2016-11-industry-news/xception.png)
+![](./xception.png)
 
 Xception takes the observation that
 
@@ -192,7 +193,7 @@ _... Shared by Noon_
 
 _<http://www.kdnuggets.com/2015/07/deep-learning-adversarial-examples-misconceptions.html>_
 
-![](/img/blog/2016-11-industry-news/panda.png)
+![](./panda.png)
 
 This post could also be titled "Eight Myths About Adversarial Examples". There are some good
 tips in here regarding false-intuitions, especially in the context of security. A couple
@@ -212,7 +213,7 @@ _... Shared by Lyndon_
 
 _<http://medhack.com.au/>_
 
-![](/img/blog/2016-11-industry-news/med_hack.png)
+![](./med_hack.png)
 
 "med_hack" is a two-day health-care hackathon running on November 28-29 at
 General Assembly, Melbourne. There are a wide variety of interesting
@@ -224,7 +225,7 @@ _... Shared by Noon_
 
 _<https://youtu.be/GmgoPd7VQ9Q>_
 
-![](/img/blog/2016-11-industry-news/Bartosz.png)
+![](./Bartosz.png)
 
 This is the final video of Bartosz Milewski's
 "Category-Theory for Programmers". The lecture series has been regularly
@@ -240,7 +241,7 @@ _... Shared by Lyndon_
 
 _<http://nightmare.mit.edu/>_
 
-![](/img/blog/2016-11-industry-news/nightmare.png)
+![](./nightmare.png)
 
 Just in time for Halloween, Nightmare-Machine is offered up by MIT as
 a spooky alternative to Google's Deep-Dream. It's hard to glean the
@@ -255,7 +256,7 @@ _... Shared by Alice_
 
 _<https://eprint.iacr.org/2015/1134.pdf>_
 
-![](/img/blog/2016-11-industry-news/lattice.png)
+![](./lattice.png)
 
 Homomorphic encryption is super-cool. Lattices are a super-cool way to implement
 homomorphic encryption. "Λ◦λ" is presented as a functional-framework for the
@@ -283,7 +284,7 @@ _... Shared by Lyndon_
 
 _<https://arxiv.org/abs/1610.08401>_
 
-![](/img/blog/2016-11-industry-news/universal.png)
+![](./universal.png)
 
 The abstract says it better than I could:
 
@@ -309,7 +310,7 @@ _... Shared by Lyndon_
 
 _<https://www.partnershiponai.org/>_
 
-![](/img/blog/2016-11-industry-news/partnership_ai.png)
+![](./partnership_ai.png)
 
 A new partnership has been formed of some of the biggest players in AI. This was huge
 news in the scene recently as the participants have been very active in
@@ -325,7 +326,7 @@ _... Shared by Lyndon_
 
 _<https://deepmind.com/blog/deepmind-and-blizzard-release-starcraft-ii-ai-research-environment/>_
 
-![](/img/blog/2016-11-industry-news/starcraft.png)
+![](./starcraft.png)
 
 Sick of developing sophisticated RNNs trained with advanced reinforcement techniques
 only to have them playing "Space-Invaders"? Well now they can play Starcraft instead!
@@ -338,7 +339,7 @@ Sounds fun :)
 
 _<http://openreview.net/forum?id=BkjLkSqxg>_
 
-![](/img/blog/2016-11-industry-news/lipnet.png)
+![](./lipnet.png)
 
 About all you need to hear to read the rest of this is...
 

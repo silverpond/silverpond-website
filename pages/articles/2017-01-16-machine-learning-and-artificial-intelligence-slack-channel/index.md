@@ -6,8 +6,9 @@ meta: |
   Want to discuss the latest findings and research in ML and AI? Join us in
   our new Slack channel!
 ---
+<!-- /img/blog/ -->
     
-<img src="/img/blog/slack-brain.png" class="image fit" />
+<img src="./slack-brain.png" class="image fit" />
 
 Late last year we started a [Slack channel](https://ml-ai.slack.com/) so that
 the Machine Learning and AI community could chat amongst themselves; discuss

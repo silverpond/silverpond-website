@@ -9,8 +9,9 @@ meta: |
   papers, posts, and press-releases that
   have caught our attention... In December of 2016.
 ---
+<!-- /img/blog/2016-12-industry-news -->
 
-![](/img/blog/2016-12-industry-news/foam.png)
+![](./foam.png)
 
 <div style="text-align: right;">
   <em>
@@ -34,7 +35,7 @@ _Note: Updates to this post are still happening as December isn't over yet :)_
 
 _<https://silky.github.io/posts/2016-12-11-quantum-neural-networks.html>_
 
-![](/img/blog/2016-12-industry-news/fully-quantum-nn.png)
+![](./fully-quantum-nn.png)
 
 If you're looking hear about some recent papers on quantum machine learning then you've
 come to the right place! Noon covers three recent papers in this post that combine
@@ -53,7 +54,7 @@ active right now, and the benefits of combining the two could be huge.
 
 _<https://arxiv.org/abs/1612.01340>_
 
-![](/img/blog/2016-12-industry-news/clickbaitnet.png)
+![](./clickbaitnet.png)
 
 The abstract says it best:
 
@@ -72,7 +73,7 @@ Results are very good!
 
 _<https://arxiv.org/abs/1412.4880>_
 
-![](/img/blog/2016-12-industry-news/haskell_physics.png)
+![](./haskell_physics.png)
 
 In the vein of, and building on many if the ideas in
 [Structure and Interpretation of Classical Mechanics](https://mitpress.mit.edu/sites/default/files/titles/content/sicm/book.html),

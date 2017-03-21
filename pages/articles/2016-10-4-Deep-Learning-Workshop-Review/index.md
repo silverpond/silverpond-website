@@ -4,8 +4,9 @@ title: Deep-Learning Workshop Review
 author: Lyndon Maydwell
 meta: Impressions and photos from our inaugural deep-learning workshop.
 ---
+<!-- /img/blog/deep-workshop-review -->
 
-<img src="/img/blog/deep-workshop-review/assist.png" class="image fit" />
+<img src="./assist.png" class="image fit" />
 
 Our first [deep-learning workshop](/workshops) was a long time coming.
 We ran several previews as well as spending a great deal of time developing and
@@ -21,7 +22,7 @@ data-scientists in industry and newcomers to the concepts involved.
 All were eager to discover more about [deep-learning](/deeplearning) and
 ways to apply it in their day-to-day work.
 
-<img src="/img/blog/deep-workshop-review/dialog.png" class="image fit" />
+<img src="./dialog.png" class="image fit" />
 
 We got off to a great start, working through preliminary materials giving background
 knowledge of the concepts involved and establishing the pattern of introduction,
@@ -30,7 +31,7 @@ then interactive experimentation with the ideas.
 As we moved on we began exploring more advanced concepts such as embedding and
 representation learning via interaction with the recently [open-sourced DeepScite project](/2016/09/22/DeepScite-Open-Sourced.html).
 
-<img src="/img/blog/deep-workshop-review/richardassist.png" class="image fit" />
+<img src="./richardassist.png" class="image fit" />
 
 We received great feedback from attendees, one piece of which was the desire to
 spend more time on the content and exercises. In response to this, we're
@@ -38,7 +39,7 @@ extending the duration of our next workshop. Instead of four hours, we'll be
 running the workshop for 7 hours, including one hour for lunch to give everyone
 ample time to exchange deep learning inspiration. 
 
-<img src="/img/blog/deep-workshop-review/slidewatching.png" class="image fit" />
+<img src="./slidewatching.png" class="image fit" />
 
 We've also taken the opportunity to polish the flow of the content to ensure
 that all the concepts covered tie seamlessly into each other over the course of

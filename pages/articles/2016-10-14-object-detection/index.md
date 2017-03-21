@@ -7,6 +7,7 @@ meta: |
   to detect pedestrians on the sidewalk and people in our office.
 
 ---
+<!-- /img/blog/object-detection -->
 
 <style>
   img.smlimg {
@@ -34,7 +35,7 @@ ourselves with some free time on our hands, we decided to combine some of the
 various bits of hardware we had lying around the office with our love of deep
 learning to create something cool.
 
-![](/img/blog/object_detection/IMG_20161013_161140.jpg)
+![](./IMG_20161013_161140.jpg)
 
 <!--more-->
 
@@ -60,7 +61,7 @@ digraph {
 }
 -->
 
-![](/img/blog/object_detection/dot_75283.png)
+![](./dot_75283.png)
 
 The first step was to get the Pi talking to the digital SLR.  While there are a
 number of open-source tools available which will allow you to do this, we
@@ -111,9 +112,9 @@ outlining the areas the model thinks belongs to a “human”.
 Once we had this magic up and running, it was simply a matter of plugging it
 into our simple AWS pipeline and viola, a pedestrian detector.
 
-<img src="/img/blog/object_detection/2016-10-13_04-56.jpg" class="smlimg" />
+<img src="./2016-10-13_04-56.jpg" class="smlimg" />
 <strong>→</strong>
-<img src="/img/blog/object_detection/window.jpg"           class="smlimg" />
+<img src="./window.jpg"           class="smlimg" />
 
 
 While we put together this little demo in a couple of days, we think it does a

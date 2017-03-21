@@ -4,9 +4,10 @@ title: Deep-Earning, or, Why Attend a Deep-Learning Workshop
 author: Lyndon Maydwell
 meta: Deep-Learning can be beneficial for a business in ways that might not be obvious at first...
 ---
+<!-- /img/blog/deep-earning -->
 
 <p class="attribution">
-	<img src="/img/blog/deep-earning/bizbrain2.png" class="image fit" />
+	<img src="./bizbrain2.png" class="image fit" />
 	<br />
 	<em>
 		<a href="https://www.flickr.com/photos/spyndle/">Kreg Steppe</a> -
@@ -106,7 +107,7 @@ understanding of deep-learning may be a good idea for a business.
 
 ### Industry trends
 
-<img title="https://www.flickr.com/photos/9382228@N08/4836823936/in/photolist-8npZf9-8nmRnc-8nmRNZ-8npZBd-8npZPN-8nmRLH-8nmRDt-8npYjd-8nmRtv-8npZKL-8npZxJ-8npZ5E-8npYXQ-8npYmC-8nmRav-8nmS22-8npZzC-8npYSw-8npZhU-8npYUm-8npYDq-8nmS7F-5XTpVc-7FNRXz-7FSUGu-dknMzL-7FNYyV-7FNRB4-7FSNms-7FSNiC-7FNXe6-7FSQUW-7FNVtr-7FSUbC-7FSUDh-7FNWw2-7FNY2r-7FNRDt-7FSTZQ-7FNYsT-7FNTgT-7FNYhX-7FNWrH-7FNXYp-7FSPh5-7FNSAz-7FNQEZ-7FNXJ8-7FSV5h-7FSQxQ" src="/img/blog/deep-earning/trends.png" />
+<img title="https://www.flickr.com/photos/9382228@N08/4836823936/in/photolist-8npZf9-8nmRnc-8nmRNZ-8npZBd-8npZPN-8nmRLH-8nmRDt-8npYjd-8nmRtv-8npZKL-8npZxJ-8npZ5E-8npYXQ-8npYmC-8nmRav-8nmS22-8npZzC-8npYSw-8npZhU-8npYUm-8npYDq-8nmS7F-5XTpVc-7FNRXz-7FSUGu-dknMzL-7FNYyV-7FNRB4-7FSNms-7FSNiC-7FNXe6-7FSQUW-7FNVtr-7FSUbC-7FSUDh-7FNWw2-7FNY2r-7FNRDt-7FSTZQ-7FNYsT-7FNTgT-7FNYhX-7FNWrH-7FNXYp-7FSPh5-7FNSAz-7FNQEZ-7FNXJ8-7FSV5h-7FSQxQ" src="./trends.png" />
 
 There is no denying that deep-learning is extremely hot right now
 and that many companies, large-and-small, are adopting the
@@ -118,7 +119,7 @@ a lack of understanding of what deep-learning can and cannot offer you.
 
 ### Informed Recruitment / HR
 
-<img title="https://www.flickr.com/photos/theslowlane/29109445903/in/photolist-6d3MGc-Lmiw7k-8ZJt2D-8ZDfdt-bdd2Kx-76R5Yv" src="/img/blog/deep-earning/hr.png" />
+<img title="https://www.flickr.com/photos/theslowlane/29109445903/in/photolist-6d3MGc-Lmiw7k-8ZJt2D-8ZDfdt-bdd2Kx-76R5Yv" src="./hr.png" />
 
 If you do decide to invest in a deep-learning capability for your business,
 then you will undoubtedly need to acquire the skills of talented
@@ -131,7 +132,7 @@ expected performance accurately.
 
 ### Informed Management
 
-<img title="https://www.flickr.com/photos/euthman/2100169288/in/photolist-4czVaj-cUYWTJ-4czVjA-dU4aLw-dTXwji-4eYN9S-4eUPRr-dU47nE-4eYNAm-4f5kQA-4czVvL-4f5kJd-81GqdM-dTXuCX-br47Md-4eYN2J-59UxaP-br4aRN-pSSUfc-dTXyEe-dU44dS-pAvBT4-5ePrDE-dU4aq7-9Ap8AA-e9S63H-4eYNsU-pAvFSM-jALBkX-jAKaQx-dU4bSA-dTXxpk-dTXrYp-dU4cEU-hDsgaF-dTXvwi-oW9sax-pAvBUX-jAPgBd-dU49PY-dTXyr8-dTXxKF-dTXuXF-dTXsw8-dTXrt8-jAQmUC-dU44G9-4JD3f7-jALAm2-dU46Xu" src="/img/blog/deep-earning/management.jpg " />
+<img title="https://www.flickr.com/photos/euthman/2100169288/in/photolist-4czVaj-cUYWTJ-4czVjA-dU4aLw-dTXwji-4eYN9S-4eUPRr-dU47nE-4eYNAm-4f5kQA-4czVvL-4f5kJd-81GqdM-dTXuCX-br47Md-4eYN2J-59UxaP-br4aRN-pSSUfc-dTXyEe-dU44dS-pAvBT4-5ePrDE-dU4aq7-9Ap8AA-e9S63H-4eYNsU-pAvFSM-jALBkX-jAKaQx-dU4bSA-dTXxpk-dTXrYp-dU4cEU-hDsgaF-dTXvwi-oW9sax-pAvBUX-jAPgBd-dU49PY-dTXyr8-dTXxKF-dTXuXF-dTXsw8-dTXrt8-jAQmUC-dU44G9-4JD3f7-jALAm2-dU46Xu" src="./management.jpg " />
 
 Likewise, when you have built a talented deep-learning team, you
 should be able to make best use of their efforts, cultivate their
@@ -142,7 +143,7 @@ plan your strategic roadmap.
 
 ### Signalling
 
-<img title="https://www.flickr.com/photos/oimax/62738842/in/photolist-6xy5b-7QHuhf-5UZUmp-5Q5Ha8-zfemfi-mWUYYB-8YukwM-cB35bG-9yx371-2MyHVt-REydx-aXbn9K-4duAmu-eCuvc-fr7pu6-8WYyUs-ocfLuT-6G7Z2k-qWkmW3-6fvDin-64HeV-6m2wHQ-fHNtZ5-bDVU1-opg9VA-fWLVL9-6d141p-8DNEdr-8DNEmk-azhoGN-4mFQaT-k5sftV-aw52mM-fbPyHw-8jnNto-dx9HN-dx9J1-2bv723-73foo2-qEJB1K-6W3AgV-3Gsp9-bwA4yT-prVM1z-6c2Lix-6Zcx9Q-tvWtVw-cF9qTo-HoEr44-reokpf" src="/img/blog/deep-earning/signal.png" />
+<img title="https://www.flickr.com/photos/oimax/62738842/in/photolist-6xy5b-7QHuhf-5UZUmp-5Q5Ha8-zfemfi-mWUYYB-8YukwM-cB35bG-9yx371-2MyHVt-REydx-aXbn9K-4duAmu-eCuvc-fr7pu6-8WYyUs-ocfLuT-6G7Z2k-qWkmW3-6fvDin-64HeV-6m2wHQ-fHNtZ5-bDVU1-opg9VA-fWLVL9-6d141p-8DNEdr-8DNEmk-azhoGN-4mFQaT-k5sftV-aw52mM-fbPyHw-8jnNto-dx9HN-dx9J1-2bv723-73foo2-qEJB1K-6W3AgV-3Gsp9-bwA4yT-prVM1z-6c2Lix-6Zcx9Q-tvWtVw-cF9qTo-HoEr44-reokpf" src="./signal.png" />
 
 Finally, by being on the cutting edge of trends such as deep-learning
 your business signals that it is a savvy operator and is investing
@@ -161,4 +162,4 @@ Garner support from your supervisor by sharing this post with them!
 
 <br />
 
-<img title="https://en.wikipedia.org/wiki/Bonsai#/media/File:Eurya,_1970-2007.jpg" src="/img/blog/deep-earning/bonsai.jpg" />
+<img title="https://en.wikipedia.org/wiki/Bonsai#/media/File:Eurya,_1970-2007.jpg" src="./bonsai.jpg" />

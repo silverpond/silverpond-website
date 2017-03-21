@@ -6,9 +6,10 @@ meta: |
   The Jetson TX1 Dev-Kit Silverpond has been waiting for has arrived, and we're now ready
   to test new deep-learning models we've been developing on a low-power, small-form-factor board.
 ---
+<!-- /img/blog/jetson -->
 
 <p class="attribution" style="text-align: right;">
-	<img src="/img/blog/jetson/jetson.jpg" class="image fit" />
+	<img src="./jetson.jpg" class="image fit" />
 	<em> Prior to Applying "Out-of-Bag" on the Recently Arrived Jetson TX1</em>
 </p>
 

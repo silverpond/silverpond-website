@@ -6,6 +6,8 @@ author: Lyndon Maydwell
 meta: Insights from our work on building a fast and scalable data science platform for Victoria's electricity provider, Powercor.
 ---
 
+<!-- /img/blog/agl_data_science_platform -->
+
 <style type="text/css">
 	table tr td {
 		padding: 0 0.5em;
@@ -13,7 +15,7 @@ meta: Insights from our work on building a fast and scalable data science platfo
 </style>
 
 <p class="attribution">
-	<img src="/img/blog/agl_data_science_platform/science_platform.png" class="image fit" />
+	<img src="./science_platform.png" class="image fit" />
 	<em>
 		<a href="https://www.flickr.com/photos/usnavyresearch/">Office of Naval Research</a> -
 		<a href="https://www.flickr.com/photos/usnavyresearch/10855637924/in/photolist-hxgYX7-gcmAL3-akcq1H-gcmB2d-hxh1G9-dLtGXz-e9ZSxG-gcmYbe-f7siwc-dLPvSZ-iiAwWZ-gcmo11-e9UcYp-gPScC-gvhXkD-e9ZSXm-gcmAFo-e9ZSBb-i45ou3-gny4n4-edT3He-dMkeQY-e9ZTf9-dMuBcy-e9ZSDu-oBSiJs-gcmAQb-fZDLcL-e9ZSyj-e9ZTjN-aXbgBH-e9UcKa-gV5rHn-e9UcWz-i45Uhr-dKxJnp-e9ZT1q-e9UcG2-gnCLCd-9uX91Z-4CNgZu-kwvnJB-gcmge6-e9UcKM-dHwRhu-e9UcPv-e9UdpV-gkUDUH-e9ZSMS-e9ZSLC">"120630-N-PO203-241"</a>
@@ -68,7 +70,7 @@ They can be thought of as requirements. Without each one a platform
 is untenable.
 
 <p class="attribution">
-	<img src="/img/blog/agl_data_science_platform/AGL_Powercor_Jono.jpeg" class="image fit" />
+	<img src="./AGL_Powercor_Jono.jpeg" class="image fit" />
 	<em>Jonathan Chang - About to introduce the speakers...</em>
 </p>
 
@@ -93,7 +95,7 @@ these principles emerge:
 ### <em> Build Systems ~ Functions </em>
 
 <p class="attribution">
-	<img src="/img/blog/agl_data_science_platform/AGL_Powercor_Audience.jpeg" class="image fit" />
+	<img src="./AGL_Powercor_Audience.jpeg" class="image fit" />
 	<em>Presentation Audience</em>
 </p>
 
@@ -116,7 +118,7 @@ With the additional argument being model-specific. For example:
 With this concept at the heart of our platform, compositionality becomes
 the enabling factor of construction and reuse.
 
-![](/img/blog/agl_data_science_platform/fault_dependencies.png)
+![](./fault_dependencies.png)
 
 With such a methodology at play, many of the traditional pain-points
 such as synchronization-issues, difficulties running reports over
@@ -124,7 +126,7 @@ such as synchronization-issues, difficulties running reports over
 simplify greatly, or evaporate entirely.
 
 <p class="attribution">
-	<img src="/img/blog/agl_data_science_platform/AGL_Powercor_Presentation.jpeg" class="image fit" />
+	<img src="./AGL_Powercor_Presentation.jpeg" class="image fit" />
 	<em>Peter McTaggart - Opening the presentation...</em>
 </p>
 

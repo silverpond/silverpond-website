@@ -5,7 +5,9 @@ author: Amanda Mailer
 meta: A 4-hour workshop on 28 Sep on the basics of deep learning
 ---
 
-[![Deep Learning Workshop](http://silverpond.com.au/img/blog/DeepLearningWorkshop_Eventbrite.png)](https://www.eventbrite.com/e/deep-learning-workshop-tickets-4397376672)
+<!-- /img/blog/ -->
+
+[![Deep Learning Workshop](./DeepLearningWorkshop_Eventbrite.png)](https://www.eventbrite.com/e/deep-learning-workshop-tickets-4397376672)
 
 <p style="font-weight: bold; padding: 1em; margin: 1em; border: 2px solid red;">
 Note: This event has already run. See <a href="/workshops">our workshops page</a>
