@@ -30,8 +30,8 @@ const Splash = styled.div`
   display: flex;
   flex-direction: column;
   height: calc(100vh - 3vh);
-  min-height: 66rem;
-  padding: 2.5rem 0 5rem;
+  min-height: 50rem;
+  padding: 2.5rem 0;
 `;
 
 const SplashInner = styled.div`
