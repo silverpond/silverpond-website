@@ -29,7 +29,7 @@ const Articles = (
 ) => {
   const articles = filterPagesByCategory(pages, 'articles');
   const featuredArticle = findFeaturedPages(articles)[0];
-  const nonFeaturedArticles = filterNot(articles, [featuredArticle]);
+  const nonFeaturedArticles = filterNot(articles, [featuredArticle]).reverse();
 
   return (
     <div>
