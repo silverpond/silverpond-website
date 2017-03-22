@@ -5,13 +5,8 @@ author: Lyndon Maydwell
 meta: |
   An entertaining demonstration of the extraction capability of the object-detection
   API that we have built is provided by the iconic Beatles Abbey Road album cover.
+image: cover-boxes.png
 ---
-<!-- /img/blog/beatles-extraction -->
-
-<p class="attribution">
-	<img src="./cover-boxes.png" class="image fit" />
-</p>
-
 The current [object-detection demo](/object-detector) that we have built can,
 with an attached probability, locate and outline pedestrians in an image.
 Recently, the extraction of the pedestrians into separate images has also

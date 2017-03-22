@@ -3,16 +3,15 @@ layout: blog
 title: Deep-Earning, or, Why Attend a Deep-Learning Workshop
 author: Lyndon Maydwell
 meta: Deep-Learning can be beneficial for a business in ways that might not be obvious at first...
+image: bizbrain2.png
 ---
-<!-- /img/blog/deep-earning -->
 
 <p class="attribution">
-	<img src="./bizbrain2.png" class="image fit" />
-	<br />
-	<em>
-		<a href="https://www.flickr.com/photos/spyndle/">Kreg Steppe</a> -
-		<a href="https://www.flickr.com/photos/spyndle/2884915815/in/photolist-5oVWXR-eir4MA-b7azHv-8tCQab-a3LXyD-dvUk8q-53FP23-bxk8uc-8H8MQE-8VEK6Y-8ZXpLt-nMScFA-F8eKz9-qVZCHB-g3BZ3S-61CxCh-3Qm2ky-7L73Bw-4vnTeR-kxPtyi-9ZFFND-9g4SXt-9aBSAe-g1NWR-9sd9XG-a3MeZm-8vjcGb-8MZtLb-6inrDn-eEBcmB-5H5P7u-musbQ-5LxPYn-8mH7C3-31FKVp-dyUKKU-7rCxHu-pmtEyX-bvEJGe-5xKMjv-qN2QZJ-4XXG7L-ejezxy-5mdGnT-pbeMb9-6s9rKv-Cr51L-qGvLRQ-aqjLH-8NQ9WX">"Deep in Thought"</a>
-	</em>
+  <br />
+  <em>
+    <a href="https://www.flickr.com/photos/spyndle/">Kreg Steppe</a> -
+    <a href="https://www.flickr.com/photos/spyndle/2884915815/in/photolist-5oVWXR-eir4MA-b7azHv-8tCQab-a3LXyD-dvUk8q-53FP23-bxk8uc-8H8MQE-8VEK6Y-8ZXpLt-nMScFA-F8eKz9-qVZCHB-g3BZ3S-61CxCh-3Qm2ky-7L73Bw-4vnTeR-kxPtyi-9ZFFND-9g4SXt-9aBSAe-g1NWR-9sd9XG-a3MeZm-8vjcGb-8MZtLb-6inrDn-eEBcmB-5H5P7u-musbQ-5LxPYn-8mH7C3-31FKVp-dyUKKU-7rCxHu-pmtEyX-bvEJGe-5xKMjv-qN2QZJ-4XXG7L-ejezxy-5mdGnT-pbeMb9-6s9rKv-Cr51L-qGvLRQ-aqjLH-8NQ9WX">"Deep in Thought"</a>
+  </em>
 </p>
 
 

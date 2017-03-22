@@ -5,11 +5,8 @@ author: Noon van der Silk
 meta: |
   Want to discuss the latest findings and research in ML and AI? Join us in
   our new Slack channel!
+image: slack-brain.png
 ---
-<!-- /img/blog/ -->
-    
-<img src="./slack-brain.png" class="image fit" />
-
 Late last year we started a [Slack channel](https://ml-ai.slack.com/) so that
 the Machine Learning and AI community could chat amongst themselves; discuss
 research and post interesting projects.

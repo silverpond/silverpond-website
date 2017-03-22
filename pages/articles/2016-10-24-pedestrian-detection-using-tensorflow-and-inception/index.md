@@ -5,11 +5,8 @@ author: Martin Ingram
 redirect_from: "/2016/10/24/pedestrian-detection-details.html"
 meta: |
   How we built an object detection system using Tensorflow and Inception, and taught it to recognize pedestrians.
+image: ped_sample.png
 ---
-<!-- /img/blog/pedestrian-detection-details -->
-
-![detection](./ped_sample.png)
-
 _A detection from our model_
 
 In an earlier post, Richard introduced our object detection demo and its underlying infrastructure. I'll now offer details on how we built the Inception based neural-network at the core of the system and how we went about making it learn to detect pedestrians.

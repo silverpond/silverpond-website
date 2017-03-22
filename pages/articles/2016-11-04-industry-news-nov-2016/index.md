@@ -9,11 +9,8 @@ meta: |
   and functional-programming
   papers, posts, and press-releases that
   have caught our attention.
+image: 2661597665_cb3689871f_b.jpg
 ---
-<!-- /img/blog/2016-11-industry-news -->
-
-![](./2661597665_cb3689871f_b.jpg)
-
 <div style="text-align: right;">
   <em>
     <a href="https://www.flickr.com/photos/manitobamaps/2661597665/in/photolist-7LHxe7-9ErPSC-7LHxab-7LDzTa-dESsxF-koPvau-i5ZGnc-jZpRo2-eYvLFz-4qwYo2-eYvFAt-eYvxXi-99xoge-5NLFbS-9a6NRo-eYH11f-7sbEaf-4icKQ-9nzv3K-54cofV-7s7d6H-7sbLPE-7seXCS-7sbJ1q-7s9WNm-7qAZ4x-7s7Jqe-7s7Hhi-7s7D66-7sbKnu-7seXeJ-7s62KM-7s7EpK-7sbc9Q-7s61p2-eYGSL5-8VekGo-4fRmaS-4ozZwX-7BVqZ1-eYErjm-4TXUgA-AUeWa-7BVrnS-7BREuR-7vzAau-7BREnF-oStFw-wzAW19-kD64Pp">Proposed Bunn's Creek Park (1973)</a>

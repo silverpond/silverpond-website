@@ -5,9 +5,8 @@ author: Richard Johnson
 meta: | 
   A simple object detection pipeline we set up in a week, using deep learning 
   to detect pedestrians on the sidewalk and people in our office.
-
+image: IMG_20161013_161140.jpg
 ---
-<!-- /img/blog/object-detection -->
 
 <style>
   img.smlimg {

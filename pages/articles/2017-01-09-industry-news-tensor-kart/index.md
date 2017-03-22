@@ -9,4 +9,3 @@ meta: |
   yourself, you can program a computer to have fun for you! Also this project
   is a fun introduction to the idea of self-driving cars.
 ---
-<!-- /img/blog/ -->

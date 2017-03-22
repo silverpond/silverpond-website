@@ -6,11 +6,9 @@ meta: |
   Traditional recommendation engines are limited by their reliance on meta-data.
   Deep-learning can make recommendations based on inference about real data, opening
   up previously inaccessable opportunities for your business and your customers.
+image: gem_splash.png
 ---
-<!-- /img/blog/hidden_gems -->
-
 <p class="attribution" style="text-align: right;">
-	<img src="./gem_splash.png" class="image fit" />
 	<em>
 		<a href="https://www.flickr.com/photos/fdecomite/">fdecomite</a> -
 		<a href="https://www.flickr.com/photos/fdecomite/1603420369/in/photolist-3rFX1M-ncdh5w-7qFds9-7qFmro-7qGjeb-7qFe5S-7qGqU3-7qBr5a-41oeXm-7qG8G7-7qFi93-7qBBsX-pZ3KSV-7qBigK-7qBLMx-7qBpPa-cYNhLE-7qFboU-pt9t7-7qCxYF-pt9rb-7qGu3Q-8cHUQj-7qFxjU-7qBoja-8iurgh-7qGhYm-8irc6n-61nsRn-8iuqNA-5xuZ1e-c53udW-4yuBvF-6htW72-pt9uT-6XwGHU-52kvK3-7DfTdW-4yuAbD-7qCyJn-7qBiS4-7qGhMN-pWXgCG-ucbuf-avJWBr-8iur81-7qBqvg-7qBBEi-ea9aV-7qCbuK">"Gems VI"</a>

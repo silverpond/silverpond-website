@@ -3,11 +3,8 @@ layout: blog
 title: Nvidia's GTCx in Melbourne
 author: Lyndon Maydwell
 meta: Fostering the deep learning community - Nvidia's GTCx in Melbourne
+image: GTCxAus_1.jpg
 ---
-<!-- /img/blog/CTCxAus -->
-
-![](./GTCxAus_1.JPG)
-
 <!--more-->
 
 In many ways, the recent neural-network renaissance in the form of

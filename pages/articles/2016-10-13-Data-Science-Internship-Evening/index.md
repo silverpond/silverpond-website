@@ -6,8 +6,8 @@ meta: |
   Silverpond presented at the Data-Science Melbourne
   "Data-Science Internship Evening", sharing our 
   machine learning and AI work with the 500 attendees.
+image: crowd-1.jpg
 ---
-<!-- /img/blog/dsi-event -->
 
 On Monday there was a huge turnout for the
 ["Data-Science Internship Evening"](https://www.meetup.com/Data-Science-Melbourne/events/232889835/)

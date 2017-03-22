@@ -3,10 +3,8 @@ layout: blog
 title: "Silverpond at Compose :: Melbourne"
 author: Lyndon Maydwell
 meta: "Photos from Compose :: Melbourne, the functional programming conference we helped organise"
+image: shot.jpg
 ---
-<!-- /img/blog/compose -->
-
-![](./shot.jpg)
 
 Silverpond made an appearance at
 [Compose :: Melbourne](http://www.composeconference.org/)

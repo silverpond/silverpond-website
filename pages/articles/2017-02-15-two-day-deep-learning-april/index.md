@@ -7,11 +7,8 @@ meta: |
   show-and tell sessions where previous attendees can show of projects
   they have been working on using the deep-learning techniques we've
   taught.
+image: event.png
 ---
-<!-- /img/blog/2017-02-14-two-day-deep-learning -->
-
-![](./event.png)
-
 Silverpond have
 [scheduled our next deep-learning workshop](https://www.eventbrite.com/e/deep-learning-2-day-workshop-tickets-32036837042)
 and there is a **big change** in store! We've extended the event by adding a second-day

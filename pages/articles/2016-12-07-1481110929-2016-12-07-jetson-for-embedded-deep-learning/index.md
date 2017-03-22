@@ -5,14 +5,8 @@ author: Lyndon Maydwell
 meta: |
   The Jetson TX1 Dev-Kit Silverpond has been waiting for has arrived, and we're now ready
   to test new deep-learning models we've been developing on a low-power, small-form-factor board.
+image: jetson.jpg
 ---
-<!-- /img/blog/jetson -->
-
-<p class="attribution" style="text-align: right;">
-	<img src="./jetson.jpg" class="image fit" />
-	<em> Prior to Applying "Out-of-Bag" on the Recently Arrived Jetson TX1</em>
-</p>
-
 Silverpond has been waiting for a Jetson TX1 Dev-Kit to arrive for the
 last couple of weeks in order to test out some new deep-learning models
 that we've been developing on a lower-power, smaller-form-factor board.

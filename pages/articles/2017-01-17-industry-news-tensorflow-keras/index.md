@@ -12,4 +12,3 @@ meta: |
   and make choosing an interface much easier
   by default.
 ---
-<!-- /img/blog/keras-tensorflow -->

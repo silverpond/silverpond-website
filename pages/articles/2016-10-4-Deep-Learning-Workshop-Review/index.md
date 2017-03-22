@@ -3,11 +3,8 @@ layout: blog
 title: Deep-Learning Workshop Review
 author: Lyndon Maydwell
 meta: Impressions and photos from our inaugural deep-learning workshop.
+image: assist.png
 ---
-<!-- /img/blog/deep-workshop-review -->
-
-<img src="./assist.png" class="image fit" />
-
 Our first [deep-learning workshop](/workshops) was a long time coming.
 We ran several previews as well as spending a great deal of time developing and
 refining the workshop content. But as they say,

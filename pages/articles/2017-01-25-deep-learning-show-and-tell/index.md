@@ -7,11 +7,8 @@ meta: |
   show-and tell sessions where previous attendees can show of projects
   they have been working on using the deep-learning techniques we've
   taught.
+image: birds.png
 ---
-<!-- /img/blog/show-and-tell -->
-
-![](./birds.png)
-
 <div style="text-align: right;">
   <em>
     <a href="https://www.flickr.com/photos/eschipul/386762837/in/photolist-Abg7M-8pu1mW-avBhyk-rNaauJ-6eECAT-efvVak-5aMX1v-4Emsd8-bUbh5B-pPaQhx-4v1shB-7LpFkX-5TcA2w-pmRV9n-6QVzSt-r9V4K1-bG8PHi-pougVV-bpvrin-6gK62X-G9QvSn-7FMbYX-6QeGEz-PnCbQ-eBWbNx-5CLjvD-okSvMS-ajHhuP-s2T93f-cQdqc5-bUbgsT-3fnMg-oxLNjW-5AkgxX-58piEJ-bUbgE4-f73Khf-5FAji2-bUbgH2-73uih6-bUbgTk-6FGk1x-eSmRdt-9eXeHT-2F8ZK-apuVLw-8XBWdV-on1yn8-nrxgX6-6huG24">"Running with the Seagulls"</a>

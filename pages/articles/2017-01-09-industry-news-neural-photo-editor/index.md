@@ -12,4 +12,3 @@ meta: |
   capabilities of the interface. Will something like this appear in the next
   version of Photoshop?
 ---
-<!-- /img/blog/2017-01-industry-news -->

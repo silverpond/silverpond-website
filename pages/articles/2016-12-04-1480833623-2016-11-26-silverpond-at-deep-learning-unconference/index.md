@@ -7,14 +7,8 @@ meta: |
   to gather Melbourne's leaders and practitioners of AI and machine learning
   in order to discuss their pain-points and what might be in store
   for the future.
+image: IMG_2909.JPG
 ---
-<!-- /img/blog/ml-unconference -->
-
-<p class="attribution" style="text-align: right;">
-	<img src="./IMG_2909.JPG" class="image fit" />
-	<em>An Unkeynote at the Machine Learning Unconference</em>
-</p>
-
 Silverpond recently organised the Machine Learning Unconference intended
 to gather Melbourne's leaders and practitioners of AI and machine learning
 in order to discuss their pain-points and what might be in store
