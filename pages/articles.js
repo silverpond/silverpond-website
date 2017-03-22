@@ -27,7 +27,9 @@ const Articles = (
     route: Object,
   },
 ) => {
-  const articles = filterPagesByCategory(pages, 'articles');
+  const articles = filterPagesByCategory(pages, 'articles').filter(
+    article => !article.data.draft === true,
+  );
   const featuredArticle = findFeaturedPages(articles)[0];
   const nonFeaturedArticles = filterNot(articles, [featuredArticle]).reverse();
 
