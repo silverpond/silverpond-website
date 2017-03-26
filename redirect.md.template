@@ -1,6 +1,5 @@
 ---
-path: "{{{redirect_from}}}"
-redirect_to: "{{{redirect_to}}}"
-title: "Redirecting from {{redirect_from}} to {{redirect_to}}"
+path: "{{{redirectFrom}}}"
+redirect_to: "{{{redirectTo}}}"
+title: "Redirecting from {{redirectFrom}} to {{redirectTo}}"
 ---
-{{ &body }}

@@ -12,11 +12,10 @@ const getPostType = (path: string): string => {
 
 // Component
 const MarkdownWrapper = (props: Object) => {
-
-  if(/^redirects/.test(props.route.page.requirePath)) {
+  if (/^redirects/.test(props.route.page.requirePath)) {
     return <Redirect {...props} />;
   }
-  
+
   switch (getPostType(props.route.page.path)) {
     case 'articles':
       return <Article {...props} />;

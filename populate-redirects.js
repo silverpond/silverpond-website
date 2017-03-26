@@ -1,24 +1,20 @@
-const _ = require('lodash');
+/* eslint-disable comma-dangle */
 const fs = require('fs-extra');
 const Mustache = require('mustache');
 const hash = require('object-hash');
 
 const redirectDir = 'pages/redirects/';
-
-const REDIRECTS =
-	[ {from: "/subscribe_newsletter", to: "/"}
-	];
-
+const redirects = [{ from: '/subscribe_newsletter', to: '/' }];
 const template = fs.readFileSync('redirect.md.template', { encoding: 'utf8' });
 
 // Create event .md file
-const createRedirect = (redirect) => {
+const createRedirect = redirect => {
   fs.writeFileSync(
     `${redirectDir}redirect_${hash(redirect)}.md`,
     Mustache.render(template, {
-      redirect_from: redirect.from,
-      redirect_to: redirect.to
-	})
+      redirectFrom: redirect.from,
+      redirectTo: redirect.to,
+    }),
   );
 };
 
@@ -29,4 +25,4 @@ if (fs.existsSync(redirectDir)) {
 fs.mkdirSync(redirectDir);
 
 // Get redirects
-REDIRECTS.forEach(createRedirect);
+redirects.forEach(createRedirect);

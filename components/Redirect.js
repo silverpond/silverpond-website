@@ -7,20 +7,33 @@ import { prefixLink } from 'gatsby-helpers';
 import Helmet from 'react-helmet';
 
 // Component
-const Redirect = ({
+const Redirect = (
+  {
     route: {
-      pages,
       page: {
-        path,
-        data: { title, redirect_to },
+        data: {
+          title,
+          redirectTo,
+        },
       },
     },
-  }) => {
+  }: {
+    route: {
+      page: {
+        data: {
+          title: string,
+          redirectTo: string,
+        },
+      },
+    },
+  },
+) => {
   return (
-      <Helmet title={title}
-              meta={[{name: "refresh", content: `0; url=${redirect_to}`}]}
-              script={[{innerHTML: `window.location='${redirect_to}';`}]}
-      />
+    <Helmet
+      title={title}
+      meta={[{ name: 'refresh', content: `0; url=${redirectTo}` }]}
+      script={[{ innerHTML: `window.location='${prefixLink(redirectTo)}';` }]}
+    />
   );
 };
 
