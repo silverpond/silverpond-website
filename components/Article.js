@@ -12,7 +12,7 @@ import type { Page } from '../lib/type-defs';
 // Imports - components
 import Avatar from '../components/Avatar';
 import Header from '../components/Header';
-import Helmet from 'react-helmet';
+import PostMeta from '../components/PostMeta';
 import Section from '../components/Section';
 import SplashImage from '../components/SplashImage';
 
@@ -60,10 +60,11 @@ const Article = (
       page: {
         data: {
           author,
-          title,
-          image,
-          date,
           body,
+          date,
+          draft,
+          image,
+          title,
         },
       },
     },
@@ -73,10 +74,11 @@ const Article = (
       page: {
         data: {
           author: string,
-          title: string,
-          image: string,
-          date: string,
           body: string,
+          date: string,
+          draft?: boolean,
+          image: string,
+          title: string,
         },
       },
     },
@@ -85,7 +87,7 @@ const Article = (
   const authorDetails = getPerson(pages, author);
   return (
     <div>
-      <Helmet title={title} />
+      <PostMeta title={title} draft={draft} />
       <Header />
       <SplashImage src={prefixLink(`./${image}`)} />
       <Section size="small">

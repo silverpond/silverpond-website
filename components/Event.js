@@ -12,9 +12,9 @@ import type { Page } from '../lib/type-defs';
 import Avatar from '../components/Avatar';
 import Button from '../components/Button';
 import Header from '../components/Header';
-import Helmet from 'react-helmet';
-import Section from '../components/Section';
 import MastHeadMap from '../components/MastHeadMap';
+import PostMeta from '../components/PostMeta';
+import Section from '../components/Section';
 import TextLink from '../components/TextLink';
 
 const Head = styled.div`
@@ -78,6 +78,7 @@ const Event = (
           attendLink,
           body,
           date,
+          draft,
           hosts,
           title,
           venue,
@@ -92,6 +93,7 @@ const Event = (
           attendLink?: string,
           body: string,
           date: string,
+          draft?: boolean,
           hosts: string[],
           title: string,
           venue: {
@@ -110,7 +112,7 @@ const Event = (
   const hostRecords = getHosts(hosts, pages);
   return (
     <div>
-      <Helmet title={title} />
+      <PostMeta title={title} draft={draft} />
       <Header />
       {!!venue && <MastHeadMap lat={venue.lat} lon={venue.lon} />}
 
