@@ -26,6 +26,11 @@ const Head = styled.div`
   align-items: baseline;
   display: flex;
   margin-bottom: 3rem;
+  flex-direction: column;
+  
+  @media (min-width:768px){
+    flex-direction: inherit;
+  }
 `;
 
 const Title = styled.h3`
@@ -57,9 +62,11 @@ const PromotedContent = (
         <Title color={color}>
           {category}
         </Title>
-        <ArrowLink to={to} fancytext>
+
+          <ArrowLink to={to} fancytext>
           more {category}
         </ArrowLink>
+
       </Head>
       {children}
     </Section>

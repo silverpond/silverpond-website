@@ -15,6 +15,13 @@ type NavItemType = {
 
 const Container = styled.ul`
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  
+  @media (min-width:768px){
+    flex-direction: row;
+    width: inherit;
+  }
 `;
 
 const NavItem = styled.li`

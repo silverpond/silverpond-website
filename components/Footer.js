@@ -31,6 +31,11 @@ const Aside = styled.div`
 const Inner = styled(InnerBase)`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
+  @media (min-width:768px) {
+  flex-direction: row;
+  }
 `;
 
 const Logo = styled(LogoLink)`
@@ -130,8 +135,11 @@ const Footer = () => {
         </div>
 
         <Aside>
-          <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
-          <EmailSignupForm />
+          { /*
+            <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
+            <EmailSignupForm />
+            */
+        }
         </Aside>
 
       </Inner>

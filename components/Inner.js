@@ -14,8 +14,13 @@ const getSize = (size: Size): string => {
 };
 
 const Inner = styled.div`
+margin: 0 auto;
+width: 100%;
+
+@media(min-width:768px){
   margin: 0 auto;
   width: ${props => getSize(props.size)};
+}
 `;
 
 export default Inner;

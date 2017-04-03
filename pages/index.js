@@ -25,13 +25,13 @@ import Section from '../components/Section';
 
 // Styled components
 const Splash = styled.div`
-  align-items: center;
-  background-color: ${palette.red.base};
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 3vh);
-  min-height: 50rem;
-  padding: 2.5rem 0;
+align-items: center;
+background-color: ${palette.red.base};
+display: flex;
+flex-direction: column;
+height: calc(100vh - 3vh);
+min-height: 50rem;
+padding: 2.5rem 0;
 `;
 
 const SplashInner = styled.div`
@@ -44,17 +44,26 @@ const SplashInner = styled.div`
 
 const Logo = styled.img`
   margin-bottom: 4rem;
-  width: 1085px;
+  width: 100%;
+
+  @media(min-width: 768px){
+    margin-bottom: 4rem;
+    width: 1085px;
+  }
 `;
 
 const TagLine = styled.h2`
   ${typeStyles('h1')}
   color: white;
   font-family: georgia;
-  font-size: 4rem;
+  font-size: 2rem;
   line-height: 5rem;
   margin-bottom: 5rem;
   text-align: center;
+
+  @media(min-width: 768px){
+      ${typeStyles('h1')}
+  }
 `;
 
 const Highlight = styled.span`
@@ -129,7 +138,7 @@ const Home = (
               alt="Jono Chang having coffee."
             />
           </Col>
-          <Col span="7">
+          <Col span="7" >
             <AboutText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse enim mi, vulputate nec tincidunt quis, finibus id ex.
@@ -210,8 +219,8 @@ const Home = (
         <ClientsWrapper>
           {promotedClients.map(client => {
             return (
-              <Col key={client.data.name} span="3">
-                <img
+              <Col key={client.data.name}>
+                  <img
                   src={prefixLink(`${client.path}${client.data.image}`)}
                   alt={`${client.data.name} logo`}
                 />

@@ -21,9 +21,14 @@ const getBackgroundColor = (color: string): string => {
 };
 
 const Container = styled.div`
-  ${props => angledAccent(getBackgroundColor(props.color))}
-  background-color: ${props => getBackgroundColor(props.color)};
+${props => angledAccent(getBackgroundColor(props.color))}
+background-color: ${props => getBackgroundColor(props.color)};
+padding: 0.5rem;
+
+@media (min-width:768px){
   padding: 6rem;
+}
+
 `;
 
 const Content = styled(Inner)`
@@ -33,6 +38,10 @@ const Content = styled(Inner)`
   }
   return null;
 }}
+
+@media (min-width:768px){
+}
+
 `;
 
 // Component
