@@ -134,14 +134,14 @@ const Home = (
       </Splash>
 
       <Section>
-        <ColWrapper>
-          <Col span="5">
+        <ColWrapper sm="column">
+          <Col lg="5" sm="12">
             <AboutImage
               src={prefixLink('/images/coffee.jpg')}
               alt="Jono Chang having coffee."
             />
           </Col>
-          <Col span="7">
+          <Col lg="7" sm="12">
             <AboutText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse enim mi, vulputate nec tincidunt quis, finibus id ex.
