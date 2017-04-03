@@ -34,7 +34,15 @@ articles/2017-03-07-my-article-name/my-other-image.jpg
 `index.md` is for post content.  
 All associated images are stored in the same folder.
 
+### Drafts
+Drafts for both articles and events can be created by adding a `draft: true` flag to the frontmatter of the post you wish to be in draft mode. While in draft mode the post can be viewed by navigating directly to the post url which is derived from the post folder path, eg: `/articles/2016-10-06-balancing-spark/`
+
+The post will not appear in post indexes or in google search results.
+
 ### Article front matter
+**draft:** `true | false`  
+Whether the article is in draft mode. While in draft mode the article can be viewed by navigating directly to the article url which is derived from the article folder path, eg: `/articles/2016-10-06-balancing-spark/`, but will not appear in the article index or google search results.
+
 **featured:** `true | false`  
 Whether article is displayed on the homepage and as a featured item on `/articles/` - only the first 2 featured items will display on the homepage and only the first featured item will display on `/articles/`.
 
@@ -54,6 +62,9 @@ A short summary/introduction for the article.
 Image that will be used as a splash image for the article.  
 
 ### Event front matter
+**draft:** `true | false`  
+Whether the event is in draft mode. While in draft mode the event can be viewed by navigating directly to the event url which is derived from the event folder path, eg: `/events/2016-10-06-balancing-spark/`, but will not appear in the event index or google search results.
+
 **featured:** `true | false`  
 Whether event is displayed on the homepage and as a featured item on `/events/` - only the first 2 featured items will display on the homepage and only the first featured item will display on `/events/`.
 
