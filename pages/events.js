@@ -30,9 +30,7 @@ const Events = (
     route: Object,
   },
 ) => {
-  const events = filterPagesByCategory(pages, 'events').filter(
-    event => !event.data.draft === true,
-  );
+  const events = filterPagesByCategory(pages, 'events');
   const featuredEvent = findFeaturedPages(events)[0];
   const featuredEventHosts = getHosts(featuredEvent.data.hosts, pages);
   const nonFeaturedEvents = filterNot(events, [featuredEvent]);
