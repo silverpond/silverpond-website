@@ -1,7 +1,7 @@
 ---
 name: Lyndon Maydwell
 image: lyndon-maydwell.jpg
-role: Data Scientist + Engineer
+role: Data scientist, Software engineer
 teamMember: true
 ---
-Lyndon...he's just this guy. You know?
+

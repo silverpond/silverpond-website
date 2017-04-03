@@ -1,7 +1,7 @@
 ---
 name: Andy Kitchen
 image: andy-kitchen.jpg
-role: Data Scientist
+role: Data scientist, Software engineer
 teamMember: true
 ---
-Andy...he's just this guy. You know?
+
