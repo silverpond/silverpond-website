@@ -135,11 +135,8 @@ const Footer = () => {
         </div>
 
         <Aside>
-          { /*
             <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
             <EmailSignupForm />
-            */
-        }
         </Aside>
 
       </Inner>

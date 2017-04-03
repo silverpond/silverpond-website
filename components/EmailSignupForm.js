@@ -18,11 +18,12 @@ const Text = styled.p`
 
 const Form = styled.form`
   display: flex;
+
 `;
 
 const Input = styled.input`
   backgroundColor: ${palette.slate.light};
-  border-radius: 3px; 
+  border-radius: 3px;
   border: 0;
   color: white;
   flex-grow: 1;
@@ -55,6 +56,7 @@ const EmailSignupForm = () => {
         target="_blank"
         method="post"
       >
+       
         <Input placeholder="your.email@example.com" name="EMAIL" type="email" />
         <BotBaitField
           aria-hidden="true"
@@ -63,6 +65,7 @@ const EmailSignupForm = () => {
           tabindex="-1"
           value=""
         />
+
         <Button color="white" hasArrow>
           Sign up
         </Button>
