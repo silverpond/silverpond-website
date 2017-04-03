@@ -1,5 +1,0 @@
----
-path: "{{{redirectFrom}}}"
-redirect_to: "{{{redirectTo}}}"
-title: "Redirecting from {{redirectFrom}} to {{redirectTo}}"
----
