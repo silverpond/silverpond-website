@@ -17,6 +17,7 @@ import ArrowLink from '../components/ArrowLink';
 import ArticleSmall from '../components/ArticleSmall';
 import ArticleFeatured from '../components/ArticleFeatured';
 import EventSmall from '../components/EventSmall';
+import Helmet from '../components/Helmet';
 import IntroText from '../components/IntroText';
 import ItemList from '../components/ItemList';
 import Nav from '../components/Nav';
@@ -94,6 +95,7 @@ const Home = (
   const promotedClients = getPromotedPages(route.pages, 'clients', 4);
   return (
     <div>
+      <Helmet title="Home" />
       <Splash>
 
         <Nav

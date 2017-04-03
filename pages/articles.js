@@ -16,6 +16,7 @@ import {
 import { ColWrapper, Col } from '../components/Grid';
 import ArticleFeatured from '../components/ArticleFeatured';
 import ArticleSmall from '../components/ArticleSmall';
+import Helmet from '../components/Helmet';
 import MastHead from '../components/MastHead';
 import Section from '../components/Section';
 
@@ -33,6 +34,7 @@ const Articles = (
 
   return (
     <div>
+      <Helmet title="Articles" />
       <MastHead title="Articles" subTitle="We write lots of great articles." />
 
       <Section color="grey">

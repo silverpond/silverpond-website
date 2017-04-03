@@ -13,6 +13,7 @@ import {
 } from '../lib/utilities';
 
 import EventSmall from '../components/EventSmall';
+import Helmet from '../components/Helmet';
 import ItemList from '../components/ItemList';
 import MastHead from '../components/MastHead';
 import Section from '../components/Section';
@@ -37,6 +38,7 @@ const Events = (
 
   return (
     <div>
+      <Helmet title="Events" />
       <MastHead title="Events" subTitle="We run lots of great events" />
 
       <Section color="grey" size="medium">

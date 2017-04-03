@@ -9,10 +9,11 @@ import { textBlock } from '../lib/styles';
 import { filterPagesByCategory, imagePath } from '../lib/utilities';
 
 import Header from '../components/Header';
+import Helmet from '../components/Helmet';
 import PersonSmall from '../components/PersonSmall';
+import Section from '../components/Section';
 import SplashImage from '../components/SplashImage';
 import { ColWrapper, Col } from '../components/Grid';
-import Section from '../components/Section';
 
 const Title = styled.h2`
   ${typeStyles('h1')}
@@ -51,6 +52,7 @@ const About = (
   );
   return (
     <div>
+      <Helmet title="About" />
       <Header />
       <SplashImage src="/images/team.jpg" />
       <Section size="small">

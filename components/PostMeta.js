@@ -1,9 +1,10 @@
 // @flow
 // Imports - config
 import React from 'react';
-import Helmet from 'react-helmet';
+import Helmet from '../components/Helmet';
+import type MetaTag from '../lib/type-defs';
 
-const robotsMeta = draft => {
+const robotsMeta = (draft?: boolean): MetaTag => {
   if (draft) {
     return { name: 'robots', content: 'noindex, nofollow' };
   }

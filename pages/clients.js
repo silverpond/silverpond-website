@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { filterPagesByCategory, imagePath } from '../lib/utilities';
 
 import Client from '../components/Client';
+import Helmet from '../components/Helmet';
 import IntroText from '../components/IntroText';
 import ItemList from '../components/ItemList';
 import MastHead from '../components/MastHead';
@@ -27,6 +28,7 @@ const Clients = (
   const clients = filterPagesByCategory(pages, 'clients');
   return (
     <div>
+      <Helmet title="Clients" />
       <MastHead title="Clients" subTitle="We have lots of great clients" />
 
       <Section size="medium">

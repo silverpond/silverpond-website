@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Helmet from '../components/Helmet';
 import InfoSection from '../components/InfoSection';
 import IntroText from '../components/IntroText';
 import MastHead from '../components/MastHead';
@@ -18,6 +19,7 @@ const Intro = styled(IntroText)`
 const DeepLearning = () => {
   return (
     <div>
+      <Helmet title="Deep Learning" />
       <MastHead title="Deep learning" subTitle="All about our deep learning" />
 
       <Section>
