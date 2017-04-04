@@ -92,8 +92,7 @@ const SocialLink = styled.a`
 const Footer = () => {
   return (
     <Container id="footer">
-      { /* <Inner>
-
+      <Inner>
         <div>
           <Logo to={prefixLink('/')} onDark />
           <Address>
@@ -134,12 +133,12 @@ const Footer = () => {
           </SocialLinks>
         </div>
 
-        <Aside>
+        { /* <Aside>
             <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
             <EmailSignupForm />
-        </Aside>
+        </Aside> */ }
 
-      </Inner> */}
+      </Inner>
     </Container>
   );
 };

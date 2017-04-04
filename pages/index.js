@@ -157,6 +157,7 @@ const Home = (
           </Col>
         </ColWrapper>
       </Section>
+
       <Section color="grey">
         <ArticleFeatured
           to={prefixLink(promotedCaseStudy.path)}
@@ -192,13 +193,13 @@ const Home = (
       </PromotedContent>
 
       <PromotedContent category="articles" to="/articles/" color="grey">
-        <ColWrapper xs="column">
+        <ColWrapper xs="column" sm="column">
           {promotedArticles.map(article => {
             return (
               <ArticleCol
                 key={article.data.title}
                 xs="12"
-                sm="6"
+                sm="12"
                 md="6"
                 lg="6"
                 style={{ display: 'flex' }}
@@ -222,7 +223,7 @@ const Home = (
         <ClientsWrapper xs="column" sm="column">
           {promotedClients.map(client => {
             return (
-              <Col key={client.data.name} xs="12" sm="12" md="3" lg="3">
+              <Col key={client.data.name} xs="12" sm="3" md="3" >
                   <img
                   src={prefixLink(`${client.path}${client.data.image}`)}
                   alt={`${client.data.name} logo`}

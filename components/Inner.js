@@ -14,10 +14,15 @@ const getSize = (size: Size): string => {
 };
 
 const Inner = styled.div`
-margin: 0 auto;
-width: ${props => getSize(props.size)};
-
- ${ media.extrasmall`
+  margin: 0 auto;
+  width: ${props => getSize(props.size)};
+  ${ media.extrasmall`
+   width: 100%;
+  `}
+  ${ media.small`
+   width: 100%;
+  `}
+  ${ media.medium`
    width: 100%;
   `}
 `;
