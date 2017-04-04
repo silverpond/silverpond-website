@@ -127,7 +127,7 @@ const Home = (
         <ColWrapper>
           <Col span="5">
             <AboutImage
-              src={prefixLink('/images/coffee.png')}
+              src={prefixLink('/images/coffee.jpg')}
               alt="Jono Chang having coffee."
             />
           </Col>
