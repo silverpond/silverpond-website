@@ -47,6 +47,12 @@ const Logo = styled.img`
   margin-bottom: 4rem;
   width: 1085px;
   ${ media.extrasmall`
+    width: 70%;
+  `}
+  ${ media.small`
+    width: 100%;
+  `}
+  ${ media.medium`
     width: 100%;
   `}
 `;
