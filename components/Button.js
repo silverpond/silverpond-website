@@ -2,10 +2,12 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { palette, type, typeStyles } from '../lib/settings';
+import { palette, type, typeStyles } from 'lib/settings';
+import { absoluteCenter } from 'lib/styles';
 
-import AdaptiveLink from '../components/AdaptiveLink';
-import ArrowIcon from '../components/ArrowIcon';
+import AdaptiveLink from 'components/AdaptiveLink';
+import ArrowIcon from 'components/ArrowIcon';
+import Loader from 'halogen/BounceLoader';
 
 type Color = 'blue' | 'white';
 type Size = 'small' | 'medium' | 'large';
@@ -22,6 +24,13 @@ const ColorStyles = (color: Color): string => {
     case 'blue':
       return `
         background: ${palette.blue.base};
+        color: white;
+        fill: white;
+        font-weight: ${type.weights.medium};
+      `;
+    case 'grey':
+      return `
+        background: ${palette.grey.base};
         color: white;
         fill: white;
         font-weight: ${type.weights.medium};
@@ -60,17 +69,17 @@ const sizeStyles = (size: Size): string => {
   }
 };
 
-const styles = (props: Object): string => {
+export const styles = (props: Object): string => {
   return `
-  ${ColorStyles(props.color)}
-  ${sizeStyles(props.size)}
-  border-radius: 3px;
-  border: none;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
-  cursor: pointer;
-  display: inline-block;
-  min-width: 8rem;
-  text-align: center;
+    ${ColorStyles(props.color)}
+    ${sizeStyles(props.size)}
+    border-radius: 3px;
+    border: none;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    display: inline-block;
+    min-width: 8rem;
+    text-align: center;
   `;
 };
 
@@ -82,21 +91,38 @@ const Link = styled(AdaptiveLink)`
   ${styles}
 `;
 
+const Inner = styled.div`
+  position: relative;
+
+  & > span {
+    visibility: ${props => props.isLoading ? 'hidden' : 'visible'};
+  }
+
+  & > div {
+    ${absoluteCenter}
+    visibility: ${props => props.isLoading ? 'visible' : 'hidden'};
+  }
+`;
+
 // Component
 const Component = (
   props: {
     children?: React.Element<any>,
-    to?: string,
     hasArrow?: boolean,
+    isLoading?: boolean,
     size?: string,
+    to?: string,
   },
 ) => {
-  const { hasArrow, children, ...rest } = props;
+  const { hasArrow, children, isLoading, ...rest } = props;
   const buttonContent = (
-    <span>
-      {children}
-      {hasArrow && <ArrowIcon style={{ marginLeft: '1rem' }} />}
-    </span>
+    <Inner isLoading={isLoading}>
+      <span>
+        {children}
+        {hasArrow && <ArrowIcon style={{ marginLeft: '1rem' }} />}
+      </span>
+      <Loader color="white" size="2rem" />
+    </Inner>
   );
   if (props.to) {
     return <Link {...rest}>{buttonContent}</Link>;
