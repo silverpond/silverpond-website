@@ -17,7 +17,7 @@ const Inner = styled.div`
 margin: 0 auto;
 width: ${props => getSize(props.size)};
 
- ${ media.handheld`
+ ${ media.extrasmall`
    width: 100%;
   `}
 `;

@@ -28,7 +28,7 @@ const Head = styled.div`
   display: flex;
   margin-bottom: 3rem;
 
-  ${ media.handheld`
+  ${ media.extrasmall`
     flex-direction: column;
   `}
 `;
@@ -40,6 +40,10 @@ const Title = styled.h3`
   line-height: 7rem;
   margin: 0 2rem 0 -6rem;
   text-transform: uppercase;
+  ${ media.extrasmall`
+    font-size: 5rem;
+    margin: 0 2rem 0 0;
+  `}
 `;
 
 // Component

@@ -16,7 +16,7 @@ type NavItemType = {
 
 const Container = styled.ul`
   display: flex;
- ${ media.handheld`
+ ${ media.extrasmall`
      flex-direction: column;
      width: 100%;
   `}

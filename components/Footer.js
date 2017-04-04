@@ -33,7 +33,7 @@ const Inner = styled(InnerBase)`
   display: flex;
   justify-content: space-between;
 
-  ${ media.handheld`
+  ${ media.extrasmall`
     flex-direction: column;
   `}
 `;
@@ -92,7 +92,7 @@ const SocialLink = styled.a`
 const Footer = () => {
   return (
     <Container id="footer">
-      <Inner>
+      { /* <Inner>
 
         <div>
           <Logo to={prefixLink('/')} onDark />
@@ -139,7 +139,7 @@ const Footer = () => {
             <EmailSignupForm />
         </Aside>
 
-      </Inner>
+      </Inner> */}
     </Container>
   );
 };

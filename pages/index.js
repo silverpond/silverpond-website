@@ -46,7 +46,7 @@ const SplashInner = styled.div`
 const Logo = styled.img`
   margin-bottom: 4rem;
   width: 1085px;
-  ${ media.handheld`
+  ${ media.extrasmall`
     width: 100%;
   `}
 `;
@@ -126,14 +126,14 @@ const Home = (
       </Splash>
 
       <Section>
-        <ColWrapper>
-          <Col span="5">
+        <ColWrapper xs="column">
+          <Col xs="12" sm="6" md="6" lg="6">
             <AboutImage
               src={prefixLink('/images/coffee.png')}
               alt="Jono Chang having coffee."
             />
           </Col>
-          <Col span="7" >
+          <Col xs="12" sm="6" md="6" lg="6">
             <AboutText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse enim mi, vulputate nec tincidunt quis, finibus id ex.
@@ -151,7 +151,6 @@ const Home = (
           </Col>
         </ColWrapper>
       </Section>
-
       <Section color="grey">
         <ArticleFeatured
           to={prefixLink(promotedCaseStudy.path)}
@@ -187,12 +186,15 @@ const Home = (
       </PromotedContent>
 
       <PromotedContent category="articles" to="/articles/" color="grey">
-        <ColWrapper>
+        <ColWrapper xs="column">
           {promotedArticles.map(article => {
             return (
               <ArticleCol
                 key={article.data.title}
-                span="6"
+                xs="12"
+                sm="6"
+                md="6"
+                lg="6"
                 style={{ display: 'flex' }}
               >
                 <ArticleSmall
@@ -211,10 +213,10 @@ const Home = (
       </PromotedContent>
 
       <PromotedContent category="clients" to="/clients/">
-        <ClientsWrapper>
+        <ClientsWrapper xs="column" sm="column">
           {promotedClients.map(client => {
             return (
-              <Col key={client.data.name}>
+              <Col key={client.data.name} xs="12" sm="12" md="3" lg="3">
                   <img
                   src={prefixLink(`${client.path}${client.data.image}`)}
                   alt={`${client.data.name} logo`}
@@ -224,6 +226,8 @@ const Home = (
           })}
         </ClientsWrapper>
       </PromotedContent>
+
+
 
     </div>
   );

@@ -7,7 +7,7 @@ import { media } from '../lib/style-utils';
 const Container = styled.div`
   display: flex;
 
- ${ media.handheld`
+ ${ media.extrasmall`
      flex-direction: column;
   `}
 `;

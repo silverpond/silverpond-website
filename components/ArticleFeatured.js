@@ -45,8 +45,8 @@ const CaseStudySmall = (
 ) => {
   return (
     <div>
-      <ColWrapper>
-        <Col span="6">
+      <ColWrapper xs="column">
+        <Col xs="12" sm="6" md="6" lg="6">
           <Tag>
             {tag}
           </Tag>
@@ -60,7 +60,7 @@ const CaseStudySmall = (
             Find out more
           </ArrowLink>
         </Col>
-        <Col span="6">
+        <Col xs="12" sm="6" md="6" lg="6">
           <Image src={image} />
         </Col>
       </ColWrapper>

@@ -22,12 +22,13 @@ const getBackgroundColor = (color: string): string => {
 };
 
 const Container = styled.div`
-${props => angledAccent(getBackgroundColor(props.color))}
+${props => angledAccent(getBackgroundColor(props.color))};
 background-color: ${props => getBackgroundColor(props.color)};
 padding: 6rem;
-${ media.handheld`
+${ media.extrasmall`
   padding: 0.5rem;
 `}
+
 `;
 
 const Content = styled(Inner)`
