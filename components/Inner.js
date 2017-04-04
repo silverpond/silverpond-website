@@ -15,10 +15,10 @@ const getSize = (size: Size): string => {
 
 const Inner = styled.div`
 margin: 0 auto;
-width: 100%;
- ${ media.desktop`
-   margin: 0 auto;
-   width: ${props => getSize(props.size)};
+width: ${props => getSize(props.size)};
+
+ ${ media.handheld`
+   width: 100%;
   `}
 `;
 

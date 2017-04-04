@@ -32,9 +32,9 @@ const Aside = styled.div`
 const Inner = styled(InnerBase)`
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-  ${ media.desktop`
-    flex-direction: row;
+
+  ${ media.handheld`
+    flex-direction: column;
   `}
 `;
 

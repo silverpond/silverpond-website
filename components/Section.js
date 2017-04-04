@@ -24,9 +24,9 @@ const getBackgroundColor = (color: string): string => {
 const Container = styled.div`
 ${props => angledAccent(getBackgroundColor(props.color))}
 background-color: ${props => getBackgroundColor(props.color)};
-padding: 0.5rem;
-${ media.desktop`
-  padding: 6rem;
+padding: 6rem;
+${ media.handheld`
+  padding: 0.5rem;
 `}
 `;
 

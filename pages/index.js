@@ -45,10 +45,9 @@ const SplashInner = styled.div`
 
 const Logo = styled.img`
   margin-bottom: 4rem;
-  width: 100%;
-  ${ media.desktop`
-    margin-bottom: 4rem;
-    width: 1085px;
+  width: 1085px;
+  ${ media.handheld`
+    width: 100%;
   `}
 `;
 
@@ -60,9 +59,6 @@ const TagLine = styled.h2`
   line-height: 5rem;
   margin-bottom: 5rem;
   text-align: center;
-  ${media.desktop`
-    ${typeStyles('h1')}
-  `}
 `;
 
 const Highlight = styled.span`

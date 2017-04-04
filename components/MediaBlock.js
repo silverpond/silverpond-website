@@ -6,9 +6,9 @@ import { media } from '../lib/style-utils';
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
- ${ media.desktop`
-   flex-direction: row;
+
+ ${ media.handheld`
+     flex-direction: column;
   `}
 `;
 

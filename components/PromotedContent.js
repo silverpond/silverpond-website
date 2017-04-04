@@ -27,9 +27,9 @@ const Head = styled.div`
   align-items: baseline;
   display: flex;
   margin-bottom: 3rem;
-  flex-direction: column;
-  ${ media.desktop`
-    flex-direction: inherit;
+
+  ${ media.handheld`
+    flex-direction: column;
   `}
 `;
 

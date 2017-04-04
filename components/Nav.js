@@ -16,11 +16,9 @@ type NavItemType = {
 
 const Container = styled.ul`
   display: flex;
-  flex-direction: column;
-  width: 100%;
- ${ media.desktop`
-   flex-direction: row;
-   width: inherit;
+ ${ media.handheld`
+     flex-direction: column;
+     width: 100%;
   `}
 `;
 
