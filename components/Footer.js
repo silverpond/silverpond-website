@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
 import { palette, type, typeStyles } from '../lib/settings';
+import { media } from '../lib/style-utils';
 
 import EmailSignupForm from '../components/EmailSignupForm';
 import InnerBase from '../components/Inner';
@@ -32,10 +33,9 @@ const Inner = styled(InnerBase)`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-
-  @media (min-width:768px) {
-  flex-direction: row;
-  }
+  ${ media.desktop`
+    flex-direction: row;
+  `}
 `;
 
 const Logo = styled(LogoLink)`

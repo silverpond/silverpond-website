@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { palette, typeStyles } from '../lib/settings';
+import { media } from '../lib/style-utils';
 import { prefixLink } from 'gatsby-helpers';
 import {
   calcReadTime,
@@ -45,11 +46,10 @@ const SplashInner = styled.div`
 const Logo = styled.img`
   margin-bottom: 4rem;
   width: 100%;
-
-  @media(min-width: 768px){
+  ${ media.desktop`
     margin-bottom: 4rem;
     width: 1085px;
-  }
+  `}
 `;
 
 const TagLine = styled.h2`
@@ -60,10 +60,9 @@ const TagLine = styled.h2`
   line-height: 5rem;
   margin-bottom: 5rem;
   text-align: center;
-
-  @media(min-width: 768px){
-      ${typeStyles('h1')}
-  }
+  ${media.desktop`
+    ${typeStyles('h1')}
+  `}
 `;
 
 const Highlight = styled.span`

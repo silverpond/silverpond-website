@@ -1,7 +1,7 @@
 // @flow
 /* eslint-disable no-mixed-operators */
 import styled from 'styled-components';
-
+import { media } from '../lib/style-utils';
 const spacing = '5rem';
 
 
@@ -10,10 +10,9 @@ export const ColWrapper = styled.div`
   flex-direction: ${({ reversed }) => reversed ? 'row-reverse' : 'row'}
   margin-left: -${spacing}
   flex-direction: column;
-
-  @media (min-width:768px){
+  ${ media.desktop`
     flex-direction: row;
-  }
+  `}
 `;
 
 // export const Col = styled.div`

@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { palette, type } from '../lib/settings';
+import { media } from '../lib/style-utils';
 
 // Imports - components
 import Section from '../components/Section';
@@ -27,10 +28,9 @@ const Head = styled.div`
   display: flex;
   margin-bottom: 3rem;
   flex-direction: column;
-  
-  @media (min-width:768px){
+  ${ media.desktop`
     flex-direction: inherit;
-  }
+  `}
 `;
 
 const Title = styled.h3`

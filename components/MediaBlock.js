@@ -2,14 +2,14 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
+import { media } from '../lib/style-utils';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  
-  @media (min-width: 768px){
-    flex-direction: row;
-  }
+ ${ media.desktop`
+   flex-direction: row;
+  `}
 `;
 
 const Aside = styled.div`
