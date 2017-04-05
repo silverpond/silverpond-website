@@ -9,20 +9,21 @@ import {
   getPerson,
   getPromotedPages,
   imagePath,
-} from '../lib/utilities';
+} from 'lib/utilities';
 
 // Imports - components
-import { ColWrapper, Col } from '../components/Grid';
-import ArrowLink from '../components/ArrowLink';
-import ArticleSmall from '../components/ArticleSmall';
-import ArticleFeatured from '../components/ArticleFeatured';
-import EventSmall from '../components/EventSmall';
-import Helmet from '../components/Helmet';
-import IntroText from '../components/IntroText';
-import ItemList from '../components/ItemList';
-import Nav from '../components/Nav';
-import PromotedContent from '../components/PromotedContent';
-import Section from '../components/Section';
+import { ColWrapper, Col } from 'components/Grid';
+import ArrowLink from 'components/ArrowLink';
+import ArticleSmall from 'components/ArticleSmall';
+import ArticleFeatured from 'components/ArticleFeatured';
+import EventSmall from 'components/EventSmall';
+import Helmet from 'components/Helmet';
+import IntroText from 'components/IntroText';
+import ItemList from 'components/ItemList';
+import Nav from 'components/Nav';
+import PromotedContent from 'components/PromotedContent';
+import Section from 'components/Section';
+import Logo from 'components/Logo';
 
 // Styled components
 const Splash = styled.div`
