@@ -44,11 +44,6 @@ const SplashInner = styled.div`
   justify-content: center;
 `;
 
-const Logo = styled.img`
-  margin-bottom: 4rem;
-  width: 1085px;
-`;
-
 const TagLine = styled.h2`
   ${typeStyles('h1')}
   color: white;
@@ -108,7 +103,7 @@ const Home = (
         />
 
         <SplashInner>
-          <Logo src={prefixLink('images/silverpond-logo.svg')} />
+          <Logo style={{ marginBottom: '4rem' }} />
           <TagLine>
             A team of technical leaders specialising in
             <br />
