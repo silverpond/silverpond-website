@@ -32,7 +32,7 @@ display: flex;
 flex-direction: column;
 height: calc(100vh - 3vh);
 min-height: 50rem;
-padding: 2.5rem 0;
+padding: 2.5rem 1rem;
 `;
 
 const SplashInner = styled.div`
@@ -90,7 +90,7 @@ const AboutImage = styled.img`
 
 const ArticleCol = styled(Col)`
   display: flex;
-  margin-bottom: 2.5rem; 
+  margin-bottom: 2.5rem;
 `;
 
 const ClientsWrapper = styled(ColWrapper)`

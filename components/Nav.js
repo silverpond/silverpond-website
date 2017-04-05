@@ -13,12 +13,14 @@ type NavItemType = {
   link?: string,
   options?: Object,
 };
-
+//TODO: Fix the ul for responsive xs and sm sizes. for now just display none (add a sandwich menu)
 const Container = styled.ul`
   display: flex;
  ${ media.extrasmall`
-     flex-direction: column;
-     width: 100%;
+    display: none;
+  `}
+ ${ media.small`
+    display: none;
   `}
 `;
 
@@ -34,6 +36,11 @@ const NavItem = styled.li`
   &:last-child {
     margin-right: 0;
   }
+
+  ${ media.extrasmall`
+
+   `}
+
 `;
 
 // Component
