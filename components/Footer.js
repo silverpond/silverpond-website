@@ -21,6 +21,15 @@ const Container = styled.div`
   background-color: ${palette.slate.base};
   color: white;
   padding: 4rem 0 6rem;
+  ${media.extrasmall`
+    padding: 4rem 1rem 6rem;
+    `}
+  ${media.small`
+    padding: 4rem 2rem 6rem;
+    `}
+  ${media.medium`
+    padding: 4rem 2rem 6rem;
+    `}
 `;
 
 const Aside = styled.div`
@@ -32,7 +41,6 @@ const Aside = styled.div`
 const Inner = styled(InnerBase)`
   display: flex;
   justify-content: space-between;
-
   ${ media.extrasmall`
     flex-direction: column;
   `}
@@ -133,10 +141,10 @@ const Footer = () => {
           </SocialLinks>
         </div>
 
-        { /* <Aside>
+        <Aside>
             <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
             <EmailSignupForm />
-        </Aside> */ }
+        </Aside>
 
       </Inner>
     </Container>

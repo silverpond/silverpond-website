@@ -4,6 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { palette } from '../lib/settings';
+import { media } from '../lib/style-utils';
 
 import Button from '../components/Button';
 
@@ -18,7 +19,9 @@ const Text = styled.p`
 
 const Form = styled.form`
   display: flex;
-
+${media.extrasmall`
+  flex-direction: column;
+`}
 `;
 
 const Input = styled.input`
@@ -33,6 +36,12 @@ const Input = styled.input`
   &::-webkit-input-placeholder {
   color: white;
   }
+
+  ${media.extrasmall`
+    padding: 1rem;
+    margin-bottom: 3rem;
+    margin-right: 0;
+  `}
 `;
 
 const BotBaitField = styled.input`
@@ -56,7 +65,7 @@ const EmailSignupForm = () => {
         target="_blank"
         method="post"
       >
-       
+
         <Input placeholder="your.email@example.com" name="EMAIL" type="email" />
         <BotBaitField
           aria-hidden="true"
