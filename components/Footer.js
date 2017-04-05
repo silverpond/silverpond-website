@@ -16,10 +16,12 @@ const iconUrl = icon => {
   return prefixLink(url);
 };
 
+// relative position to cover overflow from fixed MastHead element
 const Container = styled.div`
   background-color: ${palette.slate.base};
   color: white;
   padding: 4rem 0 6rem;
+  position: relative;
 `;
 
 const Aside = styled.div`
