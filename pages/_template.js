@@ -7,12 +7,14 @@ import Footer from '../components/Footer';
 
 import 'normalize.css';
 
-const Header = styled.div`
-  display: none;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const MainContent = styled.div`
+  flex-grow: 1;
 `;
 
 // Component
@@ -24,15 +26,12 @@ const Template = (
   },
 ) => {
   return (
-    <div>
-      <Header>
-        header
-      </Header>
-      <div>
+    <Container>
+      <MainContent>
         {children}
-      </div>
+      </MainContent>
       <Footer />
-    </div>
+    </Container>
   );
 };
 
