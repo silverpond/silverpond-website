@@ -28,6 +28,7 @@ export const ColWrapper = styled.div`
 export const Col = styled.div`
   padding-left: ${spacing};
   width: ${props => calcSpanPercentage(props.lg)};
+  // outline: 1px dashed #CCC;
 
   ${ media.extrasmall`
       width: ${props => calcSpanPercentage(props.xs)};

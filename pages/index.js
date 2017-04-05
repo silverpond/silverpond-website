@@ -73,15 +73,24 @@ const Highlight = styled.span`
 
 const AboutText = styled(IntroText)`
   margin-bottom: 2rem;
+  ${ media.extrasmall`
+    margin-top: 0.5rem;
+  `}
 `;
 
 const AboutImage = styled.img`
   margin-left: -6rem;
   width: calc(100% + 6rem);
+  ${ media.extrasmall`
+    margin: 0.5rem auto;
+    width: 100%;
+    display: flex;
+  `}
 `;
 
 const ArticleCol = styled(Col)`
   display: flex;
+  margin-bottom: 2.5rem; 
 `;
 
 const ClientsWrapper = styled(ColWrapper)`
@@ -105,7 +114,6 @@ const Home = (
   return (
     <div>
       <Splash>
-
         <Nav
           style={{
             flexShrink: 0,
@@ -113,7 +121,6 @@ const Home = (
           }}
           white
         />
-
         <SplashInner>
           <Logo src={prefixLink('images/silverpond-logo.svg')} />
           <TagLine>

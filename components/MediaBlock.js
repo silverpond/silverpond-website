@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
 
  ${ media.extrasmall`
-     flex-direction: column;
+     flex-direction: column-reverse;
   `}
 `;
 
@@ -16,6 +16,11 @@ const Aside = styled.div`
   flex-shrink: 0;
   margin-right: 4rem;
   width: 180px;
+  ${ media.extrasmall`
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 0;
+  `}
 `;
 
 const Main = styled.div`

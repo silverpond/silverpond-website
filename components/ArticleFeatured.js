@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import string from 'string';
 import { typeStyles } from '../lib/settings';
+import { media } from '../lib/style-utils';
 
 // Components
 import { ColWrapper, Col } from '../components/Grid';
@@ -21,10 +22,16 @@ const Image = styled.img`
   max-height: 25rem;
   object-fit: cover;
   width: 100%;
+  ${ media.extrasmall`
+    display: none;
+    `}
 `;
 
 const Tag = styled(TagBase)`
   margin-bottom: 1.5rem;
+  ${ media.extrasmall`
+    margin-top: 1.5rem;
+  `}
 `;
 
 // Component

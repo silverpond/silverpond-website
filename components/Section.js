@@ -26,7 +26,8 @@ ${props => angledAccent(getBackgroundColor(props.color))};
 background-color: ${props => getBackgroundColor(props.color)};
 padding: 6rem;
 ${ media.extrasmall`
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0 0.5rem ;
+
 `}
 
 `;

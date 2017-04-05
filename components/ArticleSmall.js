@@ -6,7 +6,6 @@ import dateformat from 'dateformat';
 import string from 'string';
 import { typeStyles, type } from '../lib/settings';
 import { imagePath } from '../lib/utilities';
-import { media } from '../lib/style-utils';
 
 // Imports - components
 import { Link } from 'react-router';
@@ -16,7 +15,7 @@ import Avatar from '../components/Avatar';
 const Container = styled(Link)`
   display: flex;
   flex-direction: column;
-`;
+  `;
 
 const Head = styled.div`
   align-items: center;
