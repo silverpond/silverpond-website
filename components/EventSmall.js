@@ -6,6 +6,7 @@ import dateformat from 'dateformat';
 import string from 'string';
 import { palette, type, typeStyles } from '../lib/settings';
 import { mapLink, imagePath } from '../lib/utilities';
+import { media } from '../lib/style-utils';
 
 import { Link } from 'react-router';
 import Avatar from '../components/Avatar';
@@ -19,6 +20,9 @@ const Date = styled.h4`
   font-weight: ${type.weights.bold};
   line-height: 4.5rem;
   white-space: nowrap;
+  ${ media.extrasmall`
+    font-size: 2rem;
+  `}
 `;
 
 const Time = styled.p`

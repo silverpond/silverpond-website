@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { linkUnderline } from '../lib/styles';
+import { media } from '../lib/style-utils';
 
 import { Link } from 'react-router';
 import ArrowIcon from '../components/ArrowIcon';
@@ -16,6 +17,13 @@ const FancyText = styled.span`
   font-family: georgia;
   font-style: italic;
   margin-right: 2rem;
+`;
+
+const ArrowIconWrapper = styled.span`
+  ${ media.extrasmall`
+    display: flex;
+    padding-bottom: 2rem;
+  `}
 `;
 
 // Component
@@ -36,7 +44,9 @@ const ArrowLink = (
       {fancytext
         ? <FancyText>{children}</FancyText>
         : <LinkText>{children}</LinkText>}
-      <ArrowIcon />
+        <ArrowIconWrapper>
+          <ArrowIcon />
+        </ArrowIconWrapper>
     </Link>
   );
 };

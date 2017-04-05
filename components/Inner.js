@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { media } from '../lib/style-utils';
 type Size = 'medium';
 
 const getSize = (size: Size): string => {
@@ -16,6 +16,15 @@ const getSize = (size: Size): string => {
 const Inner = styled.div`
   margin: 0 auto;
   width: ${props => getSize(props.size)};
+  ${ media.extrasmall`
+   width: 100%;
+  `}
+  ${ media.small`
+   width: 100%;
+  `}
+  ${ media.medium`
+   width: 100%;
+  `}
 `;
 
 export default Inner;

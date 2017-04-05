@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import { type } from '../lib/settings';
+import { media } from '../lib/style-utils';
 
 type NavItemType = {
   name: string,
@@ -15,6 +16,10 @@ type NavItemType = {
 
 const Container = styled.ul`
   display: flex;
+ ${ media.extrasmall`
+     flex-direction: column;
+     width: 100%;
+  `}
 `;
 
 const NavItem = styled.li`

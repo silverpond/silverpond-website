@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { palette, typeStyles } from '../lib/settings';
+import { media } from '../lib/style-utils';
 import { prefixLink } from 'gatsby-helpers';
 import {
   calcReadTime,
@@ -26,13 +27,13 @@ import Section from '../components/Section';
 
 // Styled components
 const Splash = styled.div`
-  align-items: center;
-  background-color: ${palette.red.base};
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 3vh);
-  min-height: 50rem;
-  padding: 2.5rem 0;
+align-items: center;
+background-color: ${palette.red.base};
+display: flex;
+flex-direction: column;
+height: calc(100vh - 3vh);
+min-height: 50rem;
+padding: 2.5rem 0;
 `;
 
 const SplashInner = styled.div`
@@ -46,13 +47,22 @@ const SplashInner = styled.div`
 const Logo = styled.img`
   margin-bottom: 4rem;
   width: 1085px;
+  ${ media.extrasmall`
+    width: 70%;
+  `}
+  ${ media.small`
+    width: 100%;
+  `}
+  ${ media.medium`
+    width: 100%;
+  `}
 `;
 
 const TagLine = styled.h2`
   ${typeStyles('h1')}
   color: white;
   font-family: georgia;
-  font-size: 4rem;
+  font-size: 2rem;
   line-height: 5rem;
   margin-bottom: 5rem;
   text-align: center;
@@ -64,15 +74,24 @@ const Highlight = styled.span`
 
 const AboutText = styled(IntroText)`
   margin-bottom: 2rem;
+  ${ media.extrasmall`
+    margin-top: 0.5rem;
+  `}
 `;
 
 const AboutImage = styled.img`
   margin-left: -6rem;
   width: calc(100% + 6rem);
+  ${ media.extrasmall`
+    margin: 0.5rem auto;
+    width: 100%;
+    display: flex;
+  `}
 `;
 
 const ArticleCol = styled(Col)`
   display: flex;
+  margin-bottom: 2.5rem; 
 `;
 
 const ClientsWrapper = styled(ColWrapper)`
@@ -97,7 +116,6 @@ const Home = (
     <div>
       <Helmet title="Home" />
       <Splash>
-
         <Nav
           style={{
             flexShrink: 0,
@@ -105,7 +123,6 @@ const Home = (
           }}
           white
         />
-
         <SplashInner>
           <Logo src={prefixLink('images/silverpond-logo.svg')} />
           <TagLine>
@@ -124,14 +141,14 @@ const Home = (
       </Splash>
 
       <Section>
-        <ColWrapper>
-          <Col span="5">
+        <ColWrapper xs="column">
+          <Col xs="12" sm="6" md="6" lg="6">
             <AboutImage
               src={prefixLink('/images/coffee.jpg')}
               alt="Jono Chang having coffee."
             />
           </Col>
-          <Col span="7">
+          <Col xs="12" sm="6" md="6" lg="6">
             <AboutText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse enim mi, vulputate nec tincidunt quis, finibus id ex.
@@ -185,12 +202,15 @@ const Home = (
       </PromotedContent>
 
       <PromotedContent category="articles" to="/articles/" color="grey">
-        <ColWrapper>
+        <ColWrapper xs="column" sm="column">
           {promotedArticles.map(article => {
             return (
               <ArticleCol
                 key={article.data.title}
-                span="6"
+                xs="12"
+                sm="12"
+                md="6"
+                lg="6"
                 style={{ display: 'flex' }}
               >
                 <ArticleSmall
@@ -209,11 +229,11 @@ const Home = (
       </PromotedContent>
 
       <PromotedContent category="clients" to="/clients/">
-        <ClientsWrapper>
+        <ClientsWrapper xs="column" sm="column">
           {promotedClients.map(client => {
             return (
-              <Col key={client.data.name} span="3">
-                <img
+              <Col key={client.data.name} xs="12" sm="3" md="3" >
+                  <img
                   src={prefixLink(`${client.path}${client.data.image}`)}
                   alt={`${client.data.name} logo`}
                 />
@@ -222,6 +242,8 @@ const Home = (
           })}
         </ClientsWrapper>
       </PromotedContent>
+
+
 
     </div>
   );

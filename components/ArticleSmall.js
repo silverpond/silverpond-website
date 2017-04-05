@@ -15,7 +15,7 @@ import Avatar from '../components/Avatar';
 const Container = styled(Link)`
   display: flex;
   flex-direction: column;
-`;
+  `;
 
 const Head = styled.div`
   align-items: center;

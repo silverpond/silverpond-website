@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { palette, type } from '../lib/settings';
+import { media } from '../lib/style-utils';
 
 // Imports - components
 import Section from '../components/Section';
@@ -26,6 +27,10 @@ const Head = styled.div`
   align-items: baseline;
   display: flex;
   margin-bottom: 3rem;
+
+  ${ media.extrasmall`
+    flex-direction: column;
+  `}
 `;
 
 const Title = styled.h3`
@@ -35,6 +40,10 @@ const Title = styled.h3`
   line-height: 7rem;
   margin: 0 2rem 0 -6rem;
   text-transform: uppercase;
+  ${ media.extrasmall`
+    font-size: 5rem;
+    margin: 0 2rem 0 0;
+  `}
 `;
 
 // Component
@@ -57,9 +66,11 @@ const PromotedContent = (
         <Title color={color}>
           {category}
         </Title>
-        <ArrowLink to={to} fancytext>
+
+          <ArrowLink to={to} fancytext>
           more {category}
         </ArrowLink>
+
       </Head>
       {children}
     </Section>

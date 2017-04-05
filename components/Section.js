@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { palette } from '../lib/settings';
 import { centerContent, angledAccent } from '../lib/styles';
 import type { SectionColor, SectionSize } from '../lib/type-defs';
+import { media } from '../lib/style-utils';
 
 // Imports - components
 import Inner from '../components/Inner';
@@ -21,9 +22,14 @@ const getBackgroundColor = (color: string): string => {
 };
 
 const Container = styled.div`
-  ${props => angledAccent(getBackgroundColor(props.color))}
-  background-color: ${props => getBackgroundColor(props.color)};
-  padding: 6rem;
+${props => angledAccent(getBackgroundColor(props.color))};
+background-color: ${props => getBackgroundColor(props.color)};
+padding: 6rem;
+${ media.extrasmall`
+  padding: 0.5rem 0.5rem 0 0.5rem ;
+
+`}
+
 `;
 
 const Content = styled(Inner)`

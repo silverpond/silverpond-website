@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
 import { palette, type, typeStyles } from '../lib/settings';
+import { media } from '../lib/style-utils';
 
 import EmailSignupForm from '../components/EmailSignupForm';
 import InnerBase from '../components/Inner';
@@ -33,6 +34,10 @@ const Aside = styled.div`
 const Inner = styled(InnerBase)`
   display: flex;
   justify-content: space-between;
+
+  ${ media.extrasmall`
+    flex-direction: column;
+  `}
 `;
 
 const Logo = styled(LogoLink)`
@@ -90,7 +95,6 @@ const Footer = () => {
   return (
     <Container id="footer">
       <Inner>
-
         <div>
           <Logo to={prefixLink('/')} onDark />
           <Address>
@@ -131,10 +135,10 @@ const Footer = () => {
           </SocialLinks>
         </div>
 
-        <Aside>
-          <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
-          <EmailSignupForm />
-        </Aside>
+        { /* <Aside>
+            <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
+            <EmailSignupForm />
+        </Aside> */ }
 
       </Inner>
     </Container>
