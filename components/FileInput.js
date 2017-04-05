@@ -15,7 +15,7 @@ const Label = styled.label`
 `;
 
 // Component
-const FileInput = ({ onChange }) => {
+const FileInput = ({ onChange }: { onChange: () => mixed }) => {
   return (
     <Label>
       Choose file

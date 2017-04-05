@@ -27,6 +27,8 @@ module.exports = {
     ],
     'no-use-before-define': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-indent-props': 0, // handled by prettier
+    'react/jsx-closing-bracket-location': 0, // handled by prettier
     'react/prop-types': [
       2,
       { ignore: ['isValid', 'getValue', 'setValue', 'hasValue', 'isPristine'] },

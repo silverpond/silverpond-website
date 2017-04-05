@@ -1,4 +1,4 @@
-// @flow
+/* global FileReader, Image, FormData */
 // Imports - config
 import React from 'react';
 import fetch from 'isomorphic-fetch';
@@ -11,7 +11,6 @@ import { type, typeStyles, palette } from 'lib/settings';
 import Button from 'components/Button';
 import MastHead from 'components/MastHead';
 import Section from 'components/Section';
-import Inner from 'components/Inner';
 import FileInput from 'components/FileInput';
 import { ColWrapper, Col } from 'components/Grid';
 
@@ -94,13 +93,13 @@ const appear = keyframes`
 `;
 
 const Rect = styled.rect`
+  animation: ${appear} .6s ease-out;
   fill: rgba(255, 192, 203, .5);
   shape-rendering: crispEdges;
   stroke-width: 3px;
   stroke: pink;
-  vector-effect: non-scaling-stroke;
-  animation: ${appear} .6s ease-out;
   transform-origin: bottom;
+  vector-effect: non-scaling-stroke;
 `;
 
 const SegmentRow = styled(ColWrapper)`
@@ -109,8 +108,8 @@ const SegmentRow = styled(ColWrapper)`
 
 // Component
 class ObjectDetectionDemo extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       image: undefined,
       imageDataUrl: undefined,
@@ -130,11 +129,11 @@ class ObjectDetectionDemo extends React.Component {
 
     fr.readAsDataURL(file);
 
-    fr.onload = e => {
-      const result = e.target.result;
+    fr.onload = frEvent => {
+      const result = frEvent.target.result;
       image.src = result;
 
-      image.onload = e => {
+      image.onload = () => {
         this.setState({
           image: file,
           imageDataUrl: result,
@@ -290,11 +289,11 @@ class ObjectDetectionDemo extends React.Component {
             return (
               <SegmentRow key={hash(row)}>
                 {row.map(result => {
-                  const { bbox: [x1, y1, x2, y2], class: type } = result;
+                  const { bbox: [x1, y1, x2, y2], class: clazz } = result;
                   return (
                     <Col span="4" key={hash(result)}>
                       <p>
-                        {`class: ${type}`}
+                        {`class: ${clazz}`}
                       </p>
                       <Svg viewBox={`${x1} ${y1} ${x2 - x1} ${y2 - y1}`}>
                         <image href={this.state.imageDataUrl} />
