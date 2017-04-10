@@ -1,19 +1,8 @@
 // @flow
 // Imports - config
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
-
-const slideInLeft = keyframes`
-  from {
-    transform: translateX(-30rem);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-`;
+import styled, { keyframes, css } from 'styled-components';
+import { range } from 'lodash';
 
 const slideInRight = keyframes`
   from {
@@ -27,14 +16,20 @@ const slideInRight = keyframes`
   }
 `;
 
-const Svg = styled.svg`
-  & > g:nth-child(odd) {
-    animation: ${slideInRight} 1.5s cubic-bezier(0, 0, 0.4, 1.2) both .5s;
-  }
+const letterAnimations = letterCount => {
+  return range(1, letterCount)
+    .map(i => {
+      return `
+        & > g:nth-of-type(${i}) {
+          animation: ${slideInRight} 1.5s cubic-bezier(0, 0, 0.4, 1.2) both ${i * 0.15}s;
+        }
+      `;
+    })
+    .join(' ');
+};
 
-  & > g:nth-child(even) {
-    animation: ${slideInLeft} 1.5s cubic-bezier(0, 0, 0.4, 1.2) both .5s;
-  }
+const Svg = styled.svg`
+  ${letterAnimations(15)}
 `;
 
 // Component
