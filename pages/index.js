@@ -1,7 +1,7 @@
 // @flow
 // Imports - config
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { palette, typeStyles } from '../lib/settings';
 import { prefixLink } from 'gatsby-helpers';
 import {
@@ -25,6 +25,19 @@ import PromotedContent from 'components/PromotedContent';
 import Section from 'components/Section';
 import Logo from 'components/Logo';
 
+// Keyframes
+const tagline = keyframes`
+  from {
+    transform: translateY(10rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
 // Styled components
 const Splash = styled.div`
   align-items: center;
@@ -46,6 +59,7 @@ const SplashInner = styled.div`
 
 const TagLine = styled.h2`
   ${typeStyles('h1')}
+  animation: ${tagline} 1s cubic-bezier(0, 0, 0.4, 1.2) both 3s;
   color: white;
   font-family: georgia;
   font-size: 4rem;
