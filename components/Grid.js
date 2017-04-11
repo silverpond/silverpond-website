@@ -9,18 +9,38 @@ const calcSpanPercentage = (colSpan: number): string => {
   return `${colSpan / 12 * 100}%`;
 };
 
+const columnStyles = props => {
+  if (props.sm === 'column') {
+    return `
+      flex-direction: column;
+      margin-left: 0;
+
+      & > div {
+        padding-left: 0;
+      }
+
+      & > div + div {
+        padding-top: ${spacing};
+      }
+    `;
+  }
+};
+
 export const ColWrapper = styled.div`
   display: flex;
   flex-direction: ${props => props.reversed ? 'row-reverse' : 'row'};
   margin-left: -${spacing};
 
+  & > div {
+    padding-left: ${spacing};
+  }
+
   ${media.small`
-    flex-direction: ${props => props.sm ? props.sm : 'row'};
+    ${props => columnStyles(props)}
   `}
 `;
 
 export const Col = styled.div`
-  padding-left: ${spacing};
   width: ${props => calcSpanPercentage(props.lg)};
 
   ${media.small`
