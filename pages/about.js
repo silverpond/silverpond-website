@@ -98,10 +98,10 @@ const About = (
 
         {chunk(teamMembers, 3).map(row => {
           return (
-            <PeopleRow key={hash(row)}>
+            <PeopleRow key={hash(row)} sm="column">
               {row.map(person => {
                 return (
-                  <Col span="4" key={hash(person)}>
+                  <Col sm="12" lg="4" key={hash(person)}>
                     <PersonSmall
                       name={person.data.name}
                       description={person.data.role}
