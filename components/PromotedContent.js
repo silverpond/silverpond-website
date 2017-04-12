@@ -3,6 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { palette, type } from '../lib/settings';
+import { media } from 'lib/styles';
 
 // Imports - components
 import Section from '../components/Section';
@@ -26,6 +27,10 @@ const Head = styled.div`
   align-items: baseline;
   display: flex;
   margin-bottom: 3rem;
+
+  ${media.small`
+    display: block;
+  `}
 `;
 
 const Title = styled.h3`
@@ -35,6 +40,13 @@ const Title = styled.h3`
   line-height: 7rem;
   margin: 0 2rem 0 -6rem;
   text-transform: uppercase;
+
+  ${media.small`
+    font-size: 5rem;
+    line-height: 5rem;
+    margin-left: 0;
+    margin-right: 0;
+  `}
 `;
 
 // Component

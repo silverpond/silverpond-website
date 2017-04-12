@@ -2,8 +2,9 @@
 // Imports - config
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { palette, typeStyles } from '../lib/settings';
+import { palette, typeStyles } from 'lib/settings';
 import { prefixLink } from 'gatsby-helpers';
+import { media } from 'lib/styles';
 import {
   calcReadTime,
   getPerson,
@@ -47,6 +48,12 @@ const Splash = styled.div`
   height: calc(100vh - 3vh);
   min-height: 50rem;
   padding: 2.5rem 0;
+
+  ${media.small`
+    height: auto;
+    flex-direction: column-reverse;
+    min-height: 0;
+  `}
 `;
 
 const SplashInner = styled.div`
@@ -55,6 +62,7 @@ const SplashInner = styled.div`
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+  padding: 0 2rem;
 `;
 
 const TagLine = styled.h2`
@@ -66,6 +74,11 @@ const TagLine = styled.h2`
   line-height: 5rem;
   margin-bottom: 5rem;
   text-align: center;
+
+  ${media.small`
+    font-size: 1.8rem;
+    line-height: 2rem;
+  `}
 `;
 
 const Highlight = styled.span`
@@ -74,11 +87,20 @@ const Highlight = styled.span`
 
 const AboutText = styled(IntroText)`
   margin-bottom: 2rem;
+
+  ${media.small`
+    margin-bottom: 2rem;
+  `}
 `;
 
 const AboutImage = styled.img`
   margin-left: -6rem;
   width: calc(100% + 6rem);
+
+  ${media.small`
+    margin-left: 0;
+    width: 100%;
+  `}
 `;
 
 const ArticleCol = styled(Col)`
@@ -111,7 +133,6 @@ const Home = (
         <Nav
           style={{
             flexShrink: 0,
-            marginBottom: '2rem',
           }}
           white
         />
@@ -195,14 +216,10 @@ const Home = (
       </PromotedContent>
 
       <PromotedContent category="articles" to="/articles/" color="grey">
-        <ColWrapper>
+        <ColWrapper sm="column">
           {promotedArticles.map(article => {
             return (
-              <ArticleCol
-                key={article.data.title}
-                span="6"
-                style={{ display: 'flex' }}
-              >
+              <Col key={article.data.title} sm="12" lg="6">
                 <ArticleSmall
                   author={getPerson(route.pages, article.data.author)}
                   date={article.data.date}
@@ -212,17 +229,17 @@ const Home = (
                   image={article.data.image}
                   path={article.path}
                 />
-              </ArticleCol>
+              </Col>
             );
           })}
         </ColWrapper>
       </PromotedContent>
 
       <PromotedContent category="clients" to="/clients/">
-        <ClientsWrapper>
+        <ClientsWrapper sm="column">
           {promotedClients.map(client => {
             return (
-              <Col key={client.data.name} span="3">
+              <Col key={client.data.name} sm="12" lg="3">
                 <img
                   src={prefixLink(`${client.path}${client.data.image}`)}
                   alt={`${client.data.name} logo`}

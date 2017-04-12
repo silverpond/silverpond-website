@@ -6,12 +6,29 @@ import dateformat from 'dateformat';
 import string from 'string';
 import { palette, type, typeStyles } from '../lib/settings';
 import { mapLink, imagePath } from '../lib/utilities';
+import { media } from 'lib/styles';
 
 import { Link } from 'react-router';
 import Avatar from '../components/Avatar';
 import Button from '../components/Button';
 import MediaBlock from '../components/MediaBlock';
 import TextLink from '../components/TextLink';
+
+const Meta = styled.div`
+  ${media.small`
+    display: flex;
+    justify-content: space-between;
+  `}
+`;
+
+const MetaAside = styled.div`
+  ${media.small`
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  `}
+`;
 
 const Date = styled.h4`
   color: ${palette.grey.base}
@@ -35,6 +52,12 @@ const Location = styled(TextLink)`
 const AttendButton = styled(Button)`
   margin-top: 1.5rem;
   width: 100%;
+
+  ${media.small`
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    width: auto;
+  `}
 `;
 
 const Title = styled(Link)`
@@ -92,24 +115,28 @@ const EventSmall = ({
   return (
     <MediaBlock
       aside={
-        <div>
-          <Date>
-            {dateformat(date, 'd mmm')}
-          </Date>
-          <Time>
-            {dateformat(date, 'h:MMtt')}
-          </Time>
+        <Meta>
+          <div>
+            <Date>
+              {dateformat(date, 'd mmm')}
+            </Date>
+            <Time>
+              {dateformat(date, 'h:MMtt')}
+            </Time>
+          </div>
 
-          {!!venue &&
-            <Location to={mapLink(venue)} target="_blank">
-              {venue.name}
-            </Location>}
+          <MetaAside>
+            {!!venue &&
+              <Location to={mapLink(venue)} target="_blank">
+                {venue.name}
+              </Location>}
 
-          {!!attendLink &&
-            <AttendButton to={attendLink} target="_blank" size="small">
-              Attend event
-            </AttendButton>}
-        </div>
+            {!!attendLink &&
+              <AttendButton to={attendLink} target="_blank" size="small">
+                Attend event
+              </AttendButton>}
+          </MetaAside>
+        </Meta>
       }
     >
       <Title to={eventLink}>

@@ -4,6 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { palette } from '../lib/settings';
+import { media } from 'lib/styles';
 
 import Button from '../components/Button';
 
@@ -18,6 +19,10 @@ const Text = styled.p`
 
 const Form = styled.form`
   display: flex;
+
+  ${media.small`
+    flex-direction: column;
+  `}
 `;
 
 const Input = styled.input`
@@ -26,12 +31,19 @@ const Input = styled.input`
   border: 0;
   color: white;
   flex-grow: 1;
+  height: 3.5rem;
   margin-right: 3rem;
   padding: 0 2rem;
 
   &::-webkit-input-placeholder {
-  color: white;
+    color: white;
   }
+
+  ${media.small`
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+    text-align: center;
+  `}
 `;
 
 const BotBaitField = styled.input`

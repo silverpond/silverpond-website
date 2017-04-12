@@ -45,7 +45,7 @@ const CaseStudySmall = (
 ) => {
   return (
     <div>
-      <ColWrapper>
+      <ColWrapper sm="column">
         <Col span="6">
           <Tag>
             {tag}

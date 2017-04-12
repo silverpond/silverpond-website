@@ -20,7 +20,7 @@ const columnStyles = props => {
       }
 
       & > div + div {
-        padding-top: ${spacing};
+        padding-top: 4rem;
       }
     `;
   }

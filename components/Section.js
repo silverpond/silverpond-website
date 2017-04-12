@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { palette } from '../lib/settings';
-import { centerContent, angledAccent } from '../lib/styles';
+import { centerContent, angledAccent, media } from '../lib/styles';
 import type { SectionColor, SectionSize } from '../lib/type-defs';
 
 // Imports - components
@@ -24,6 +24,10 @@ const Container = styled.div`
   ${props => angledAccent(getBackgroundColor(props.color))}
   background-color: ${props => getBackgroundColor(props.color)};
   padding: 6rem;
+
+  ${media.small`
+    padding: 4rem 2rem;
+  `}
 `;
 
 const Content = styled(Inner)`

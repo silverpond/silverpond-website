@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
 import { palette, type, typeStyles } from '../lib/settings';
+import { media } from 'lib/styles';
 
 import EmailSignupForm from '../components/EmailSignupForm';
 import InnerBase from '../components/Inner';
@@ -22,17 +23,30 @@ const Container = styled.div`
   color: white;
   padding: 4rem 0 6rem;
   position: relative;
+
+  ${media.small`
+    padding-left: 2rem;
+    padding-right: 2rem;
+  `}
 `;
 
 const Aside = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  ${media.small`
+    margin-top: 2rem;
+  `}
 `;
 
 const Inner = styled(InnerBase)`
   display: flex;
   justify-content: space-between;
+
+  ${media.small`
+    display: block;
+  `}
 `;
 
 const Logo = styled(LogoLink)`
@@ -132,7 +146,11 @@ const Footer = () => {
         </div>
 
         <Aside>
-          <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
+          <Nav
+            style={{ flexShrink: 0, marginBottom: '2rem' }}
+            sm="hidden"
+            white
+          />
           <EmailSignupForm />
         </Aside>
 

@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import { type } from '../lib/settings';
+import { media } from 'lib/styles';
+
+type SmallModifier = 'hidden';
 
 type NavItemType = {
   name: string,
@@ -13,8 +16,18 @@ type NavItemType = {
   options?: Object,
 };
 
+const smallStyleModifiers = SmallModifier => {
+  if (SmallModifier === 'hidden') {
+    return media.small`
+      display: none;
+    `;
+  }
+};
+
 const Container = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  ${props => smallStyleModifiers(props.sm)}
 `;
 
 const NavItem = styled.li`
@@ -29,6 +42,10 @@ const NavItem = styled.li`
   &:last-child {
     margin-right: 0;
   }
+
+  ${media.small`
+    margin: .25rem 2rem !important;
+  `}
 `;
 
 // Component
@@ -36,9 +53,11 @@ const Nav = (
   {
     style,
     white,
+    sm,
   }: {
     style?: Object,
     white?: boolean,
+    sm?: SmallModifier,
   },
 ) => {
   const items = [
@@ -55,7 +74,7 @@ const Nav = (
     { name: 'Contact', href: '#footer' },
   ];
   return (
-    <Container style={style}>
+    <Container style={style} sm={sm}>
       {items.map((item: NavItemType) => {
         return (
           <NavItem key={item.name} white={white}>
