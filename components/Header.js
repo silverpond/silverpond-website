@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
 import { palette } from '../lib/settings';
 import { media } from 'lib/styles';
+import type RuleSet from 'lib/type-defs';
 
 import Nav from '../components/Nav';
 import LogoLink from '../components/LogoLink';
@@ -15,6 +16,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 2rem 3rem;
+  ${props => props.styleString}
 
   ${media.small`
     display: block;
@@ -34,14 +36,14 @@ const Logo = styled(LogoLink)`
 const Header = (
   {
     onDark,
-    style,
+    styleString,
   }: {
     onDark?: boolean,
-    style?: Object,
+    styleString?: RuleSet,
   },
 ) => {
   return (
-    <Container style={style}>
+    <Container styleString={styleString}>
       <Logo to={prefixLink('/')} onDark={onDark} />
       <Nav />
     </Container>

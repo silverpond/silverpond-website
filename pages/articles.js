@@ -50,10 +50,10 @@ const Articles = (
       {chunk(nonFeaturedArticles, 2).map(group => {
         return (
           <Section key={hash(group)}>
-            <ColWrapper>
+            <ColWrapper sm="column">
               {group.map(article => {
                 return (
-                  <Col span="6" key={hash(article)}>
+                  <Col sm="12" lg="6" key={hash(article)}>
                     <ArticleSmall
                       author={getPerson(pages, article.data.author)}
                       date={article.data.date}

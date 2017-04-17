@@ -16,18 +16,20 @@ type NavItemType = {
   options?: Object,
 };
 
-const smallStyleModifiers = SmallModifier => {
-  if (SmallModifier === 'hidden') {
+const smallStyleModifiers = smallModifier => {
+  if (smallModifier === 'hidden') {
     return media.small`
       display: none;
     `;
   }
+  return undefined;
 };
 
 const Container = styled.ul`
   display: flex;
   flex-wrap: wrap;
   ${props => smallStyleModifiers(props.sm)}
+  ${props => props.styleString}
 `;
 
 const NavItem = styled.li`
@@ -51,13 +53,15 @@ const NavItem = styled.li`
 // Component
 const Nav = (
   {
-    style,
-    white,
     sm,
+    style,
+    styleString,
+    white,
   }: {
-    style?: Object,
-    white?: boolean,
     sm?: SmallModifier,
+    style?: Object,
+    styleString?: string,
+    white?: boolean,
   },
 ) => {
   const items = [
@@ -74,7 +78,7 @@ const Nav = (
     { name: 'Contact', href: '#footer' },
   ];
   return (
-    <Container style={style} sm={sm}>
+    <Container style={style} sm={sm} styleString={styleString}>
       {items.map((item: NavItemType) => {
         return (
           <NavItem key={item.name} white={white}>

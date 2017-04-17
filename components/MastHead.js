@@ -1,9 +1,10 @@
 // @flow
 // Imports - config
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
 import { palette, type, typeStyles } from '../lib/settings';
+import { media } from 'lib/styles';
 
 import Header from '../components/Header';
 
@@ -13,6 +14,10 @@ export const settings = {
 
 const Container = styled.div`
   height: ${settings.height}
+
+  ${media.small`
+    height: auto;
+  `}
 `;
 
 const Inner = styled.div`
@@ -25,6 +30,12 @@ const Inner = styled.div`
   position: fixed;
   right: 0;
   top: 0;
+
+  ${media.small`
+    height: auto;
+    padding-bottom: 4rem;
+    position: static;
+  `}
 
   &:after {
     background-image: url('${prefixLink('/images/silverpond-logo.svg')}');
@@ -60,6 +71,18 @@ const SubTitle = styled.h3`
   font-weight: ${type.weights.normal};
 `;
 
+const headerStyle = css`
+  border: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  ${media.small`
+    position: static;
+  `}
+`;
+
 // Component
 const MastHead = (
   {
@@ -73,10 +96,7 @@ const MastHead = (
   return (
     <Container>
       <Inner>
-        <Header
-          style={{ position: 'absolute', top: 0, left: 0, right: 0 }}
-          onDark
-        />
+        <Header styleString={headerStyle} onDark />
         <Body>
           <Title>
             {title}
