@@ -24,6 +24,7 @@ const columnStyles = props => {
       }
     `;
   }
+  return undefined;
 };
 
 export const ColWrapper = styled.div`

@@ -1,7 +1,7 @@
 // @flow
 // Imports - config
 import React from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { range } from 'lodash';
 
 const slideInRight = keyframes`
@@ -33,7 +33,7 @@ const Svg = styled.svg`
 `;
 
 // Component
-const Logo = ({ style }) => {
+const Logo = ({ style }: { style?: Object }) => {
   return (
     <Svg viewBox="0 0 704.5 134.5" style={style}>
       <style

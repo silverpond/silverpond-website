@@ -103,10 +103,6 @@ const AboutImage = styled.img`
   `}
 `;
 
-const ArticleCol = styled(Col)`
-  display: flex;
-`;
-
 const ClientsWrapper = styled(ColWrapper)`
   align-items: center;
 `;
