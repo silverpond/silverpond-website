@@ -7,7 +7,7 @@ import { absoluteCenter } from 'lib/styles';
 
 import AdaptiveLink from 'components/AdaptiveLink';
 import ArrowIcon from 'components/ArrowIcon';
-import Loader from 'halogen/BounceLoader';
+import Loader from 'components/Loader';
 
 type Color = 'blue' | 'white';
 type Size = 'small' | 'medium' | 'large';
@@ -99,9 +99,14 @@ const Inner = styled.div`
   }
 
   & > div {
-    ${absoluteCenter}
     visibility: ${props => props.isLoading ? 'visible' : 'hidden'};
   }
+`;
+
+const LoaderContainer = styled.div`
+  ${absoluteCenter}
+  height: 2rem;
+  width: 2rem;
 `;
 
 // Component
@@ -121,7 +126,9 @@ const Component = (
         {children}
         {hasArrow && <ArrowIcon style={{ marginLeft: '1rem' }} />}
       </span>
-      <Loader color="white" size="2rem" />
+      <LoaderContainer>
+        <Loader />
+      </LoaderContainer>
     </Inner>
   );
   if (props.to) {
