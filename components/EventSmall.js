@@ -63,6 +63,15 @@ const Hosts = styled.div`
   }
 `;
 
+const renderLocation = (venue = {}) => {
+  const link = mapLink(venue);
+  return link
+    ? <Location to={mapLink(venue)} target="_blank">
+        {venue.name}
+      </Location>
+    : null;
+};
+
 // Component
 const EventSmall = (
   {
@@ -102,10 +111,7 @@ const EventSmall = (
             {dateformat(date, 'h:MMtt')}
           </Time>
 
-          {!!venue.address &&
-            <Location to={mapLink(venue)} target="_blank">
-              {venue.name}
-            </Location>}
+          {renderLocation(venue)}
 
           {!!attendLink &&
             <AttendButton to={attendLink} target="_blank" size="small">
