@@ -134,7 +134,7 @@ const Event = (
               Attend event
             </Button>
           </Meta>
-          {!!venue &&
+          {!!venue.address &&
             <TextLink to={mapLink(venue)}>
               {venue.name}
             </TextLink>}

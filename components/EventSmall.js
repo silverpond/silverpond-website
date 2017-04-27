@@ -102,7 +102,7 @@ const EventSmall = (
             {dateformat(date, 'h:MMtt')}
           </Time>
 
-          {!!venue &&
+          {!!venue.address &&
             <Location to={mapLink(venue)} target="_blank">
               {venue.name}
             </Location>}
