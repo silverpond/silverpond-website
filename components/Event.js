@@ -68,6 +68,15 @@ const Hosts = styled.div`
   }
 `;
 
+const renderLocation = (venue = {}) => {
+  const link = mapLink(venue);
+  return link
+    ? <TextLink to={mapLink(venue)} target="_blank">
+        {venue.name}
+      </TextLink>
+    : null;
+};
+
 // Component
 const Event = (
   {
@@ -134,10 +143,7 @@ const Event = (
               Attend event
             </Button>
           </Meta>
-          {!!venue.address &&
-            <TextLink to={mapLink(venue)}>
-              {venue.name}
-            </TextLink>}
+          {renderLocation(venue)}
         </Head>
 
         <Body dangerouslySetInnerHTML={{ __html: body }} />
