@@ -1,0 +1,7 @@
+---
+name: {{ name }}
+image: {{ image }}
+role: {{ role }}
+teamMember: true
+---
+{{ &body }}
