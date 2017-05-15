@@ -63,43 +63,32 @@ const Hosts = styled.div`
   }
 `;
 
-const renderLocation = (venue = {}) => {
-  const link = mapLink(venue);
-  return link
-    ? <Location to={mapLink(venue)} target="_blank">
-        {venue.name}
-      </Location>
-    : null;
-};
-
 // Component
-const EventSmall = (
-  {
-    attendLink,
-    date,
-    eventLink,
-    hosts,
-    text,
-    title,
-    venue,
-  }: {
-    attendLink?: string,
-    date: string,
-    eventLink: string,
-    hosts?: Array<any>,
-    style?: Object,
-    text: string,
-    title: string,
-    venue: {
-      name: string,
-      lat: string,
-      lon: string,
-      address: string,
-      city: string,
-      country: string,
-    },
+const EventSmall = ({
+  attendLink,
+  date,
+  eventLink,
+  hosts,
+  text,
+  title,
+  venue,
+}: {
+  attendLink?: string,
+  date: string,
+  eventLink: string,
+  hosts?: Array<any>,
+  style?: Object,
+  text: string,
+  title: string,
+  venue: {
+    name: string,
+    lat: string,
+    lon: string,
+    address: string,
+    city: string,
+    country: string,
   },
-) => {
+}) => {
   return (
     <MediaBlock
       aside={
@@ -111,7 +100,10 @@ const EventSmall = (
             {dateformat(date, 'h:MMtt')}
           </Time>
 
-          {renderLocation(venue)}
+          {!!venue &&
+            <Location to={mapLink(venue)} target="_blank">
+              {venue.name}
+            </Location>}
 
           {!!attendLink &&
             <AttendButton to={attendLink} target="_blank" size="small">

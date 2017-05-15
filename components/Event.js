@@ -68,56 +68,35 @@ const Hosts = styled.div`
   }
 `;
 
-const renderLocation = (venue = {}) => {
-  const link = mapLink(venue);
-  return link
-    ? <TextLink to={mapLink(venue)} target="_blank">
-        {venue.name}
-      </TextLink>
-    : null;
-};
-
 // Component
-const Event = (
-  {
-    route: {
-      pages,
-      page: {
-        data: {
-          attendLink,
-          body,
-          date,
-          draft,
-          hosts,
-          title,
-          venue,
-        },
-      },
-    },
-  }: {
-    route: {
-      pages: Page[],
-      page: {
-        data: {
-          attendLink?: string,
-          body: string,
-          date: string,
-          draft?: boolean,
-          hosts: string[],
-          title: string,
-          venue: {
-            name: string,
-            lat: string,
-            lon: string,
-            address: string,
-            city: string,
-            country: string,
-          },
+const Event = ({
+  route: {
+    pages,
+    page: { data: { attendLink, body, date, draft, hosts, title, venue } },
+  },
+}: {
+  route: {
+    pages: Page[],
+    page: {
+      data: {
+        attendLink?: string,
+        body: string,
+        date: string,
+        draft?: boolean,
+        hosts: string[],
+        title: string,
+        venue: {
+          name: string,
+          lat: string,
+          lon: string,
+          address: string,
+          city: string,
+          country: string,
         },
       },
     },
   },
-) => {
+}) => {
   const hostRecords = getHosts(hosts, pages);
   return (
     <div>
@@ -143,7 +122,10 @@ const Event = (
               Attend event
             </Button>
           </Meta>
-          {renderLocation(venue)}
+          {!!venue &&
+            <TextLink to={mapLink(venue)} target="_blank">
+              {venue.name}
+            </TextLink>}
         </Head>
 
         <Body dangerouslySetInnerHTML={{ __html: body }} />
