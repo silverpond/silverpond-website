@@ -49,7 +49,8 @@
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
-    "build": "gatsby build"
+    "build": "gatsby build --prefix-links",
+    "flow-watch": "flow-watch"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
@@ -58,6 +59,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
-    "flow-bin": "^0.38.0"
+    "flow-bin": "^0.38.0",
+    "flow-watch": "^1.1.1"
   }
 }
