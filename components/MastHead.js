@@ -13,7 +13,7 @@ export const settings = {
 };
 
 const Container = styled.div`
-  height: ${settings.height}
+  height: ${settings.height};
 
   ${media.small`
     height: auto;
@@ -84,15 +84,7 @@ const headerStyle = css`
 `;
 
 // Component
-const MastHead = (
-  {
-    title,
-    subTitle,
-  }: {
-    title: string,
-    subTitle: string,
-  },
-) => {
+const MastHead = ({ title, subTitle }: { title: string, subTitle: string }) => {
   return (
     <Container>
       <Inner>
