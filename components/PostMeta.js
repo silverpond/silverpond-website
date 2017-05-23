@@ -2,7 +2,7 @@
 // Imports - config
 import React from 'react';
 import Helmet from 'components/Helmet';
-import type MetaTag from 'lib/type-defs';
+import type { MetaTag } from 'lib/type-defs';
 
 const robotsMeta = (draft?: boolean): MetaTag => {
   if (draft) {
@@ -12,15 +12,7 @@ const robotsMeta = (draft?: boolean): MetaTag => {
 };
 
 // Component
-const PostMeta = (
-  {
-    title,
-    draft,
-  }: {
-    title: string,
-    draft?: boolean,
-  },
-) => {
+const PostMeta = ({ title, draft }: { title: string, draft?: boolean }) => {
   return <Helmet title={title} meta={[robotsMeta(draft)]} />;
 };
 

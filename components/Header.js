@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
 import { palette } from 'lib/settings';
 import { media } from 'lib/styles';
-import type RuleSet from 'lib/type-defs';
+import type { RuleSet } from 'lib/type-defs';
 
 import MobileNav from 'components/MobileNav';
 import Nav from 'components/Nav';
