@@ -3,10 +3,10 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
-import { palette, type, typeStyles } from '../lib/settings';
+import { palette, type, typeStyles } from 'lib/settings';
 import { media } from 'lib/styles';
 
-import Header from '../components/Header';
+import Header from 'components/Header';
 
 export const settings = {
   height: '40rem',

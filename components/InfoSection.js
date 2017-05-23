@@ -3,12 +3,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
-import { typeStyles } from '../lib/settings';
+import { typeStyles } from 'lib/settings';
 
-import { ColWrapper, Col } from '../components/Grid';
-import ArrowLink from '../components/ArrowLink';
-import Section from '../components/Section';
-import type { SectionColor } from '../lib/type-defs';
+import { ColWrapper, Col } from 'components/Grid';
+import ArrowLink from 'components/ArrowLink';
+import Section from 'components/Section';
+import type { SectionColor } from 'lib/type-defs';
 
 const Title = styled.h3`
   ${typeStyles('h3')}

@@ -2,12 +2,12 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { palette } from '../lib/settings';
-import { centerContent, angledAccent, media } from '../lib/styles';
-import type { SectionColor, SectionSize } from '../lib/type-defs';
+import { palette } from 'lib/settings';
+import { centerContent, angledAccent, media } from 'lib/styles';
+import type { SectionColor, SectionSize } from 'lib/type-defs';
 
 // Imports - components
-import Inner from '../components/Inner';
+import Inner from 'components/Inner';
 
 const getBackgroundColor = (color: string): string => {
   switch (color) {

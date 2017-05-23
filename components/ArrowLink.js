@@ -2,10 +2,10 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { linkUnderline } from '../lib/styles';
+import { linkUnderline } from 'lib/styles';
 
 import { Link } from 'react-router';
-import ArrowIcon from '../components/ArrowIcon';
+import ArrowIcon from 'components/ArrowIcon';
 
 const LinkText = styled.span`
   ${linkUnderline}

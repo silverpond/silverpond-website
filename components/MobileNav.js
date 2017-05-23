@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
-import { palette } from '../lib/settings';
+import { palette } from 'lib/settings';
 import { media } from 'lib/styles';
 
 type NavItemType = {

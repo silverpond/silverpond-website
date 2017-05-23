@@ -3,19 +3,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import dateformat from 'dateformat';
-import { palette, type, typeStyles } from '../lib/settings';
-import { textBlock } from '../lib/styles';
-import { getHosts, mapLink, imagePath } from '../lib/utilities';
-import type { Page } from '../lib/type-defs';
+import { palette, type, typeStyles } from 'lib/settings';
+import { textBlock } from 'lib/styles';
+import { getHosts, mapLink, imagePath } from 'lib/utilities';
+import type { Page } from 'lib/type-defs';
 
 // Imports - components
-import Avatar from '../components/Avatar';
-import Button from '../components/Button';
-import Header from '../components/Header';
-import MastHeadMap from '../components/MastHeadMap';
-import PostMeta from '../components/PostMeta';
-import Section from '../components/Section';
-import TextLink from '../components/TextLink';
+import Avatar from 'components/Avatar';
+import Button from 'components/Button';
+import Header from 'components/Header';
+import MastHeadMap from 'components/MastHeadMap';
+import PostMeta from 'components/PostMeta';
+import Section from 'components/Section';
+import TextLink from 'components/TextLink';
 
 const Head = styled.div`
   margin-bottom: 4rem;

@@ -4,15 +4,15 @@ import React from 'react';
 import styled from 'styled-components';
 import dateformat from 'dateformat';
 import string from 'string';
-import { palette, type, typeStyles } from '../lib/settings';
-import { mapLink, imagePath } from '../lib/utilities';
+import { palette, type, typeStyles } from 'lib/settings';
+import { mapLink, imagePath } from 'lib/utilities';
 import { media } from 'lib/styles';
 
 import { Link } from 'react-router';
-import Avatar from '../components/Avatar';
-import Button from '../components/Button';
-import MediaBlock from '../components/MediaBlock';
-import TextLink from '../components/TextLink';
+import Avatar from 'components/Avatar';
+import Button from 'components/Button';
+import MediaBlock from 'components/MediaBlock';
+import TextLink from 'components/TextLink';
 
 const Meta = styled.div`
   ${media.small`

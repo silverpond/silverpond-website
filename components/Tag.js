@@ -1,6 +1,6 @@
 // Imports - config
 import styled from 'styled-components';
-import { palette, type, typeStyles } from '../lib/settings';
+import { palette, type, typeStyles } from 'lib/settings';
 
 // Component
 const Tag = styled.h4`

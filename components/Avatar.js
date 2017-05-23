@@ -2,7 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { typeStyles, type } from '../lib/settings';
+import { typeStyles, type } from 'lib/settings';
 
 const Container = styled.div`
   align-items: center;

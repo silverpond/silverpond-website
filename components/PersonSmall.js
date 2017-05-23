@@ -2,7 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { palette } from '../lib/settings';
+import { palette } from 'lib/settings';
 
 const Container = styled.div`
   align-items: center;

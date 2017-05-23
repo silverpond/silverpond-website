@@ -2,15 +2,15 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { filterPagesByCategory, imagePath } from '../lib/utilities';
+import { filterPagesByCategory, imagePath } from 'lib/utilities';
 
-import Client from '../components/Client';
-import Helmet from '../components/Helmet';
-import IntroText from '../components/IntroText';
-import ItemList from '../components/ItemList';
-import MastHead from '../components/MastHead';
-import Section from '../components/Section';
-import StartProjectBanner from '../components/StartProjectBanner';
+import Client from 'components/Client';
+import Helmet from 'components/Helmet';
+import IntroText from 'components/IntroText';
+import ItemList from 'components/ItemList';
+import MastHead from 'components/MastHead';
+import Section from 'components/Section';
+import StartProjectBanner from 'components/StartProjectBanner';
 
 const Intro = styled(IntroText)`
   margin-bottom: 5rem;

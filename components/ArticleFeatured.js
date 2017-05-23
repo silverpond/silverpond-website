@@ -3,13 +3,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import string from 'string';
-import { typeStyles } from '../lib/settings';
+import { typeStyles } from 'lib/settings';
 
 // Components
-import { ColWrapper, Col } from '../components/Grid';
+import { ColWrapper, Col } from 'components/Grid';
 import { Link } from 'react-router';
-import ArrowLink from '../components/ArrowLink';
-import TagBase from '../components/Tag';
+import ArrowLink from 'components/ArrowLink';
+import TagBase from 'components/Tag';
 
 const Title = styled(Link)`
   ${typeStyles('h3')}

@@ -3,14 +3,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { prefixLink } from 'gatsby-helpers';
-import { palette, type, typeStyles } from '../lib/settings';
+import { palette, type, typeStyles } from 'lib/settings';
 import { media } from 'lib/styles';
 
-import EmailSignupForm from '../components/EmailSignupForm';
-import InnerBase from '../components/Inner';
-import LogoLink from '../components/LogoLink';
-import Nav from '../components/Nav';
-import TextLink from '../components/TextLink';
+import EmailSignupForm from 'components/EmailSignupForm';
+import InnerBase from 'components/Inner';
+import LogoLink from 'components/LogoLink';
+import Nav from 'components/Nav';
+import TextLink from 'components/TextLink';
 
 const iconUrl = icon => {
   const url = `/images/icons/${icon}.svg`;

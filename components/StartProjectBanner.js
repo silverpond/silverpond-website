@@ -2,10 +2,10 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { type, typeStyles } from '../lib/settings';
+import { type, typeStyles } from 'lib/settings';
 
-import Button from '../components/Button';
-import Section from '../components/Section';
+import Button from 'components/Button';
+import Section from 'components/Section';
 
 // Styled components
 const Title = styled.h3`

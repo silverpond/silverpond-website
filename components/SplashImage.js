@@ -1,7 +1,7 @@
 // @flow
 // Imports - config
 import styled from 'styled-components';
-import { settings as mastHeadSettings } from '../components/MastHead';
+import { settings as mastHeadSettings } from 'components/MastHead';
 import { media } from 'lib/styles';
 
 // Component

@@ -10,14 +10,14 @@ import {
   filterPagesByCategory,
   findFeaturedPages,
   getHosts,
-} from '../lib/utilities';
+} from 'lib/utilities';
 
-import EventSmall from '../components/EventSmall';
-import Helmet from '../components/Helmet';
-import ItemList from '../components/ItemList';
-import MastHead from '../components/MastHead';
-import Section from '../components/Section';
-import Tag from '../components/Tag';
+import EventSmall from 'components/EventSmall';
+import Helmet from 'components/Helmet';
+import ItemList from 'components/ItemList';
+import MastHead from 'components/MastHead';
+import Section from 'components/Section';
+import Tag from 'components/Tag';
 
 const FeaturedTag = styled(Tag)`
   margin-bottom: 2rem;

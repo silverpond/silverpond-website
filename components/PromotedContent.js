@@ -2,12 +2,12 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { palette, type } from '../lib/settings';
+import { palette, type } from 'lib/settings';
 import { media } from 'lib/styles';
 
 // Imports - components
-import Section from '../components/Section';
-import ArrowLink from '../components/ArrowLink';
+import Section from 'components/Section';
+import ArrowLink from 'components/ArrowLink';
 
 type Color = 'red' | 'grey';
 

@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
-import { type } from '../lib/settings';
+import { type } from 'lib/settings';
 import { media } from 'lib/styles';
 
 type SmallModifier = 'hidden';

@@ -3,10 +3,10 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { palette } from '../lib/settings';
+import { palette } from 'lib/settings';
 import { media } from 'lib/styles';
 
-import Button from '../components/Button';
+import Button from 'components/Button';
 
 // Styled components
 const Title = styled.h3`

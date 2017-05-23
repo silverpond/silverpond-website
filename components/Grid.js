@@ -1,7 +1,7 @@
 // @flow
 /* eslint-disable no-mixed-operators */
 import styled from 'styled-components';
-import { media } from '../lib/styles';
+import { media } from 'lib/styles';
 
 const spacing = '5rem';
 

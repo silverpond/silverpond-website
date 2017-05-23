@@ -4,16 +4,16 @@ import React from 'react';
 import styled from 'styled-components';
 import hash from 'object-hash';
 import { chunk } from 'lodash';
-import { typeStyles } from '../lib/settings';
-import { textBlock } from '../lib/styles';
-import { filterPagesByCategory, imagePath } from '../lib/utilities';
+import { typeStyles } from 'lib/settings';
+import { textBlock } from 'lib/styles';
+import { filterPagesByCategory, imagePath } from 'lib/utilities';
 
-import Header from '../components/Header';
-import Helmet from '../components/Helmet';
-import PersonSmall from '../components/PersonSmall';
-import Section from '../components/Section';
-import SplashImage from '../components/SplashImage';
-import { ColWrapper, Col } from '../components/Grid';
+import Header from 'components/Header';
+import Helmet from 'components/Helmet';
+import PersonSmall from 'components/PersonSmall';
+import Section from 'components/Section';
+import SplashImage from 'components/SplashImage';
+import { ColWrapper, Col } from 'components/Grid';
 
 const Title = styled.h2`
   ${typeStyles('h1')}

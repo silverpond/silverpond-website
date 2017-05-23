@@ -4,12 +4,12 @@ import React from 'react';
 import styled from 'styled-components';
 import dateformat from 'dateformat';
 import string from 'string';
-import { typeStyles, type } from '../lib/settings';
-import { imagePath } from '../lib/utilities';
+import { typeStyles, type } from 'lib/settings';
+import { imagePath } from 'lib/utilities';
 
 // Imports - components
 import { Link } from 'react-router';
-import Avatar from '../components/Avatar';
+import Avatar from 'components/Avatar';
 
 // Styled components
 const Container = styled(Link)`

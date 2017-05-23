@@ -11,14 +11,14 @@ import {
   findFeaturedPages,
   getPerson,
   imagePath,
-} from '../lib/utilities';
+} from 'lib/utilities';
 
-import { ColWrapper, Col } from '../components/Grid';
-import ArticleFeatured from '../components/ArticleFeatured';
-import ArticleSmall from '../components/ArticleSmall';
-import Helmet from '../components/Helmet';
-import MastHead from '../components/MastHead';
-import Section from '../components/Section';
+import { ColWrapper, Col } from 'components/Grid';
+import ArticleFeatured from 'components/ArticleFeatured';
+import ArticleSmall from 'components/ArticleSmall';
+import Helmet from 'components/Helmet';
+import MastHead from 'components/MastHead';
+import Section from 'components/Section';
 
 // Component
 const Articles = (

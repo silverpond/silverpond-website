@@ -3,7 +3,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import { settings as mastHeadSettings } from '../components/MastHead';
+import { settings as mastHeadSettings } from 'components/MastHead';
 
 import GoogleMap from 'google-map-react';
 

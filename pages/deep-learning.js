@@ -3,12 +3,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Helmet from '../components/Helmet';
-import InfoSection from '../components/InfoSection';
-import IntroText from '../components/IntroText';
-import MastHead from '../components/MastHead';
-import Section from '../components/Section';
-import StartProjectBanner from '../components/StartProjectBanner';
+import Helmet from 'components/Helmet';
+import InfoSection from 'components/InfoSection';
+import IntroText from 'components/IntroText';
+import MastHead from 'components/MastHead';
+import Section from 'components/Section';
+import StartProjectBanner from 'components/StartProjectBanner';
 
 const Intro = styled(IntroText)`
   margin-bottom: 5rem;
