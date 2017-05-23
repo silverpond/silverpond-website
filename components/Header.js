@@ -7,6 +7,7 @@ import { palette } from '../lib/settings';
 import { media } from 'lib/styles';
 import type RuleSet from 'lib/type-defs';
 
+import MobileNav from '../components/MobileNav';
 import Nav from '../components/Nav';
 import LogoLink from '../components/LogoLink';
 
@@ -33,19 +34,18 @@ const Logo = styled(LogoLink)`
 `;
 
 // Component
-const Header = (
-  {
-    onDark,
-    styleString,
-  }: {
-    onDark?: boolean,
-    styleString?: RuleSet,
-  },
-) => {
+const Header = ({
+  onDark,
+  styleString,
+}: {
+  onDark?: boolean,
+  styleString?: RuleSet,
+}) => {
   return (
     <Container styleString={styleString}>
       <Logo to={prefixLink('/')} onDark={onDark} />
       <Nav />
+      <MobileNav />
     </Container>
   );
 };
