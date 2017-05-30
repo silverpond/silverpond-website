@@ -1,4 +1,4 @@
-// flow-typed signature: 0a435b1c0cd39f3d1645fc566c1242a0
+// flow-typed signature: 57f12d94c2dffe1896c3028bcff3f5ac
 // flow-typed version: <<STUB>>/mustache_v^2.3.0/flow_v0.38.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

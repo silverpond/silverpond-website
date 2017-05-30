@@ -1,4 +1,4 @@
-// flow-typed signature: b76c39e0d7dabdf8cefaf13e7e0a9d70
+// flow-typed signature: 302e51903bd58383e46bf1bdf26fd698
 // flow-typed version: <<STUB>>/google-map-react_v^0.22.3/flow_v0.38.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

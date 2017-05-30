@@ -1,4 +1,4 @@
-// flow-typed signature: 14f9deb56e4378b34ba0cf7b4164743a
+// flow-typed signature: 37b1fa2e087d50d1bd62ff1eee59b9f9
 // flow-typed version: <<STUB>>/dateformat_v^2.0.0/flow_v0.38.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 

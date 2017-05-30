@@ -1,4 +1,4 @@
-// flow-typed signature: 8b59330d94f63e1a5a1a5e2318eae1fa
+// flow-typed signature: 65a85c8667784168904f2f59b8a7ad09
 // flow-typed version: <<STUB>>/node-rest-client_v^2.5.0/flow_v0.38.0
 
 /**
@@ -8,8 +8,8 @@
  *
  * Fill this stub out by replacing all the `any` types.
  *
- * Once filled out, we encourage you to share your work with the 
- * community by sending a pull request to: 
+ * Once filled out, we encourage you to share your work with the
+ * community by sending a pull request to:
  * https://github.com/flowtype/flow-typed
  */
 
