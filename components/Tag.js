@@ -4,8 +4,8 @@ import { palette, type, typeStyles } from 'lib/settings';
 
 // Component
 const Tag = styled.h4`
-  ${typeStyles('h5')}
-  color: ${palette.grey.base}
+  ${typeStyles('h5')};
+  color: ${palette.grey.base};
   display: inline-block;
   font-weight: ${type.weights.bold};
   line-height: 3rem;
@@ -13,7 +13,7 @@ const Tag = styled.h4`
   text-transform: uppercase;
 
   &:before {
-    background-color: ${palette.grey.base}
+    background-color: ${palette.grey.base};
     content: "";
     display: block;
     height: 3px;

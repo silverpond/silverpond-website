@@ -66,7 +66,7 @@ const SplashInner = styled.div`
 `;
 
 const TagLine = styled.h2`
-  ${typeStyles('h1')}
+  ${typeStyles('h1')};
   animation: ${tagline} 1s cubic-bezier(0, 0, 0.4, 1.2) both 3s;
   color: white;
   font-family: georgia;
@@ -108,15 +108,13 @@ const ClientsWrapper = styled(ColWrapper)`
 `;
 
 // Component
-const Home = (
-  {
-    route,
-  }: {
-    route: {
-      pages: Object[],
-    },
+const Home = ({
+  route,
+}: {
+  route: {
+    pages: Object[],
   },
-) => {
+}) => {
   const promotedCaseStudy = getPromotedPages(route.pages, 'case-studies', 1)[0];
   const promotedArticles = getPromotedPages(route.pages, 'articles');
   const promotedEvents = getPromotedPages(route.pages, 'events');
@@ -194,7 +192,8 @@ const Home = (
         <ItemList>
           {promotedEvents.map(event => {
             const hosts = event.data.hosts.map(host =>
-              getPerson(route.pages, host));
+              getPerson(route.pages, host),
+            );
             return (
               <EventSmall
                 key={event.data.title}

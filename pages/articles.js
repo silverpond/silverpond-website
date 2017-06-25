@@ -21,13 +21,7 @@ import MastHead from 'components/MastHead';
 import Section from 'components/Section';
 
 // Component
-const Articles = (
-  {
-    route: { pages },
-  }: {
-    route: Object,
-  },
-) => {
+const Articles = ({ route: { pages } }: { route: Object }) => {
   const articles = filterPagesByCategory(pages, 'articles');
   const featuredArticle = findFeaturedPages(articles)[0];
   const nonFeaturedArticles = filterNot(articles, [featuredArticle]).reverse();

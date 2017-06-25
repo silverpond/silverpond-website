@@ -12,7 +12,7 @@ import ArrowLink from 'components/ArrowLink';
 import TagBase from 'components/Tag';
 
 const Title = styled(Link)`
-  ${typeStyles('h3')}
+  ${typeStyles('h3')};
   display: block;
   margin-bottom: 2rem;
 `;
@@ -28,21 +28,19 @@ const Tag = styled(TagBase)`
 `;
 
 // Component
-const CaseStudySmall = (
-  {
-    image,
-    tag,
-    text,
-    title,
-    to,
-  }: {
-    image: string,
-    tag: string,
-    text: string,
-    title: string,
-    to: string,
-  },
-) => {
+const CaseStudySmall = ({
+  image,
+  tag,
+  text,
+  title,
+  to,
+}: {
+  image: string,
+  tag: string,
+  text: string,
+  title: string,
+  to: string,
+}) => {
   return (
     <div>
       <ColWrapper sm="column">
