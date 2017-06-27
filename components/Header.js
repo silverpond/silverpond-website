@@ -7,9 +7,9 @@ import { palette } from 'lib/settings';
 import { media } from 'lib/styles';
 import type { RuleSet } from 'lib/type-defs';
 
+import LogoLink from 'components/LogoLink';
 import MobileNav from 'components/MobileNav';
 import Nav from 'components/Nav';
-import LogoLink from 'components/LogoLink';
 
 const Container = styled.div`
   align-items: center;
@@ -20,17 +20,26 @@ const Container = styled.div`
   ${props => props.styleString}
 
   ${media.small`
-    display: block;
-    padding: 2rem 0;
+    align-items: flex-start;
+    padding-left: 2rem;
+    padding-right: 2rem;
   `}
 `;
 
 const Logo = styled(LogoLink)`
   margin-right: 2rem;
+`;
 
-  ${media.small`
-    margin: 0 2rem 1rem 2rem;
-  `}
+const navStyles = `
+  @media (max-width: 1050px) {
+    display: none;
+  }
+`;
+
+const mobileNavStyles = `
+  @media (min-width: 1050px) {
+    display: none;
+  }
 `;
 
 // Component
@@ -44,8 +53,8 @@ const Header = ({
   return (
     <Container styleString={styleString}>
       <Logo to={prefixLink('/')} onDark={onDark} />
-      <Nav />
-      <MobileNav />
+      <Nav styleString={navStyles} />
+      <MobileNav styleString={mobileNavStyles} />
     </Container>
   );
 };
