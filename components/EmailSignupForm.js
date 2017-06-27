@@ -26,7 +26,7 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  backgroundColor: ${palette.slate.light};
+  background-color: ${palette.slate.light};
   border-radius: 3px; 
   border: 0;
   color: white;
