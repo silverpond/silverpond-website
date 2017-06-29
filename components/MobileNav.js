@@ -30,6 +30,7 @@ const Container = styled.div`
 const MenuButton = styled.button`
   background: none;
   border: 0;
+  fill: ${props => (props.dark ? palette.slate.base : 'white')};
   padding: 0;
 `;
 
@@ -113,8 +114,8 @@ class MobileNav extends React.Component {
     return (
       <Container>
 
-        <MenuButton onClick={this.handleClick}>
-          <MenuIcon active={this.state.active} />
+        <MenuButton onClick={this.handleClick} dark={this.props.dark}>
+          <MenuIcon />
         </MenuButton>
 
         <Nav active={this.state.active}>

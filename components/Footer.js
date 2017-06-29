@@ -106,7 +106,7 @@ const Footer = () => {
       <Inner>
 
         <div>
-          <Logo to={prefixLink('/')} onDark />
+          <Logo to={prefixLink('/')} />
           <Address>
             Level 2
             <br />

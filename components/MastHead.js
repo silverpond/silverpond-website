@@ -88,7 +88,7 @@ const MastHead = ({ title, subTitle }: { title: string, subTitle: string }) => {
   return (
     <Container>
       <Inner>
-        <Header styleString={headerStyle} onDark />
+        <Header styleString={headerStyle} />
         <Body>
           <Title>
             {title}

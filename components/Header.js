@@ -44,17 +44,17 @@ const mobileNavStyles = `
 
 // Component
 const Header = ({
-  onDark,
+  dark,
   styleString,
 }: {
-  onDark?: boolean,
+  dark?: boolean,
   styleString?: RuleSet,
 }) => {
   return (
     <Container styleString={styleString}>
-      <Logo to={prefixLink('/')} onDark={onDark} />
+      <Logo to={prefixLink('/')} dark={dark} />
       <Nav styleString={navStyles} />
-      <MobileNav styleString={mobileNavStyles} />
+      <MobileNav styleString={mobileNavStyles} dark={dark} />
     </Container>
   );
 };

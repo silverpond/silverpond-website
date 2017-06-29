@@ -40,20 +40,14 @@ const PeopleRow = styled(ColWrapper)`
 `;
 
 // Component
-const About = (
-  {
-    route: { pages },
-  }: {
-    route: Object,
-  },
-) => {
+const About = ({ route: { pages } }: { route: Object }) => {
   const teamMembers = filterPagesByCategory(pages, 'people').filter(
     person => person.data.teamMember === true,
   );
   return (
     <div>
       <Helmet title="About" />
-      <Header />
+      <Header dark />
       <SplashImage src="/images/team.jpg" />
       <Section size="small">
         <Title>
