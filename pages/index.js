@@ -13,18 +13,19 @@ import {
 } from 'lib/utilities';
 
 // Imports - components
-import { ColWrapper, Col } from 'components/Grid';
 import ArrowLink from 'components/ArrowLink';
-import ArticleSmall from 'components/ArticleSmall';
 import ArticleFeatured from 'components/ArticleFeatured';
+import ArticleSmall from 'components/ArticleSmall';
 import EventSmall from 'components/EventSmall';
 import Helmet from 'components/Helmet';
 import IntroText from 'components/IntroText';
 import ItemList from 'components/ItemList';
+import Logo from 'components/Logo';
+import MobileNav from 'components/MobileNav';
 import Nav from 'components/Nav';
 import PromotedContent from 'components/PromotedContent';
 import Section from 'components/Section';
-import Logo from 'components/Logo';
+import { ColWrapper, Col } from 'components/Grid';
 
 // Keyframes
 const tagline = keyframes`
@@ -47,11 +48,10 @@ const Splash = styled.div`
   flex-direction: column;
   height: calc(100vh - 3vh);
   min-height: 50rem;
-  padding: 2.5rem 0;
+  padding: 2.5rem 2rem;
 
   ${media.small`
     height: auto;
-    flex-direction: column-reverse;
     min-height: 0;
   `}
 `;
@@ -107,6 +107,23 @@ const ClientsWrapper = styled(ColWrapper)`
   align-items: center;
 `;
 
+const navStyles = `
+  flex-shrink: 0;
+
+  @media (max-width: 1050px) {
+    display: none;
+  }
+`;
+
+const mobileNavStyles = `
+  align-self: flex-end;
+  margin-bottom: 2rem;
+
+  @media (min-width: 1050px) {
+    display: none;
+  }
+`;
+
 // Component
 const Home = ({
   route,
@@ -124,12 +141,9 @@ const Home = ({
       <Helmet title="Home" />
       <Splash>
 
-        <Nav
-          style={{
-            flexShrink: 0,
-          }}
-          white
-        />
+        <Nav styleString={navStyles} white />
+
+        <MobileNav styleString={mobileNavStyles} />
 
         <SplashInner>
           <Logo style={{ marginBottom: '4rem' }} />

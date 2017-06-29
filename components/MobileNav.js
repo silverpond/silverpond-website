@@ -20,11 +20,7 @@ type NavItemType = {
 };
 
 const Container = styled.div`
-  display: none;
-
-  ${media.small`
-    display: block;
-  `}
+  ${props => props.styleString}
 `;
 
 const MenuButton = styled.button`
@@ -112,7 +108,7 @@ class MobileNav extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container styleString={this.props.styleString}>
 
         <MenuButton onClick={this.handleClick} dark={this.props.dark}>
           <MenuIcon />

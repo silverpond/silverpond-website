@@ -45,10 +45,6 @@ const NavItem = styled.li`
   &:last-child {
     margin-right: 0;
   }
-
-  ${media.small`
-    margin: .25rem 2rem !important;
-  `}
 `;
 
 // Component
