@@ -22,12 +22,12 @@ const Head = styled.div`
 `;
 
 const Body = styled.div`
-  ${textBlock}
+  ${textBlock};
   margin-bottom: 4rem;
 `;
 
 const Title = styled.div`
-  ${typeStyles('h2')}
+  ${typeStyles('h2')};
   margin-bottom: 1.5rem;
 `;
 
@@ -42,18 +42,18 @@ const DateTime = styled.div`
 `;
 
 const Date = styled.h4`
-  ${typeStyles('h3')}
+  ${typeStyles('h3')};
   margin-right: 1rem;
 `;
 
 const Time = styled.p`
-  ${typeStyles('h4')}
+  ${typeStyles('h4')};
   font-weight: ${type.weights.normal};
   margin-bottom: 1rem;
 `;
 
 const SubTitle = styled.h4`
-  ${typeStyles('small')}
+  ${typeStyles('small')};
   color: ${palette.grey.base};
   font-weight: ${type.weights.medium};
   margin-bottom: 1rem;

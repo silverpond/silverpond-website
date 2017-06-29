@@ -7,18 +7,16 @@ import { linkUnderline } from 'lib/styles';
 import AdaptiveLink from 'components/AdaptiveLink';
 
 const Link = styled(AdaptiveLink)`
-  ${linkUnderline}
+  ${linkUnderline};
 `;
 
 // Component
-const TextLink = (
-  {
-    children,
-    ...props
-  }: {
-    children?: React.Element<any>,
-  },
-) => {
+const TextLink = ({
+  children,
+  ...props
+}: {
+  children?: React.Element<any>,
+}) => {
   return (
     <Link {...props}>
       {children}

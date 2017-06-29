@@ -31,16 +31,21 @@ const MetaAside = styled.div`
 `;
 
 const Date = styled.h4`
-  color: ${palette.grey.base}
+  color: ${palette.grey.base};
   font-size: 4rem;
   font-weight: ${type.weights.bold};
   line-height: 4.5rem;
   white-space: nowrap;
+
+  ${media.small`
+    font-size: 3rem;
+    line-height: 3rem;
+  `}
 `;
 
 const Time = styled.p`
-  ${typeStyles('h4')}
-  color: ${palette.grey.base}
+  ${typeStyles('h4')};
+  color: ${palette.grey.base};
   font-weight: ${type.weights.normal};
   margin-bottom: 1rem;
 `;
@@ -61,7 +66,7 @@ const AttendButton = styled(Button)`
 `;
 
 const Title = styled(Link)`
-  ${typeStyles('h3')}
+  ${typeStyles('h3')};
   display: block;
 `;
 
@@ -71,7 +76,7 @@ const Text = styled.p`
 `;
 
 const SubTitle = styled.h4`
-  ${typeStyles('small')}
+  ${typeStyles('small')};
   color: ${palette.grey.base};
   font-weight: ${type.weights.bold};
   margin-bottom: 1rem;
