@@ -4,11 +4,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
-import { palette } from 'lib/settings';
+import { palette, typeStyles } from 'lib/settings';
 import { media } from 'lib/styles';
 import { range } from 'lodash';
+import navItems from 'lib/nav-items';
 
 import MenuIcon from 'components/MenuIcon';
+import CrossIcon from 'components/CrossIcon';
 
 type NavItemType = {
   name: string,
@@ -29,23 +31,23 @@ const MenuButton = styled.button`
   background: none;
   border: 0;
   padding: 0;
-  position: relative;
-  z-index: 10;
 `;
 
 const Nav = styled.ul`
   background-color: ${palette.slate.base};
   bottom: 0;
-  max-width: 90vw;
+  color: white;
+  display: flex;
+  fill: white;
+  flex-direction: column;
   padding: 2rem;
-  padding-top: 6rem;
   position: fixed;
   right: 0;
   top: 0;
-  width: 300px;
-  z-index: 1;
+  transform: translateY(100%);
   transition: all .2s ease;
-  transform: translateX(100%);
+  width: 100%;
+  z-index: 1;
 
   ${props => (props.active ? activeNavStyles : '')}
 `;
@@ -71,7 +73,9 @@ const activeNavStyles = `
 `;
 
 const NavItem = styled.li`
-  text-align: right;
+  ${typeStyles('h4')};
+  color: white;
+  text-align: center;
   transform: translateY(250px);
   transition: all .3s cubic-bezier(0, 0, 0, 1);
   opacity: 0;
@@ -79,6 +83,13 @@ const NavItem = styled.li`
   & + & {
     margin-top: 1rem;
   }
+`;
+
+const NavClose = styled.button`
+  align-self: flex-end;
+  background: transparent;
+  border: 0;
+  padding: 0;
 `;
 
 // Component
@@ -99,20 +110,6 @@ class MobileNav extends React.Component {
   };
 
   render() {
-    const items = [
-      { name: 'About', link: '/about/' },
-      {
-        name: 'Co-working',
-        href: 'http://silverpond.com.au/the_pond/',
-        options: { target: '_blank', rel: 'noopener noreferrer' },
-      },
-      { name: 'Articles', link: '/articles/' },
-      { name: 'Events', link: '/events/' },
-      { name: 'Clients', link: '/clients/' },
-      { name: 'Deep learning', link: '/deep-learning/' },
-      { name: 'Contact', href: '#footer' },
-    ];
-
     return (
       <Container>
 
@@ -121,9 +118,12 @@ class MobileNav extends React.Component {
         </MenuButton>
 
         <Nav active={this.state.active}>
-          {items.map((item: NavItemType) => {
+          <NavClose onClick={this.handleClick}>
+            <CrossIcon height="2rem" width="2rem" />
+          </NavClose>
+          {navItems.map((item: NavItemType) => {
             return (
-              <NavItem key={item.name}>
+              <NavItem key={item.name} onClick={this.handleClick}>
                 {item.hasOwnProperty('href')
                   ? <a href={item.href} {...item.options}>
                       {item.name}

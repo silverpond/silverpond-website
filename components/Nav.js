@@ -6,6 +6,7 @@ import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import { type } from 'lib/settings';
 import { media } from 'lib/styles';
+import navItems from 'lib/nav-items';
 
 type SmallModifier = 'hidden';
 
@@ -33,7 +34,7 @@ const Container = styled.ul`
 `;
 
 const NavItem = styled.li`
-  color: ${props => props.white ? 'white' : 'inherit'};
+  color: ${props => (props.white ? 'white' : 'inherit')};
   font-weight: ${type.weights.medium};
   margin: 0 2rem;
 
@@ -51,35 +52,20 @@ const NavItem = styled.li`
 `;
 
 // Component
-const Nav = (
-  {
-    sm,
-    style,
-    styleString,
-    white,
-  }: {
-    sm?: SmallModifier,
-    style?: Object,
-    styleString?: string,
-    white?: boolean,
-  },
-) => {
-  const items = [
-    { name: 'About', link: '/about/' },
-    {
-      name: 'Co-working',
-      href: 'http://silverpond.com.au/the_pond/',
-      options: { target: '_blank', rel: 'noopener noreferrer' },
-    },
-    { name: 'Articles', link: '/articles/' },
-    { name: 'Events', link: '/events/' },
-    { name: 'Clients', link: '/clients/' },
-    { name: 'Deep learning', link: '/deep-learning/' },
-    { name: 'Contact', href: '#footer' },
-  ];
+const Nav = ({
+  sm,
+  style,
+  styleString,
+  white,
+}: {
+  sm?: SmallModifier,
+  style?: Object,
+  styleString?: string,
+  white?: boolean,
+}) => {
   return (
     <Container style={style} sm={sm} styleString={styleString}>
-      {items.map((item: NavItemType) => {
+      {navItems.map((item: NavItemType) => {
         return (
           <NavItem key={item.name} white={white}>
             {item.hasOwnProperty('href')
