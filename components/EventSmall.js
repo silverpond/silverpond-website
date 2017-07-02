@@ -16,18 +16,11 @@ import TextLink from 'components/TextLink';
 
 const Meta = styled.div`
   ${media.small`
+    align-items: flex-start;
     display: flex;
-    justify-content: space-between;
-  `}
-`;
-
-const MetaAside = styled.div`
-  ${media.small`
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-  `}
+    flex-direction: column;
+    margin-bottom: 2rem;
+  `};
 `;
 
 const Date = styled.h4`
@@ -40,7 +33,7 @@ const Date = styled.h4`
   ${media.small`
     font-size: 3rem;
     line-height: 3rem;
-  `}
+  `};
 `;
 
 const Time = styled.p`
@@ -48,6 +41,10 @@ const Time = styled.p`
   color: ${palette.grey.base};
   font-weight: ${type.weights.normal};
   margin-bottom: 1rem;
+
+  ${media.small`
+    margin-bottom: 0;
+  `};
 `;
 
 const Location = styled(TextLink)`
@@ -121,26 +118,20 @@ const EventSmall = ({
     <MediaBlock
       aside={
         <Meta>
-          <div>
-            <Date>
-              {dateformat(date, 'd mmm')}
-            </Date>
-            <Time>
-              {dateformat(date, 'h:MMtt')}
-            </Time>
-          </div>
-
-          <MetaAside>
-            {!!venue &&
-              <Location to={mapLink(venue)} target="_blank">
-                {venue.name}
-              </Location>}
-
-            {!!attendLink &&
-              <AttendButton to={attendLink} target="_blank" size="small">
-                Attend event
-              </AttendButton>}
-          </MetaAside>
+          <Date>
+            {dateformat(date, 'd mmm')}
+          </Date>
+          <Time>
+            {dateformat(date, 'h:MMtt')}
+          </Time>
+          {!!venue &&
+            <Location to={mapLink(venue)} target="_blank">
+              {venue.name}
+            </Location>}
+          {!!attendLink &&
+            <AttendButton to={attendLink} target="_blank" size="small">
+              Attend event
+            </AttendButton>}
         </Meta>
       }
     >
@@ -154,9 +145,7 @@ const EventSmall = ({
       {!!hosts &&
         hosts.length > 0 &&
         <div>
-          <SubTitle>
-            Hosted by
-          </SubTitle>
+          <SubTitle>Hosted by</SubTitle>
           <Hosts>
             {hosts.map(host => {
               if (host != null) {
@@ -172,7 +161,6 @@ const EventSmall = ({
             })}
           </Hosts>
         </div>}
-
     </MediaBlock>
   );
 };
