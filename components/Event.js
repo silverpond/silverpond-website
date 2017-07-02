@@ -7,6 +7,7 @@ import { palette, type, typeStyles } from 'lib/settings';
 import { textBlock } from 'lib/styles';
 import { getHosts, mapLink, imagePath } from 'lib/utilities';
 import type { Page } from 'lib/type-defs';
+import { media } from 'lib/styles';
 
 // Imports - components
 import Avatar from 'components/Avatar';
@@ -17,9 +18,7 @@ import PostMeta from 'components/PostMeta';
 import Section from 'components/Section';
 import TextLink from 'components/TextLink';
 
-const Head = styled.div`
-  margin-bottom: 4rem;
-`;
+const Head = styled.div`margin-bottom: 4rem;`;
 
 const Body = styled.div`
   ${textBlock};
@@ -34,6 +33,12 @@ const Title = styled.div`
 const Meta = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${media.small`
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  `};
 `;
 
 const DateTime = styled.div`
@@ -101,7 +106,7 @@ const Event = ({
   return (
     <div>
       <PostMeta title={title} draft={draft} />
-      <Header />
+      <Header dark />
       {!!venue && <MastHeadMap lat={venue.lat} lon={venue.lon} />}
 
       <Section size="small">
@@ -133,9 +138,7 @@ const Event = ({
         {!!hosts &&
           hosts.length > 0 &&
           <div>
-            <SubTitle>
-              Hosted by
-            </SubTitle>
+            <SubTitle>Hosted by</SubTitle>
             <Hosts>
               {hostRecords.map(host => {
                 if (host != null) {
@@ -151,7 +154,6 @@ const Event = ({
               })}
             </Hosts>
           </div>}
-
       </Section>
     </div>
   );
