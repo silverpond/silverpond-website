@@ -16,17 +16,15 @@ import PostMeta from 'components/PostMeta';
 import Section from 'components/Section';
 import SplashImage from 'components/SplashImage';
 
-const Head = styled.div`
-  margin-bottom: 5rem;
-`;
+const Head = styled.div`margin-bottom: 5rem;`;
 
 const Body = styled.div`
-  ${textBlock}
+  ${textBlock};
   margin-bottom: 6rem;
 `;
 
 const Title = styled.div`
-  ${typeStyles('h2')}
+  ${typeStyles('h2')};
   margin-bottom: 1.5rem;
 `;
 
@@ -41,7 +39,7 @@ const Meta = styled.div`
 `;
 
 const Date = styled.p`
-  ${typeStyles('small')}
+  ${typeStyles('small')};
   font-weight: ${type.weights.medium};
 `;
 
@@ -53,42 +51,28 @@ const ReadTime = styled.p`
 `;
 
 // Component
-const Article = (
-  {
-    route: {
-      pages,
-      page: {
-        data: {
-          author,
-          body,
-          date,
-          draft,
-          image,
-          title,
-        },
-      },
-    },
-  }: {
-    route: {
-      pages: Page[],
-      page: {
-        data: {
-          author: string,
-          body: string,
-          date: string,
-          draft?: boolean,
-          image: string,
-          title: string,
-        },
+const Article = ({
+  route: { pages, page: { data: { author, body, date, draft, image, title } } },
+}: {
+  route: {
+    pages: Page[],
+    page: {
+      data: {
+        author: string,
+        body: string,
+        date: string,
+        draft?: boolean,
+        image: string,
+        title: string,
       },
     },
   },
-) => {
+}) => {
   const authorDetails = getPerson(pages, author);
   return (
     <div>
       <PostMeta title={title} draft={draft} />
-      <Header />
+      <Header dark />
       <SplashImage src={prefixLink(`./${image}`)} />
       <Section size="small">
         <Head>
