@@ -3,8 +3,6 @@ import Helmet from 'react-helmet';
 
 const HTML = (props: Object) => {
   const head = Helmet.rewind();
-  const BUILD_TIME = new Date().getTime();
-  let css;
   return (
     <html lang="en">
       <head>

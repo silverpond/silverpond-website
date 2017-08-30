@@ -5,7 +5,7 @@ type Size = 'medium';
 const getSize = (size: Size): string => {
   switch (size) {
     case 'small':
-      return '700px';
+      return '800px';
     case 'medium':
       return '950px';
     default:
@@ -15,7 +15,7 @@ const getSize = (size: Size): string => {
 
 const Inner = styled.div`
   margin: 0 auto;
-  width: ${props => getSize(props.size)};
+  max-width: ${props => getSize(props.size)};
 `;
 
 export default Inner;

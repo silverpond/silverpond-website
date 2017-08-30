@@ -18,7 +18,7 @@ import SplashImage from 'components/SplashImage';
 
 const Head = styled.div`margin-bottom: 5rem;`;
 
-const Body = styled.div`${textBlock} margin-bottom: 6rem;`;
+const Body = styled.div`${textBlock} margin-bottom: 2rem;`;
 
 const Title = styled.div`${typeStyles('h2')} margin-bottom: 1.5rem;`;
 

@@ -18,6 +18,6 @@ const StyledLink = styled(Link)`
   width: 195px;
 `;
 
-const LogoLink = () => <StyledLink exact />;
+const LogoLink = () => <StyledLink exact to="/" />;
 
 export default LogoLink;

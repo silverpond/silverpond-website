@@ -12,7 +12,7 @@ import Avatar from 'components/Avatar';
 import MastHead from 'components/MastHead';
 import PostMeta from 'components/PostMeta';
 import Section from 'components/Section';
-import SplashImage from 'components/SplashImage';
+import TextContent from 'components/TextContent';
 
 const Body = styled.div`${textBlock} margin-bottom: 6rem;`;
 
@@ -38,8 +38,7 @@ const Article = ({ data }: { data: Object }) => {
   return (
     <div>
       <PostMeta title={title} draft={draft} />
-      <MastHead title={title} subTitle={author} />
-      {image ? <SplashImage src={getImageUrl(image)} /> : null}
+      <MastHead imageUrl={getImageUrl(image)} title={title} subTitle={author} />
       <Section size="small" style={{ paddingTop: '2rem' }}>
         <Meta>
           <Date>{dateformat(date, 'mediumDate')}</Date>
@@ -48,7 +47,9 @@ const Article = ({ data }: { data: Object }) => {
         {authorDetails ? (
           <Avatar name={authorDetails.name} imageUrl={getImageUrl(authorDetails.image)} />
         ) : null}
-        <Body dangerouslySetInnerHTML={{ __html: article.html }} />
+        <TextContent>
+          <Body dangerouslySetInnerHTML={{ __html: article.html }} />
+        </TextContent>
       </Section>
     </div>
   );

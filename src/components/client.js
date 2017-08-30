@@ -15,17 +15,9 @@ const Title = styled.h3`${typeStyles('h3')};`;
 const Body = styled.div`${textBlock};`;
 
 // Component
-const Client = ({
-  image,
-  name,
-  body,
-}: {
-  image: string,
-  name: string,
-  body: string,
-}) => {
+const Client = ({ body, imageUrl, name }: { body: string, imageUrl: string, name: string }) => {
   return (
-    <MediaBlock aside={<Logo src={image} />}>
+    <MediaBlock aside={<Logo src={imageUrl} />}>
       <Title>{name}</Title>
       <Body dangerouslySetInnerHTML={{ __html: body }} />
     </MediaBlock>

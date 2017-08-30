@@ -21,24 +21,39 @@ const Inner = styled.div`
   flex-direction: column;
   height: ${settings.height};
   left: 0;
+  overflow: hidden;
   position: fixed;
   right: 0;
   top: 0;
+`;
 
-  &:after {
-    background-image: url('${staticAssetPath('silverpond-logo.svg')}');
-    background-position: -150px 0;
-    background-repeat: no-repeat;
-    background-size: 4000px;
-    content: '';
-    display: block;
-    height: ${settings.height};
-    opacity: 0.1;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
+const BackgroundColor = styled.div`
+  background-image: url('${staticAssetPath('silverpond-logo.svg')}');
+  background-position: -150px 0;
+  background-repeat: no-repeat;
+  background-size: 4000px;
+  content: '';
+  display: block;
+  height: ${settings.height};
+  opacity: 0.1;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+`;
+
+const BackgroundImage = styled.div`
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  display: block;
+  filter: contrast(50%);
+  height: ${settings.height};
+  opacity: 0.33;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
 `;
 
 const Body = styled.div`
@@ -49,6 +64,7 @@ const Body = styled.div`
   justify-content: center;
   margin: 0 auto;
   max-width: 75rem;
+  position: relative;
   text-align: center;
 `;
 
@@ -63,11 +79,24 @@ const SubTitle = styled.h3`
 `;
 
 // Component
-const MastHead = ({ title, subTitle }: { title: string, subTitle?: string }) => {
+const MastHead = ({
+  title,
+  subTitle,
+  imageUrl,
+}: {
+  title: string,
+  subTitle?: string,
+  imageUrl?: string,
+}) => {
   return (
     <Container>
       <Inner>
-        <Header style={{ position: 'absolute', top: 0, left: 0, right: 0 }} onDark />
+        {imageUrl ? (
+          <BackgroundImage style={{ backgroundImage: `url('${imageUrl}')` }} />
+        ) : (
+          <BackgroundColor />
+        )}
+        <Header style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 1 }} onDark />
         <Body>
           <Title>{title}</Title>
           <SubTitle>{subTitle}</SubTitle>

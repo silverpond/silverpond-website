@@ -38,9 +38,8 @@ const About = ({ data }: { data: Object }) => {
     return { ...frontmatter, timeToRead, body: html };
   });
 
-  const teamMembers = filterPagesByCategory(pages, 'people').filter(
-    person => person.teamMember === true,
-  );
+  const people = filterPagesByCategory(pages, 'people');
+  const teamMembers = people.filter(person => person.teamMember);
 
   return (
     <div>
@@ -83,15 +82,13 @@ const About = ({ data }: { data: Object }) => {
             pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum sapien.
           </p>
         </Body>
-
         <SubTitle>Meet the team</SubTitle>
-
-        {chunk(teamMembers, 3).map(row => {
+        {chunk(teamMembers, 3).map((row, index) => {
           return (
-            <PeopleRow key={hash(row)}>
+            <PeopleRow key={index}>
               {row.map(person => {
                 return (
-                  <Col span="4" key={hash(person)}>
+                  <Col span="4" key={person.name}>
                     <PersonSmall
                       name={person.name}
                       description={person.role}
@@ -114,15 +111,8 @@ export const pageQuery = graphql`
       edges {
         node {
           html
-          timeToRead
           frontmatter {
-            active
-            attendLink
-            date
-            intro
             category
-            featured
-            hosts
             image {
               childImageSharp {
                 responsiveSizes {
@@ -130,10 +120,10 @@ export const pageQuery = graphql`
                 }
               }
             }
-            meta
             name
             path
-            title
+            role
+            teamMember
           }
         }
       }

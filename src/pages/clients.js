@@ -47,9 +47,9 @@ const Clients = ({ data }: { data: Object }) => {
             return (
               <Client
                 key={client.name}
-                image={getImageUrl(client.image)}
                 name={client.name}
                 body={client.body}
+                imageUrl={getImageUrl(client.image)}
               />
             );
           })}

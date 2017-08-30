@@ -34,7 +34,7 @@ const Title = styled.h3`
   font-size: 7rem;
   font-weight: ${type.weights.bold};
   line-height: 7rem;
-  margin: 0 2rem 0 -6rem;
+  margin: 0 2rem 0 0;
   text-transform: uppercase;
 `;
 
