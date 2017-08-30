@@ -15,7 +15,7 @@ import MediaBlock from 'components/MediaBlock';
 import TextLink from 'components/TextLink';
 
 const Date = styled.h4`
-  color: ${palette.grey.base}
+  color: ${palette.grey.base};
   font-size: 4rem;
   font-weight: ${type.weights.bold};
   line-height: 4.5rem;
@@ -34,7 +34,10 @@ const AttendButton = styled(Button)`
   width: 100%;
 `;
 
-const Title = styled(Link)`${typeStyles('h3')} display: block;`;
+const Title = styled(Link)`
+  ${typeStyles('h3')};
+  display: block;
+`;
 
 const Text = styled.p`
   margin-bottom: 2rem;
@@ -42,7 +45,8 @@ const Text = styled.p`
 `;
 
 const SubTitle = styled.h4`
-  ${typeStyles('small')} color: ${palette.grey.base};
+  ${typeStyles('small')};
+  color: ${palette.grey.base};
   font-weight: ${type.weights.bold};
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -52,18 +56,9 @@ const Hosts = styled.div`
   display: flex;
 
   & > * + * {
-    margin-left: 2rem;
+    margin-left: 4rem;
   }
 `;
-
-const renderLocation = (venue = {}) => {
-  const link = mapLink(venue);
-  return link ? (
-    <Location to={mapLink(venue)} target="_blank">
-      {venue.name}
-    </Location>
-  ) : null;
-};
 
 // Component
 const EventSmall = ({
@@ -91,27 +86,29 @@ const EventSmall = ({
     country: string,
   },
 }) => {
+  const link = mapLink(venue);
   return (
     <MediaBlock
       aside={
         <div>
           <Date>{dateformat(date, 'd mmm')}</Date>
           <Time>{dateformat(date, 'h:MMtt')}</Time>
-
-          {renderLocation(venue)}
-
-          {!!attendLink && (
+          {link ? (
+            <Location to={link} target="_blank">
+              {venue.name}
+            </Location>
+          ) : null}
+          {attendLink ? (
             <AttendButton to={attendLink} target="_blank" size="small">
               Attend event
             </AttendButton>
-          )}
+          ) : null}
         </div>
       }
     >
       <Title to={eventLink}>{title}</Title>
       <Text>{string(text).truncate(300).s}</Text>
-
-      {!!hosts &&
+      {hosts &&
       hosts.length > 0 && (
         <div>
           <SubTitle>Hosted by</SubTitle>

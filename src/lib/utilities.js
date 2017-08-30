@@ -51,25 +51,15 @@ export const getHosts = (hostNames: string[], pages: Page[]): Page[] => {
 };
 
 // build a google maps link from event venue object
-export const mapLink = ({
-  address,
-  city,
-  country,
-  lat,
-  lon,
-}: {
-  address: string,
-  city: string,
-  country: string,
-  lat: string,
-  lng: string,
-}) => {
-  return address
-    ? `https://www.google.com/maps/place/${address.replace(
-        / /,
-        '+',
-      )}+${city}+${country}/@${lat},@${lng}`
-    : undefined;
+export const mapLink = (location: ?Object): ?string => {
+  if (!location) return null;
+
+  const { address, city, country, lat, lng } = location;
+
+  if (!address) return null;
+
+  const query = `${address.replace(/ /, '+')}+${city}+${country}/@${lat},@${lng}`;
+  return `https://www.google.com/maps/place/${query}`;
 };
 
 // Interprets a GraphQL image response

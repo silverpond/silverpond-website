@@ -2,7 +2,6 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import hash from 'object-hash';
 import { chunk } from 'lodash';
 
 import { typeStyles } from 'lib/settings';
@@ -83,9 +82,9 @@ const About = ({ data }: { data: Object }) => {
           </p>
         </Body>
         <SubTitle>Meet the team</SubTitle>
-        {chunk(teamMembers, 3).map((row, index) => {
+        {chunk(teamMembers, 3).map(row => {
           return (
-            <PeopleRow key={index}>
+            <PeopleRow key={row}>
               {row.map(person => {
                 return (
                   <Col span="4" key={person.name}>

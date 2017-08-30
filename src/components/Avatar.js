@@ -17,7 +17,10 @@ const Image = styled.img`
   width: 5rem;
 `;
 
-const Name = styled.p`${typeStyles('small')} font-weight: ${type.weights.medium};`;
+const Name = styled.p`
+  ${typeStyles('small')};
+  font-weight: ${type.weights.medium};
+`;
 
 // Component
 const Avatar = ({ name, imageUrl }: { name: string, imageUrl: string }) => {

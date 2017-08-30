@@ -2,7 +2,6 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import hash from 'object-hash';
 import s from 'string';
 
 import { filterNot, filterPagesByCategory, findFeaturedPages, getHosts } from 'lib/utilities';
@@ -35,7 +34,7 @@ const Events = ({ data }: { data: Object }) => {
       <Section color="grey" size="medium">
         <FeaturedTag>Featured</FeaturedTag>
         <EventSmall
-          key={hash(featuredEvent)}
+          key={featuredEvent.path}
           date={featuredEvent.date}
           title={featuredEvent.title}
           venue={featuredEvent.venue}
@@ -50,7 +49,7 @@ const Events = ({ data }: { data: Object }) => {
             const hosts = getHosts(event.hosts, pages);
             return (
               <EventSmall
-                key={hash(event)}
+                key={event.path}
                 date={event.date}
                 title={event.title}
                 venue={event.venue}

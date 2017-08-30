@@ -2,7 +2,6 @@
 // Imports - config
 import React from 'react';
 import fetch from 'isomorphic-fetch';
-import hash from 'object-hash';
 import styled, { keyframes } from 'styled-components';
 import pluralize from 'pluralize';
 import { chunk } from 'lodash';
@@ -230,14 +229,7 @@ class ObjectDetectionDemo extends React.Component {
                 {this.state.results.map(result => {
                   const { bbox: [x1, y1, x2, y2] } = result;
                   return (
-                    <Rect
-                      key={hash(result)}
-                      fill="none"
-                      height={y2 - y1}
-                      width={x2 - x1}
-                      x={x1}
-                      y={y1}
-                    />
+                    <Rect key={result} fill="none" height={y2 - y1} width={x2 - x1} x={x1} y={y1} />
                   );
                 })}
               </Svg>
@@ -250,11 +242,11 @@ class ObjectDetectionDemo extends React.Component {
 
           {chunk(this.state.results, 3).map(row => {
             return (
-              <SegmentRow key={hash(row)}>
+              <SegmentRow key={row}>
                 {row.map(result => {
                   const { bbox: [x1, y1, x2, y2], class: clazz } = result;
                   return (
-                    <Col span="4" key={hash(result)}>
+                    <Col span="4" key={result}>
                       <p>{`class: ${clazz}`}</p>
                       <Svg viewBox={`${x1} ${y1} ${x2 - x1} ${y2 - y1}`}>
                         <image href={this.state.imageDataUrl} />

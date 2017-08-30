@@ -1,7 +1,6 @@
 // @flow
 // Imports - config
 import React from 'react';
-import hash from 'object-hash';
 import { chunk } from 'lodash';
 
 import {
@@ -43,13 +42,13 @@ const Articles = ({ data }: { data: Object }) => {
           tag="Featured"
         />
       </Section>
-      {chunk(nonFeaturedArticles, 2).map(group => {
+      {chunk(nonFeaturedArticles, 2).map(row => {
         return (
-          <Section key={hash(group)}>
+          <Section key={row}>
             <ColWrapper>
-              {group.map(article => {
+              {row.map(article => {
                 return (
-                  <Col span="6" key={hash(article)}>
+                  <Col span="6" key={article.path}>
                     <ArticleSmall
                       author={getPerson(pages, article.author)}
                       date={article.date}

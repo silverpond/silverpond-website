@@ -34,16 +34,16 @@ const Spacer = styled.div`
 // Component
 const PersonSmall = ({
   description,
-  image,
+  imageUrl,
   name,
 }: {
   description: string,
-  image: string,
+  imageUrl: string,
   name: string,
 }) => {
   return (
     <Container>
-      <Image src={image} />
+      <Image src={imageUrl} />
       <Name>{name}</Name>
       <Spacer />
       <Description>{description}</Description>

@@ -34,6 +34,7 @@ module.exports = {
     'react/jsx-no-bind': 0,
     'react/no-danger': 0,
     'react/require-default-props': 0,
+    'react/no-array-index-key': 0,
     'react/no-unused-prop-types': 0, // currently can't handle destructuring assignments
     semi: 0,
     'arrow-parens': ['error', 'as-needed'],

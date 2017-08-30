@@ -3,8 +3,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import dateformat from 'dateformat';
-import string from 'string';
-import hash from 'object-hash';
 import Link from 'gatsby-link';
 
 import { palette, type, typeStyles } from 'lib/settings';
@@ -110,9 +108,9 @@ const WorkshopSmall = ({
         <div>
           {dates.map(date => {
             return (
-              <div key={hash(date) + hash('div')}>
-                <Date key={hash(date) + hash('date')}>{dateformat(date, 'd mmm')}</Date>
-                <Time key={hash(date) + hash('time')}>{dateformat(date, 'h:MMtt')}</Time>
+              <div key={date}>
+                <Date>{dateformat(date, 'd mmm')}</Date>
+                <Time>{dateformat(date, 'h:MMtt')}</Time>
               </div>
             );
           })}
