@@ -96,7 +96,7 @@ Details on the location where the event is being held - used when generating map
 venue:
   name: Silverpond office
   lat: -37.8155307
-  lon: 144.9619365
+  lng: 144.9619365
   address: 382 Little Collins st
   city: Melbourne
   country: Australia

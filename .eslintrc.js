@@ -1,6 +1,5 @@
 module.exports = {
   extends: 'airbnb',
-  installedESLint: true,
   parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
@@ -21,10 +20,7 @@ module.exports = {
     'no-shadow': 1,
     'no-undef': 1,
     'no-floating-decimal': 0,
-    'no-unused-expressions': [
-      'error',
-      { allowShortCircuit: true, allowTernary: true },
-    ],
+    'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
     'no-use-before-define': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-indent-props': 0, // handled by prettier

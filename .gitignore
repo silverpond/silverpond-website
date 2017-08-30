@@ -2,6 +2,7 @@ node_modules/
 pages/meetup-events/
 pages/redirects/
 public
+.cache
 .gatsby-context.js
 .DS_Store
 .intermediate-representation/

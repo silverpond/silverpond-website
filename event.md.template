@@ -8,7 +8,7 @@ path: "/events/{{ slug }}/"
 venue:
   name: {{ venue.name }}
   lat: {{ venue.lat }}
-  lon: {{ venue.lon }}
+  lng: {{ venue.lng }}
   address: {{ venue.address_1 }}
   city: {{ venue.city }}
   country: {{ venue.country }}

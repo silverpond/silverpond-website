@@ -27,5 +27,8 @@ node_modules/styled-components/flow-typed/lodash_v4.x.x.js
 node_modules/styled-components/flow-typed/inline-style-prefixer_vx.x.x.js
 
 [options]
-module.name_mapper='^components\(.*\)$' -> '<PROJECT_ROOT>/components/\1'
-module.name_mapper='^lib\(.*\)$' -> '<PROJECT_ROOT>/lib/\1'
+module.name_mapper='^components\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
+module.name_mapper='^images\(.*\)$' -> '<PROJECT_ROOT>/src/images/\1'
+module.name_mapper='^lib\(.*\)$' -> '<PROJECT_ROOT>/src/lib/\1'
+module.name_mapper='^pages\(.*\)$' -> '<PROJECT_ROOT>/src/pages/\1'
+module.name_mapper='^utils\(.*\)$' -> '<PROJECT_ROOT>/src/utils'

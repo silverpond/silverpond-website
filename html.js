@@ -1,8 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { prefixLink } from 'gatsby-helpers';
 
-const HTML = ({ body }: { body: string }) => {
+const HTML = (props: Object) => {
   const head = Helmet.rewind();
   const BUILD_TIME = new Date().getTime();
   let css;
@@ -14,6 +13,7 @@ const HTML = ({ body }: { body: string }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {head.title.toComponent()}
         {head.meta.toComponent()}
+        {props.headComponents}
         <link
           href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Volkhov"
           rel="stylesheet"
@@ -21,8 +21,8 @@ const HTML = ({ body }: { body: string }) => {
         {css}
       </head>
       <body>
-        <div id="react-mount" dangerouslySetInnerHTML={{ __html: body }} />
-        <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
+        <div id="__gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />
+        {props.postBodyComponents}
       </body>
     </html>
   );

@@ -2,8 +2,8 @@
 // Imports - config
 import React from 'react';
 
-import Article from '../components/Article';
-import Event from '../components/Event';
+import Article from 'components/Article';
+import Event from 'components/Event';
 
 const getPostType = (path: string): string => {
   return path.split('/')[1];
