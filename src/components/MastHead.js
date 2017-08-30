@@ -63,7 +63,7 @@ const SubTitle = styled.h3`
 `;
 
 // Component
-const MastHead = ({ title, subTitle }: { title: string, subTitle: string }) => {
+const MastHead = ({ title, subTitle }: { title: string, subTitle?: string }) => {
   return (
     <Container>
       <Inner>

@@ -29,11 +29,7 @@ const ArrowLink = ({
 }) => {
   return (
     <Link to={to}>
-      {fancytext ? (
-        <FancyText>{children}</FancyText>
-      ) : (
-        <LinkText>{children}</LinkText>
-      )}
+      {fancytext ? <FancyText>{children}</FancyText> : <LinkText>{children}</LinkText>}
       <ArrowIcon />
     </Link>
   );
