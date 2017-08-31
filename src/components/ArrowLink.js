@@ -8,7 +8,10 @@ import { linkUnderline } from 'lib/styles';
 
 import ArrowIcon from 'components/ArrowIcon';
 
-const LinkText = styled.span`${linkUnderline} margin-right: 2rem;`;
+const LinkText = styled.span`
+  ${linkUnderline};
+  margin-right: 2rem;
+`;
 
 const FancyText = styled.span`
   font-family: georgia;

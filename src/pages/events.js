@@ -17,14 +17,15 @@ const FeaturedTag = styled(Tag)`margin-bottom: 2rem;`;
 
 // Component
 const Events = ({ data }: { data: Object }) => {
-  const pages = data.allMarkdownRemark.edges.map(edge => {
-    const { frontmatter, html, timeToRead } = edge.node;
-    return { ...frontmatter, timeToRead, body: html };
+  const events = data.events.edges.map(edge => {
+    const { excerpt, frontmatter, html, timeToRead } = edge.node;
+    return { ...frontmatter, excerpt, timeToRead, body: html };
   });
 
-  const events = filterPagesByCategory(pages, 'events');
+  const people = data.people.edges.map(edge => edge.node.frontmatter);
+
   const featuredEvent = findFeaturedPages(events)[0];
-  const featuredEventHosts = getHosts(featuredEvent.hosts, pages);
+  const featuredEventHosts = getHosts(featuredEvent.hosts, people);
   const nonFeaturedEvents = filterNot(events, [featuredEvent]);
 
   return (
@@ -39,14 +40,14 @@ const Events = ({ data }: { data: Object }) => {
           title={featuredEvent.title}
           venue={featuredEvent.venue}
           hosts={featuredEventHosts}
-          text={featuredEvent.intro || featuredEvent.body}
+          text={featuredEvent.intro || featuredEvent.excerpt}
           eventLink={featuredEvent.path}
         />
       </Section>
       <Section size="medium">
         <ItemList>
           {nonFeaturedEvents.map(event => {
-            const hosts = getHosts(event.hosts, pages);
+            const hosts = getHosts(event.hosts, people);
             return (
               <EventSmall
                 key={event.path}
@@ -54,7 +55,7 @@ const Events = ({ data }: { data: Object }) => {
                 title={event.title}
                 venue={event.venue}
                 hosts={hosts}
-                text={event.intro || s(event.body).stripTags().s}
+                text={event.intro || event.excerpt}
                 attendLink={event.attendLink}
                 eventLink={event.path}
               />
@@ -68,17 +69,15 @@ const Events = ({ data }: { data: Object }) => {
 
 export const pageQuery = graphql`
   query EventsQuery {
-    allMarkdownRemark {
+    events: allMarkdownRemark(filter: { frontmatter: { category: { eq: "events" } } }) {
       edges {
         node {
-          html
           timeToRead
+          excerpt
           frontmatter {
-            active
             attendLink
             date
             intro
-            category
             featured
             hosts
             image {
@@ -88,10 +87,24 @@ export const pageQuery = graphql`
                 }
               }
             }
-            meta
-            name
             path
             title
+          }
+        }
+      }
+    }
+    people: allMarkdownRemark(filter: { frontmatter: { category: { eq: "people" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            image {
+              childImageSharp {
+                responsiveSizes {
+                  src
+                }
+              }
+            }
           }
         }
       }

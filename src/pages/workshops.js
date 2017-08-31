@@ -1,6 +1,7 @@
 // @flow
 // Imports - config
 import React from 'react';
+import moment from 'moment';
 
 import { filterPagesByCategory, getHosts } from 'lib/utilities';
 
@@ -9,6 +10,11 @@ import Helmet from 'components/Helmet';
 import ItemList from 'components/ItemList';
 import MastHead from 'components/MastHead';
 import Section from 'components/Section';
+
+function hasFinished(dates: Array<Date>): boolean {
+  const today = new Date();
+  return dates.every(date => moment(date).isBefore(today));
+}
 
 const Workshop = (workshop: Object, people: Array<Object>) => {
   const hosts = getHosts(workshop.hosts, people);
@@ -34,19 +40,23 @@ const Workshops = ({ data }: { data: Object }) => {
 
   const people = filterPagesByCategory(pages, 'people');
   const workshops = filterPagesByCategory(pages, 'workshops');
-  const activeWorkshops = workshops.filter(w => w.active === true);
-  const priorWorkshops = workshops.filter(w => w.active === false);
+  const activeWorkshops = workshops.filter(w => !hasFinished(w.dates));
+  const priorWorkshops = workshops.filter(w => hasFinished(w.dates));
 
   return (
     <div>
       <Helmet title="Workshops" />
       <MastHead title="Workshops" subTitle="Come join us at one of our Deep Learning workshops" />
-      <Section color="grey" size="medium">
-        {activeWorkshops.map(workshop => Workshop(workshop, people))}
-      </Section>
-      <Section size="medium">
-        <ItemList>{priorWorkshops.map(workshop => Workshop(workshop, people))}</ItemList>
-      </Section>
+      {activeWorkshops.length > 0 && (
+        <Section color="grey" size="medium">
+          {activeWorkshops.map(workshop => Workshop(workshop, people))}
+        </Section>
+      )}
+      {priorWorkshops.length > 0 && (
+        <Section size="medium">
+          <ItemList>{priorWorkshops.map(workshop => Workshop(workshop, people))}</ItemList>
+        </Section>
+      )}
     </div>
   );
 };

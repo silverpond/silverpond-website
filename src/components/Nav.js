@@ -29,25 +29,36 @@ const NavItem = styled.li`
   }
 `;
 
+const items = [
+  { name: 'About', link: '/about/' },
+  { name: 'Articles', link: '/articles/' },
+  { name: 'Events', link: '/events/' },
+  { name: 'Clients', link: '/clients/' },
+  { name: 'Deep learning', link: '/deep-learning/' },
+  { name: 'Workshops', link: '/workshops/' },
+  {
+    name: 'Co-working',
+    href: 'http://silverpond.com.au/the_pond/',
+    options: { target: '_blank', rel: 'noopener noreferrer' },
+  },
+  { name: 'Contact', href: '#footer' },
+];
+
 // Component
-const Nav = ({ style, white }: { style?: Object, white?: boolean }) => {
-  const items = [
-    { name: 'About', link: '/about/' },
-    { name: 'Articles', link: '/articles/' },
-    { name: 'Events', link: '/events/' },
-    { name: 'Clients', link: '/clients/' },
-    { name: 'Deep learning', link: '/deep-learning/' },
-    { name: 'Workshops', link: '/workshops/' },
-    {
-      name: 'Co-working',
-      href: 'http://silverpond.com.au/the_pond/',
-      options: { target: '_blank', rel: 'noopener noreferrer' },
-    },
-    { name: 'Contact', href: '#footer' },
-  ];
+const Nav = ({
+  style,
+  white,
+  without,
+}: {
+  style?: Object,
+  white?: boolean,
+  without?: Array<string>,
+}) => {
+  const unwantedItems = without || [];
+  const wantedItems = items.filter(i => !unwantedItems.includes(i.name));
   return (
     <Container style={style}>
-      {items.map((item: NavItemType) => {
+      {wantedItems.map((item: NavItemType) => {
         return (
           <NavItem key={item.name} white={white}>
             {item.hasOwnProperty('href') ? (

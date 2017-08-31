@@ -60,7 +60,7 @@ const ArticleSmall = ({
   text,
   title,
 }: {
-  author: any,
+  author: ?Object,
   date: string,
   imageUrl?: string,
   path: string,

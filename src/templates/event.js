@@ -16,11 +16,8 @@ import MastHead from 'components/MastHead';
 import MastHeadMap from 'components/MastHeadMap';
 import PostMeta from 'components/PostMeta';
 import Section from 'components/Section';
+import TextContent from 'components/TextContent';
 import TextLink from 'components/TextLink';
-
-const Body = styled.div`${textBlock} margin-bottom: 4rem;`;
-
-const Title = styled.div`${typeStyles('h2')} margin-bottom: 1.5rem;`;
 
 const Meta = styled.div`
   display: flex;
@@ -28,19 +25,27 @@ const Meta = styled.div`
 `;
 
 const DateTime = styled.div`
-  align-items: baseline;
+  align-items: flex-end;
   display: flex;
+  height: 42px;
 `;
 
-const Date = styled.h4`${typeStyles('h3')} margin-right: 1rem;`;
+const Date = styled.h4`
+  ${typeStyles('h3')};
+  line-height: 1;
+  margin-right: 1rem;
+`;
 
 const Time = styled.p`
-  ${typeStyles('h4')} font-weight: ${type.weights.normal};
-  margin-bottom: 1rem;
+  ${typeStyles('h4')};
+  font-weight: ${type.weights.normal};
+  line-height: 1;
+  margin-bottom: 0;
 `;
 
 const SubTitle = styled.h4`
-  ${typeStyles('small')} color: ${palette.grey.base};
+  ${typeStyles('small')};
+  color: ${palette.grey.base};
   font-weight: ${type.weights.medium};
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -66,7 +71,6 @@ const renderLocation = (venue = {}) => {
 // Component
 const Event = ({ data }: { data: Object }) => {
   const event = data.markdownRemark;
-  const hosts = null;
   const hostRecords = [];
   const venue = null;
 
@@ -77,8 +81,7 @@ const Event = ({ data }: { data: Object }) => {
     <div>
       <PostMeta title={title} draft={draft} />
       {venue ? <MastHeadMap lat={venue.lat} lon={venue.lng} /> : <MastHead title={title} />}
-      <Section size="small" style={{ paddingTop: '2rem' }}>
-        <Title>{title}</Title>
+      <Section size="small" style={{ padding: '4rem 0' }}>
         <Meta>
           <DateTime>
             <Date>{dateformat(date, 'd mmm')}</Date>
@@ -89,20 +92,16 @@ const Event = ({ data }: { data: Object }) => {
           </Button>
         </Meta>
         {renderLocation(venue)}
-        <Body dangerouslySetInnerHTML={{ __html: event.html }} />
-        {!!hosts &&
-        hosts.length > 0 && (
+        <TextContent>
+          <div dangerouslySetInnerHTML={{ __html: event.html }} />
+        </TextContent>
+        {hostRecords.length > 0 && (
           <div>
             <SubTitle>Hosted by</SubTitle>
             <Hosts>
-              {hostRecords.map(host => {
-                if (host != null) {
-                  return (
-                    <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
-                  );
-                }
-                return null;
-              })}
+              {hostRecords.map(host => (
+                <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
+              ))}
             </Hosts>
           </div>
         )}

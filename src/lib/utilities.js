@@ -30,8 +30,8 @@ export const getPromotedPages = (
 };
 
 // find a person page by name
-export const getPerson = (pages: Page[], name: string) => {
-  return pages.find(page => page.category === 'people' && page.name === name);
+export const getPerson = (pages: Page[], name: string): ?Object => {
+  return pages.find(page => page.name === name);
 };
 
 // calculate read time from html string where average read time is 275 words per minute
@@ -63,8 +63,8 @@ export const mapLink = (location: ?Object): ?string => {
 };
 
 // Interprets a GraphQL image response
-export const getImageUrl = (image: ?Object): ?string => {
-  return image && image.childImageSharp ? image.childImageSharp.responsiveSizes.src : null;
+export const getImageUrl = (image: ?Object): string => {
+  return image && image.childImageSharp ? image.childImageSharp.responsiveSizes.src : '';
 };
 
 export function staticAssetPath(assetPath: string): string {

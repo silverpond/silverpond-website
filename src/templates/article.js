@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import dateformat from 'dateformat';
 
 import { type, typeStyles } from 'lib/settings';
-import { textBlock } from 'lib/styles';
 import { getImageUrl, getPerson } from 'lib/utilities';
 
 import Avatar from 'components/Avatar';
@@ -14,11 +13,12 @@ import PostMeta from 'components/PostMeta';
 import Section from 'components/Section';
 import TextContent from 'components/TextContent';
 
-const Body = styled.div`${textBlock} margin-bottom: 6rem;`;
-
 const Meta = styled.div`text-align: right;`;
 
-const Date = styled.p`${typeStyles('small')} font-weight: ${type.weights.medium};`;
+const Date = styled.p`
+  ${typeStyles('small')};
+  font-weight: ${type.weights.medium};
+`;
 
 const ReadTime = styled.p`
   font-family: georgia;
@@ -29,26 +29,28 @@ const ReadTime = styled.p`
 
 // Component
 const Article = ({ data }: { data: Object }) => {
-  const article = data.markdownRemark;
-  const authorDetails = null;
+  if (!data.article) return null;
 
-  const { author, date, draft, image, title } = article.frontmatter;
+  const { author, frontmatter, html, timeToRead } = data.article;
+  const { date, draft, image, title } = frontmatter;
 
-  // const authorDetails = getPerson(pages, author);
+  const people = data.people.edges.map(edge => edge.node.frontmatter);
+  const authorDetails = getPerson(people, author);
+
   return (
     <div>
       <PostMeta title={title} draft={draft} />
       <MastHead imageUrl={getImageUrl(image)} title={title} subTitle={author} />
-      <Section size="small" style={{ paddingTop: '2rem' }}>
+      <Section size="small" style={{ padding: '4rem 0' }}>
         <Meta>
           <Date>{dateformat(date, 'mediumDate')}</Date>
-          <ReadTime>{article.timeToRead} min read</ReadTime>
+          <ReadTime>{timeToRead} min read</ReadTime>
         </Meta>
-        {authorDetails ? (
+        {author ? (
           <Avatar name={authorDetails.name} imageUrl={getImageUrl(authorDetails.image)} />
         ) : null}
         <TextContent>
-          <Body dangerouslySetInnerHTML={{ __html: article.html }} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </TextContent>
       </Section>
     </div>
@@ -57,7 +59,7 @@ const Article = ({ data }: { data: Object }) => {
 
 export const pageQuery = graphql`
   query ArticleQuery($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    article: markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       timeToRead
       frontmatter {
@@ -69,6 +71,22 @@ export const pageQuery = graphql`
           childImageSharp {
             responsiveSizes {
               src
+            }
+          }
+        }
+      }
+    }
+    people: allMarkdownRemark(filter: { frontmatter: { category: { eq: "people" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            image {
+              childImageSharp {
+                responsiveSizes {
+                  src
+                }
+              }
             }
           }
         }

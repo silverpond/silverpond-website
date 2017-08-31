@@ -20,12 +20,13 @@ import Section from 'components/Section';
 
 // Component
 const Articles = ({ data }: { data: Object }) => {
-  const pages = data.allMarkdownRemark.edges.map(edge => {
+  const articles = data.articles.edges.map(edge => {
     const { frontmatter, html, timeToRead } = edge.node;
     return { ...frontmatter, timeToRead, body: html };
   });
 
-  const articles = filterPagesByCategory(pages, 'articles');
+  const people = data.people.edges.map(edge => edge.node.frontmatter);
+
   const featuredArticle = findFeaturedPages(articles)[0];
   const nonFeaturedArticles = filterNot(articles, [featuredArticle]).reverse();
 
@@ -36,21 +37,21 @@ const Articles = ({ data }: { data: Object }) => {
       <Section color="grey">
         <ArticleFeatured
           to={featuredArticle.path}
-          imageUrl={getImageUrl(featuredArticle.image)}
           title={featuredArticle.title}
           text={featuredArticle.meta}
           tag="Featured"
+          imageUrl={getImageUrl(featuredArticle.image)}
         />
       </Section>
-      {chunk(nonFeaturedArticles, 2).map(row => {
+      {chunk(nonFeaturedArticles, 2).map((row, index) => {
         return (
-          <Section key={row}>
+          <Section key={index}>
             <ColWrapper>
               {row.map(article => {
                 return (
                   <Col span="6" key={article.path}>
                     <ArticleSmall
-                      author={getPerson(pages, article.author)}
+                      author={getPerson(people, article.author)}
                       date={article.date}
                       title={article.title}
                       text={article.meta}
@@ -71,19 +72,14 @@ const Articles = ({ data }: { data: Object }) => {
 
 export const pageQuery = graphql`
   query ArticlesQuery {
-    allMarkdownRemark {
+    articles: allMarkdownRemark(filter: { frontmatter: { category: { eq: "articles" } } }) {
       edges {
         node {
-          html
           timeToRead
           frontmatter {
-            active
-            attendLink
+            author
             date
-            intro
-            category
             featured
-            hosts
             image {
               childImageSharp {
                 responsiveSizes {
@@ -91,10 +87,24 @@ export const pageQuery = graphql`
                 }
               }
             }
-            meta
-            name
             path
             title
+          }
+        }
+      }
+    }
+    people: allMarkdownRemark(filter: { frontmatter: { category: { eq: "people" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            image {
+              childImageSharp {
+                responsiveSizes {
+                  src
+                }
+              }
+            }
           }
         }
       }

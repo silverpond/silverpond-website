@@ -15,7 +15,7 @@ import MediaBlock from 'components/MediaBlock';
 import TextLink from 'components/TextLink';
 
 const Date = styled.h4`
-  color: ${palette.grey.base}
+  color: ${palette.grey.base};
   font-size: 4rem;
   font-weight: ${type.weights.bold};
   line-height: 4.5rem;
@@ -23,7 +23,9 @@ const Date = styled.h4`
 `;
 
 const Time = styled.p`
-  ${typeStyles('h4')} color: ${palette.grey.base} font-weight: ${type.weights.normal};
+  ${typeStyles('h4')};
+  color: ${palette.grey.base};
+  font-weight: ${type.weights.normal};
   margin-bottom: 1rem;
 `;
 
@@ -34,7 +36,10 @@ const AttendButton = styled(Button)`
   width: 100%;
 `;
 
-const Title = styled(Link)`${typeStyles('h3')} display: block;`;
+const Title = styled(Link)`
+  ${typeStyles('h3')};
+  display: block;
+`;
 
 const Text = styled.p`
   margin-bottom: 2rem;
@@ -53,7 +58,8 @@ const Body = styled.div`
 `;
 
 const SubTitle = styled.h4`
-  ${typeStyles('small')} color: ${palette.grey.base};
+  ${typeStyles('small')};
+  color: ${palette.grey.base};
   font-weight: ${type.weights.bold};
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -80,7 +86,6 @@ const renderLocation = (venue = {}) => {
 const WorkshopSmall = ({
   attendLink,
   dates,
-  eventLink,
   hosts,
   body,
   title,
@@ -88,7 +93,6 @@ const WorkshopSmall = ({
 }: {
   attendLink?: string,
   dates: Array<any>,
-  eventLink: string,
   hosts?: Array<any>,
   style?: Object,
   body: string,
@@ -123,21 +127,16 @@ const WorkshopSmall = ({
         </div>
       }
     >
-      <Title to={eventLink}>{title}</Title>
+      <Title>{title}</Title>
       <Body dangerouslySetInnerHTML={{ __html: body }} />
       {!!hosts &&
       hosts.length > 0 && (
         <div>
           <SubTitle>Hosted by</SubTitle>
           <Hosts>
-            {hosts.map(host => {
-              if (host != null) {
-                return (
-                  <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
-                );
-              }
-              return null;
-            })}
+            {hosts.map(host => (
+              <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
+            ))}
           </Hosts>
         </div>
       )}

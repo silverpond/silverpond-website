@@ -82,9 +82,9 @@ const About = ({ data }: { data: Object }) => {
           </p>
         </Body>
         <SubTitle>Meet the team</SubTitle>
-        {chunk(teamMembers, 3).map(row => {
+        {chunk(teamMembers, 3).map((row, index) => {
           return (
-            <PeopleRow key={row}>
+            <PeopleRow key={index}>
               {row.map(person => {
                 return (
                   <Col span="4" key={person.name}>

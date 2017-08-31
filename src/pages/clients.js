@@ -46,7 +46,7 @@ const Clients = ({ data }: { data: Object }) => {
           {clients.map(client => {
             return (
               <Client
-                key={client.name}
+                key={client.path}
                 name={client.name}
                 body={client.body}
                 imageUrl={getImageUrl(client.image)}

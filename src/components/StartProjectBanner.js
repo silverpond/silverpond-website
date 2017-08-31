@@ -10,7 +10,8 @@ import Section from 'components/Section';
 
 // Styled components
 const Title = styled.h3`
-  ${typeStyles('h1')} color: white;
+  ${typeStyles('h1')};
+  color: white;
   font-weight: ${type.weights.bold};
   margin-bottom: 2.5rem;
 `;
@@ -20,12 +21,7 @@ const StartProject = () => {
   return (
     <Section color="red" centeredContent>
       <Title>Start a project with us today!</Title>
-      <Button
-        to="mailto:hello@silverpond.com.au"
-        color="white"
-        size="large"
-        hasArrow
-      >
+      <Button to="mailto:hello@silverpond.com.au" color="white" size="large" hasArrow>
         Contact us
       </Button>
     </Section>

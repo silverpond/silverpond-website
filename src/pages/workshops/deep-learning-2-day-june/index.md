@@ -7,8 +7,8 @@ hosts      :
     - Noon van der Silk
     - Lyndon Maydwell
 dates:
-    - Wed Jun 7 2017 10:00:00 GMT+1000 (AEDT)
-    - Thu Jun 8 2017 10:00:00 GMT+1000 (AEDT)
+    - 2017-06-07T10:00:00+1000
+    - 2017-06-08T10:00:00+1000
 category: workshops
 path: /workshops/deep-learning-2-day-june
 ---

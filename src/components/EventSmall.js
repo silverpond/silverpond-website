@@ -73,7 +73,7 @@ const EventSmall = ({
   attendLink?: string,
   date: string,
   eventLink: string,
-  hosts?: Array<any>,
+  hosts?: Array<Object>,
   style?: Object,
   text: string,
   title: string,
@@ -113,11 +113,9 @@ const EventSmall = ({
         <div>
           <SubTitle>Hosted by</SubTitle>
           <Hosts>
-            {hosts.map(host => {
-              return host ? (
-                <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
-              ) : null;
-            })}
+            {hosts.map(host => (
+              <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
+            ))}
           </Hosts>
         </div>
       )}

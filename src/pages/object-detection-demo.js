@@ -26,7 +26,8 @@ const Controls = styled(ColWrapper)`
 `;
 
 const Label = styled.p`
-  ${typeStyles('small')} font-weight: ${type.weights.medium};
+  ${typeStyles('small')};
+  font-weight: ${type.weights.medium};
   margin-bottom: 1rem;
 `;
 
@@ -240,9 +241,9 @@ class ObjectDetectionDemo extends React.Component {
 
           <p>{this.state.message}</p>
 
-          {chunk(this.state.results, 3).map(row => {
+          {chunk(this.state.results, 3).map((row, index) => {
             return (
-              <SegmentRow key={row}>
+              <SegmentRow key={index}>
                 {row.map(result => {
                   const { bbox: [x1, y1, x2, y2], class: clazz } = result;
                   return (

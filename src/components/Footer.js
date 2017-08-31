@@ -15,7 +15,7 @@ import TextLink from 'components/TextLink';
 const Container = styled.div`
   background-color: ${palette.slate.base};
   color: white;
-  padding: 4rem 2rem 6rem;
+  padding: 4rem;
   position: relative;
 `;
 
@@ -111,7 +111,11 @@ const Footer = () => {
           </SocialLinks>
         </div>
         <Aside>
-          <Nav style={{ flexShrink: 0, marginBottom: '2rem' }} white />
+          <Nav
+            style={{ flexShrink: 0, marginBottom: '2rem' }}
+            white
+            without={['About', 'Events', 'Workshops']}
+          />
           <EmailSignupForm />
         </Aside>
       </Inner>

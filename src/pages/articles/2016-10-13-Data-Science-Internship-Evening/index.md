@@ -8,7 +8,7 @@ meta: |
   machine learning and AI work with the 500 attendees.
 image: crowd-1.jpg
 category: articles
-path: /articles/2016-10-13-Data-Science-Internship-Evening
+path: /articles/2016-10-13-data-science-internship-evening
 ---
 
 On Monday there was a huge turnout for the

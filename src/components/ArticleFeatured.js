@@ -12,7 +12,8 @@ import ArrowLink from 'components/ArrowLink';
 import TagBase from 'components/Tag';
 
 const Title = styled(Link)`
-  ${typeStyles('h3')} display: block;
+  ${typeStyles('h3')};
+  display: block;
   margin-bottom: 2rem;
 `;
 
@@ -31,7 +32,7 @@ const ArticleFeatured = ({
   title,
   to,
 }: {
-  imageUrl: string,
+  imageUrl?: string,
   tag: string,
   text: string,
   title: string,
