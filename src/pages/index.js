@@ -59,7 +59,7 @@ const TagLine = styled.h2`
   margin-bottom: 2.5rem;
   text-align: center;
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     font-size: 4rem;
     line-height: 5rem;
     margin-bottom: 5rem;

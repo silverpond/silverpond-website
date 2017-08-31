@@ -15,7 +15,7 @@ const Title = styled.h3`
   font-weight: ${type.weights.bold};
   margin-bottom: 2.5rem;
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     ${typeStyles('h1')};
     margin-bottom: 2.5rem;
   }

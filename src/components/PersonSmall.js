@@ -11,7 +11,7 @@ const Container = styled.div`
   flex-direction: column;
   margin-bottom: 2rem;
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     margin-bottom: 0;
   }
 `;
@@ -20,7 +20,7 @@ const Image = styled.img`
   margin-bottom: 1rem;
   width: 100%;
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     margin-bottom: 2.5rem;
   }
 `;

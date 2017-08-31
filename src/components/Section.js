@@ -26,7 +26,7 @@ const Container = styled.div`
       getBackgroundColor(props.color)};
   padding: 2rem;
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     padding: 8rem 6rem;
   }
 `;

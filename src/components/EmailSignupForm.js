@@ -18,7 +18,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  @mixin (min-width: 750px) {
+  @mixin (min-width: 768px) {
     flex-direction: row;
   }
 
@@ -27,7 +27,7 @@ const Form = styled.form`
   }
 `;
 
-const InputWrapper = styled.div`@media (min-width: 750px) {padding-right: 2rem;}`;
+const InputWrapper = styled.div`@media (min-width: 768px) {padding-right: 2rem;}`;
 
 const Input = styled.input`
   background-color: ${palette.slate.light};

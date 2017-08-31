@@ -39,8 +39,8 @@ const Container = styled.div`
   }
 `;
 
-const TextContent = ({ children }: Object) => {
-  return <Container>{children}</Container>;
+const TextContent = ({ children, style }: { children: any, style?: Object }) => {
+  return <Container style={style}>{children}</Container>;
 };
 
 export default TextContent;

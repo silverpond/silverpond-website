@@ -21,7 +21,7 @@ const Container = styled.div`
   padding: 2rem;
   position: relative;
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     padding: 2rem 4rem 4rem;
   }
 `;
@@ -81,7 +81,7 @@ const NavItem = styled.li`
   margin: 0 2rem;
   text-align: center;
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     display: inline-block;
     line-height: 1.5;
   }

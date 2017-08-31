@@ -38,7 +38,6 @@ const Clients = ({ data }: { data: Object }) => {
           pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum sapien. Ut
           tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus semper.
         </Intro>
-
         <ItemList>
           {clients.map(client => {
             return (
@@ -52,7 +51,6 @@ const Clients = ({ data }: { data: Object }) => {
           })}
         </ItemList>
       </Section>
-
       <StartProjectBanner />
     </div>
   );

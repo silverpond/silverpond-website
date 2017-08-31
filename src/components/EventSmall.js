@@ -21,7 +21,7 @@ const Date = styled.h4`
   line-height: 4.5rem;
   white-space: nowrap;
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     margin-bottom: 0.5rem;
   }
 `;
@@ -63,7 +63,7 @@ const Hosts = styled.div`
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 750px) {
+  @media (min-width: 768px) {
     flex-direction: row;
 
     & > * {

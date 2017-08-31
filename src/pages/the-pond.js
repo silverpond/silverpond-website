@@ -21,7 +21,7 @@ const ThePond = () => {
       <Helmet title="The Pond" />
       <MastHead title="The Pond" subTitle="A Data Science and Machine Learning Coworking Space" />
       <Section>
-        <TextContent>
+        <TextContent style={{ margin: '0 auto', maxWidth: '768px' }}>
           <p>Hi there and welcome to the Pond!</p>
           <p>
             We're a community of creatives, data scientists, machine learning enthusiasts,

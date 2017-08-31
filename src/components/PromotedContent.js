@@ -26,7 +26,20 @@ const getTitleColor = (color: string): string => {
 const Head = styled.div`
   align-items: baseline;
   display: flex;
+  flex-direction: column;
   margin-bottom: 3rem;
+
+  > :last-child {
+    align-self: flex-end;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+
+    > :last-child {
+      align-self: initial;
+    }
+  }
 `;
 
 const Title = styled.h3`
