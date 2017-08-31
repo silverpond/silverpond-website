@@ -16,7 +16,6 @@ const HTML = (props: Object) => {
           href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Volkhov"
           rel="stylesheet"
         />
-        {css}
       </head>
       <body>
         <div id="__gatsby" dangerouslySetInnerHTML={{ __html: props.body }} />

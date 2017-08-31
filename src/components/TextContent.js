@@ -3,8 +3,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
+  margin: 0 auto;
+  max-width: 60rem;
+
   a > span {
     margin: 2rem 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+    padding: 0;
   }
 
   img {
@@ -14,6 +27,7 @@ const Container = styled.div`
   p {
     line-height: 1.4;
     margin-bottom: 1rem;
+    margin-top: 0;
   }
 
   span {
@@ -23,6 +37,7 @@ const Container = styled.div`
   ul {
     list-style: disc;
     margin-bottom: 1rem;
+    margin-top: 0;
     padding-left: 2rem;
   }
 `;

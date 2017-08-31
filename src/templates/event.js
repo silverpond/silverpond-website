@@ -59,24 +59,18 @@ const Hosts = styled.div`
   }
 `;
 
-const renderLocation = (venue = {}) => {
-  const link = mapLink(venue);
-  return link ? (
-    <TextLink to={mapLink(venue)} target="_blank">
-      {venue.name}
-    </TextLink>
-  ) : null;
-};
-
 // Component
 const Event = ({ data }: { data: Object }) => {
-  const event = data.markdownRemark;
-  const hostRecords = [];
-  const venue = null;
+  if (!data.event) return null;
 
-  const { attendLink, date, draft, title } = event.frontmatter;
+  const { frontmatter, html } = data.event;
+  const { attendLink, date, draft, hosts, title, venue } = frontmatter;
 
-  // const hostRecords = getHosts(hosts, pages);
+  const people = data.people.edges.map(edge => edge.node.frontmatter);
+
+  const link = mapLink(venue);
+  const hostRecords = getHosts(hosts, people);
+
   return (
     <div>
       <PostMeta title={title} draft={draft} />
@@ -91,9 +85,13 @@ const Event = ({ data }: { data: Object }) => {
             Attend event
           </Button>
         </Meta>
-        {renderLocation(venue)}
+        {link ? (
+          <TextLink to={mapLink(venue)} target="_blank">
+            {venue.name}
+          </TextLink>
+        ) : null}
         <TextContent>
-          <div dangerouslySetInnerHTML={{ __html: event.html }} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </TextContent>
         {hostRecords.length > 0 && (
           <div>
@@ -112,7 +110,7 @@ const Event = ({ data }: { data: Object }) => {
 
 export const pageQuery = graphql`
   query EventQuery($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    event: markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       timeToRead
       frontmatter {
@@ -125,6 +123,22 @@ export const pageQuery = graphql`
           childImageSharp {
             responsiveSizes {
               src
+            }
+          }
+        }
+      }
+    }
+    people: allMarkdownRemark(filter: { frontmatter: { category: { eq: "people" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            image {
+              childImageSharp {
+                responsiveSizes {
+                  src
+                }
+              }
             }
           }
         }

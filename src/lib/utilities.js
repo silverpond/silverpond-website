@@ -34,14 +34,6 @@ export const getPerson = (pages: Page[], name: string): ?Object => {
   return pages.find(page => page.name === name);
 };
 
-// calculate read time from html string where average read time is 275 words per minute
-export const calcReadTime = (string: string): number => {
-  const wordCount = s(string)
-    .stripTags()
-    .s.split(' ').length;
-  return Math.ceil(wordCount / 275);
-};
-
 // get Person records as an Array from an array of names
 export const getHosts = (hostNames: string[], pages: Page[]): Page[] => {
   const hosts = hostNames.map(host => {

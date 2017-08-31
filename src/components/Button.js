@@ -76,11 +76,18 @@ export const styles = (props: Object): string => {
     ${sizeStyles(props.size)}
     border-radius: 3px;
     border: none;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     cursor: pointer;
     display: inline-block;
+    filter: brightness(100%);
     min-width: 8rem;
     text-align: center;
+    transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1), filter .3s;
+
+    &:hover {
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      filter: brightness(90%);
+    }
   `;
 };
 

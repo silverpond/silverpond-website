@@ -6,7 +6,7 @@ import { chunk } from 'lodash';
 
 import { typeStyles } from 'lib/settings';
 import { textBlock } from 'lib/styles';
-import { filterPagesByCategory, getImageUrl, staticAssetPath } from 'lib/utilities';
+import { getImageUrl, staticAssetPath } from 'lib/utilities';
 
 import Header from 'components/Header';
 import Helmet from 'components/Helmet';
@@ -32,22 +32,21 @@ const PeopleRow = styled(ColWrapper)`
 
 // Component
 const About = ({ data }: { data: Object }) => {
-  const pages = data.allMarkdownRemark.edges.map(edge => {
-    const { frontmatter, html, timeToRead } = edge.node;
-    return { ...frontmatter, timeToRead, body: html };
+  const people = data.people.edges.map(edge => {
+    const { frontmatter, html } = edge.node;
+    return { ...frontmatter, body: html };
   });
 
-  const people = filterPagesByCategory(pages, 'people');
   const teamMembers = people.filter(person => person.teamMember);
 
   return (
     <div>
       <Helmet title="About" />
       <Header
+        onDark
         style={{
-          backgroundColor: 'rgba(242, 81, 70, .75)',
+          backgroundColor: 'rgba(0, 0, 0, .75)',
           borderBottom: 0,
-          color: 'white',
           position: 'absolute',
           width: '100%',
         }}
@@ -106,12 +105,11 @@ const About = ({ data }: { data: Object }) => {
 
 export const pageQuery = graphql`
   query AboutQuery {
-    allMarkdownRemark {
+    people: allMarkdownRemark(filter: { frontmatter: { category: { eq: "people" } } }) {
       edges {
         node {
           html
           frontmatter {
-            category
             image {
               childImageSharp {
                 responsiveSizes {

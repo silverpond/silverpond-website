@@ -46,7 +46,7 @@ const Article = ({ data }: { data: Object }) => {
           <Date>{dateformat(date, 'mediumDate')}</Date>
           <ReadTime>{timeToRead} min read</ReadTime>
         </Meta>
-        {author ? (
+        {authorDetails ? (
           <Avatar name={authorDetails.name} imageUrl={getImageUrl(authorDetails.image)} />
         ) : null}
         <TextContent>

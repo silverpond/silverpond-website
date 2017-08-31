@@ -1,20 +1,22 @@
 // @flow
-// Imports - config
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'gatsby-link';
 
 import { palette, type, typeStyles } from 'lib/settings';
 
 import EmailSignupForm from 'components/EmailSignupForm';
 import InnerBase from 'components/Inner';
 import LogoLink from 'components/LogoLink';
-import Nav from 'components/Nav';
+import SocialLink from 'components/SocialLink';
 import TextLink from 'components/TextLink';
+
+const textColor = 'rgba(255, 255, 255, 0.9)';
 
 // relative position to cover overflow from fixed MastHead element
 const Container = styled.div`
   background-color: ${palette.slate.base};
-  color: white;
+  color: ${textColor};
   padding: 4rem;
   position: relative;
 `;
@@ -22,7 +24,7 @@ const Container = styled.div`
 const Aside = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 `;
 
 const Inner = styled(InnerBase)`
@@ -46,14 +48,14 @@ const Contact = styled.p`
 
   & span:last-child {
     ${typeStyles('h4')};
-    color: white;
+    color: ${textColor};
     font-weight: ${type.weights.normal};
   }
 `;
 
 const EmailLink = styled(TextLink)`
   ${typeStyles('h4')};
-  color: white;
+  color: ${textColor};
   font-weight: ${type.weights.normal};
 
   &:after {
@@ -70,12 +72,32 @@ const SocialLinks = styled.div`
   }
 `;
 
-const SocialLink = styled.a`
-  background: url('../images/${props => props.icon}') no-repeat center;
-  display: block;
-  width: 2rem;
-  height: 2rem;
-  background-size: contain;`;
+const NavContainer = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 6rem;
+`;
+
+const NavItem = styled.li`
+  color: ${textColor};
+  font-weight: ${type.weights.medium};
+  margin: 0 2rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
+const navItems = [
+  { name: 'Articles', link: '/articles' },
+  { name: 'Clients', link: '/clients' },
+  { name: 'Deep Learning', link: '/deep-learning' },
+];
 
 // Component
 const Footer = () => {
@@ -111,11 +133,13 @@ const Footer = () => {
           </SocialLinks>
         </div>
         <Aside>
-          <Nav
-            style={{ flexShrink: 0, marginBottom: '2rem' }}
-            white
-            without={['About', 'Events', 'Workshops']}
-          />
+          <NavContainer>
+            {navItems.map(item => (
+              <NavItem key={item.name}>
+                <Link to={item.link}>{item.name}</Link>
+              </NavItem>
+            ))}
+          </NavContainer>
           <EmailSignupForm />
         </Aside>
       </Inner>

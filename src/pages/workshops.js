@@ -3,7 +3,7 @@
 import React from 'react';
 import moment from 'moment';
 
-import { filterPagesByCategory, getHosts } from 'lib/utilities';
+import { getHosts } from 'lib/utilities';
 
 import WorkshopSmall from 'components/WorkshopSmall';
 import Helmet from 'components/Helmet';
@@ -33,13 +33,13 @@ const Workshop = (workshop: Object, people: Array<Object>) => {
 
 // Component
 const Workshops = ({ data }: { data: Object }) => {
-  const pages = data.allMarkdownRemark.edges.map(edge => {
-    const { frontmatter, html, timeToRead } = edge.node;
-    return { ...frontmatter, timeToRead, body: html };
+  const workshops = data.workshops.edges.map(edge => {
+    const { frontmatter, html } = edge.node;
+    return { ...frontmatter, body: html };
   });
 
-  const people = filterPagesByCategory(pages, 'people');
-  const workshops = filterPagesByCategory(pages, 'workshops');
+  const people = data.people.edges.map(edge => edge.node.frontmatter);
+
   const activeWorkshops = workshops.filter(w => !hasFinished(w.dates));
   const priorWorkshops = workshops.filter(w => hasFinished(w.dates));
 
@@ -63,17 +63,13 @@ const Workshops = ({ data }: { data: Object }) => {
 
 export const pageQuery = graphql`
   query WorkshopsQuery {
-    allMarkdownRemark {
+    workshops: allMarkdownRemark(filter: { frontmatter: { category: { eq: "workshops" } } }) {
       edges {
         node {
           html
-          timeToRead
           frontmatter {
-            active
             attendLink
             dates
-            intro
-            category
             featured
             hosts
             image {
@@ -83,10 +79,24 @@ export const pageQuery = graphql`
                 }
               }
             }
-            meta
-            name
             path
             title
+          }
+        }
+      }
+    }
+    people: allMarkdownRemark(filter: { frontmatter: { category: { eq: "people" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            image {
+              childImageSharp {
+                responsiveSizes {
+                  src
+                }
+              }
+            }
           }
         }
       }

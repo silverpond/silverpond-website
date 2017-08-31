@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { filterPagesByCategory, getImageUrl } from 'lib/utilities';
+import { getImageUrl } from 'lib/utilities';
 
 import Client from 'components/Client';
 import Helmet from 'components/Helmet';
@@ -20,18 +20,15 @@ const Intro = styled(IntroText)`
 
 // Component
 const Clients = ({ data }: { data: Object }) => {
-  const pages = data.allMarkdownRemark.edges.map(edge => {
-    const { frontmatter, html, timeToRead } = edge.node;
-    return { ...frontmatter, timeToRead, body: html };
+  const clients = data.clients.edges.map(edge => {
+    const { frontmatter, html } = edge.node;
+    return { ...frontmatter, body: html };
   });
-
-  const clients = filterPagesByCategory(pages, 'clients');
 
   return (
     <div>
       <Helmet title="Clients" />
       <MastHead title="Clients" subTitle="We have lots of great clients" />
-
       <Section size="medium">
         <Intro>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim mi, vulputate
@@ -63,19 +60,11 @@ const Clients = ({ data }: { data: Object }) => {
 
 export const pageQuery = graphql`
   query ClientsQuery {
-    allMarkdownRemark {
+    clients: allMarkdownRemark(filter: { frontmatter: { category: { eq: "clients" } } }) {
       edges {
         node {
           html
-          timeToRead
           frontmatter {
-            active
-            attendLink
-            date
-            intro
-            category
-            featured
-            hosts
             image {
               childImageSharp {
                 responsiveSizes {
@@ -83,10 +72,8 @@ export const pageQuery = graphql`
                 }
               }
             }
-            meta
             name
             path
-            title
           }
         }
       }

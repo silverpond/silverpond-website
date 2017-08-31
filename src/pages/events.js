@@ -2,9 +2,8 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import s from 'string';
 
-import { filterNot, filterPagesByCategory, findFeaturedPages, getHosts } from 'lib/utilities';
+import { filterNot, findFeaturedPages, getHosts } from 'lib/utilities';
 
 import EventSmall from 'components/EventSmall';
 import Helmet from 'components/Helmet';

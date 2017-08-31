@@ -16,7 +16,7 @@ type NavItemType = {
 const Container = styled.ul`display: flex;`;
 
 const NavItem = styled.li`
-  color: ${props => (props.white ? 'white' : 'inherit')};
+  color: white;
   font-weight: ${type.weights.medium};
   margin: 0 2rem;
 
@@ -31,36 +31,19 @@ const NavItem = styled.li`
 
 const items = [
   { name: 'About', link: '/about/' },
-  { name: 'Articles', link: '/articles/' },
   { name: 'Events', link: '/events/' },
-  { name: 'Clients', link: '/clients/' },
-  { name: 'Deep learning', link: '/deep-learning/' },
+  { name: 'Co-working', link: '/the-pond/' },
   { name: 'Workshops', link: '/workshops/' },
-  {
-    name: 'Co-working',
-    href: 'http://silverpond.com.au/the_pond/',
-    options: { target: '_blank', rel: 'noopener noreferrer' },
-  },
   { name: 'Contact', href: '#footer' },
 ];
 
 // Component
-const Nav = ({
-  style,
-  white,
-  without,
-}: {
-  style?: Object,
-  white?: boolean,
-  without?: Array<string>,
-}) => {
-  const unwantedItems = without || [];
-  const wantedItems = items.filter(i => !unwantedItems.includes(i.name));
+const Nav = ({ style }: { style?: Object }) => {
   return (
     <Container style={style}>
-      {wantedItems.map((item: NavItemType) => {
+      {items.map((item: NavItemType) => {
         return (
-          <NavItem key={item.name} white={white}>
+          <NavItem key={item.name}>
             {item.hasOwnProperty('href') ? (
               <a href={item.href} {...item.options}>
                 {item.name}

@@ -12,6 +12,7 @@ import { mapLink, getImageUrl } from 'lib/utilities';
 import Avatar from 'components/Avatar';
 import Button from 'components/Button';
 import MediaBlock from 'components/MediaBlock';
+import TextContent from 'components/TextContent';
 import TextLink from 'components/TextLink';
 
 const Date = styled.h4`
@@ -39,22 +40,6 @@ const AttendButton = styled(Button)`
 const Title = styled(Link)`
   ${typeStyles('h3')};
   display: block;
-`;
-
-const Text = styled.p`
-  margin-bottom: 2rem;
-  max-width: 800px;
-`;
-
-const Body = styled.div`
-  ${textBlock} ul li {
-    margin-left: 3rem;
-    list-style-type: circle;
-  }
-
-  h3 {
-    font-size: 2rem;
-  }
 `;
 
 const SubTitle = styled.h4`
@@ -128,7 +113,9 @@ const WorkshopSmall = ({
       }
     >
       <Title>{title}</Title>
-      <Body dangerouslySetInnerHTML={{ __html: body }} />
+      <TextContent>
+        <div dangerouslySetInnerHTML={{ __html: body }} />
+      </TextContent>
       {!!hosts &&
       hosts.length > 0 && (
         <div>

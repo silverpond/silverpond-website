@@ -13,10 +13,12 @@ import EventSmall from 'components/EventSmall';
 import Helmet from 'components/Helmet';
 import IntroText from 'components/IntroText';
 import ItemList from 'components/ItemList';
+import Logo from 'components/Logo';
 import Nav from 'components/Nav';
 import PromotedContent from 'components/PromotedContent';
 import Section from 'components/Section';
-import Logo from 'components/Logo';
+import Tag from 'components/Tag';
+
 // Keyframes
 const tagline = keyframes`
   from {
@@ -58,29 +60,31 @@ const TagLine = styled.h2`
   text-align: center;
 `;
 
+const HeadingTag = styled(Tag)`margin-bottom: 1.5rem;`;
+
 const Highlight = styled.span`color: ${palette.red.lighter};`;
 
-const AboutText = styled(IntroText)`margin-bottom: 2rem;`;
+const LeadText = styled(IntroText)`margin-bottom: 2rem;`;
+const BodyText = styled.div`margin-bottom: 2rem;`;
 
-const AboutImage = styled.img`
-  margin-left: -6rem;
-  width: calc(100% + 6rem);
-`;
+const AboutImage = styled.img`width: 100%;`;
 
 const ArticleCol = styled(Col)`display: flex;`;
 
 const ClientsWrapper = styled(ColWrapper)`align-items: center;`;
 
 const Home = ({ data }: { data: Object }) => {
-  const pages = data.allMarkdownRemark.edges.map(edge => {
+  const pages = data.pages.edges.map(edge => {
     const { frontmatter, html, timeToRead } = edge.node;
     return { ...frontmatter, body: html, timeToRead };
   });
 
-  const promotedCaseStudy = getPromotedPages(pages, 'case-studies', 1)[0];
+  const people = data.people.edges.map(edge => edge.node.frontmatter);
+
   const promotedArticles = getPromotedPages(pages, 'articles');
-  const promotedEvents = getPromotedPages(pages, 'events');
+  const promotedCaseStudy = getPromotedPages(pages, 'case-studies', 1)[0];
   const promotedClients = getPromotedPages(pages, 'clients', 4);
+  const promotedEvents = getPromotedPages(pages, 'events');
 
   return (
     <div>
@@ -111,7 +115,7 @@ const Home = ({ data }: { data: Object }) => {
             <AboutImage src={staticAssetPath('coffee.jpg')} alt="Jono Chang having coffee." />
           </Col>
           <Col span="7">
-            <AboutText>
+            <LeadText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim mi,
               vulputate nec tincidunt quis, finibus id ex. Quisque venenatis rhoncus odio, eu ornare
               tortor pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum
@@ -119,12 +123,35 @@ const Home = ({ data }: { data: Object }) => {
               semper. pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum
               sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus
               semper.
-            </AboutText>
+            </LeadText>
             <ArrowLink to="/deep-learning">Find out more about deep learning</ArrowLink>
           </Col>
         </ColWrapper>
       </Section>
       <Section color="grey">
+        <ColWrapper>
+          <Col span="7">
+            <HeadingTag>Object Detection</HeadingTag>
+            <BodyText>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim mi,
+              vulputate nec tincidunt quis, finibus id ex. Quisque venenatis rhoncus odio, eu ornare
+              tortor pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum
+              sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus
+              semper. pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum
+              sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus
+              semper.
+            </BodyText>
+            <ArrowLink to="/object-detection">Try out our object detection demo</ArrowLink>
+          </Col>
+          <Col span="5">
+            <AboutImage
+              src={staticAssetPath('computer-vision.png')}
+              alt="Object detection image."
+            />
+          </Col>
+        </ColWrapper>
+      </Section>
+      <Section>
         <ArticleFeatured
           to={promotedCaseStudy.path}
           imageUrl={getImageUrl(promotedCaseStudy.image)}
@@ -133,10 +160,10 @@ const Home = ({ data }: { data: Object }) => {
           tag="Case study"
         />
       </Section>
-      <PromotedContent category="events" to="/events/">
+      <PromotedContent category="events" to="/events/" color="grey">
         <ItemList>
           {promotedEvents.map(event => {
-            const hosts = event.hosts.map(host => getPerson(pages, host));
+            const hosts = event.hosts.map(host => getPerson(people, host));
             return (
               <EventSmall
                 key={event.title}
@@ -152,10 +179,10 @@ const Home = ({ data }: { data: Object }) => {
           })}
         </ItemList>
       </PromotedContent>
-      <PromotedContent category="articles" to="/articles/" color="grey">
+      <PromotedContent category="articles" to="/articles/">
         <ColWrapper>
           {promotedArticles.map(article => {
-            const person = getPerson(pages, article.author);
+            const person = getPerson(people, article.author);
             return (
               <ArticleCol key={article.title} span="6" style={{ display: 'flex' }}>
                 <ArticleSmall
@@ -172,7 +199,7 @@ const Home = ({ data }: { data: Object }) => {
           })}
         </ColWrapper>
       </PromotedContent>
-      <PromotedContent category="clients" to="/clients/">
+      <PromotedContent category="clients" to="/clients/" color="grey">
         <ClientsWrapper>
           {promotedClients.map(client => {
             return (
@@ -189,7 +216,7 @@ const Home = ({ data }: { data: Object }) => {
 
 export const pageQuery = graphql`
   query LandingQuery {
-    allMarkdownRemark {
+    pages: allMarkdownRemark(filter: { frontmatter: { featured: { eq: true } } }) {
       edges {
         node {
           html
@@ -197,6 +224,7 @@ export const pageQuery = graphql`
           frontmatter {
             active
             attendLink
+            author
             date
             intro
             category
@@ -213,6 +241,22 @@ export const pageQuery = graphql`
             name
             path
             title
+          }
+        }
+      }
+    }
+    people: allMarkdownRemark(filter: { frontmatter: { category: { eq: "people" } } }) {
+      edges {
+        node {
+          frontmatter {
+            name
+            image {
+              childImageSharp {
+                responsiveSizes {
+                  src
+                }
+              }
+            }
           }
         }
       }

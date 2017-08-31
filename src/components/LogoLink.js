@@ -11,6 +11,7 @@ const getImageUrl = ({ onDark }: { onDark: boolean }) => {
 
 const StyledLink = styled(Link)`
   background-image: url('${getImageUrl}');
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   display: block;

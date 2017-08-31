@@ -3,13 +3,7 @@
 import React from 'react';
 import { chunk } from 'lodash';
 
-import {
-  filterNot,
-  filterPagesByCategory,
-  findFeaturedPages,
-  getPerson,
-  getImageUrl,
-} from 'lib/utilities';
+import { filterNot, findFeaturedPages, getPerson, getImageUrl } from 'lib/utilities';
 
 import { ColWrapper, Col } from 'components/Grid';
 import ArticleFeatured from 'components/ArticleFeatured';

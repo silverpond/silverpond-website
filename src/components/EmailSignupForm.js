@@ -16,16 +16,16 @@ const Text = styled.p`margin: 0 0 2rem;`;
 const Form = styled.form`display: flex;`;
 
 const Input = styled.input`
-  backgroundColor: ${palette.slate.light};
+  background-color: ${palette.slate.light};
   border-radius: 3px;
   border: 0;
   color: white;
   flex-grow: 1;
   margin-right: 3rem;
-  padding: 0 2rem;
+  padding: 0 1rem;
 
   &::-webkit-input-placeholder {
-    color: white;
+    color: ${palette.slate.lighter};
   }
 `;
 
@@ -40,8 +40,7 @@ const EmailSignupForm = () => {
     <div>
       <Title>Join the Silverpond mailing list</Title>
       <Text>
-        Stay up to date with the most interesting deep learning articles we've
-        been reading.
+        Stay up to date with the most interesting deep learning articles we've been reading.
       </Text>
       <Form
         action="//silverpond.us13.list-manage.com/subscribe/post?u=af7133600d742ed0346eaf58b&amp;id=ccc8026de5"

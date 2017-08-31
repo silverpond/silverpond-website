@@ -1,24 +1,18 @@
 ---
-title      : Deep Learning 2-Day Workshop!
-active     : true
-attendLink : https://www.eventbrite.com/e/deep-learning-2-day-workshop-tickets-34093497569
-venue      : Silverpond Office
-hosts      : 
-    - Noon van der Silk
-    - Lyndon Maydwell
+title: Deep Learning 2-Day Workshop!
+attendLink: https://www.eventbrite.com/e/deep-learning-2-day-workshop-tickets-34093497569
+venue: Silverpond Office
+hosts: 
+- Noon van der Silk
+- Lyndon Maydwell
 dates:
-    - 2017-06-07T10:00:00+1000
-    - 2017-06-08T10:00:00+1000
+- 2017-06-07T10:00:00+1000
+- 2017-06-08T10:00:00+1000
 category: workshops
 path: /workshops/deep-learning-2-day-june
 ---
 
-<a href="https://www.eventbrite.com/e/deep-learning-2-day-workshop-tickets-34093497569" target="_blank">![Deep Learning Workshop](./DeepLearningWorkshop_Jun2017.png)</a>
-
-**Day 1 - WED 7 JUN 2017 10AM - 5PM**<br>
-**Day 2 - THU 8 JUN 2017 10AM - 5PM**<br>
-**Silverpond Office**<br>
-**Level 2, 382 Little Collins Street, Melbourne**<br>
+![Deep Learning Workshop](./DeepLearningWorkshop_Jun2017.png)</a>
 
 Venture into deep learning with this 2-day workshop that will take you from
 the mathematical and theoretical foundations to building models and neural
