@@ -39,7 +39,7 @@ const Splash = styled.div`
   flex-direction: column;
   height: 100vh;
   min-height: 50rem;
-  padding: 2.5rem 0;
+  padding: 2.5rem;
 `;
 
 const SplashInner = styled.div`
@@ -52,25 +52,27 @@ const SplashInner = styled.div`
 
 const TagLine = styled.h2`
   ${typeStyles('h1')} animation: ${tagline} 1s cubic-bezier(0, 0, 0.4, 1.2) both 3s;
-  color: white;
+  color: ${palette.red.lighter};
   font-family: georgia;
-  font-size: 4rem;
-  line-height: 5rem;
-  margin-bottom: 5rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 2.5rem;
   text-align: center;
+
+  @media (min-width: 750px) {
+    font-size: 4rem;
+    line-height: 5rem;
+    margin-bottom: 5rem;
+  }
 `;
-
+const Highlight = styled.span`color: white;`;
 const HeadingTag = styled(Tag)`margin-bottom: 1.5rem;`;
-
-const Highlight = styled.span`color: ${palette.red.lighter};`;
 
 const LeadText = styled(IntroText)`margin-bottom: 2rem;`;
 const BodyText = styled.div`margin-bottom: 2rem;`;
 
 const AboutImage = styled.img`width: 100%;`;
-
 const ArticleCol = styled(Col)`display: flex;`;
-
 const ClientsWrapper = styled(ColWrapper)`align-items: center;`;
 
 const Home = ({ data }: { data: Object }) => {
@@ -200,7 +202,7 @@ const Home = ({ data }: { data: Object }) => {
         <ClientsWrapper>
           {promotedClients.map(client => {
             return (
-              <Col key={client.name} span="3">
+              <Col key={client.name} span="3" style={{ textAlign: 'center' }}>
                 <img src={getImageUrl(client.image)} alt={`${client.name} logo`} />
               </Col>
             );

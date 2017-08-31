@@ -6,6 +6,7 @@ import Link from 'gatsby-link';
 import { palette, type, typeStyles } from 'lib/settings';
 
 import EmailSignupForm from 'components/EmailSignupForm';
+import { Col, ColWrapper } from 'components/Grid';
 import InnerBase from 'components/Inner';
 import LogoLink from 'components/LogoLink';
 import SocialLink from 'components/SocialLink';
@@ -17,19 +18,12 @@ const textColor = 'rgba(255, 255, 255, 0.9)';
 const Container = styled.div`
   background-color: ${palette.slate.base};
   color: ${textColor};
-  padding: 4rem;
+  padding: 2rem;
   position: relative;
-`;
 
-const Aside = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-`;
-
-const Inner = styled(InnerBase)`
-  display: flex;
-  justify-content: space-between;
+  @media (min-width: 750px) {
+    padding: 2rem 4rem 4rem;
+  }
 `;
 
 const Logo = styled(LogoLink)`margin-bottom: 1.5rem;`;
@@ -39,7 +33,6 @@ const Address = styled.p`margin: 0 0 2rem;`;
 const Contact = styled.p`
   color: ${palette.grey.base};
   margin: 1rem 0;
-  padding-right: 2rem;
 
   & span:first-child {
     display: inline-block;
@@ -73,38 +66,49 @@ const SocialLinks = styled.div`
 `;
 
 const NavContainer = styled.ul`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-bottom: 7rem;
+  border-bottom: 2px solid ${palette.slate.light};
+  display: block;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
 `;
 
 const NavItem = styled.li`
   color: ${textColor};
+  display: block;
   font-weight: ${type.weights.medium};
+  line-height: 3rem;
   margin: 0 2rem;
+  text-align: center;
 
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
+  @media (min-width: 750px) {
+    display: inline-block;
+    line-height: 1.5;
   }
 `;
 
 const navItems = [
   { name: 'Articles', link: '/articles' },
   { name: 'Clients', link: '/clients' },
+  { name: 'Coworking', link: '/the-pond' },
   { name: 'Deep Learning', link: '/deep-learning' },
+  { name: 'Events', link: '/events' },
+  { name: 'Workshops', link: '/workshops' },
 ];
 
 // Component
 const Footer = () => {
   return (
     <Container id="footer">
-      <Inner>
-        <div>
+      <NavContainer>
+        {navItems.map(item => (
+          <NavItem key={item.name}>
+            <Link to={item.link}>{item.name}</Link>
+          </NavItem>
+        ))}
+      </NavContainer>
+      <ColWrapper style={{ alignItems: 'center' }}>
+        <Col span="4" style={{ paddingTop: '1rem' }}>
           <Logo to="/" />
           <Address>
             Level 2
@@ -131,18 +135,11 @@ const Footer = () => {
               href="https://www.linkedin.com/company/silverpond-pty-ltd"
             />
           </SocialLinks>
-        </div>
-        <Aside>
-          <NavContainer>
-            {navItems.map(item => (
-              <NavItem key={item.name}>
-                <Link to={item.link}>{item.name}</Link>
-              </NavItem>
-            ))}
-          </NavContainer>
+        </Col>
+        <Col span="8">
           <EmailSignupForm />
-        </Aside>
-      </Inner>
+        </Col>
+      </ColWrapper>
     </Container>
   );
 };

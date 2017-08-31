@@ -9,11 +9,20 @@ const Container = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
+
+  @media (min-width: 750px) {
+    margin-bottom: 0;
+  }
 `;
 
 const Image = styled.img`
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
   width: 100%;
+
+  @media (min-width: 750px) {
+    margin-bottom: 2.5rem;
+  }
 `;
 
 const Name = styled.h5`margin: 0;`;

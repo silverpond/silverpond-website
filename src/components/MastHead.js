@@ -76,6 +76,7 @@ const Title = styled.h2`
 const SubTitle = styled.h3`
   ${typeStyles('h3')};
   font-weight: ${type.weights.normal};
+  padding: 0 2rem;
 `;
 
 // Component

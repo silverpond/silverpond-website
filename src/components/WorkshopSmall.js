@@ -11,7 +11,7 @@ import { mapLink, getImageUrl } from 'lib/utilities';
 import Address from 'components/Address';
 import Avatar from 'components/Avatar';
 import Button from 'components/Button';
-import MediaBlock from 'components/MediaBlock';
+import { ColWrapper, Col } from 'components/Grid';
 import TextContent from 'components/TextContent';
 import TextLink from 'components/TextLink';
 
@@ -83,8 +83,8 @@ const WorkshopSmall = ({
   },
 }) => {
   return (
-    <MediaBlock
-      aside={
+    <ColWrapper>
+      <Col span={3}>
         <div>
           {dates.map(date => {
             return (
@@ -101,24 +101,25 @@ const WorkshopSmall = ({
             </AttendButton>
           )}
         </div>
-      }
-    >
-      <Title>{title}</Title>
-      <TextContent>
-        <div dangerouslySetInnerHTML={{ __html: body }} />
-      </TextContent>
-      {!!hosts &&
-      hosts.length > 0 && (
-        <div>
-          <SubTitle>Hosted by</SubTitle>
-          <Hosts>
-            {hosts.map(host => (
-              <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
-            ))}
-          </Hosts>
-        </div>
-      )}
-    </MediaBlock>
+      </Col>
+      <Col span={9}>
+        <Title>{title}</Title>
+        <TextContent>
+          <div dangerouslySetInnerHTML={{ __html: body }} />
+        </TextContent>
+        {!!hosts &&
+        hosts.length > 0 && (
+          <div>
+            <SubTitle>Hosted by</SubTitle>
+            <Hosts>
+              {hosts.map(host => (
+                <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
+              ))}
+            </Hosts>
+          </div>
+        )}
+      </Col>
+    </ColWrapper>
   );
 };
 

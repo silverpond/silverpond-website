@@ -19,7 +19,10 @@ const Title = styled.h2`${typeStyles('h1')} margin-bottom: 3rem;`;
 
 const Body = styled.div`${textBlock} margin-bottom: 5rem;`;
 
-const SubTitle = styled.h4`${typeStyles('h2')} margin-bottom: 2.5rem;`;
+const SubTitle = styled.h4`
+  ${typeStyles('h2')};
+  margin-bottom: 2.5rem;
+`;
 
 // min-width hack - bug in styled-components where only having `&` rules
 // mis-compiles styles (min-width in this context is meaningless).

@@ -11,7 +11,7 @@ import { mapLink, getImageUrl } from 'lib/utilities';
 
 import Avatar from 'components/Avatar';
 import Button from 'components/Button';
-import MediaBlock from 'components/MediaBlock';
+import { Col, ColWrapper } from 'components/Grid';
 import TextLink from 'components/TextLink';
 
 const Date = styled.h4`
@@ -20,17 +20,20 @@ const Date = styled.h4`
   font-weight: ${type.weights.bold};
   line-height: 4.5rem;
   white-space: nowrap;
+
+  @media (min-width: 750px) {
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const Time = styled.p`
-  ${typeStyles('h4')} color: ${palette.grey.base} font-weight: ${type.weights.normal};
-  margin-bottom: 1rem;
+  ${typeStyles('h4')};
+  color: ${palette.grey.base};
+  font-weight: ${type.weights.normal};
 `;
 
-const Location = styled(TextLink)`white-space: nowrap;`;
-
 const AttendButton = styled(Button)`
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   width: 100%;
 `;
 
@@ -54,9 +57,19 @@ const SubTitle = styled.h4`
 
 const Hosts = styled.div`
   display: flex;
+  flex-direction: column;
 
-  & > * + * {
-    margin-left: 4rem;
+  & > * {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 750px) {
+    flex-direction: row;
+
+    & > * {
+      margin-bottom: 0;
+      margin-right: 4rem;
+    }
   }
 `;
 
@@ -88,38 +101,34 @@ const EventSmall = ({
 }) => {
   const link = mapLink(venue);
   return (
-    <MediaBlock
-      aside={
+    <ColWrapper>
+      <Col span={3}>
         <div>
           <Date>{moment(date).format('D MMM')}</Date>
           <Time>{moment(date).format('LT')}</Time>
-          {link ? (
-            <Location to={link} target="_blank">
-              {venue.name}
-            </Location>
-          ) : null}
           {attendLink ? (
             <AttendButton to={attendLink} target="_blank" size="small">
               Attend event
             </AttendButton>
           ) : null}
         </div>
-      }
-    >
-      <Title to={eventLink}>{title}</Title>
-      <Text>{string(text).truncate(300).s}</Text>
-      {hosts &&
-      hosts.length > 0 && (
-        <div>
-          <SubTitle>Hosted by</SubTitle>
-          <Hosts>
-            {hosts.map(host => (
-              <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
-            ))}
-          </Hosts>
-        </div>
-      )}
-    </MediaBlock>
+      </Col>
+      <Col span={9}>
+        <Title to={eventLink}>{title}</Title>
+        <Text>{string(text).truncate(300).s}</Text>
+        {hosts &&
+        hosts.length > 0 && (
+          <div>
+            <SubTitle>Hosted by</SubTitle>
+            <Hosts>
+              {hosts.map(host => (
+                <Avatar key={host.name} name={host.name} imageUrl={getImageUrl(host.image)} />
+              ))}
+            </Hosts>
+          </div>
+        )}
+      </Col>
+    </ColWrapper>
   );
 };
 

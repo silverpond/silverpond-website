@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { typeStyles } from 'lib/settings';
 import { textBlock } from 'lib/styles';
 
-import MediaBlock from 'components/MediaBlock';
+import { ColWrapper, Col } from 'components/Grid';
 
 const Logo = styled.img`width: 100%;`;
 
@@ -17,10 +17,15 @@ const Body = styled.div`${textBlock};`;
 // Component
 const Client = ({ body, imageUrl, name }: { body: string, imageUrl: string, name: string }) => {
   return (
-    <MediaBlock aside={<Logo src={imageUrl} />}>
-      <Title>{name}</Title>
-      <Body dangerouslySetInnerHTML={{ __html: body }} />
-    </MediaBlock>
+    <ColWrapper>
+      <Col span={3}>
+        <Logo src={imageUrl} />
+      </Col>
+      <Col span={9}>
+        <Title>{name}</Title>
+        <Body dangerouslySetInnerHTML={{ __html: body }} />
+      </Col>
+    </ColWrapper>
   );
 };
 

@@ -7,13 +7,27 @@ import styled from 'styled-components';
 import { palette } from 'lib/settings';
 
 import Button from 'components/Button';
+import { ColWrapper, Col } from 'components/Grid';
 
 // Styled components
 const Title = styled.h3`margin-bottom: 0.5rem;`;
 
 const Text = styled.p`margin: 0 0 2rem;`;
 
-const Form = styled.form`display: flex;`;
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  @mixin (min-width: 750px) {
+    flex-direction: row;
+  }
+
+  button {
+    width: 100%;
+  }
+`;
+
+const InputWrapper = styled.div`@media (min-width: 750px) {padding-right: 2rem;}`;
 
 const Input = styled.input`
   background-color: ${palette.slate.light};
@@ -21,8 +35,8 @@ const Input = styled.input`
   border: 0;
   color: white;
   flex-grow: 1;
-  margin-right: 3rem;
-  padding: 0 1rem;
+  padding: 1rem;
+  width: 100%;
 
   &::-webkit-input-placeholder {
     color: ${palette.slate.lighter};
@@ -48,17 +62,25 @@ const EmailSignupForm = () => {
         target="_blank"
         method="post"
       >
-        <Input placeholder="your.email@example.com" name="EMAIL" type="email" />
-        <BotBaitField
-          aria-hidden="true"
-          type="text"
-          name="b_af7133600d742ed0346eaf58b_ccc8026de5"
-          tabindex="-1"
-          value=""
-        />
-        <Button color="white" hasArrow>
-          Sign up
-        </Button>
+        <ColWrapper>
+          <Col span={8} style={{ padding: 0 }}>
+            <InputWrapper>
+              <Input placeholder="your.email@example.com" name="EMAIL" type="email" />
+              <BotBaitField
+                aria-hidden="true"
+                type="text"
+                name="b_af7133600d742ed0346eaf58b_ccc8026de5"
+                tabindex="-1"
+                value=""
+              />
+            </InputWrapper>
+          </Col>
+          <Col span={4} style={{ padding: 0 }}>
+            <Button color="white" hasArrow>
+              Sign up
+            </Button>
+          </Col>
+        </ColWrapper>
       </Form>
     </div>
   );

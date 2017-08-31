@@ -10,10 +10,15 @@ import Section from 'components/Section';
 
 // Styled components
 const Title = styled.h3`
-  ${typeStyles('h1')};
+  ${typeStyles('h3')};
   color: white;
   font-weight: ${type.weights.bold};
   margin-bottom: 2.5rem;
+
+  @media (min-width: 750px) {
+    ${typeStyles('h1')};
+    margin-bottom: 2.5rem;
+  }
 `;
 
 // Component
