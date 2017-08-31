@@ -13,7 +13,20 @@ import PostMeta from 'components/PostMeta';
 import Section from 'components/Section';
 import TextContent from 'components/TextContent';
 
-const Meta = styled.div`text-align: right;`;
+const Overview = styled.div`
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+`;
+
+const Meta = styled.div`
+  align-self: center;
+  text-align: right;
+`;
 
 const Date = styled.p`
   ${typeStyles('small')};
@@ -31,8 +44,8 @@ const ReadTime = styled.p`
 const Article = ({ data }: { data: Object }) => {
   if (!data.article) return null;
 
-  const { author, frontmatter, html, timeToRead } = data.article;
-  const { date, draft, image, title } = frontmatter;
+  const { frontmatter, html, timeToRead } = data.article;
+  const { author, date, draft, image, title } = frontmatter;
 
   const people = data.people.edges.map(edge => edge.node.frontmatter);
   const authorDetails = getPerson(people, author);
@@ -40,15 +53,19 @@ const Article = ({ data }: { data: Object }) => {
   return (
     <div>
       <PostMeta title={title} draft={draft} />
-      <MastHead imageUrl={getImageUrl(image)} title={title} subTitle={author} />
+      <MastHead imageUrl={getImageUrl(image)} title={title} />
       <Section size="small" style={{ padding: '4rem 0' }}>
-        <Meta>
-          <Date>{moment(date).format('MMM D, YYY')}</Date>
-          <ReadTime>{timeToRead} min read</ReadTime>
-        </Meta>
-        {authorDetails ? (
-          <Avatar name={authorDetails.name} imageUrl={getImageUrl(authorDetails.image)} />
-        ) : null}
+        <Overview>
+          {authorDetails ? (
+            <Avatar name={authorDetails.name} imageUrl={getImageUrl(authorDetails.image)} />
+          ) : (
+            <span />
+          )}
+          <Meta>
+            <Date>{moment(date).format('MMM D, YYY')}</Date>
+            <ReadTime>{timeToRead} min read</ReadTime>
+          </Meta>
+        </Overview>
         <TextContent>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </TextContent>

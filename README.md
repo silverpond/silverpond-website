@@ -1,13 +1,12 @@
 ## Setup
-`npm install -g gatsby`
-
-`npm install`
+`brew install vips`  Image processing tool
+`yarn install`
 
 ## Development environment
-`gatsby develop`
+`yarn run dev`
 
 ## Build command (local)
-`gatsby build`
+`yarn run build`
 
 ## Deploy
 Website is currently being built and deployed through [travis ci](https://travis-ci.org/silverpond/silverpond-website), kicked off every time a commit is pushed to the repo.
@@ -40,6 +39,11 @@ Drafts for both articles and events can be created by adding a `draft: true` fla
 The post will not appear in post indexes or in google search results.
 
 ### Article front matter
+**category:** `articles`
+
+**path**: `/articles/<slug>`
+Where the article will be published.
+
 **draft:** `true | false`  
 Whether the article is in draft mode. While in draft mode the article can be viewed by navigating directly to the article url which is derived from the article folder path, eg: `/articles/2016-10-06-balancing-spark/`, but will not appear in the article index or google search results.
 
@@ -62,6 +66,11 @@ A short summary/introduction for the article.
 Image that will be used as a splash image for the article.  
 
 ### Event front matter
+**category:** `events`
+
+**path**: `/events/<slug>`
+Where the event will be published.
+
 **draft:** `true | false`  
 Whether the event is in draft mode. While in draft mode the event can be viewed by navigating directly to the event url which is derived from the event folder path, eg: `/events/2016-10-06-balancing-spark/`, but will not appear in the event index or google search results.
 
@@ -103,6 +112,8 @@ venue:
 ```
 
 ### Person front matter
+**category**: `people`
+
 **name**: `Lyndon Maydwell`  
 Person's name
 
@@ -115,6 +126,8 @@ Person's role (displayed on the team page)
 Whether the Person is a current team member (controls whether they will appear as a team member on the `/about/` page).
 
 ### Client front matter
+**category**: `clients`
+
 **featured**: `true | false`  
 Whether the client logo is displayed on the home page. Only the first 4 featured clients will be displayed on the home page.
 

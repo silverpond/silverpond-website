@@ -214,7 +214,7 @@ const Home = ({ data }: { data: Object }) => {
 };
 
 export const pageQuery = graphql`
-  query LandingQuery {
+  query HomepageQuery {
     pages: allMarkdownRemark(filter: { frontmatter: { featured: { eq: true } } }) {
       edges {
         node {

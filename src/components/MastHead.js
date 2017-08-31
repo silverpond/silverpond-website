@@ -48,7 +48,7 @@ const BackgroundImage = styled.div`
   display: block;
   filter: contrast(50%);
   height: ${settings.height};
-  opacity: 0.33;
+  opacity: 0.66;
   pointer-events: none;
   position: absolute;
   top: 0;
