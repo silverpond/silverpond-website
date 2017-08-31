@@ -8,6 +8,7 @@ import Link from 'gatsby-link';
 import { palette, type, typeStyles } from 'lib/settings';
 import { mapLink, getImageUrl } from 'lib/utilities';
 
+import Address from 'components/Address';
 import Avatar from 'components/Avatar';
 import Button from 'components/Button';
 import MediaBlock from 'components/MediaBlock';
@@ -74,14 +75,13 @@ const WorkshopSmall = ({
   title: string,
   venue: {
     name: string,
-    lat: string,
-    lng: string,
+    lat: number,
+    lng: number,
     address: string,
     city: string,
     country: string,
   },
 }) => {
-  const link = mapLink(venue);
   return (
     <MediaBlock
       aside={
@@ -94,14 +94,10 @@ const WorkshopSmall = ({
               </div>
             );
           })}
-          {link ? (
-            <Location to={mapLink(venue)} target="_blank">
-              {venue.name}
-            </Location>
-          ) : null}
+          {venue && <Address {...venue} />}
           {!!attendLink && (
             <AttendButton to={attendLink} target="_blank" size="small">
-              Attend event
+              Attend
             </AttendButton>
           )}
         </div>
