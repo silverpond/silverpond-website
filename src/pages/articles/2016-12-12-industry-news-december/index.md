@@ -2,6 +2,7 @@
 layout: blog
 title: Industry News - December 2016
 author: Lyndon Maydwell
+date: "2016-12-12"
 meta: |
   A collection of recent
   machine-learning, artificial-intelligence

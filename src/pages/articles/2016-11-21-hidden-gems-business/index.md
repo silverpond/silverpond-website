@@ -2,13 +2,14 @@
 layout: blog
 title: The Business of Mining Hidden Gems
 author: Lyndon Maydwell
+date: "2016-11-21"
 meta: |
   Traditional recommendation engines are limited by their reliance on meta-data.
   Deep-learning can make recommendations based on inference about real data, opening
   up previously inaccessable opportunities for your business and your customers.
 image: gem_splash.png
 category: articles
-path: 2016-11-21-hidden-gems-business
+path: /articles/2016-11-21-hidden-gems-business
 ---
 <p class="attribution" style="text-align: right;">
 	<em>

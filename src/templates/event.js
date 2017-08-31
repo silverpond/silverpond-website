@@ -2,14 +2,12 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import dateformat from 'dateformat';
+import moment from 'moment';
 
 import { palette, type, typeStyles } from 'lib/settings';
-import { textBlock } from 'lib/styles';
 import { getHosts, mapLink, getImageUrl } from 'lib/utilities';
-import type { Page } from 'lib/type-defs';
 
-// Imports - components
+import Address from 'components/Address';
 import Avatar from 'components/Avatar';
 import Button from 'components/Button';
 import MastHead from 'components/MastHead';
@@ -19,28 +17,23 @@ import Section from 'components/Section';
 import TextContent from 'components/TextContent';
 import TextLink from 'components/TextLink';
 
-const Meta = styled.div`
+const EventHeader = styled.div`
+  align-items: center;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 2rem;
 `;
 
 const DateTime = styled.div`
-  align-items: flex-end;
-  display: flex;
-  height: 42px;
-`;
-
-const Date = styled.h4`
-  ${typeStyles('h3')};
-  line-height: 1;
-  margin-right: 1rem;
-`;
-
-const Time = styled.p`
   ${typeStyles('h4')};
   font-weight: ${type.weights.normal};
   line-height: 1;
-  margin-bottom: 0;
+`;
+
+const Title = styled.h2`
+  ${typeStyles('h2')};
+  margin-bottom: 0.5rem;
 `;
 
 const SubTitle = styled.h4`
@@ -51,11 +44,13 @@ const SubTitle = styled.h4`
   text-transform: uppercase;
 `;
 
+const AddressWrapper = styled.div`margin: 2rem 0;`;
+
 const Hosts = styled.div`
   display: flex;
 
   & > * + * {
-    margin-left: 2rem;
+    margin-left: 4rem;
   }
 `;
 
@@ -67,32 +62,32 @@ const Event = ({ data }: { data: Object }) => {
   const { attendLink, date, draft, hosts, title, venue } = frontmatter;
 
   const people = data.people.edges.map(edge => edge.node.frontmatter);
-
-  const link = mapLink(venue);
   const hostRecords = getHosts(hosts, people);
 
   return (
     <div>
       <PostMeta title={title} draft={draft} />
-      {venue ? <MastHeadMap lat={venue.lat} lon={venue.lng} /> : <MastHead title={title} />}
+      <MastHeadMap lat={venue.lat} lng={venue.lng} />
       <Section size="small" style={{ padding: '4rem 0' }}>
-        <Meta>
-          <DateTime>
-            <Date>{dateformat(date, 'd mmm')}</Date>
-            <Time>{dateformat(date, 'h:Mtt')}</Time>
-          </DateTime>
+        <EventHeader>
+          <div>
+            <Title>
+              {title}
+              {draft ? ' - Draft' : ''}
+            </Title>
+            <DateTime>{moment(date).format('D MMM YYYY - LT')}</DateTime>
+          </div>
           <Button to={attendLink} target="_blank" hasArrow>
-            Attend event
+            Attend
           </Button>
-        </Meta>
-        {link ? (
-          <TextLink to={mapLink(venue)} target="_blank">
-            {venue.name}
-          </TextLink>
-        ) : null}
+        </EventHeader>
         <TextContent>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </TextContent>
+        <AddressWrapper>
+          <SubTitle>Location</SubTitle>
+          <Address {...venue} style={{ marginTop: '-0.5rem' }} />
+        </AddressWrapper>
         {hostRecords.length > 0 && (
           <div>
             <SubTitle>Hosted by</SubTitle>
@@ -125,6 +120,14 @@ export const pageQuery = graphql`
               src
             }
           }
+        }
+        venue {
+          name
+          lat
+          lng
+          address
+          city
+          country
         }
       }
     }

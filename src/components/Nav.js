@@ -31,8 +31,8 @@ const NavItem = styled.li`
 
 const items = [
   { name: 'About', link: '/about/' },
+  { name: 'Coworking', link: '/the-pond/' },
   { name: 'Events', link: '/events/' },
-  { name: 'Co-working', link: '/the-pond/' },
   { name: 'Workshops', link: '/workshops/' },
   { name: 'Contact', href: '#footer' },
 ];

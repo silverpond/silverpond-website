@@ -4,6 +4,7 @@ title: Jupyter-Notebook Vim Bindings
 author: Lyndon Maydwell
 link: "https://github.com/lambdalisue/jupyter-vim-binding#jupyter-vim-binding"
 image: "screencast.gif"
+date: "2017-02-14"
 meta: |
   For those of us who have a modal-brain, there is now the possibility of using
   our favorite editor's key-bindings in Jupyter-Notebooks! The notebook environment

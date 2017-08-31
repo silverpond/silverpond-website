@@ -2,6 +2,7 @@
 layout: blog
 title: An Object Detection Demo
 author: Richard Johnson
+date: "2016-10-14"
 meta: | 
   A simple object detection pipeline we set up in a week, using deep learning 
   to detect pedestrians on the sidewalk and people in our office.

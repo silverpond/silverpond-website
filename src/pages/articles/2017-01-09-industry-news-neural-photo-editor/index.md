@@ -4,6 +4,7 @@ title: Neural-Photo-Editor
 author: Lyndon Maydwell
 link: "https://github.com/ajbrock/Neural-Photo-Editor"
 image: "neural-editing.png"
+date: "2017-01-09"
 meta: |
   Generative photo-editing is now a reality! Powered by deep-learning, the
   Neural-Photo-Editor takes image manipulation to the next level by extending

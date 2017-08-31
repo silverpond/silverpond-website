@@ -2,6 +2,7 @@
 layout: blog
 title: Nvidia's GTCx in Melbourne
 author: Lyndon Maydwell
+date: "2016-10-05"
 meta: Fostering the deep learning community - Nvidia's GTCx in Melbourne
 image: GTCxAus_1.jpg
 category: articles

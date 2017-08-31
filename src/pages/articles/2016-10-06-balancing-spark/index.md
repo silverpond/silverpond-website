@@ -1,8 +1,8 @@
 ---
 featured: true
 title: "Balancing Spark – Bin Packing to Solve Data Skew"
-date: Oct 6, 2016
 author: James Sofra
+date: "2016-10-06"
 meta: Applying bin packing techniques to resolve data skew and speed up Apache Spark execution.
 image: birds_on_a_wire.jpg
 category: articles

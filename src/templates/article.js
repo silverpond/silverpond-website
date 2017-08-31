@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import dateformat from 'dateformat';
+import moment from 'moment';
 
 import { type, typeStyles } from 'lib/settings';
 import { getImageUrl, getPerson } from 'lib/utilities';
@@ -43,7 +43,7 @@ const Article = ({ data }: { data: Object }) => {
       <MastHead imageUrl={getImageUrl(image)} title={title} subTitle={author} />
       <Section size="small" style={{ padding: '4rem 0' }}>
         <Meta>
-          <Date>{dateformat(date, 'mediumDate')}</Date>
+          <Date>{moment(date).format('MMM D, YYY')}</Date>
           <ReadTime>{timeToRead} min read</ReadTime>
         </Meta>
         {authorDetails ? (

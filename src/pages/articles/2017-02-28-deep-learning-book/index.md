@@ -2,6 +2,7 @@
 layout: book
 author: "Lyndon Maydwell"
 redirect_from: "/2017/02/27/deep-learning-book.html"
+date: "2017-02-28"
 meta: |
   The Deep-Learning Book is one of the most comprehensive texts that exist on 
   the subject. Taking you from foundations to latest research in deep-learning, 

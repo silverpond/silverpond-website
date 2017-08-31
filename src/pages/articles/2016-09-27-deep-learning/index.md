@@ -2,6 +2,7 @@
 layout: blog
 title: Deep-Earning, or, Why Attend a Deep-Learning Workshop
 author: Lyndon Maydwell
+date: "2016-09-27"
 meta: Deep-Learning can be beneficial for a business in ways that might not be obvious at first...
 image: bizbrain2.png
 category: articles

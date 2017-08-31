@@ -1,13 +1,19 @@
 ---
 title: Deep Learning 2-Day Workshop!
 attendLink: https://www.eventbrite.com/e/deep-learning-2-day-workshop-tickets-34093497569
-venue: Silverpond Office
 hosts: 
 - Noon van der Silk
 - Lyndon Maydwell
 dates:
 - 2017-06-07T10:00:00+1000
 - 2017-06-08T10:00:00+1000
+venue:
+  name: Silverpond office
+  lat: -37.8155307
+  lng: 144.9619365
+  address: 382 Little Collins St
+  city: Melbourne
+  country: Australia
 category: workshops
 path: /workshops/deep-learning-2-day-june
 ---

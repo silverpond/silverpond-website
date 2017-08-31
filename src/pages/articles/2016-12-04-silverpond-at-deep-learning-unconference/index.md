@@ -2,6 +2,7 @@
 layout: blog
 title: Silverpond at the Machine Learning Unconference
 author: Lyndon Maydwell
+date: "2016-12-04"
 meta: |
   Silverpond recently organised the Machine Learning Unconference intended
   to gather Melbourne's leaders and practitioners of AI and machine learning

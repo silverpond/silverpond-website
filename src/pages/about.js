@@ -25,6 +25,7 @@ const SubTitle = styled.h4`${typeStyles('h2')} margin-bottom: 2.5rem;`;
 // mis-compiles styles (min-width in this context is meaningless).
 const PeopleRow = styled(ColWrapper)`
   min-width: 0;
+
   & + & {
     margin-top: 5rem;
   }

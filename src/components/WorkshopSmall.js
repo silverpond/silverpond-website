@@ -2,11 +2,10 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import dateformat from 'dateformat';
+import moment from 'moment';
 import Link from 'gatsby-link';
 
 import { palette, type, typeStyles } from 'lib/settings';
-import { textBlock } from 'lib/styles';
 import { mapLink, getImageUrl } from 'lib/utilities';
 
 import Avatar from 'components/Avatar';
@@ -58,15 +57,6 @@ const Hosts = styled.div`
   }
 `;
 
-const renderLocation = (venue = {}) => {
-  const link = mapLink(venue);
-  return link ? (
-    <Location to={mapLink(venue)} target="_blank">
-      {venue.name}
-    </Location>
-  ) : null;
-};
-
 // Component
 const WorkshopSmall = ({
   attendLink,
@@ -91,6 +81,7 @@ const WorkshopSmall = ({
     country: string,
   },
 }) => {
+  const link = mapLink(venue);
   return (
     <MediaBlock
       aside={
@@ -98,12 +89,16 @@ const WorkshopSmall = ({
           {dates.map(date => {
             return (
               <div key={date}>
-                <Date>{dateformat(date, 'd mmm')}</Date>
-                <Time>{dateformat(date, 'h:MMtt')}</Time>
+                <Date>{moment(date).format('D MMM')}</Date>
+                <Time>{moment(date).format('LT')}</Time>
               </div>
             );
           })}
-          {renderLocation(venue)}
+          {link ? (
+            <Location to={mapLink(venue)} target="_blank">
+              {venue.name}
+            </Location>
+          ) : null}
           {!!attendLink && (
             <AttendButton to={attendLink} target="_blank" size="small">
               Attend event

@@ -1,7 +1,7 @@
 ---
 title: "Testing draft posts"
-date: Sep 14, 2016
 author: Lyndon Maydwell
+date: "2019-09-14"
 meta: "this is a test post"
 draft: true
 category: articles

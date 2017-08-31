@@ -5,6 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { settings as mastHeadSettings } from 'components/MastHead';
+import Header from 'components/Header';
 
 import GoogleMap from 'google-map-react';
 
@@ -56,10 +57,20 @@ const mapStyles = [
   },
 ];
 
-// Component
-const MastHeadMap = ({ lat, lng }: { lat: any, lng: any }) => {
+const MastHeadMap = ({ lat, lng }: { lat: number, lng: number }) => {
   return (
     <Container>
+      <Header
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1,
+        }}
+        onDark
+      />
       <GoogleMap
         bootstrapURLKeys={{
           key: 'AIzaSyDB7DpjzTPnafr-hf5Yf-eRO6jlz-hixtI',

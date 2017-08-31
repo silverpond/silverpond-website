@@ -2,6 +2,7 @@
 layout: blog
 title: Embedded Deep-Learning on the NVIDIA Jetson TX1
 author: Lyndon Maydwell
+date: "2016-12-07"
 meta: |
   The Jetson TX1 Dev-Kit Silverpond has been waiting for has arrived, and we're now ready
   to test new deep-learning models we've been developing on a low-power, small-form-factor board.

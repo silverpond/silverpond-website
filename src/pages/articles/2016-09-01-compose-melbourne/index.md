@@ -2,6 +2,7 @@
 layout: blog
 title: "Silverpond at Compose :: Melbourne"
 author: Lyndon Maydwell
+date: "2016-09-01"
 meta: "Photos from Compose :: Melbourne, the functional programming conference we helped organise"
 image: shot.jpg
 category: articles

@@ -2,6 +2,7 @@
 layout: blog
 title: Inaugural Deep-Learning Show & Tell!
 author: Lyndon Maydwell
+date: "2017-01-25"
 meta: |
   As part of Silverpond's deep-learning workshops, we commit to running
   show-and tell sessions where previous attendees can show of projects

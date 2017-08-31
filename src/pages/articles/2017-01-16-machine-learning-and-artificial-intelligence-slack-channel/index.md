@@ -2,6 +2,7 @@
 layout: blog
 title: The Machine Learning and Artificial Intelligence Slack Channel
 author: Noon van der Silk
+date: "2017-01-16"
 meta: |
   Want to discuss the latest findings and research in ML and AI? Join us in
   our new Slack channel!

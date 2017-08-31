@@ -2,6 +2,7 @@
 layout: blog
 title: Silverpond at the Data-Science Internship Evening
 author: Lyndon Maydwell
+date: "2016-10-13"
 meta: |
   Silverpond presented at the Data-Science Melbourne
   "Data-Science Internship Evening", sharing our 

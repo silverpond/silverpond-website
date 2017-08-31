@@ -2,6 +2,7 @@
 layout: blog
 title: "Announcement: New Two-Day Deep-Learning Workshop in April"
 author: Lyndon Maydwell
+date: "2017-02-15"
 meta: |
   As part of Silverpond's deep-learning workshops, we commit to running
   show-and tell sessions where previous attendees can show of projects

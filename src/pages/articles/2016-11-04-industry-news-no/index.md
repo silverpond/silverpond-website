@@ -2,6 +2,7 @@
 layout: blog
 title: Recent Industry News - November 2016
 author: Lyndon Maydwell
+date: "2016-11-04"
 redirect_from: "/2016/11/04/industry-news.html"
 meta: |
   A collection of some recent

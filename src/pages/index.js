@@ -37,7 +37,7 @@ const Splash = styled.div`
   background-color: ${palette.red.base};
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 3vh);
+  height: 100vh;
   min-height: 50rem;
   padding: 2.5rem 0;
 `;
@@ -130,20 +130,17 @@ const Home = ({ data }: { data: Object }) => {
       </Section>
       <Section color="grey">
         <ColWrapper>
-          <Col span="7">
+          <Col span="6">
             <HeadingTag>Object Detection</HeadingTag>
             <BodyText>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse enim mi,
               vulputate nec tincidunt quis, finibus id ex. Quisque venenatis rhoncus odio, eu ornare
               tortor pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum
-              sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus
-              semper. pretium sit amet. Sed tincidunt maximus felis a dictum. Donec eu vestibulum
-              sapien. Ut tempus id enim ut auctor. Suspendisse congue lacus ultrices tellus faucibus
-              semper.
+              sapien.
             </BodyText>
             <ArrowLink to="/object-detection">Try out our object detection demo</ArrowLink>
           </Col>
-          <Col span="5">
+          <Col span="6">
             <AboutImage
               src={staticAssetPath('computer-vision.png')}
               alt="Object detection image."
@@ -222,7 +219,6 @@ export const pageQuery = graphql`
           html
           timeToRead
           frontmatter {
-            active
             attendLink
             author
             date

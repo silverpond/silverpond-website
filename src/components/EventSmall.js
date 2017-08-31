@@ -2,7 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import dateformat from 'dateformat';
+import moment from 'moment';
 import string from 'string';
 import Link from 'gatsby-link';
 
@@ -91,8 +91,8 @@ const EventSmall = ({
     <MediaBlock
       aside={
         <div>
-          <Date>{dateformat(date, 'd mmm')}</Date>
-          <Time>{dateformat(date, 'h:MMtt')}</Time>
+          <Date>{moment(date).format('D MMM')}</Date>
+          <Time>{moment(date).format('LT')}</Time>
           {link ? (
             <Location to={link} target="_blank">
               {venue.name}

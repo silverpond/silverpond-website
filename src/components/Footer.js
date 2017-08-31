@@ -76,7 +76,7 @@ const NavContainer = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-bottom: 6rem;
+  margin-bottom: 7rem;
 `;
 
 const NavItem = styled.li`

@@ -2,6 +2,7 @@
 layout: blog
 title: Deep-Learning Workshop Review
 author: Lyndon Maydwell
+date: "2016-10-04"
 meta: Impressions and photos from our inaugural deep-learning workshop.
 image: assist.png
 category: articles

@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Building Data Science Platforms – A Solution for Powercor"
-date: Sep 12, 2016
+date: "2016-09-12"
 author: Lyndon Maydwell
 meta: Insights from our work on building a fast and scalable data science platform for Victoria's electricity provider, Powercor.
 image: science_platform.png

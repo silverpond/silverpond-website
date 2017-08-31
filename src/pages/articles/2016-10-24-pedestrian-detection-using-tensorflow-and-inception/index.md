@@ -2,6 +2,7 @@
 layout: blog
 title: Pedestrian Detection using Tensorflow and Inception
 author: Martin Ingram
+date: "2016-10-24"
 redirect_from: "/2016/10/24/pedestrian-detection-details.html"
 meta: |
   How we built an object detection system using Tensorflow and Inception, and taught it to recognize pedestrians.

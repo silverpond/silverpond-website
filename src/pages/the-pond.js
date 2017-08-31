@@ -19,7 +19,7 @@ const ThePond = () => {
   return (
     <div>
       <Helmet title="The Pond" />
-      <MastHead title="The Pond" subTitle="A Data Science and Machine Learning Co-working Space" />
+      <MastHead title="The Pond" subTitle="A Data Science and Machine Learning Coworking Space" />
       <Section>
         <TextContent>
           <p>Hi there and welcome to the Pond!</p>

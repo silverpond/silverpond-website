@@ -2,6 +2,7 @@
 layout: blog
 title: DeepScite Open-Sourced
 author: Lyndon Maydwell
+date: "2016-09-22"
 meta: The DeepScite Arxiv Recommendation Engine has been Open-Sourced
 image: deepscite_splash.jpg
 category: articles

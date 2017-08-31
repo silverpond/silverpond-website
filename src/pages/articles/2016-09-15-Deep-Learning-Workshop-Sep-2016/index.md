@@ -2,6 +2,7 @@
 layout: blog
 title: Deep Learning Workshop - Sep 2016
 author: Amanda Mailer
+date: "2016-09-25"
 meta: A 4-hour workshop on 28 Sep on the basics of deep learning
 image: DeepLearningWorkshop_Eventbrite.png
 category: articles

@@ -2,6 +2,7 @@
 layout: blog
 title: Beatles Abbey-Road Pedestrian Extraction
 author: Lyndon Maydwell
+date: "2016-11-15"
 meta: |
   An entertaining demonstration of the extraction capability of the object-detection
   API that we have built is provided by the iconic Beatles Abbey Road album cover.

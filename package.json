@@ -36,7 +36,6 @@
     "flow-bin": "^0.53.1"
   },
   "dependencies": {
-    "dateformat": "^2.0.0",
     "fs-extra": "^4.0.1",
     "gatsby": "^1.9.14",
     "gatsby-link": "^1.6.14",

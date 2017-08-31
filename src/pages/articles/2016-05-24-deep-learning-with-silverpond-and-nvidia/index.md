@@ -2,6 +2,7 @@
 layout: blog
 title: Join us for an evening of Deep Learning! 
 author: Noon van der Silk
+date: "2016-05-24"
 meta: We join NVIDIA to present an evening on the hardware and applications for deep learning.
 image: an-evening-of-deep-learning.png
 category: articles

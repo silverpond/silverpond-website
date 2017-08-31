@@ -2,6 +2,7 @@
 layout: blog
 title: Our New Website
 author: "Lyndon Maydwell"
+date: "2016-03-30"
 category: articles
 path: /articles/2016-03-30-new-website
 ---

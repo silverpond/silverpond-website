@@ -2,6 +2,7 @@
 title: Want to Become a Silverponder?
 author: Lyndon Maydwell
 draft: true
+date: "2017-03-06"
 meta: |
   Silverpond is looking for a software engineer, a front-end designer, and a machine learning practicioner.
 image: Silverpond-Group-1.jpg

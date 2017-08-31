@@ -81,6 +81,14 @@ export const pageQuery = graphql`
             }
             path
             title
+            venue {
+              name
+              lat
+              lng
+              address
+              city
+              country
+            }
           }
         }
       }

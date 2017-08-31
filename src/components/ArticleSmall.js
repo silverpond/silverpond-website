@@ -2,7 +2,7 @@
 // Imports - config
 import React from 'react';
 import styled from 'styled-components';
-import dateformat from 'dateformat';
+import moment from 'moment';
 import string from 'string';
 import Link from 'gatsby-link';
 
@@ -71,7 +71,7 @@ const ArticleSmall = ({
   return (
     <Container to={path}>
       <Head>
-        <Date>{dateformat(date, 'mediumDate')}</Date>
+        <Date>{moment(date).format('MMM D, YYY')}</Date>
         <ReadTime>{readTime} min read</ReadTime>
       </Head>
       {imageUrl ? <Image src={imageUrl} /> : null}
