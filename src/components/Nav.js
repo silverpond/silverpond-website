@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Link from 'gatsby-link';
 
 import { type } from 'lib/settings';
+import { staticAssetPath } from 'lib/utilities';
 
 const Container = styled.div`
   left: 0;
@@ -72,40 +73,50 @@ const SideMenuList = styled.ul`
   transform: ${props => (props.isOpen ? 'translate3d(0, 0, 0)' : 'translate3d(-100vw, 0 ,0)')};
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
-  z-index: 2;
+  z-index: 10;
 `;
 
 const SideMenuItem = styled.li`
   border-bottom: 1px solid #ddd;
   display: block;
   padding: 1rem;
+
+  a {
+    color: #333;
+  }
 `;
 
 const SideMenuOpen = styled.a`
-  background-color: green;
-  border-radius: 50%;
   cursor: pointer;
   display: inline-block;
-  height: 2.75rem;
-  position: relative;
-  width: 2.75rem;
-  z-index: 1;
+  left: 10px;
+  position: absolute;
+  top: 20px;
+  z-index: ${props => (props.isOpen ? 'initial' : 1)};
 
   @media (min-width: 768px) {
     display: none;
   }
+
+  img {
+    height: 3.75rem;
+    width: 3.75rem;
+  }
 `;
 
 const SideMenuClose = styled.a`
-  background-color: red;
-  border-radius: 50%;
   cursor: pointer;
   display: inline-block;
   height: 2.75rem;
   position: absolute;
-  right: 0;
+  right: 12px;
   top: 0;
   width: 2.75rem;
+
+  img {
+    height: 3.75rem;
+    width: 3.75rem;
+  }
 `;
 
 const items = [
@@ -131,11 +142,15 @@ const Navbar = ({ styles }: { styles: Object }) => {
 const SideNav = ({ isOpen, onToggle }: { isOpen: boolean, onToggle: () => void }) => {
   return (
     <Container>
-      <SideMenuOpen onClick={onToggle} />
+      <SideMenuOpen isOpen={isOpen} onClick={onToggle}>
+        <img src={staticAssetPath('menu.svg')} alt="Menu" />
+      </SideMenuOpen>
       <SideMenuContainer isOpen={isOpen}>
         <SideMenuOverlay isOpen={isOpen} />
         <SideMenuList isOpen={isOpen}>
-          <SideMenuClose onClick={onToggle} />
+          <SideMenuClose onClick={onToggle}>
+            <img src={staticAssetPath('close.svg')} alt="Close" />
+          </SideMenuClose>
           {items.map(item => (
             <SideMenuItem key={item.name}>
               <Link to={item.link}>{item.name}</Link>

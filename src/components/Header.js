@@ -9,8 +9,12 @@ import LogoLink from 'components/LogoLink';
 const Container = styled.div`
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 2rem 3rem;
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 
 // Component

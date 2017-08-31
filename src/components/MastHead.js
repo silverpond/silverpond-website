@@ -21,7 +21,6 @@ const Inner = styled.div`
   flex-direction: column;
   height: ${settings.height};
   left: 0;
-  overflow: hidden;
   position: fixed;
   right: 0;
   top: 0;
