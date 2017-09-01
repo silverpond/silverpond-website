@@ -9,13 +9,26 @@ import Nav from 'components/Nav';
 import LogoLink from 'components/LogoLink';
 
 const Container = styled.div`
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+
+  @media (min-width: ${breakpoints.small}) {
+    left: 50%;
+    margin: 0 auto;
+    max-width: ${breakpoints.large};
+    transform: translateX(-50%);
+  }
+`;
+
+const Content = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
   padding: 2rem 3rem;
-  position: absolute;
+  position: relative;
   width: 100%;
-  z-index: 1;
 
   @media (min-width: ${breakpoints.small}) {
     justify-content: space-between;
@@ -26,8 +39,10 @@ const Container = styled.div`
 const Header = ({ onDark, style }: { onDark?: boolean, style?: Object }) => {
   return (
     <Container style={style}>
-      <LogoLink to="/" onDark={onDark} />
-      <Nav />
+      <Content>
+        <LogoLink to="/" onDark={onDark} />
+        <Nav />
+      </Content>
     </Container>
   );
 };

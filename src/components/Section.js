@@ -31,7 +31,7 @@ const Container = styled.div`
   }
 
   @media (min-width: ${breakpoints.medium}) {
-    padding: 8rem 6rem;
+    padding: 6rem;
   }
 `;
 

@@ -7,6 +7,12 @@ const Container = styled.div`
     margin: 2rem 0;
   }
 
+  blockquote {
+    border-left: 5px solid #ddd;
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+
   h1,
   h2,
   h3,

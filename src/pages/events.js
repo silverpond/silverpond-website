@@ -31,7 +31,7 @@ const Events = ({ data }: { data: Object }) => {
     <div>
       <Helmet title="Events" />
       <MastHead title="Events" subTitle="We run lots of great events" />
-      <Section color="grey" size="medium">
+      <Section color="grey">
         <FeaturedTag>Featured</FeaturedTag>
         <EventSmall
           key={featuredEvent.path}
@@ -43,7 +43,7 @@ const Events = ({ data }: { data: Object }) => {
           eventLink={featuredEvent.path}
         />
       </Section>
-      <Section size="medium">
+      <Section>
         <ItemList>
           {nonFeaturedEvents.map(event => {
             const hosts = getHosts(event.hosts, people);

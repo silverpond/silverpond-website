@@ -48,12 +48,12 @@ const Workshops = ({ data }: { data: Object }) => {
       <Helmet title="Workshops" />
       <MastHead title="Workshops" subTitle="Come join us at one of our Deep Learning workshops" />
       {activeWorkshops.length > 0 && (
-        <Section color="grey" size="medium">
+        <Section color="grey">
           {activeWorkshops.map(workshop => Workshop(workshop, people))}
         </Section>
       )}
       {priorWorkshops.length > 0 && (
-        <Section size="medium">
+        <Section>
           <ItemList>{priorWorkshops.map(workshop => Workshop(workshop, people))}</ItemList>
         </Section>
       )}
