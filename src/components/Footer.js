@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
-import { palette, type, typeStyles } from 'lib/settings';
+import { breakpoints, palette, type, typeStyles } from 'lib/settings';
 
 import EmailSignupForm from 'components/EmailSignupForm';
 import { Col, ColWrapper } from 'components/Grid';
@@ -20,7 +20,7 @@ const Container = styled.div`
   padding: 2rem 0;
   position: relative;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     padding: 2rem 4rem 4rem;
   }
 `;
@@ -71,7 +71,7 @@ const NavContainer = styled.ul`
   padding-bottom: 2rem;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     display: block;
   }
 `;

@@ -6,13 +6,12 @@ import moment from 'moment';
 import string from 'string';
 import Link from 'gatsby-link';
 
-import { palette, type, typeStyles } from 'lib/settings';
+import { breakpoints, palette, type, typeStyles } from 'lib/settings';
 import { mapLink, getImageUrl } from 'lib/utilities';
 
 import Avatar from 'components/Avatar';
 import Button from 'components/Button';
 import { Col, ColWrapper } from 'components/Grid';
-import TextLink from 'components/TextLink';
 
 const Date = styled.h4`
   color: ${palette.grey.base};
@@ -21,7 +20,7 @@ const Date = styled.h4`
   line-height: 4.5rem;
   white-space: nowrap;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     margin-bottom: 0.5rem;
   }
 `;
@@ -63,7 +62,7 @@ const Hosts = styled.div`
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     flex-direction: row;
 
     & > * {

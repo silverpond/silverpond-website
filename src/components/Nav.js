@@ -3,15 +3,16 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 
-import { type } from 'lib/settings';
+import { breakpoints, type } from 'lib/settings';
 import { staticAssetPath } from 'lib/utilities';
 
 const Container = styled.div`
   left: 0;
   position: absolute;
   top: 0;
+  z-index: 1;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     display: flex;
     position: relative;
   }
@@ -20,7 +21,7 @@ const Container = styled.div`
 const NavbarContainer = styled.ul`
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     display: flex;
   }
 `;
@@ -28,7 +29,12 @@ const NavbarContainer = styled.ul`
 const NavbarItem = styled.li`
   color: white;
   font-weight: ${type.weights.medium};
-  margin: 0 2rem;
+  margin: 0 1rem;
+  white-space: nowrap;
+
+  @media (min-width: 900px) {
+    margin: 0 2rem;
+  }
 
   &:first-child {
     margin-left: 0;
@@ -48,7 +54,7 @@ const SideMenuContainer = styled.div`
   width: 100vw;
   z-index: 10;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     display: none;
   }
 `;
@@ -67,7 +73,7 @@ const SideMenuList = styled.ul`
   background-color: #eee;
   display: block;
   height: 100vh;
-  max-width: 30rem;
+  max-width: 25rem;
   padding-top: 4rem;
   position: relative;
   transform: ${props => (props.isOpen ? 'translate3d(0, 0, 0)' : 'translate3d(-100vw, 0 ,0)')};
@@ -93,8 +99,9 @@ const SideMenuOpen = styled.a`
   left: 10px;
   position: absolute;
   top: 20px;
+  z-index: 1;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     display: none;
   }
 
@@ -164,7 +171,9 @@ const SideNav = ({ isOpen, onToggle }: { isOpen: boolean, onToggle: () => void }
           </SideMenuClose>
           {sidenavItems.map(item => (
             <SideMenuItem key={item.name}>
-              <Link to={item.link}>{item.name}</Link>
+              <Link to={item.link} onClick={onToggle}>
+                {item.name}
+              </Link>
             </SideMenuItem>
           ))}
         </SideMenuList>

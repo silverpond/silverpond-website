@@ -4,7 +4,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { palette } from 'lib/settings';
+import { breakpoints, palette } from 'lib/settings';
 
 import Button from 'components/Button';
 import { ColWrapper, Col } from 'components/Grid';
@@ -18,7 +18,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  @mixin (min-width: 768px) {
+  @mixin (min-width: ${breakpoints.small}) {
     flex-direction: row;
   }
 
@@ -27,7 +27,7 @@ const Form = styled.form`
   }
 `;
 
-const InputWrapper = styled.div`@media (min-width: 768px) {padding-right: 2rem;}`;
+const InputWrapper = styled.div`@media (min-width: ${breakpoints.small}) {padding-right: 2rem;}`;
 
 const Input = styled.input`
   background-color: ${palette.slate.light};

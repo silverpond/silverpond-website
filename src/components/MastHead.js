@@ -91,7 +91,7 @@ const MastHead = ({
   return (
     <Container>
       <Inner>
-        <Header floating onDark />
+        <Header onDark />
         {imageUrl ? (
           <BackgroundImage style={{ backgroundImage: `url('${imageUrl}')` }} />
         ) : (

@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { type, typeStyles } from 'lib/settings';
+import { breakpoints, type, typeStyles } from 'lib/settings';
 
 import Button from 'components/Button';
 import Section from 'components/Section';
@@ -15,7 +15,7 @@ const Title = styled.h3`
   font-weight: ${type.weights.bold};
   margin-bottom: 2.5rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     ${typeStyles('h1')};
     margin-bottom: 2.5rem;
   }

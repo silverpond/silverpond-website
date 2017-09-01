@@ -23,6 +23,12 @@ export const typeStyles = (key: string) => {
   return toStyle(convertCase(key));
 };
 
+export const breakpoints = {
+  small: '768px',
+  medium: '950px',
+  large: '1150px',
+};
+
 // Palette setup
 export const palette = {};
 palette.blue = generateShades(207, '95%', '37%', '13%');

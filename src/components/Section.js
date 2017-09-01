@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { palette } from 'lib/settings';
+import { breakpoints, palette } from 'lib/settings';
 import { centerContent, angledAccent } from 'lib/styles';
 import type { SectionColor, SectionSize } from 'lib/type-defs';
 
@@ -24,9 +24,13 @@ const getBackgroundColor = (color: string): string => {
 const Container = styled.div`
   ${props => angledAccent(getBackgroundColor(props.color))} background-color: ${props =>
       getBackgroundColor(props.color)};
-  padding: 2rem;
+  padding: 1rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
+    padding: 2rem;
+  }
+
+  @media (min-width: ${breakpoints.medium}) {
     padding: 8rem 6rem;
   }
 `;

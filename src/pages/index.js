@@ -2,7 +2,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import { palette, typeStyles } from 'lib/settings';
+import { breakpoints, palette, typeStyles } from 'lib/settings';
 import { getImageUrl, getPerson, getPromotedPages, staticAssetPath } from 'lib/utilities';
 
 import { ColWrapper, Col } from 'components/Grid';
@@ -39,7 +39,7 @@ const Splash = styled.div`
   flex-direction: column;
   height: 100vh;
   min-height: 50rem;
-  padding: 2.5rem;
+  padding: 2.5rem 0;
 `;
 
 const SplashInner = styled.div`
@@ -48,6 +48,11 @@ const SplashInner = styled.div`
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+
+  svg {
+    margin: 0 auto;
+    max-width: 90%;
+  }
 `;
 
 const TagLine = styled.h2`
@@ -57,12 +62,14 @@ const TagLine = styled.h2`
   font-size: 2rem;
   line-height: 2.5rem;
   margin-bottom: 2.5rem;
+  padding: 0 1rem;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     font-size: 4rem;
     line-height: 5rem;
     margin-bottom: 5rem;
+    padding: 0 2.5rem;
   }
 `;
 const Highlight = styled.span`color: white;`;

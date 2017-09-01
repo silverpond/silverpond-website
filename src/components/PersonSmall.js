@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { palette } from 'lib/settings';
+import { breakpoints, palette } from 'lib/settings';
 
 const Container = styled.div`
   align-items: center;
@@ -11,7 +11,7 @@ const Container = styled.div`
   flex-direction: column;
   margin-bottom: 2rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     margin-bottom: 0;
   }
 `;
@@ -20,7 +20,7 @@ const Image = styled.img`
   margin-bottom: 1rem;
   width: 100%;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     margin-bottom: 2.5rem;
   }
 `;

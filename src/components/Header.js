@@ -3,6 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { breakpoints } from 'lib/settings';
+
 import Nav from 'components/Nav';
 import LogoLink from 'components/LogoLink';
 
@@ -11,27 +13,19 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   padding: 2rem 3rem;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     justify-content: space-between;
   }
 `;
 
-const floatStyle = { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 1 };
-
 // Component
-const Header = ({
-  floating,
-  onDark,
-  style,
-}: {
-  floating?: boolean,
-  onDark?: boolean,
-  style?: Object,
-}) => {
-  const mergedStyles = floating ? { ...floatStyle, style } : style;
+const Header = ({ onDark, style }: { onDark?: boolean, style?: Object }) => {
   return (
-    <Container style={mergedStyles}>
+    <Container style={style}>
       <LogoLink to="/" onDark={onDark} />
       <Nav />
     </Container>

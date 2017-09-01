@@ -46,16 +46,8 @@ const About = ({ data }: { data: Object }) => {
   return (
     <div>
       <Helmet title="About" />
-      <Header
-        onDark
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, .75)',
-          borderBottom: 0,
-          position: 'absolute',
-          width: '100%',
-        }}
-      />
-      <SplashImage src={staticAssetPath('team.jpg')} />
+      <Header onDark />
+      <SplashImage src={staticAssetPath('team.jpg')} overlay="rgba(0, 0, 0, .5)" />
       <Section size="small">
         <Title>We are Silverpond!</Title>
         <Body>

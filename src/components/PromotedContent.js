@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { palette, type } from 'lib/settings';
+import { breakpoints, palette, type } from 'lib/settings';
 
 // Imports - components
 import Section from 'components/Section';
@@ -33,7 +33,7 @@ const Head = styled.div`
     align-self: flex-end;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: ${breakpoints.small}) {
     flex-direction: row;
 
     > :last-child {
