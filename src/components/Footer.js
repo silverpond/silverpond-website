@@ -7,7 +7,6 @@ import { palette, type, typeStyles } from 'lib/settings';
 
 import EmailSignupForm from 'components/EmailSignupForm';
 import { Col, ColWrapper } from 'components/Grid';
-import InnerBase from 'components/Inner';
 import LogoLink from 'components/LogoLink';
 import SocialLink from 'components/SocialLink';
 import TextLink from 'components/TextLink';
@@ -18,7 +17,7 @@ const textColor = 'rgba(255, 255, 255, 0.9)';
 const Container = styled.div`
   background-color: ${palette.slate.base};
   color: ${textColor};
-  padding: 2rem;
+  padding: 2rem 0;
   position: relative;
 
   @media (min-width: 768px) {
@@ -67,24 +66,22 @@ const SocialLinks = styled.div`
 
 const NavContainer = styled.ul`
   border-bottom: 2px solid ${palette.slate.light};
-  display: block;
+  display: none;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   text-align: center;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
 `;
 
 const NavItem = styled.li`
   color: ${textColor};
-  display: block;
+  display: inline-block;
   font-weight: ${type.weights.medium};
-  line-height: 3rem;
   margin: 0 2rem;
   text-align: center;
-
-  @media (min-width: 768px) {
-    display: inline-block;
-    line-height: 1.5;
-  }
 `;
 
 const navItems = [

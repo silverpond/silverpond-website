@@ -17,10 +17,21 @@ const Container = styled.div`
   }
 `;
 
+const floatStyle = { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 1 };
+
 // Component
-const Header = ({ onDark, style }: { onDark?: boolean, style?: Object }) => {
+const Header = ({
+  floating,
+  onDark,
+  style,
+}: {
+  floating?: boolean,
+  onDark?: boolean,
+  style?: Object,
+}) => {
+  const mergedStyles = floating ? { ...floatStyle, style } : style;
   return (
-    <Container style={style}>
+    <Container style={mergedStyles}>
       <LogoLink to="/" onDark={onDark} />
       <Nav />
     </Container>

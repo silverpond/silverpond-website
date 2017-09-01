@@ -8,7 +8,7 @@ import { staticAssetPath } from 'lib/utilities';
 
 const Container = styled.div`
   left: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
 
   @media (min-width: 768px) {
@@ -45,7 +45,8 @@ const SideMenuContainer = styled.div`
   position: fixed;
   top: 0;
   transition: ${props => (props.isOpen ? 'left 0s linear 0s' : 'left 0s linear 0.4s')};
-  width: 80vw;
+  width: 100vw;
+  z-index: 10;
 
   @media (min-width: 768px) {
     display: none;
@@ -54,13 +55,12 @@ const SideMenuContainer = styled.div`
 
 const SideMenuOverlay = styled.div`
   background-color: black;
-  bottom: 0;
+  height: 100vh;
   left: 0;
-  opacity: ${props => (props.isOpen ? 0.88 : 0)};
-  position: fixed;
-  right: 0;
+  opacity: ${props => (props.isOpen ? 0.66 : 0)};
+  position: absolute;
   transition: opacity 0.4s;
-  top: 0;
+  width: 100vw;
 `;
 
 const SideMenuList = styled.ul`
@@ -73,16 +73,17 @@ const SideMenuList = styled.ul`
   transform: ${props => (props.isOpen ? 'translate3d(0, 0, 0)' : 'translate3d(-100vw, 0 ,0)')};
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
-  z-index: 10;
 `;
 
 const SideMenuItem = styled.li`
   border-bottom: 1px solid #ddd;
   display: block;
-  padding: 1rem;
 
   a {
     color: #333;
+    display: block;
+    padding: 1rem;
+    width: 100%;
   }
 `;
 
@@ -92,7 +93,6 @@ const SideMenuOpen = styled.a`
   left: 10px;
   position: absolute;
   top: 20px;
-  z-index: ${props => (props.isOpen ? 'initial' : 1)};
 
   @media (min-width: 768px) {
     display: none;
@@ -119,8 +119,19 @@ const SideMenuClose = styled.a`
   }
 `;
 
-const items = [
+const navbarItems = [
   { name: 'About', link: '/about' },
+  { name: 'Coworking', link: '/the-pond' },
+  { name: 'Deep Learning', link: '/deep-learning' },
+  { name: 'Events', link: '/events' },
+  { name: 'Workshops', link: '/workshops' },
+];
+
+const sidenavItems = [
+  { name: 'About', link: '/about' },
+  { name: 'Articles', link: '/articles' },
+  { name: 'Clients', link: '/clients' },
+  { name: 'Contact', link: '#footer' },
   { name: 'Coworking', link: '/the-pond' },
   { name: 'Deep Learning', link: '/deep-learning' },
   { name: 'Events', link: '/events' },
@@ -130,7 +141,7 @@ const items = [
 const Navbar = ({ styles }: { styles: Object }) => {
   return (
     <NavbarContainer style={styles}>
-      {items.map(item => (
+      {navbarItems.map(item => (
         <NavbarItem key={item.name}>
           <Link to={item.link}>{item.name}</Link>
         </NavbarItem>
@@ -151,7 +162,7 @@ const SideNav = ({ isOpen, onToggle }: { isOpen: boolean, onToggle: () => void }
           <SideMenuClose onClick={onToggle}>
             <img src={staticAssetPath('close.svg')} alt="Close" />
           </SideMenuClose>
-          {items.map(item => (
+          {sidenavItems.map(item => (
             <SideMenuItem key={item.name}>
               <Link to={item.link}>{item.name}</Link>
             </SideMenuItem>

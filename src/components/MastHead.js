@@ -21,7 +21,7 @@ const Inner = styled.div`
   flex-direction: column;
   height: ${settings.height};
   left: 0;
-  position: fixed;
+  position: relative;
   right: 0;
   top: 0;
 `;
@@ -91,12 +91,12 @@ const MastHead = ({
   return (
     <Container>
       <Inner>
+        <Header floating onDark />
         {imageUrl ? (
           <BackgroundImage style={{ backgroundImage: `url('${imageUrl}')` }} />
         ) : (
           <BackgroundColor />
         )}
-        <Header style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 1 }} onDark />
         <Body>
           <Title>{title}</Title>
           <SubTitle>{subTitle}</SubTitle>

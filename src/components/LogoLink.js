@@ -16,9 +16,11 @@ const StyledLink = styled(Link)`
   background-size: contain;
   display: block;
   height: 40px;
+  position: relative;
   width: 195px;
+  z-index: 1;
 `;
 
-const LogoLink = () => <StyledLink exact to="/" />;
+const LogoLink = () => <StyledLink to="/" />;
 
 export default LogoLink;

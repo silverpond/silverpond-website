@@ -20,7 +20,7 @@ const Overview = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  padding: 0 1rem 2rem;
 `;
 
 const Meta = styled.div`
@@ -39,6 +39,8 @@ const ReadTime = styled.p`
   margin-bottom: 0;
   margin-top: 0;
 `;
+
+const Content = styled.div`padding: 0 1rem;`;
 
 // Component
 const Article = ({ data }: { data: Object }) => {
@@ -67,7 +69,7 @@ const Article = ({ data }: { data: Object }) => {
           </Meta>
         </Overview>
         <TextContent>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <Content dangerouslySetInnerHTML={{ __html: html }} />
         </TextContent>
       </Section>
     </div>
